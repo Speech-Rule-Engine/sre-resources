@@ -1,0 +1,15 @@
+\def\fCenter{\vdash}
+\begin{prooftree}
+  \Axiom$\Gamma,A,B\fCenter C$\Axiom$\Gamma\fCenter Q$
+  \UnaryInf$\Gamma,A\fCenter (B\to C)$
+\UnaryInf$\Gamma\fCenter (A\to (B\to C))$
+\BinaryInf$\Gamma\fCenter Q\wedge(A\to (B\to C))$
+\end{prooftree}
+
+
+\\def\\fCenter{\\vdash}\\begin{prooftree}  \\Axiom\$\\Gamma,A,B\\fCenter C\$\\Axiom\$\\Gamma\\fCenter Q\$  \\UnaryInf\$\\Gamma,A\\fCenter (B\\to C)\$\\UnaryInf\$\\Gamma\\fCenter (A\\to (B\\to C))\$\\BinaryInf\$\\Gamma\\fCenter Q\\wedge(A\\to (B\\to C))\$\\end{prooftree}
+
+
+
+
+\\def\\fCenter{\\vdash} \\begin{prooftree}   \\Axiom\$\\Gamma\\fCenter Q\$   \\UnaryInf\$\\Gamma,A\\fCenter Q\$  \\UnaryInf\$\\Gamma,Aa\\fCenter Q\$  \\UnaryInf\$\\Gamma,A\\fCenter Qaa\$  \\UnaryInf\$\\Gamma,Aaaa\\fCenter Q\$  \\end{prooftree}
