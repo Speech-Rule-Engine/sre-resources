@@ -1,0 +1,24 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle scriptlevel="1">
+    <mtable rowspacing="0.1em" columnspacing="0em" displaystyle="false" data-semantic-type="multiline" data-semantic-role="unknown" data-semantic-id="12" data-semantic-children="5,11">
+      <mtr data-semantic-type="line" data-semantic-role="multiline" data-semantic-id="5" data-semantic-children="3" data-semantic-parent="12">
+        <mtd>
+          <mrow data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="3" data-semantic-children="0,2" data-semantic-content="1" data-semantic-parent="4">
+            <mi data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-id="0" data-semantic-parent="3">a</mi>
+            <mo data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="1" data-semantic-parent="3" data-semantic-operator="relseq,=">=</mo>
+            <mn data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="2" data-semantic-parent="3">1</mn>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr data-semantic-type="line" data-semantic-role="multiline" data-semantic-id="11" data-semantic-children="9" data-semantic-parent="12">
+        <mtd>
+          <mrow data-semantic-type="relseq" data-semantic-role="equality" data-semantic-id="9" data-semantic-children="6,8" data-semantic-content="7" data-semantic-parent="10">
+            <mi data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="italic" data-semantic-id="6" data-semantic-parent="9">b</mi>
+            <mo data-semantic-type="relation" data-semantic-role="equality" data-semantic-id="7" data-semantic-parent="9" data-semantic-operator="relseq,=">=</mo>
+            <mn data-semantic-type="number" data-semantic-role="integer" data-semantic-font="normal" data-semantic-id="8" data-semantic-parent="9">2</mn>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mstyle>
+</math>

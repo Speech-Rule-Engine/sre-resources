@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation}
+ E^x[g(X^t)]=g(x),\ \ \forall t\geq 0, \ \forall x\in L. \tag{2.1}\cssId{e1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+ E^x[\psi \phi _t]=E^x[\psi \phi ].
+\]
+</P>
+
+<P>
+\[
+ \theta _t(\omega )(s)=\omega (t+s), \forall s\in [0,\infty ).
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ E^x[\phi \circ \theta _t\mid {\mathcal{F}}_t]=E^{X_t}[\phi ]. \tag{2.2}\cssId{e2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+  E^x[\phi _{t+h}\mid {\mathcal{F}}_t]=\phi _t,\ \ \ \forall t\geq 0, \ \forall h&gt;0. \tag{2.3}\cssId{e3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+ E^x[f(X_{t+h})\mid {\mathcal{F}}_t]=E^x[f(X_{h})\circ \theta _t\mid {\mathcal{F}}_t]=E^{X_t}[f(X_h)]=f(X_t),
+\]
+</P>
+
+<P>
+\[
+ E^x[E^{X_t}[\phi ]]=E^x[\phi ],\ \ \forall x\in L,\ \forall t&gt;0,
+\]
+</P>
+
+<P>
+\[
+E^x[E^{X_t}[\phi ]]=E^x[E^x[\phi \circ \theta _t\mid {\mathcal{F}}_t]]= E^x[E^x[\phi \mid {\mathcal{F}}_t]]=E^x[\phi ]. 
+\]
+</P>
+
+<P>
+\[
+\mu ({{\mathrm{Int}}\,}(N))&gt;0.
+\]
+</P>
+
+<P>
+\[
+\Omega _V=\{X_{t_i}\in V, \ \exists t_i\to \infty \}.
+\]
+</P>
+
+<P>
+\[
+ q_x=P^x\{\phi \geq a\}\leq p.
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ E^x[\phi ]&amp;\leq &amp;1\cdot P^x\{\phi \geq a\}+a\cdot P^x\{\phi &lt; a\}\\
+ &amp;=&amp;q_x+a(1-q_x)=a+(1-a)q_x\leq a+(1-a)p&lt;1. 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+ E^x[\phi ]=E^x[\lim _{t\to \infty }f(X_t)]=\lim _{t\to \infty }E^x[f(X_t)] =\lim _{t\to \infty } f(x)=f(x).
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ \hat{p}(y,t)&amp;=&amp;\lim _{h\downarrow 0}p(y,t+h)\ \mbox{ if } t&lt;1,\\
+ \hat{p}(y,1)&amp;=&amp;p(y,1). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ \nu _y(\{y\}\times (s,t])&amp;=&amp;\hat{p}(y,t)-\hat{p}(y,s),\\
+ \nu _y(\{y\}\times \{0\})&amp;=&amp;\hat{p}(y,0)-p(y,0) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+ q(y_0,t_0)=p(y_0,t_0)-\lim _{t\uparrow t_0}p(y_0,t)&gt;0.
+\]
+</P>
+
+<P>
+\[
+ q(y,t_0)=p(y,t_0)-\lim _{t\uparrow t_0}p(y,t).
+\]
+</P>
+
+<P>
+\[
+ \sum _{x\in L\cap \pi ^{-1}(y)}q(x)\leq 1,
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \mu =\int _K(\sum _{x\in L\cap \pi ^{-1}(y)}q(x)\delta _x)dy, \tag{4.1}\cssId{e10}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+ \int _Mf(z)d\mu (z)=\int _K(\sum _{x\in L\cap \pi ^{-1}(y)}q(x)f(x))dy.
+\]
+</P>
+
+<P>
+\[
+ p(y,b)=p(y,a),\ \forall y\in B.
+\]
+</P>
+
+<P>
+\[
+ \lvert \log q(y)-\log q(y_0)\rvert &lt;C_1d(y,y_0)&lt;C_2. 
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C^{-1}\lvert t''-t'\rvert \leq \lvert p(y,t'')-p(y,t')\rvert \leq C\lvert t''-t'\rvert , \tag{4.2}\cssId{e51}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+ &amp; &amp;\mbox{for any $y\in B$, there is a Lebesgue full measure set $I_y$ of $I$ such that} \tag{4.3}\cssId{e52}{}{}\\
+ &amp; &amp;\mbox{the partial derivative $p_t(y,t)$ exists for any $t\in I_y$.} 
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+C^{-1}\leq p_t^{\pm }(y,t)\leq C.
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ p_t^+(y,t)=p_t^-(y,t) \tag{4.4}\cssId{e53}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+ \mu =\int _{I_*}(p_t(y,t)dy)dt. 
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ (1)\ \mu (g)&gt;0\ \ \ \mathrm{and}\ \ \ (2)\ \mu (g^{-1})=\mu (g).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+f(x)=\sum _{g\in \Gamma }\mu (g)f(gx).
+\]
+</P>
+
+<P>
+\[
+\Omega =S^{\mathbb{N}}=\{\omega =(\omega _1,\omega _2,\omega _3,\mathinner {\ldotp \ldotp \ldotp })\mid \omega _i\in S\}. 
+\]
+</P>
+
+<P>
+\[
+ [g_1,\mathinner {\ldotp \ldotp \ldotp },g_n]=\{\omega \in \Omega \mid \omega _1=g_1,\mathinner {\ldotp \ldotp \ldotp },\omega _n=g_n\}.
+\]
+</P>
+
+<P>
+\[
+ {\mathbb{P}}([g_1,\mathinner {\ldotp \ldotp \ldotp },g_n])=\mu (g_1)\cdots \mu (g_n).
+\]
+</P>
+
+<P>
+\[
+ \omega =(g_1,\mathinner {\ldotp \ldotp \ldotp },g_n,\omega ')\ \mbox{ for some }\ \omega '\in \Omega ,
+\]
+</P>
+
+<P>
+\[
+{\mathbb{E}}[\phi \mid {\mathcal{B}}_n](g_1,\mathinner {\ldotp \ldotp \ldotp },g_n)= \int _\Omega \phi (g_1,\mathinner {\ldotp \ldotp \ldotp },g_n,\omega ') {\mathbb{P}}(d\omega ').
+\]
+</P>
+
+<P>
+\[
+{\mathbb{E}}[\phi \mid {\mathcal{B}}_n](g_1,\mathinner {\ldotp \ldotp \ldotp },g_n)= \sum _{h\in \Gamma }\mu (h)\phi (g_1,\mathinner {\ldotp \ldotp \ldotp },g_n,h).
+\]
+</P>
+
+<P>
+\[
+ X_n(\omega )=\omega _n\cdots \omega _1.
+\]
+</P>
+
+<P>
+\[
+ {\mathbb{E}}[f(X_{n+1}\cdot x)\mid {\mathcal{B}}_n]=f(X_n\cdot x).
+\]
+</P>
+
+<P>
+\[
+ {\mathbb{E}}[f(X_{n+1}\cdot x)\mid {\mathcal{B}}_n](g_1,\mathinner {\ldotp \ldotp \ldotp },g_n) =\sum _{h\in S}\mu (h)f(h\cdot g_n\cdots g_1\cdot x) 
+\]
+</P>
+
+<P>
+\[
+ =f(g_n\cdots g_1\cdot x)=f(X_n\cdot x)(g_1,\mathinner {\ldotp \ldotp \ldotp },g_n), 
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:45:37 PDT 2016
+<!-- hhmts end -->
+</body> </html>

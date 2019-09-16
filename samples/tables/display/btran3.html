@@ -1,0 +1,634 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+g_n(A_1,\mathinner {\ldotp \ldotp \ldotp },A_n)=\underset {X&gt;0}{\operatorname {\mathrm{arg\, min}}}\sum _{i=1}^n \delta ^2(X,A_i),
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+g_{n}(\omega _{\sigma };{\Bbb A}_{\sigma })=g(\omega ;{\Bbb A}),\ \text{where }\ \omega _{\sigma }=(w_{\sigma (1)},\dotsc ,w_{\sigma (n)});
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+(\sum _{i=1}^{n}w_{i}A_{i}^{-1})^{-1}\leq g_{n}(\omega ;{\Bbb A}) \leq \sum _{i=1}^{n}w_{i}A_{i}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+\sum _{i=1}^{n}w_{i}\log (X^{-1/2}A_{i}X^{-1/2})=0, 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ A\#_{t}B=A^{1/2}(A^{-1/2}BA^{-1/2})^{t}A^{1/2}. \tag{2.1}\cssId{E:sharp}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+d(A,B)={\mathrm{max}}\{\log M(B/A), \log M(A/B)\},
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+ d((s_{1},\dotsc ,s_{n}), (t_{1},\dotsc ,t_{n}))=\max _{1\leq i\leq n} \Big |\log \frac {s_{i}}{t_{i}}\Big | \tag{2.2}\cssId{E:CK0}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+d(A\#_t B, C\#_s D)&amp;\leq &amp; (1-t) d(A,C)+td(B,D)+\vert t-s\vert d(C,D) \tag{2.3}\cssId{E:CK1}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(A\#_t B, C\#_s D)&amp;\leq &amp;d(A\#_{t}B,C\#_{t}D)+d(C\#_{t}D,C\#_{s}D)\\
+ &amp;\leq &amp;(1-t)d(A,C)+td(B,D)+|t-s|d(C,D). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ w(A):= \sup \{\vert \langle x,Ax\rangle \vert : x\in H,\,\Vert x\Vert =1\}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+d(\sum _{i=1}^{n}A_{i},\sum _{i=1}^{n}B_{i})\leq \max _{1\leq i\leq n}\{ d(A_{i},B_{i})\}.
+\]
+</P>
+
+<P>
+\[
+G(\omega ;A_{1},\dotsc ,A_{n})\leq G(\omega ;B_{1},\dotsc ,B_{n})
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+d(G(\omega ;{\Bbb A}),G(\omega ;{\Bbb B}))\leq \sum _{i=1}^{n}w_{i}d(A_{i},B_{i})
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ G(\omega ;A_{1},\dotsc ,A_{n})&amp;\leq &amp; G(\omega ;e^{d(A_{1},B_{1})}B_{1},\dotsc ,e^{d(A_{n},B_{n})}B_{n})\\
+ &amp;=&amp;e^{\sum _{i=1}^{n}w_{i}d(A_{i},B_{i})}G(\omega ;B_{1},\dotsc ,B_{n}) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+ X=\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}). \tag{3.4}\cssId{E:Lim}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(f(X),f(Y)) &amp;\leq &amp;\max _{1\leq i\leq n}\{d(w_{i}(X\#_{t}A_{i}),w_{i}(Y\#_{t}A_{i}))\}\\
+ &amp;\leq &amp;\max _{1\leq i\leq n}\{d(X\#_{t}A_{i},Y\#_{t}A_{i})\}\\
+ &amp;\leq &amp;\max _{1\leq i\leq n}\{(1-t)d(X,Y)\}=(1-t)d(X,Y). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+ X=\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}). \tag{3.5}\cssId{E:PLim}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+ X=\left[\sum _{i=1}^{n}w_{i}(X\#_{-t}A_{i})^{-1}\right]^{-1}. \tag{3.6}\cssId{E:Plim}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\lim _{k\to \infty }f^{k}(X)=P_{t}(\omega ;{\Bbb A}), \ \ \ X\in {\Bbb P}.
+\]
+</P>
+
+<P>
+\[
+d(P_{t}(\omega ;{\Bbb A}), P_{s}(\mu ;{\Bbb B}))\leq \frac {|s-t|}{\max \{s,t\}}\Delta ({\Bbb A})+\frac {1}{\max \{s,t\}}d(\omega ,\mu )+\max _{1\leq i\leq n}d(A_{i},B_{i}),
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(X,A_{j})&amp;=&amp;d(\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}),A_{j})=d(\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}),\sum _{i=1}^{n}w_{i}A_{j})\\
+ &amp;\leq &amp;\max _{1\leq i\leq n} d(X\#_{t}A_{i},A_{j}\#_{t}A_{j})\leq \max _{1\leq i\leq n} \left[(1-t)d(X,A_{j})+t d(A_{i},A_{j})\right]\\
+ &amp;\leq &amp;(1-t)d(X,A_{j})+t\Delta ({\Bbb A}) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(Y,X)&amp;=&amp;d(\sum _{i=1}^{n}w_{i}(Y\#_{s}A_{i}),\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}))\leq \max _{1\leq i\leq n} d(Y\#_{s}A_{i},X\#_{t}A_{i})\\
+ &amp;\stackrel {(<xref rid="E:CK1" ref-type="disp-formula">{2}.3</xref>)}{\leq }&amp;\max _{1\leq i\leq n}\left[(1-s)d(Y,X)+|s-t|d(X,A_{i})\right]\\
+ &amp;\leq &amp;(1-s)d(X,Y)+(s-t)\Delta ({\Bbb A}), 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(X,Y)&amp;=&amp;d(\sum _{i=1}^{n}w_{i} (X\#_{t}A_{i}),\sum _{i=1}^{n}u_{i} (Y\#_{t}A_{i}))\\
+ &amp;=&amp;d(\sum _{i=1}^{n} X\#_{t}(w_{i}^{1/t}A_{i}),\sum _{i=1}^{n} Y\#_{t}(u_{i}^{1/t}A_{i}))\\
+ &amp;\leq &amp;\max _{1\leq i\leq n}d(X\#_{t}(w_{i}^{1/t}A_{i}),Y\#_{t}(u_{i}^{1/t}A_{i}))\\
+ &amp;\leq &amp;\max _{1\leq i\leq n}\left[(1-t)d(X,Y)+t d(w_{i}^{1/t}A_{i},u_{i}^{1/t}A_{i})\right]\\
+ &amp;=&amp;(1-t)d(X,Y)+\max _{1\leq i\leq n}|\log w_{i}-\log u_{i}|=(1-t)d(X,Y)+d(\omega ,\mu ). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(X,Y)&amp;=&amp;d(\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i}),\sum _{i=1}^{n}w_{i}(Y\#_{t}B_{i}))\\
+ &amp;\leq &amp;\max _{1\leq i\leq n}d(X\#_{t}A_{i},Y\#_{t}B_{i})\leq \max _{1\leq i\leq n}\left[(1-t)d(X,Y)+td(A_{i},B_{i})\right]\\
+ &amp;=&amp;(1-t)d(X,Y)+t\max _{1\leq i\leq n} d(A_{i},B_{i}). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+d(P_{t}(\omega ;{\Bbb A}),P_{s}(\mu ;{\Bbb B}))&amp;\leq &amp;d(P_{t}(\omega ;{\Bbb A}),P_{s}(\omega ;{\Bbb A}))+d(P_{s}(\omega ;{\Bbb A}),P_{s}(\mu ;{\Bbb A}))\\
+ &amp;{}&amp;+d(P_{s}(\mu ;{\Bbb A}),P_{s}(\mu ;{\Bbb B}))\\
+ &amp;\leq &amp;\frac {s-t}{s}\Delta ({\Bbb A})+\frac {1}{s}d(\omega ,\mu )+\max _{1\leq i\leq n} d(A_{i},B_{i}) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ M{\Bbb A}M^{*}&amp;=&amp;(MA_{1}M^{*},\dotsc ,MA_{n}M^{*}),\ \ {\Bbb A}_{\sigma }=(A_{\sigma (1)},\dotsc ,A_{\sigma _{\sigma (n)}}),\\
+ {\Bbb A}^{(k)}&amp;=&amp;(\underbrace {{\Bbb A},\dotsc ,{\Bbb A}}_{k})\in {\Bbb P}^{nk},\ \ {\omega }^{(k)}=\frac {1}{k}(\underbrace {\omega ,\dotsc ,\omega }_{k})\in \Delta _{nk},\\
+ {\mathbf{a}}^{t}&amp;=&amp;(a_{1}^{t},\dotsc ,a_{n}^{t}),\ \ {\omega }\odot {\mathbf{a}}=\frac {1}{\sum _{i=1}^{n}w_{i}a_{i}}(w_{1}a_{1},\dotsc ,w_{n}a_{n})\in \Delta _{n},\\
+ {\hat{\omega }}&amp;=&amp;\frac {1}{1-w_{n}}(w_{1},\dotsc ,w_{n-1})\in \Delta _{n-1},\ \ \ \ {\mathbf{a}}\cdot {\Bbb A}=(a_{1} A_{1},\dotsc ,a_{n} A_{n}) . 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\lim _{t\to 0^{\pm }}P_{t}(\omega ;{\Bbb A})=X_{\pm }
+\]
+</P>
+
+<P>
+\[
+{\mathcal{H}}=P_{-1}\leq P_{-s}\leq P_{-t}\leq \cdots \leq P_{0^{-}} \leq P_{0^{+}}\leq \cdots \leq P_{t}\leq P_{s}\leq {\mathcal{A}}.
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ f(X)&amp;=&amp;\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i})=\sum _{i=1}^{n}w_{i}\left[X\#_{\frac {t}{s}}(X\#_{s}A_{i})\right]\\
+ &amp;\leq &amp; \sum _{i=1}^{n}w_{i}\left[\left(1-\frac {t}{s}\right)X+\frac {t}{s}(X\#_{s}A_{i})\right]\\
+ &amp;=&amp;\left(1-\frac {t}{s}\right)X+ \frac {t}{s}\sum _{i=1}^{n}w_{i}(X\#_{s}A_{i}). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ f(X_{0})&amp;\leq &amp;\left(1-\frac {t}{s}\right)X_{0}+ \frac {t}{s}\sum _{i=1}^{n}w_{i}(X_{0}\#_{s}A_{i})=\left(1-\frac {t}{s}\right)X_{0}+\frac {t}{s}X_{0}=X_{0}. 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ f(X)&amp;=&amp;\left[\sum _{i=1}^{n}w_{i}(X\#_{t}A_{i})^{-1}\right]^{-1}\leq \sum _{i=1}^{n}w_{i}(X\#_{t}A_{i})=X. 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+P_{-t}(\omega ;{\Bbb A})=Y=\lim _{k\to \infty }f^{k}(X)\leq X=P_{t}(\omega ;{\Bbb A}).
+\]
+</P>
+
+<P>
+\[
+\lim _{t\to 0^{+}}P_{t}(\omega ;{\Bbb A})=X_{+}, \ \ \lim _{t\to 0^{-}}P_{t}(\omega ;{\Bbb A})=X_{-}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ P_{0^{+}}(\omega ;aA_{1},\dotsc ,aA_{n})x&amp;=\lim _{t\to 0^{+}}P_{t}(\omega ;aA_{1},\dotsc ,aA_{n})x=\lim _{t\to 0^{+}}\left[aP_{t}(\omega ;A_{1},\dotsc ,A_{n})x\right]\\
+ &amp;=a \lim _{t\to 0^{+}}P_{t}(\omega ;A_{1},\dotsc ,A_{n})x=aP_{0^{+}}(\omega ;A_{1},\dotsc ,A_{n})x. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+\sum _{i=1}^{n}w_{i}\log (X^{-1/2}A_{i}X^{-1/2})=0. 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+\sum _{i=1}^{n}w_{i}\log (X^{-1/2}A_{i}X^{-1/2})=0. \tag{5.7}\cssId{E:Kar}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+ \sum _{i=1}^{n}w_{i}\log (X^{1/2}A_{i}^{-1}X^{1/2})=0,
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+\sum _{i=1}^{n}w_{i}\log (A_{i}^{-1}X)=0. \tag{5.8}\cssId{E:Kar2}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \sum _{i=1}^n w_i\log (X^{-1}A_i) =0 \tag{5.9}\cssId{E:Kar3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Vert (A_\alpha B_\alpha -AB)x\Vert \!\leq \!\Vert A_\alpha (B_\alpha -B)x\Vert +\Vert (A_\alpha -A)Bx\Vert \!\leq \!M\Vert (B_\alpha -B)x\Vert +\Vert (A_\alpha -A)Bx\Vert ,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+A\#_tB=A^{1/2}(A^{-1/2}BA^{-1/2})^tA^{1/2},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ \lim _{(t,U)\to (0,V)}\frac {e^{tU}-I}{t}=V, 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ \left\|\frac {e^{tU}-I}{t}-U \right\| &amp;=&amp;\left\|\frac {\sum _{k=0}^{\infty }\frac {1}{k!}\left(tU \right)^k-I}{t}-U \right\|\\
+ &amp;=&amp;\left\|\sum _{k=1}^{\infty }\frac {1}{k!}t^{k-1}U^{k}-U \right\|=\left\|\sum _{k=2}^{\infty }\frac {t^{k-1}}{k!}U^{k}\right\|\\
+ &amp;\leq &amp;\sum _{k=2}^{\infty }\frac {t^{k-1}}{k!}\left\|U^{k}\right\|\leq \sum _{k=2}^{\infty }\frac {t^{k-1}}{k!}\left\|U\right\|^k\\
+ &amp;\leq &amp;\left\|U\right\|\left[e^{t\left\|U\right\|}-1\right]\leq m(e^{tm}-1). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ \left\|\frac {e^{tU}-I}{t}x-V x\right\|&amp;\leq &amp; \left\|\frac {e^{tU}-I}{t}x-U x\right\|+\left\|Ux-Vx \right\|\\
+ &amp;\leq &amp; m(e^{tm}-1)\|x\|+\left\|Ux-Vx \right\| \to 0. 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+X_t^{-1/2}A_{i}X_{t}^{-1/2}\leq X_t^{-1/2}(e^{m/2}I) X_{t}^{-1/2} =e^{m/2}X_t^{-1}\leq e^m I
+\]
+</P>
+
+<P>
+\[
+U_{i}:=\log (X_t^{-1/2}A_{i}X_{t}^{-1/2})\to V_{i}:=\log (X_0^{-1/2}A_{i}X_{0}^{-1/2})
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\lim _{t\to 0}\frac {(X_t^{-1/2} A_{i}X_{t}^{-1/2})^{t}-I}{t}=\lim _{t\to 0}\frac {e^{tU_{i}}-I}{t}=V_{i}=\log (X_0^{-1/2}A_{i}X_{0}^{-1/2})\tag{5.10}\cssId{EC}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ I&amp;=&amp;\sum _{i=1}^{n}w_{i}(X_{t}^{-1/2}A_{i}X_{t}^{-1/2})^{t}, 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ 0&amp;=&amp; \lim _{t\to 0^{+}}\sum _{i=1}^{n}w_{i}\left[\frac {(X_{t}^{-1/2}A_{i}X_{t}^{-1/2})^{t}-I}{t}\right]=\sum _{i=1}^{n}w_{i}\lim _{t\to 0^{+}}\left[\frac {(X_{t}^{-1/2}A_{i}X_{t}^{-1/2})^{t}-I}{t}\right]\\
+ &amp;=&amp;\sum _{i=1}^{n}w_{i} \log (X_{0}^{-1/2}A_{i}X_{0}^{-1/2}). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\sum _{i=1}^{n}w_{i}\log (X^{-1/2}(A_{i}^{-1})X^{-1/2})=0.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+0 =\sum _{i=1}^{n}w_{i}\log (X^{1/2}(A_{i})X^{1/2}) =\sum _{i=1}^{n}w_{i}\log ((X^{-1})^{-1/2}A_{i}(X^{-1})^{-1/2})=0,
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\sum _{i=1}^{n}w_{i}\log (X^{1/2}A_{i}^{-1}X^{1/2})=0. \tag{6.11}\cssId{E:least1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp; \sum _{i=1}^{n}w_{i}\log (Y^{-1/2}(a_{i}A_{i})Y^{-1/2})\\
+ &amp;\qquad =\sum _{i=1}^{n}w_{i}\log \left(\frac {a_{i}}{\prod _{i=1}^{n}a_{i}^{w_{i}}} X^{-1/2}A_{i}X^{-1/2}\right)\\
+ &amp;\qquad =\sum _{i=1}^{n}w_{i}\left[\log \left(\frac {a_{i}}{\prod _{i=1}^{n}a_{i}^{w_{i}}}I\right)+ \log (X^{-1/2}A_{i}X^{-1/2})\right]\\
+ &amp;\qquad = \log I+\sum _{i=1}^n w_i \log (X^{-1/2}A_{i}X^{-1/2})\\
+ &amp;\qquad =\sum _{i=1}^n w_i \log (X^{-1/2}A_{i}X^{-1/2}), 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+Y\in {\mathcal{K}}(\omega ; {\mathbf{a}}\cdot {\Bbb A})= {\mathcal{K}}(\omega ;a_{1}A_{1},\dotsc ,a_{n}A_{n}) \mbox{ iff }Y\in a_{1}^{w_{1}}\cdots a_{n}^{w_{n}}{\mathcal{K}}(\omega ;{\Bbb A}).
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+{\mathcal{K}}(\omega ;U{\Bbb A}U^{*})=U{\mathcal{K}}(\omega ;{\Bbb A})U^{*}. \tag{6.12}\cssId{T}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ 0&amp;=&amp;P^{-1}\left[\sum _{i=1}^{n}w_{i}\log (A_{i}^{-1}X)\right]P=\sum _{i=1}^{n}w_{i}\log (P^{-1}A_{i}^{-1}XP)\\
+ &amp;=&amp;\sum _{i=1}^{n}w_{i}\log ((P^{-1}A_{i}^{-1}P^{-1})(PXP)) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray}
+P{\mathcal{K}}(\omega ;{\Bbb A})P={\mathcal{K}}(\omega ;P{\Bbb A}P). \tag{6.13}\cssId{T1}{}{}
+\end{eqnarray}
+\]
+</P>
+
+<P>
+\[
+D_2f(a,b):\mathbf{F}\to \mathbf{G},
+\]
+</P>
+
+<P>
+\[
+F^{\omega }(A_{1},\dotsc ,A_{n},X)=\sum _{i=1}^{n}w_{i}\log (X^{1/2}A_{i}^{-1}X^{1/2}),
+\]
+</P>
+
+<P>
+\[
+DF^{\omega }_{\Bbb A}(X)(Y)=\lim _{t\to 0}\frac {F^{\omega }_{\Bbb A}(X+tY)-F^{\omega }_{\mathbf{A}}(X)}{t}.
+\]
+</P>
+
+<P>
+\[
+D_2F^\omega (\mathbb{I},I)=DF^{\omega }_{\Bbb I}(I)={\mathrm{id}}_{\mathcal{S}(H)}.
+\]
+</P>
+
+<P>
+\[
+\epsilon ^{-1} I=\Lambda (\omega ;\epsilon ^{-1} I,\mathinner {\ldotp \ldotp \ldotp },\epsilon ^{-1} I)\leq \Lambda (\omega ;{\Bbb A})\leq \Lambda (\omega ;\epsilon I,\mathinner {\ldotp \ldotp \ldotp },\epsilon I)=\epsilon I,
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+{\mathcal{K}}(\omega ;A_{1},\dotsc ,A_{n})\cap [\epsilon ^{-1}A, \epsilon A]&amp;={\mathcal{K}}(\omega ;A^{1/2}B_{1}A^{1/2},\dotsc ,A^{1/2}B_{n}A^{1/2})\cap [\epsilon ^{-1}A, \epsilon A]\\
+ &amp;=A^{1/2}\left({\mathcal{K}}(\omega ;B_{1},\dotsc ,B_{n})\cap [\epsilon ^{-1}I, \epsilon I]\right)A^{1/2}\\
+ &amp;=A^{1/2}\{\Lambda (\omega ;B_{1},\dotsc ,B_{n})\}A^{1/2}\\
+ &amp;=\{\Lambda (\omega ;A_{1},\dotsc ,A_{n})\}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\Lambda (\omega ;A_{1},\dotsc ,A_{n})=A^{1/2}\Lambda (\omega ;A^{-1/2}A_{1} A^{-1/2},\dotsc , A^{-1/2} A_{n} A^{-1/2}) A^{1/2}.
+\]
+</P>
+
+<P>
+\[
+X=\Lambda (\omega ;X\#_{t}A_{1},\dotsc ,X\#_{t}A_{n})
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ d(f_t(X),f_t(Y)) &amp;=&amp; d(\Lambda (\omega ;X\#_{t}A_{1},\dotsc ,X\#_{t}A_{n}),\Lambda (\omega ;Y\#_{t}A_{1},\dotsc ,Y\#_{t}A_{n})\\
+ &amp;\leq &amp; d(X\#_t A_j,Y\#_t A_j):= \max \{d(X\#_t A_i,Y\#_t A_i):1\leq i\leq n\} \\
+ &amp;\leq &amp; (1-t)d(X,Y) 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+(X^{-1/2}A_{i}X^{-1/2})^{t}\in [\epsilon _{\omega }^{-1}I,\epsilon _{\omega }I], \ \ \ i=1,\dotsc ,n.
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\Lambda (\omega ;(X^{-1/2}A_{1}X^{-1/2})^{t},\dotsc ,(X^{-1/2}A_{n}X^{-1/2})^{t})
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+I=\Lambda (\omega ;(X^{-1/2}A_{1}X^{-1/2})^{t},\dotsc ,(X^{-1/2}A_{n}X^{-1/2})^{t}).
+\]
+</P>
+
+<P>
+\[
+\begin{eqnarray*}
+ X&amp;=&amp;\Lambda (\omega ;X^{1/2}(X^{-1/2}A_{1}X^{-1/2})^{t}X^{1/2},\dotsc ,X^{1/2}(X^{-1/2}A_{n}X^{-1/2})^{t}X^{1/2})\\
+ &amp;=&amp;\Lambda (\omega ;X\#_{t}A_{1},\dotsc ,X\#_{t}A_{n}). 
+\end{eqnarray*}
+\]
+</P>
+
+<P>
+\[
+0=\sum _{i=1}^{n-1}\frac {w_{i}}{1-w_{n}}\log (X^{-1/2}A_{i}X^{-1/2})+\frac {w_{n}}{1-w_{n}}\log (X^{-1/2}XX^{-1/2}).
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+X=\Lambda (\omega ;A_{1},\dotsc ,A_{n-1},X).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\Lambda (\omega ;A_{1},\dotsc ,A_{n-1},Z)=Z
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+0=\sum _{i=1}^n \omega _i \log (X^{-1/2}A_iX^{-1/2}).
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\Lambda (\omega _{\sigma };{\Bbb A}_{\sigma }) =\Lambda (\omega ;{\Bbb A}),\ \text{where }\ \omega _{\sigma }=(w_{\sigma (1)},\dotsc ,w_{\sigma (n)});
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+(\sum _{i=1}^{n}w_{i}A_{i}^{-1})^{-1}\leq \Lambda (\omega ;{\Bbb A}) \leq \sum _{i=1}^{n}w_{i}A_{i}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \sum _{i=1}^{n}w_{i}\log A_{i}\leq 0\ \ \ \ {\mathrm{implies}}\ \ \ \Lambda (\omega ;A_{1},\dotsc ,A_{n})\leq I \tag{Y}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\omega _{\mathbf{p}}=\frac {1}{\sum _{i=1}^{n}{\mathbf{p}}_{\neq i}}\left({\mathbf{p}}_{\neq 1},\dotsc ,{\mathbf{p}}_{\neq n}\right)\in \Delta _{n}, \ \ {\mathbf{p}}_{\neq i}:=\prod _{j\neq i}p_{j}.
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:48:34 PDT 2016
+<!-- hhmts end -->
+</body> </html>

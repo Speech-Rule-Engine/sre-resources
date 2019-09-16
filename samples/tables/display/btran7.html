@@ -1,0 +1,1280 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation*}
+ \hat{a}, \hat{\sigma }= \left\{ \begin{array}{cl} a, \sigma &amp; \mbox{ in } B_{\gamma r_2} \setminus B_{r_2}, \\[6.0pt]  I, 1 &amp; \mbox{ in } B_{r_3} \setminus B_{\gamma r_2}. \end{array} \right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ - F^{-1}_*\hat{a}, - F^{-1}_*\hat{\sigma }, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ F(x) = \frac {r_2^2}{|x|^2} x. \tag{1.1}\cssId{def-F}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T_*\hat{a} (y) = \frac {D T (x) \hat{a}(x) D T (x)^T}{J(x)} \quad \mbox{ and } \quad T_* \hat{\sigma }(y) = \frac {\hat{\sigma }(x)}{J(x)}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ r_1 = r_2^2/ r_3. \tag{1.2}\cssId{cond-r}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Big (r_3^2/r_2^2 \Big )^{d-2} I, \Big (r_3^2/r_2^2 \Big )^{d}. \tag{1.3}\cssId{choice-A}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ A, \Sigma = \left\{ \begin{array}{cl} \hat{a}, \hat{\sigma }&amp; \mbox{ in } B_{r_3} \setminus B_{r_2}, \\[6.0pt]  F^{-1}_*\hat{a}, F^{-1}_* \hat{\sigma }&amp; \mbox{ in } B_{r_2} \setminus B_{r_1}, \\[6.0pt]  \Big (r_3^2/r_2^2 \Big )^{d-2} I, \Big (r_3^2/r_2^2 \Big )^{d} &amp; \mbox{ in } B_{r_1},\\[6.0pt]  I, 1 &amp; \mbox{ otherwise}, \end{array} \right. \tag{1.4}\cssId{defA}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ s_\delta : = \left\{ \begin{array}{cl} -1 + i \delta &amp; \mbox{ in } B_{r_2} \setminus B_{r_1}, \\[6.0pt]  1 &amp; \mbox{ otherwise}. \end{array} \right. \tag{1.5}\cssId{def-ss}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \frac {1}{\Lambda } |\xi |^{2} \le a (x) \xi \cdot \xi \le \Lambda |\xi |^{2} \quad \forall \, \xi \in \mathbb{R}^{d}, \mbox{ for a.e. } x \in B_{\gamma r_{2}} \setminus B_{r_2}, \tag{1.6}\cssId{cond-a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \hat{a} \, \mbox{is Lipschitz in}\, B_{r_3} \setminus B_{r_2}. \tag{1.7}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ G(x) = r_{3}^{2} x/ |x|^{2}. \tag{1.8}\cssId{def-G}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ G_{*} F_{*} A = I \ \text{and } G_*F_*1=1\mbox{ in } B_{r_{3}}, \tag{1.9}\cssId{GF}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ {\mathrm{div}}(s_\delta A \nabla u_\delta ) + s_0 k^2 \Sigma u_\delta = f \mbox{ in } \Omega , \tag{1.10}\cssId{eq-uu-delta}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Delta u + k^2 u = f \mbox{ in } \Omega . \tag{1.11}\cssId{eq-uu}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \mbox{equation}\, (<xref rid="eq-uu" ref-type="disp-formula">1.11</xref>)\, \mbox{with } f = 0 \mbox{ has only a zero solution in}\, H^1_0(\Omega ). \tag{1.12}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_{\delta } \to u \mbox{ weakly in } H^{1} (\Omega \setminus B_{r_3}) \mbox{ as } \delta \to 0. \tag{1.13}\cssId{key-point}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\|v\|_{L^{\infty }(\partial B_{R_2})} \leq \|v\|_{L^{\infty }(\partial B_{R_1})}^{\alpha } \|v\|_{L^{\infty }(\partial B_{r_3})}^{1 - \alpha }, \tag{2.1}\cssId{Hadamard}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \displaystyle \alpha = \log \Big ( \frac {R_3}{R_2} \Big ) \Big / \log \Big (\frac {R_3}{R_1} \Big ). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \operatorname {div}(M \nabla v) + \vec{b} \cdot \nabla v + c v = 0 \mbox{ in } B_{R_3}, \tag{2.2}\cssId{Equation}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\|v\|_{L^{\infty }(\partial B_{R_2})} \leq C \|v\|_{L^{\infty }(\partial B_{R_1})}^{\alpha } \|v\|_{L^{\infty }(\partial B_{r_3})}^{1 - \alpha }, \tag{2.3}\cssId{Landis}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\|v\|_{L^{2}(\partial B_{R_2})} \leq C \|v\|_{L^{2}(\partial B_{R_1})}^{\alpha } \|v\|_{L^2(\partial B_{r_3})}^{1 - \alpha } \tag{2.4}\cssId{Lin}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Delta v + k^2 v = 0 \mbox{ in } B_{R_3}. \tag{2.5}\cssId{H}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| v \|_{{\mathbf{H}}(\partial B_r)} = \| v\|_{H^{1/2}(\partial B_r)} + \| M \nabla v \cdot \nu \|_{H^{-1/2}(\partial B_r)}. \tag{2.6}\cssId{H-norm}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ |{\mathrm{div}}(M \nabla v)| \le c_1 |\nabla v| + c_2|v|, \quad \mbox{ in } {B_{R_3}\setminus \overline B_{R_1}}. \tag{2.7}\cssId{eq-Main}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| v\|_{{\mathbf{H}}(\partial B_{R_2})} \le C\| v\|_{{\mathbf{H}}(\partial B_{R_1})} ^{\alpha } \| v\|_{{\mathbf{H}}(\partial B_{R_3})}^{1-\alpha }, \quad \mbox{ where } \quad \alpha := \frac {R_2^{-q} - R_3^{-q}}{R_1^{-q} - R_{3}^{-q}}. \tag{2.8}\cssId{def-alpha}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {1}{\Lambda } |\xi |^2 \le M(x) \xi \cdot \xi \le \Lambda |\xi |^2 \quad \forall \, \xi \in \mathbb{R}^d, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ L : = \| M \|_{L^\infty } + R_3\|\nabla M \|_{L^\infty }. \tag{2.9}\cssId{def-L1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}(x \cdot M \nabla z) \, {\mathrm{div}}(M\nabla z) \ge - \int _{{B_{R_3}\setminus \overline B_{R_1}}} C L^2|\nabla z|^2 - \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C L^2 r |\nabla z|^2, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}(x \cdot M \nabla z) \, {\mathrm{div}}(M\nabla z) = - \int _{{B_{R_3}\setminus \overline B_{R_1}}} \nabla ( x \cdot M \nabla z) \cdot M\nabla z \tag{2.10}\cssId{texmlid3}{}{}\\
++ \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} (x \cdot M\nabla z) \, M \nabla z \cdot \nu . 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ \frac {\partial }{\partial x_i}(x \cdot M\nabla z) &amp;= \frac {\partial }{\partial x_i} \Big ( M_{k j} x_j \frac {\partial z}{\partial x_k} \Big )\\
+ &amp; = M_{k j} x_j \frac {\partial ^2 z}{\partial x_i \partial x_k} + M_{k i } \frac {\partial z}{\partial x_k} + x _j \frac {\partial M_{k j}}{\partial x_i} \frac {\partial z}{\partial x_k} 
+\end{split}\tag{2.11}\cssId{texmlid1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ -\int _{{B_{R_3}\setminus \overline B_{R_1}}} 2 x_j M_{kj} \frac {\partial ^2 z}{\partial x_i \partial x_k}M_{il} \frac {\partial z}{\partial x_l} = - \int _{B_{R_3}\setminus \overline B_{R_1}}x_j M_{kj} M_{il} \frac {\partial }{\partial x_k}\left(\frac {\partial z}{\partial x_i} \frac {\partial z}{\partial x_l}\right) \tag{2.12}\cssId{texmlid2}{}{}\\
+ = \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {\partial (x_j M_{kj} M_{il})}{\partial x_k}\frac {\partial z}{\partial x_i} \frac {\partial z}{\partial x_l} - \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} x_j M_{kj} M_{il}\frac {\partial z}{\partial x_i} \frac {\partial z}{\partial x_l} \nu _k. 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ - \int _{{B_{R_3}\setminus \overline B_{R_1}}} \nabla ( x \cdot M\nabla z) \cdot M\nabla z  \ge - \int _{{B_{R_3}\setminus \overline B_{R_1}}} C L^2|\nabla z|^2 - \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C L^2 r|\nabla z|^2.  \tag{2.13}\cssId{texmlid4}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}e^{\beta r^{-p}} (M x \cdot \nabla |z|^2) \, {\mathrm{div}}(M\nabla e^{-\beta r^{-p}}) + \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C L^2 p^2 \beta ^2 r^{- 2 p-1} |z|^2 \\
+[6.0pt] \ge \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {1}{2}\Lambda ^{-2} p^3 \beta ^2 r^{-2p - 2}|z|^2 - \int _{B_{R_3}\setminus \overline B_{R_1}}C L^2 |\nabla z|^2, 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {\mathrm{div}}(M\nabla e^{-\beta r^{-p}})&amp; = p \beta e^{-\beta r^{-p}}\big [p \beta r^{-2 p - 4} - ( p + 2) r^{-p - 4}\big ] x\\
+ &amp;\quad \cdot Mx +p \beta r^{-p - 2} e^{-\beta r^{-p}}\, {\mathrm{div}}(Mx). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}e^{\beta r^{-p}} (M x \cdot \nabla |z|^2) \, {\mathrm{div}}(M\nabla e^{-\beta r^{-p}}) = P + Q. \tag{2.14}\cssId{texmlid7}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+P = P_1 + P_2 + P_3 
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\left\{ \begin{array}{rl}\displaystyle P_1 &amp;= \displaystyle - \int _{{B_{R_3}\setminus \overline B_{R_1}}} p^2 \beta ^2 |z|^2 {\mathrm{div}}\big [ r^{- 2 p - 4} (x \cdot M x) M x \big ], \\[6.0pt]  \displaystyle P_2 &amp;= \displaystyle \int _{{B_{R_3}\setminus \overline B_{R_1}}} p \beta (p+2) |z|^2 {\mathrm{div}}\big [ r^{- p - 4} (x \cdot M x) M x \big ], \\[6.0pt]  \displaystyle P_3 &amp;= \displaystyle \int _{{B_{R_3}\setminus \overline B_{R_1}}} 2 p \beta r^{-p -2} {\mathrm{div}}(M x) z \nabla z \cdot Mx, \end{array}\right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ Q = \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} p \beta |z|^2 \Big ( \big [p \beta r^{- 2p - 4} -( p + 2) r^{-p - 4} \big ] x \cdot M x \Big ) M x \cdot \nu . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ - {\mathrm{div}}\big [ r^{- 2 p - 4} (x \cdot M x) M x \big ] = (2p + 4) (x \cdot Mx)^2 r^{-2p - 6} - r^{-2p - 4} {\mathrm{div}}\big [ (x \cdot Mx) Mx\big ]. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ P_1 \ge \int _{B_{R_3}\setminus \overline B_{R_1}}p^2 \beta ^2 r^{-2p - 2}|z|^2 \big [ (2p + 4)\Lambda ^{-2} - C L^2 \big ] . \tag{2.15}\cssId{R1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ P_2 \ge - \int _{B_{R_3}\setminus \overline B_{R_1}}(p + 2) p |\beta | r^{-p - 2}|z|^2 \big [ (p + 4)\Lambda ^{-2} + C L^2 \big ]. \tag{2.16}\cssId{R2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ P_1 + P_2 \ge \int _{B_{R_3}\setminus \overline B_{R_1}}\Lambda ^{-2} p^3 \beta ^2 r^{-2p - 2}|z|^2. \tag{2.17}\cssId{R12}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ |P_3| \leq \int _{{B_{R_3}\setminus \overline B_{R_1}}} p^2 \beta ^2 r^{-2p - 2} L^2 |z|^2 + \int _{{B_{R_3}\setminus \overline B_{R_1}}} C L^2 |\nabla z|^2.  
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ P &amp;\geq \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {1}{2} p^3\beta ^2 \Lambda ^{-2} r^{-2p - 2}|z|^2 - \int _{{B_{R_3}\setminus \overline B_{R_1}}} C L^2 |\nabla z|^2, \tag{2.18}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ |Q| \le \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} 2 \Lambda ^2 p^2 \beta ^2 r^{-2p -1 } |z|^2, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {r^{p + 2}e^{2\beta r^{-p}}}{2p |\beta |}\big [{\mathrm{div}}(M\nabla v)\big ]^2 + \int _{{B_{R_3}\setminus \overline B_{R_1}}} C L^2 e^{2 \beta r^{-p}} |\nabla v|^2 \\
+ + \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} CL^2 p^2 \beta ^2 r^{-2p-1} e^{2 \beta r^{-p}}|v|^2 + \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C L^2 r e^{2 \beta r^{-p}}|\nabla v|^2 \\
+ \ge \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {1}{2} \Lambda ^{-2} p^3 \beta ^2 r^{-2p - 2} e^{2 \beta r^{-p}} |v|^2, 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ z = e^{\beta r^{-p}} v \quad \mbox{ equivalently } v = e^{-\beta r^{-p}} z. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {\mathrm{div}}(M\nabla v) = 2\beta p r^{-p - 2} e^{-\beta r^{-p}} x \cdot M\nabla z + e^{-\beta r^{-p}} {\mathrm{div}}(M\nabla z) + z {\mathrm{div}}(M\nabla e^{-\beta r^{-p}}). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\frac {1}{2 }\big [ {\mathrm{div}}(M\nabla v) \big ]^2\\
+ &amp;\qquad \ge 2|\beta | p r^{-p - 2} e^{-\beta r^{-p}} (x \cdot M\nabla z) \Big ( e^{-\beta r^{-p}} {\mathrm{div}}(M\nabla z) + z {\mathrm{div}}( M\nabla e^{-\beta r^{-p}})\Big ). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {r^{p + 2}e^{2\beta r^{-p}}}{2p|\beta |}\big [{\mathrm{div}}(M\nabla v)\big ]^2 \geq \int _{B_{R_3}\setminus \overline B_{R_1}}2 (x \cdot M\nabla z ) \, {\mathrm{div}}(M\nabla z) \\
++ \int _{B_{R_3}\setminus \overline B_{R_1}}e^{\beta r^{-p}} (Mx \cdot \nabla |z|^2) \, {\mathrm{div}}(M\nabla e^{-\beta r^{-p}}). 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {r^{p + 2}e^{2\beta r^{-p}}}{2p|\beta |}\big [{\mathrm{div}}(M\nabla v)\big ]^2\tag{2.19}\cssId{p1-Lem3}{}{}\\
+ \ge \int _{B_{R_3}\setminus \overline B_{R_1}}\Big ( \Lambda ^{-2} p^3 \beta ^2 r^{-2p - 2}|z|^2 - C L^2 |\nabla z|^2 \Big ) \\
+[6.0pt] - \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} \Big ( C L^2 p^2 \beta ^2 r^{-2 p-1} |z|^2 + C L^2 r |\nabla z|^2 \Big ). 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ |\nabla z|^2 \leq 2 e^{2 \beta r^{-p}} (|\nabla v|^2 + p^2\beta ^2 r^{-2 p - 2}|v|^2). \tag{2.20}\cssId{p2-Lem3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {r^{p + 2}e^{2\beta r^{-p}}}{2p|\beta |}\big [{\mathrm{div}}(M\nabla v)\big ]^2\\
+ \ge \int _{B_{R_3}\setminus \overline B_{R_1}}e^{2 \beta r^{-p}} \left( \frac {1}{2} \Lambda ^{-2} p^3 \beta ^2 r^{-2p - 2} |v|^2 - C L^2 |\nabla v|^2 \right) \\
+[6.0pt]- \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} e^{2 \beta r^{-p}} \left( C L^2 p^2 \beta ^2 r^{-2p-1} |v|^2 + C L^2 r |\nabla v|^2 \right). 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}e^{2\beta r^{-p}} v \, {\mathrm{div}}(M\nabla v) + \int _{B_{R_3}\setminus \overline B_{R_1}}e^{2 \beta r^{-p}} |\nabla v|^2 \\
+ \le \int _{B_{R_3}\setminus \overline B_{R_1}}C \beta ^2 p^2 r^{-2p - 2} e^{2 \beta r^{-p}} |v|^2+ \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C e^{2\beta r^{-p}} (r|\nabla v|^2 + r^{-1}|v|^2), 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ &amp;- \int _{B_{R_3}\setminus \overline B_{R_1}}e^{2\beta r^{-p}} v \, {\mathrm{div}}(M\nabla v)\\
+ &amp;\qquad = \int _{B_{R_3}\setminus \overline B_{R_1}}M\nabla v \cdot \nabla (e^{2\beta r^{-p}} v) - \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} e^{2\beta r^{-p}} v M \nabla v \cdot \nu . 
+\end{split}\tag{2.21}\cssId{s1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ &amp; \int _{B_{R_3}\setminus \overline B_{R_1}}M\nabla v \cdot \nabla (e^{2\beta r^{-p}} v)\\
+ &amp;\qquad =\int _{B_{R_3}\setminus \overline B_{R_1}}\Big (e^{2\beta r^{-p}} M\nabla v \cdot \nabla v - 2 \beta p r^{-p - 2}e^{2\beta r^{-p}} v M\nabla v \cdot x \Big ) 
+\end{split}\tag{2.22}\cssId{s2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} e^{2\beta r^{-p}} v M \nabla v \cdot \nu \le \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} e^{2\beta r^{-p}} (r|\nabla v|^2 + L^2 r^{-1}|v|^2). \tag{2.23}\cssId{s3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 2 \beta p r^{-p - 2}v M\nabla v \cdot x \le \frac {1}{2} \Lambda ^{-1} |\nabla v|^2 + 8 \beta ^2 p^2 L^2 \Lambda r^{-2p - 2} |v|^2, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \int _{B_{R_3}\setminus \overline B_{R_1}}e^{2\beta r^{-p}} v \, {\mathrm{div}}(M\nabla v) + \int _{B_{R_3}\setminus \overline B_{R_1}}\frac {1}{2} \Lambda ^{-1} e^{2 \beta r^{-p}} |\nabla v|^2 \\
+ \le \int _{B_{R_3}\setminus \overline B_{R_1}}C \beta ^2 p^2 r^{-2p - 2} e^{2 \beta r^{-p}} |v|^2+ \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} C e^{2\beta r^{-p}} \big (r|\nabla v|^2 + r^{-1}|v|^2 \big ). 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \int _{{B_{R_3}\setminus \overline B_{R_1}}} e^{2\beta r^{-p}}|\beta | p \Big (p^3 \beta ^2 r^{-2p - 2} e^{2 \beta r^{-p}} |v|^2 + |\nabla v|^2 \Big )\tag{2.24}\cssId{comb}{}{}\\
+ \leq C \int _{B_{R_3}\setminus \overline B_{R_1}}r^{p+2} e^{2\beta r^{-p}}|{\mathrm{div}}(M\nabla v)|^2 \\
++ C \int _{\partial ({B_{R_3}\setminus \overline B_{R_1}})} |\beta | p e^{2\beta r^{-p}} \big (r|\nabla v|^2 + p^2 \beta ^2 r^{-2p -1}|v|^2 \big ), 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ |v \operatorname {div}(M \nabla v)| \le p|\beta |^2 |v|^2 r^{- 2p -2 } + \frac {4 }{p |\beta |} |\operatorname {div}(M \nabla v)|^2 r^{p+2}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 1 &lt; \lambda &lt; \lambda _0 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ D = B_{{\lambda R_3}} \setminus \overline B_{{R_1/\lambda }}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left\{ \begin{array}{cl} {\mathrm{div}}(M\nabla u_1) = 0 &amp;\mbox{in } D \setminus \partial B_{R_1},\\[6.0pt]  \displaystyle [u_1] = v; \; \displaystyle [M\nabla u_1 \cdot \nu ] = M\nabla v \cdot \nu &amp;\mbox{on } \partial B_{R_1},\\[6.0pt]  u_1 = 0 &amp;\mbox{on } \partial D, \end{array} \right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left\{ \begin{array}{cl} {\mathrm{div}}(M\nabla u_3) = 0 &amp;\mbox{in } D \setminus B_{R_3},\\[6.0pt]  \displaystyle [u_3] = v; \; \displaystyle [M\nabla u_3 \cdot \nu ] = M\nabla v \cdot \nu &amp;\mbox{on } \partial B_{R_3},\\[6.0pt]  u_3 = 0 &amp;\mbox{on } \partial D. \end{array} \right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_1 \|_{H^1(D\setminus \partial B_{R_1} )} \le C \|v \|_{{\mathbf{H}}(\partial B_{R_1})}, \quad \|u_1\|_{H^{3/2}(\partial B_{R_1/\gamma })} \leq C\|v\|_{{\mathbf{H}}(\partial B_{R_1})} \tag{2.25}\cssId{inf-R1-Thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_3 \|_{H^1(D \setminus \partial B_{R_3})} \le C \|v \|_{{\mathbf{H}}(\partial B_{R_3})}, \quad \|u_3\|_{H^{3/2}(\partial B_{\gamma R_3})} \leq C\|v\|_{{\mathbf{H}}(\partial B_{R_3})}. \tag{2.26}\cssId{inf-R3-Thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ d_1 = (\lambda -1)R_1 \quad \mbox{ and } \quad d_3 = (\lambda - 1)R_3/\lambda . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \varphi _1 = \left\{ \begin{array}{ll} 1 &amp; \mbox{ in } B_{R_1 + d_1/3} \setminus B_{R_1}, \\[6.0pt]  0 &amp;\mbox{in } \mathbb{R}^d \setminus (B_{R_1 + d_1/2} \setminus B_{R_1/\lambda }), \end{array}\right.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \varphi _3 = \left\{ \begin{array}{ll} 1 &amp;\mbox{in } B_{R_3} \setminus B_{R_3-d_3/3},\\[6.0pt]  0 &amp;\mbox{in } \mathbb{R}^d \setminus (B_{\lambda R_3} \setminus B_{R_3 - d_3/2}). \end{array} \right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ V = \left\{\begin{array}{cl} v- \varphi _1 u_1 - \varphi _3 u_3 &amp; \mbox{ in } {B_{R_3}\setminus \overline B_{R_1}}, \\[6.0pt]  - \varphi _1 u_1 - \varphi _3 u_3 &amp; \mbox{ in } D \setminus ({B_{R_3}\setminus \overline B_{R_1}}). \end{array}\right. \tag{2.27}\cssId{def-V-Thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ &amp; C \int _{D} e^{2\beta r^{-p}}\beta (\beta ^2 |V|^2 + |\nabla V|^2)\\
+ &amp;\qquad \leq \int _{D} e^{2\beta r^{-p}}|{\mathrm{div}}(M\nabla V)|^2 + \int _{\partial D} |\beta | e^{2\beta r^{-p}} (|\nabla V|^2 + \beta ^2 |V|^2). 
+\end{split}\tag{2.28}\cssId{texmlid5}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C \int _{D} e^{2\beta r^{-p}}(|V|^2 + |\nabla V|^2) \leq \beta ^2 e^{2\beta \hat{R}_{3}^{-p}} \| v\|_{{\mathbf{H}}(\partial B_{R_3})}^2 + \beta ^2 e^{2\beta \hat{R}_{1}^{-p}} \|v\|_{{\mathbf{H}}(\partial B_{R_1})}^2,  \tag{2.29}\cssId{texmlid8}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \hat{R}_3 = R_3/ \lambda \quad \mbox{ and } \quad \hat{R}_1 = R_1 / \lambda . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C \|v \|_{{\mathbf{H}}(\partial B_{R_2})} \leq \beta e^{\beta (\hat{R}_3^{-p} - R_2^{-p})} \| v\|_{{\mathbf{H}}(\partial B_{R_3})} + \beta e^{\beta (\hat{R}_1^{-p} - R_2^{-p})} \|v\|_{{\mathbf{H}}(\partial B_{R_1})}. \tag{2.30}\cssId{point-point}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \alpha ' = \frac {R_2^{-p} - \hat{R}_3^{-p}}{\hat{R}_1^{-p} - \hat{R}_3^{-p}} \quad \mbox{ and }\quad \beta (R_2^{-p} - \hat{R}_1^{-p}) = (1 - \alpha ') \ln \Big (\|v \|_{{\mathbf{H}}(\partial B_{R_3})} \big /\| v\|_{{\mathbf{H}}(\partial B_{R_1})} \Big ).<xref ref-type="fn" rid="ltxid18" alt="Footnote 3">3</xref> <fn id="ltxid18"><label>3</label> <p>Here we assume that \$\| v\|_{{\mathbf{H}}(\partial B_{R_1})} \neq 0\$ since otherwise \$v= 0\$. This fact is a consequence of the unique continuation principle and can be obtained from (<xref rid="point-point" ref-type="disp-formula">2.30</xref>) by letting \$\beta \to \infty \$.</p></fn> 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| v \|_{{\mathbf{H}}(\partial B_{R_2})} \le C \beta \|v \|_{{\mathbf{H}}(\partial B_{R_1})}^{\alpha '}\| v\|_{{\mathbf{H}}(\partial B_{R_3})}^{1-\alpha '}. \tag{2.31}\cssId{texmlid6}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\alpha : = \frac {R_2^{-2p} - R_3^{-2p}}{R_1^{-2p} - R_3^{-2p}}. \tag{2.32}\cssId{alpha}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \alpha &lt; \alpha ' \quad \forall R_2 \in (\gamma _0 R_1, R_3/ \gamma _0). \tag{2.33}\cssId{LL}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| v \|_{{\mathbf{H}}(\partial B_{R_2})} \le C \|v \|_{{\mathbf{H}}(\partial B_{R_1})}^{\alpha }\| v\|_{H(\partial B_{R_3})}^{1-\alpha }. \tag{2.34}\cssId{texmlid9}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ K(x) = R_2^2 x/ |x|^2. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \operatorname {div}(a \nabla v) + k^2 \sigma v = 0 \mbox{ in } B_{{R_3}} \setminus \overline B_{{R_2}} 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \operatorname {div}(K_*a \nabla w) + k^2 K_* \sigma w = 0 \mbox{ in } B_{{R_2}} \setminus \overline B_{{R_1}}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ w = v \quad \mbox{ and } \quad K_*a \nabla w \cdot \nu = - a \nabla v \cdot \nu \mbox{ on } \partial B_{R_2}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_\delta \|_{H^1(\Omega )}^2 \le C \left(\delta ^{-1} \|f\|_{L^2(\Omega )}\|u_{\delta }\|_{L^2({\operatorname {supp}} f)} + \|f\|_{L^2(\Omega )}^2\right), \tag{3.1}\cssId{est-stability}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_n\|_{H^1(\Omega )} =1 \mbox{ and } \frac {1}{\delta _n} \|f_n\|_{L^2(\Omega )} \| u_n\|_{L^2({\operatorname {supp}} f_n)} + \| f_n\|_{L^2(\Omega )}^2 \to 0, \tag{3.2}\cssId{contradict-assumption}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \operatorname {div}(s_{\delta _n} A \nabla u_n) + k^2 s_0 \Sigma u_n= f_n \mbox{ in } \Omega . \tag{3.3}\cssId{eq-v-delta}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \operatorname {div}(s_0 A \nabla u) + k^2 s_0 \Sigma u = 0 \mbox{ in } \Omega . \tag{3.4}\cssId{eq-uu-1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{\Omega } s_{\delta _n} A \nabla u_n \cdot \nabla \bar{u}_n \, dx - \int _{\Omega } k^2 s_0 \Sigma |u_n|^2 \, dx = - \int _\Omega f_n \bar{u}_n \, dx. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {1}{\delta _n}\Big | \int _\Omega f_n \bar{u}_n \Big | \le \frac {1}{\delta }\|f_n \|_{L^2(\Omega )} \| u_n\|_{L^2({\operatorname {supp}} f_n)} \to 0 \mbox{ as $n \to \infty $ by }(<xref rid="contradict-assumption" ref-type="disp-formula">3.2</xref>), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| \nabla u_n\|_{L^2(B_{{r_2}} \setminus \overline B_{{r_1}})} \to 0 \mbox{ as } n \to \infty . \tag{3.5}\cssId{toto1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_n \|_{L^{2}(B_{r_2} \setminus B_{r_1})} \to 0 \mbox{ as } n \to \infty . \tag{3.6}\cssId{toto1-1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_n \|_{H^{1}(B_{r_2} \setminus B_{r_1})} \to 0 \mbox{ as } n \to \infty . \tag{3.7}\cssId{part-1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ u= 0 \mbox{ in } B_{r_2} \setminus B_{r_1} 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ \| u_n \|_{H^{1/2}(\partial B_{r_2})} &amp; + \| u_n \|_{H^{1/2}(\partial B_{r_1})} + \| A \nabla u_n \cdot \nu \|_{H^{-1/2}(\partial B_{r_2})}\\
+&amp; + \| A \nabla u_n \cdot \nu \|_{H^{-1/2}(\partial B_{r_1})} \to 0 \mbox{ as }n \to \infty . 
+\end{split}\tag{3.8}\cssId{limit-1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_n \to 0 \mbox{ in } L^2(\Omega ) \mbox{ as } n \to \infty . \tag{3.9}\cssId{u0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{\Omega \setminus B_{r_2}} A \nabla u_n \cdot \nabla \bar{u}_n \, dx - \int _{\Omega \setminus B_{r_2}} k^2 s_0 \Sigma |u_n|^2 \, dx = - \int _\Omega f_n \bar{u}_n \, dx + \int _{\partial B_{r_2}} A \nabla u_n \cdot \nu \; \bar{u}_n. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|\nabla u_n \|_{L^2(\Omega \setminus B_{r_2})} \to 0 \mbox{ as } n \to \infty . \tag{3.10}\cssId{part-2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|\nabla u_n \|_{L^2(B_{r_1})} \to 0 \mbox{ as } n \to \infty . \tag{3.11}\cssId{part-3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u_n \|_{H^1(\Omega )} \to 0 \mbox{ as } n \to \infty , 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_{\delta } \|_{H^{1}(\Omega )}^2 \le C \Big ( \delta ^{-1} \| f\|_{L^2(\Omega )} \|u_{\delta } \|_{L^2(\Omega \setminus B_{r_3})} + \| f\|_{L^2(\Omega )}^2 \Big ). \tag{3.12}\cssId{haha0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_{1, \delta } = u_{\delta } \circ F^{-1} \mbox{ in } \mathbb{R}^{d} \setminus \bar{B}_{r_{2}}, \tag{3.13}\cssId{def-u1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_{2, \delta } = u_{1, \delta } \circ G^{-1} \mbox{ in } B_{r_{3}}. \tag{3.14}\cssId{def-u2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \operatorname {div}(A \nabla u_{1, \delta }) + \frac {1}{1- i \delta } k^2 \Sigma u_{1, \delta } = 0 \mbox{ in } B_{r_3} \setminus B_{r_2}, \tag{3.15}\cssId{eqn-u1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Delta u_{2, \delta } + k^2 u_{2, \delta } = 0 \mbox{ in } B_{r_3}. \tag{3.16}\cssId{eqn-u2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_{1, \delta } = u_{\delta } \Big |_{+} \mbox{ on } \partial B_{r_{2}} \quad \mbox{ and } \quad (1 - i \delta ) A \nabla u_{1, \delta } \cdot \nu = A \nabla u_{ \delta } \cdot \nu \Big |_{+} \mbox{ on } \partial B_{r_{2}}. \tag{3.17}\cssId{TO-1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+  \left\{\begin{array}{cl} {\mathrm{div}}(A \nabla V_{1, \delta }) + k^2 \Sigma V_{1, \delta } = \displaystyle - \frac {i \delta }{1 - i \delta } k^2 \Sigma u_{1, \delta } \mbox{ in } &amp; B_{r_3} \setminus B_{r_2}, \\[6.0pt]  A \nabla V_{1, \delta } \cdot \nu - i k V_{1, \delta } = 0 &amp; \mbox{ on } \partial B_{r_2}, \\[6.0pt]  V_{1, \delta } = 0 &amp; \mbox{ on } \partial B_{r_3}. \end{array}\right. \tag{3.18}\cssId{def-V1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| V_{1, \delta }\|_{H^1(B_{r_3} \setminus B_{r_2})} \le C \delta \| u_\delta \|_{H^1(\Omega )}. \tag{3.19}\cssId{V1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ U_{1, \delta } =u_{\delta } - u_{1, \delta } - V_{1, \delta }. \tag{3.20}\cssId{def-bU}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathrm{div}}(A \nabla U_{1, \delta }) + k^2 \Sigma U_{1, \delta } = 0 \mbox{ in } B_{r_3} \setminus B_{r_2}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \| U_{1, \delta }\|_{H^{1/2}(\partial B_{r_2})} + \| A \nabla U_{1, \delta } \cdot \nu \|_{H^{1/2}(\partial B_{r_2})} \le C \delta \| u_\delta \|_{H^1(\Omega )}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \| U_{1, \delta }\|_{H^{1/2}(\partial B_{r_3})} + \| A \nabla U_{1, \delta } \cdot \nu \|_{H^{1/2}(\partial B_{r_3})} \le C \| u_\delta \|_{H^1(\Omega )}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| U_{1, \delta }\|_{H^{1/2}(\partial B_{\gamma r_2})} + \| A \nabla U_{1, \delta } \cdot \nu \|_{H^{1/2}(\partial B_{\gamma r_2})} \le C \delta ^{\alpha } \| u_\delta \|_{H^1(\Omega )}, \tag{3.21}\cssId{U1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \alpha &gt; 1/2. \tag{3.22}\cssId{alpha-Thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_\delta - u_{1, \delta } \|_{H^{1/2}(\partial B_{\gamma r_2})} + \|A \nabla (u_\delta - u_{1, \delta } ) \cdot \nu \|_{H^{-1/2}(\partial B_{\gamma r_2})} \le C \delta ^{\alpha } \| u_\delta \|_{H^1(\Omega )}. \tag{3.23}\cssId{part1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ U_{2, \delta } = u_{1, \delta } - u_{2, \delta } + V_{1, \delta }. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Delta U_{2, \delta } + U_{2, \delta } = 0 \quad \mbox{ in } B_{r_3} \setminus B_{\gamma r_2} \tag{3.24}\cssId{eq-U2-Thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ U_{2, \delta } = 0 \quad \mbox{and } \quad \partial _r U_{2, \delta } = -\frac {i\delta }{1 - i\delta } \partial _r u_{1, \delta } + \partial _r V_{1, \delta } \quad \mbox{ on } \partial B_{r_3}. \tag{3.25}\cssId{p-eq-U2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \hat{J}_n(t) = 2^n n! J_n(t) \quad \mbox{ and } \quad \hat{Y}_n(t) = - \frac {\pi }{2^{n} (n-1)!} Y_n(t), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \hat{J}_n (t) = t^{n}\big [1 + o(1) \big ] \tag{3.26}\cssId{bh1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \hat{Y}_n (t) = t^{-n} \big [1 + o(1) \big ], \tag{3.27}\cssId{bh2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\begin{split}
+ U_{2, \delta } &amp;= a_0 \hat{J}_0(|x|) + b_0 \hat{Y}_0(|x|)\\
+ &amp;\quad + \sum _{n=1}^\infty \sum _{\pm } \big [a_{n, \pm } \hat{J}_{n}(|x|) + b_{n, \pm } \hat{Y}_{n}(|x|) \big ] e^{\pm i n \theta } \quad \mbox{ in } B_{r_3} \setminus B_{\gamma r_2}, 
+\end{split}\tag{3.28}\cssId{re-u-k}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \partial _r U_{2, \delta } = c_0 + \sum _{n \ge 1} \sum _{\pm } c_{n, \pm } e^{\pm i n \theta } \quad \mbox{ on } \partial B_{r_3}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ |c_0|^2 + \sum _{n \ge 1} \sum _{\pm } n^{-1} |c_{n , \pm }|^2 \sim \|\partial _r U_{2, \delta } \|_{H^{-1/2}(\partial B_{r_3})}^2 \le C \delta ^2 \| u \|_{H^{1}(\Omega )}^2. \tag{3.29}\cssId{pro-c-n}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left\{\begin{array}{c} a_{n, \pm } \hat{J}_n (r_3) + b_{n, \pm } \hat{Y}_n (r_3) = 0, \\[6.0pt]  a_{n, \pm } \hat{J}_n' (r_3) + b_{n, \pm } \hat{Y}_n' (r_3) = c_{n, \pm }, \end{array}\right. \quad \mbox{ for } n \ge 0. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+\left\{ \begin{array}{l} \displaystyle a_{n, \pm } = c_{n, \pm } AC_{n}, \\[6.0pt]  \displaystyle b_{n, \pm } = c_{n, \pm } BC_{n}, \end{array} \right. \quad \mbox{ for } n \ge 0, \tag{3.30}\cssId{efcd-k}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ AC_{n} = - \frac {\hat{Y}_n}{\hat{J}_n \hat{Y}_n' - \hat{J}_n' \hat{Y}_n}(r_3) \quad \mbox{ and } \quad BC_{n} = - \frac {\hat{J}_n}{\hat{Y}_n \hat{J}_n' - \hat{Y}_n' \hat{J}_n}(r_3). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ AC_{n} = - \frac {1}{2n} r_3^{1-n} \Big ( 1 + o(1) \Big ) \quad \mbox{ and } BC_{n} = \frac {1}{2n} r_3^{1 + n} \Big ( 1 + o(1) \Big ). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \hat{u}_\delta (x)= \sum _{n=1}^\infty \sum _{\pm } b_{n, \pm } \hat{Y}_{n}(|x|) e^{\pm i n \theta } \quad \mbox{ in } B_{r_3} \setminus B_{\gamma r_2}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|U_{2, \delta } - \hat{u}_\delta \|_{H^{1/2}(\partial B_{r})} + \|\partial _r U_{2, \delta } - \partial _r \hat{u}_\delta \|_{H^{-1/2}(\partial B_{r})} \le C \delta \|u_\delta \|_{H^1(\Omega )}. \tag{3.31}\cssId{U2-hu}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|U_{2, \delta } - \hat{u}_\delta \|_{H^{1/2}(\partial B_{r})}^2 &amp; = \|\sum _{n \ge 0} \sum _{\pm } a_{n, \pm } \hat{J}_n(|x|) e^{i n \theta } \|_{H^{1/2}(\partial B_{r})}^2\\
+[6.0pt] &amp; \sim \sum _{n \ge 0} \sum _{\pm } (n+1)|a_{n, \pm }|^2 |\hat{J}_n(|x|)|^2 \\
+[6.0pt] &amp;\sim \sum _{n \ge 0} \sum _{\pm } (n+1)|c_{n, \pm } AC_n|^2 |\hat{J}_n(|x|)|^2\\
+[6.0pt] &amp; \le C \sum _{n \ge 0} \sum _{\pm } (n+1)^{-1}| c_{n, \pm }|^2 (r/ r_3)^{2n}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|U_{2, \delta } - \hat{u}_\delta \|_{H^{1/2}(\partial B_{r})} \le C \delta \| u_\delta \|_{H^1(\Omega )}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|\partial _r U_{2, \delta } - \partial _r \hat{u}_\delta \|_{H^{-1/2}(\partial B_{r})} \le C \delta \| u_\delta \|_{H^1(\Omega )},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u_{1, \delta } - u_{2, \delta } - \hat{u}_\delta \|_{H^{1/2}(\partial B_{r})} + \|\partial _r u_{1, \delta } - \partial u_{2, \delta } - \partial _r \hat{u}_\delta \|_{H^{-1/2}(\partial B_{r})} \le C \delta \|u_\delta \|_{H^1(\Omega )}. \tag{3.32}\cssId{part2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ U_\delta = \left\{\begin{array}{cl} u_\delta &amp; \mbox{ in } \Omega \setminus B_{r_3}, \\[6.0pt]  u_\delta - \hat{u}_\delta &amp; \mbox{ if } x \in B_{r_3} \setminus B_{\gamma r_2}, \\[6.0pt]  u_{2, \delta } &amp; \mbox{ if } x \in B_{\gamma r_2}. \end{array} \right. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathrm{div}}(A \nabla U_\delta ) + k^2 \Sigma U_{\delta } = f \mbox{ in } \Omega \setminus (\partial B_{r_3} \cup \partial B_{\gamma r_2}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|[U_\delta ] \|_{H^{1/2}(\partial B_{\gamma r_2})} + \|[\partial _r U_\delta \cdot \nu ] \|_{H^{-1/2}(\partial B_{\gamma r_2})} \le C \delta ^{\alpha } \| u_\delta \|_{H^1(\Omega )} \tag{3.33}\cssId{toto1-thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|[U_\delta ] \|_{H^{1/2}(\partial B_{r_3})} + \|[\partial _r U_\delta \cdot \nu ] \|_{H^{-1/2}(\partial B_{r_3})} \le C \delta ^{\alpha } \| u_\delta \|_{H^1(\Omega )}. \tag{3.34}\cssId{toto2-thm1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\| U_\delta \|_{H^1(\Omega \setminus (\partial B_{r_3} \cup \partial B_{\gamma r_2}) )}\\
+ &amp;\qquad \le C \delta ^{\alpha } \Big ( \delta ^{-1/2}\| U_\delta \|_{L^2(\Omega \setminus B_{r_3})}^{1/2} \|f \|_{L^2(\Omega )}^{1/2} + \| f\|_{L^2(\Omega )}\Big ) + C \|f \|_{L^2(\Omega )}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Delta U + k^2 U= f \mbox{ in } \Omega \mbox{ and } U = 0 \mbox{ on } \partial \Omega . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \hat{j}_n(t) =1 \cdot 3 \cdots (2n + 1) j_n(t) \quad \mbox{ and } \quad \hat{y}_n = - \frac {y_n(t)}{1 \cdot 3 \cdots (2n-1)} , 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \hat{j}_n(t) = t^n \big (1 + O(1/n) \big ) \quad \mbox{ and } \quad \hat{y}_n(r) = t^{-n-1} \big (1 + O(1/n) \big ). \tag{3.35}\cssId{jy-n}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ U_{2, \delta } = \sum _{n=1}^\infty \sum _{m = -n }^n \big [a^m_n \hat{j}_{n}(|x|) + b^m_n \hat{y}_{n}(|x|) \big ] Y^m_n(\hat{x} ) \quad \mbox{ in } B_{r_3} \setminus B_{r_0}, \tag{3.36}\cssId{re-u-k1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Delta V_\delta + k^2 V_\delta = 0 \mbox{ in } \Omega \setminus (\partial B_{\gamma r_2} \cup \partial B_{r_3}), \quad V_\delta = 0 \mbox{ on } \partial \Omega , 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|[V_\delta ] \|_{H^{1/2}(\partial B_{\gamma r_2} \cup \partial B_{r_3})} + \|[\partial _r V_\delta \cdot \nu ] \|_{H^{-1/2}(\partial B_{\gamma r_2} \cup \partial B_{r_3})} \le C \delta ^{\alpha - 1/2} \| f \|_{L^2(\Omega )}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ m = r_3^2/ r_2^2. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ A_1, \Sigma _1 = \left\{ \begin{array}{cl} A, \Sigma &amp; \mbox{ in } \Omega \setminus B_{r_2/ m}, \\[6.0pt]  a_c, \sigma _c &amp; \mbox{ in } B_{r_2/ m}, \end{array} \right. \tag{4.1}\cssId{defA1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \hat{A}_1, \hat{\Sigma }_1 = \left\{ \begin{array}{cl} I, 1 &amp; \mbox{ in } \Omega \setminus B_{r_2}, \\[6.0pt]  (r_3/ r_2)^{2-d} a_c(x/ m), (r_3/ r_2)^{-d}\sigma _c(x/m) &amp; \mbox{ in } B_{r_2}. \end{array} \right. \tag{4.2}\cssId{defA1hat}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ {\mathrm{div}}(A_1\nabla v) + k^2 \Sigma _1 v = 0 \mbox{ in } \Omega . \tag{4.3}\cssId{P2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \operatorname {div}(s_\delta A_1 \nabla u_\delta ) + k^2 s_0 \Sigma _1 u_\delta = f \quad \mbox{in } \Omega 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \operatorname {div}(\hat{A}_1 \nabla u) + k^2 \hat{\Sigma }_1 u= f \quad \mbox{in } \Omega . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_{\delta } \to u \mbox{ weakly in } H^{1} (\Omega \setminus B_{r_3}) \mbox{ as } \delta \to 0. \tag{4.4}\cssId{key-point-Sup}{}{}
+\end{equation}
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:45:54 PDT 2016
+<!-- hhmts end -->
+</body> </html>

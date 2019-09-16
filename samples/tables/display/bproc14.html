@@ -1,0 +1,566 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation*}
+ \prod _{j=1}^N \frac {1}{1-x^j} = \sum _{k=1}^N \sum _{\begin{subarray}
+{c}0\leq h&lt;k \\
+ \gcd (h,k)=1
+\end{subarray}} \sum _{l=1}^{\lfloor N/k \rfloor } \frac {C_{h,k,l}(N)}{(x-e^{2\pi i h/k})^l}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \log (1-e^z) + \frac {1}{z}(\mathrm{Li}_2(e^z)-\pi ^2/6) = 0. \tag{1}\cssId{eq:z0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ a = \frac { \pi }{2} - \frac 12 \arg \left( \frac {e^{z_0}}{z_0(1-e^{z_0})} \right) \approx 1.79. \tag{2}\cssId{eq:a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C_{0,1,l}(N) = b^N N^{-l-1} H_l(N) + O(b^N N^{-l-117/112}), \quad N\to \infty , \tag{3}\cssId{texmlid1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ H_l(N) = \frac {(-1)^{l-1}}{\pi } \sqrt {-\frac {z_0(1-e^{z_0})}{\rho ^2e^{z_0}}} \Bigg (\Im \left( \frac {\rho (-z_0)^{l-1/2}}{\sqrt {1-e^{z_0}}}\right)\cos (2\pi N/p)) \\
+ +\Re \left(\frac {\rho (-z_0)^{l-1/2}}{\sqrt {1-e^{z_0}}}\right)\sin (2\pi N /p)\Bigg ). 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ C_{0,1,l}(N) = \frac {1}{2i\pi } \int _{|x|=r} x^{l-1} \prod _{j=1}^N \frac {1}{1-(x+1)^j}dx, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ F(z,N) := e^{f(z,N)} := e^{z/N}N^{l-1}(1-e^{z/N})^{l-1}\prod _{j=1}^N \frac {1}{1-e^{zj/N}}, \tag{4}\cssId{texmlid2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C_{0,1,l}(N) = \frac {(-1)^{l-1}}{N^l} \frac {1}{2i\pi } \int _{|z|=5} F(z,N) dz. \tag{5}\cssId{eq:F}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \prod _{j=1}^N \frac 1{1-e^{zj/N}} = (-1)^N e^{-z(N+1)/2} \prod _{j=1}^N \frac 1{1-e^{-zj/N}} \tag{6}\cssId{eq:refl}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ g(z,N) &amp;:= \log \prod _{j=1}^N \frac {1}{1-e^{zj/N}} \\
+ &amp;= - \sum _{j=1}^N \log (1-e^{zj/N}) \\
+ &amp;= \sum _{j=1}^N \sum _{k=1}^\infty \frac {1}{k}e^{zjk/N} = \sum _{k=1}^\infty \frac {1}{k} \frac {1-e^{kz}}{e^{-kz/N}-1}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \mathcal{M}g(z,\cdot )(s)&amp;=\int _0^\infty g(z,x)x^{s-1}dx \\
+ &amp;= \sum _{k=1}^\infty \frac {1-e^{kz}}{k} \int _0^\infty \frac {x^{s-1}}{e^{-kz/x}-1} dx \\
+ &amp;= \sum _{k=1}^\infty \frac {1-e^{kz}}{k} (-kz)^s \Gamma (-s)\zeta (-s) \\
+ &amp;= (-z)^s \Gamma (-s)\zeta (-s) \left(\sum _{k=1}^\infty k^{s-1} - \sum _{k=1}^\infty k^{s-1} e^{kz} \right) \\
+ &amp;= (-z)^s \Gamma (-s)\zeta (-s) \Big (\zeta (1-s) - \mathrm{Li}_{1-s}(e^z)\Big ).  \tag{7}\cssId{eq:mellin}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ g(z,N) = \frac {1}{2i\pi } \int _{-3/2-i\infty }^{-3/2+i \infty } \mathcal{M}g(z,\cdot )(s) N^{-s}ds. \tag{8}\cssId{texmlid5}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \mathrm{Li}_{1-s}(e^z) = O( |\Im s|^{\Re s -1/2}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \mathrm{Li}_{1-s}(e^z) = \frac {\Gamma (s)}{(2\pi )^s} \left( i^s \zeta \left(s,\frac 12 + \frac {\log (-e^z)}{2i\pi }\right) + i^{-s} \zeta \left(s,\frac 12 - \frac {\log (-e^z)}{2i\pi }\right)\right), \tag{9}\cssId{texmlid4}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \zeta (s,q) = \sum _{n=0}^\infty \frac {1}{(q+n)^s}, \quad \Re s &gt;1, \Re q &gt;0, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ |q+n|^{-s} = |q+n|^{-\Re s} e^{\Im (s) \arg (q+n)} \tag{10}\cssId{texmlid3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ |\zeta (s,q)| \leq \sum _{n=0}^\infty |q+n|^{-\Re s} = O(1), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \zeta (s,q) = O(e^{\tfrac 12 \pi \Im s}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Re \left(\frac 12 \pm \frac {\log (-e^z)}{2i\pi }\right)&gt;0, \quad \Im \left(\frac 12 + \frac {\log (-e^z)}{2i\pi }\right)&gt;0, \quad \text{and} \quad \Im \left(\frac 12 - \frac {\log (-e^z)}{2i\pi }\right)&lt;0 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Gamma (s) = O(e^{-\tfrac 12 \pi |\Im s|} |\Im s|^{\Re s - 1/2}) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ f(z,N) = \frac {1}{z}\Big ( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\Big )N - \frac 12 \log N \tag{11}\cssId{texmlid6}{}{}\\
+ - \frac 12 \Big (\log 2\pi +\log (1-e^{z}) - \log (-z)\Big ) +(l-1)\log (-z)+ h(z,N), 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ h(z,N) = \frac {z(e^z+1)}{24(e^z-1)} \frac 1N +\frac {z}{N} + \frac {1}{2i\pi }\int _{8/7-i\infty }^{8/7+i\infty } \mathcal{M}g(z,\cdot )(s) N^{-s} ds \tag{12}\cssId{eq:h}{}{}\\
+ -(l-1) \log (-z) + (l-1) (\log N + \log (1-e^{z/N})). 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ g(z,N) = \frac {1}{z}\Big ( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\Big )N - \frac 12 \log N - \frac 12 \Big (\log 2\pi +\log (1-e^{z}) - \log (-z)\Big )\\
+ + \frac {z(e^z+1)}{24(e^z-1)} \frac 1N +\frac {1}{2i\pi }\int _{8/7-i\infty }^{8/7+i\infty } \mathcal{M}g(z,\cdot )(s) N^{-s} ds. 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \log (1-e^{z/N}) = \log (-z) - \log N + O(N^{-1/2}) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left|\frac {e^z+1}{e^z-1}\right| = \left|1+\frac {2}{e^z-1}\right| 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ |N^{-s}| &amp;= N^{-\Re s}, \\
+ |(-z)^s| &amp;= |z|^{\Re s} e^{-\Im (s) \arg (-z)},  \tag{13}\cssId{eq:-z}{}{}\\
+ |\Gamma (-s)| &amp;\sim \sqrt {2\pi } e^{-\tfrac 12\pi \Im s} (\Im s)^{-\Re s - 1/2},  \tag{14}\cssId{eq:stirling}{}{}\\
+ \zeta (-s) &amp;= O((\Im s)^{\Re s+1/2}),  \tag{15}\cssId{eq:zeta}{}{}\\
+ \zeta (1-s)&amp;= O((\Im s)^{ \Re s-1/2}).  \tag{16}\cssId{eq:zeta1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ |\mathrm{Li}_{1-s}(e^z) | \leq \mathrm{Li}_{\Re (1-s)}(e^{\Re z}) = O(1) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ N^{-\Re s}\int _0^\infty e^{-N^{-7/8}x} x^{\Re s-1/2}dx= O(N^{-8/7} N^{23/16})=O(N^{33/112}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ C_{0,1,l}(N) \tag{17}\cssId{texmlid7}{}{}\\
+ \approx \frac {(-1)^{l-1}}{N^{l+1/2}(2\pi )^{3/2}i} \int _{|z|=5, \Re z\leq 0} \frac {(-z)^{l-1/2}}{\sqrt {1-e^z}} \exp \left( \frac {z}{N} + \frac {N}{z} \left( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\right) \right) dz, 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ a &amp;= \frac { \pi }{2} - \frac 12 \arg \frac {d^2}{dz^2} \left.\left( \frac 1z \left( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\right)\right) \right|_{z=z_0} \\
+ &amp;= \frac { \pi }{2} - \frac 12 \arg \left( \frac {e^{z_0}}{z_0(1-e^{z_0})} \right) \approx 1.79, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ z_4(N) := -\sqrt {N} + i (\Im z_0-(\sqrt {N}+\Re z_0) \Im \rho / \Re \rho ). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ z_2(N):=z_0-\rho N^{-39/112} \quad \text{and} \quad z_3(N):=z_0+\rho N^{-39/112}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ f(z,N) = - N \log (1 -e^{z_0}) -\tfrac 12 \alpha N t^2 - \tfrac 12 \log N \tag{18}\cssId{texmlid10}{}{}\\
+ + (l-\tfrac 12)\log (-z_0) -\tfrac 12 (\log 2\pi +\log (1-e^{z_0})) + O(N^{-5/112}). 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \alpha := -\frac {\rho ^2e^{z_0}} {z_0(1-e^{z_0})} \approx 0.028 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{-N^{-39/112}}^{N^{-39/112}}\exp (-\tfrac 12 \alpha N t^2)dt \sim \frac {1}{\sqrt {\alpha N}}\int _{-\infty }^{\infty }e^{-x^2/2}dx = \sqrt {\frac {2\pi }{\alpha N}}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \int _{z_2(N)}^{z_3(N)} e^{f(z,N)}dz = \frac {\rho (-z_0)^{l-1/2}}{ \sqrt {\alpha (1-e^{z_0})}} \frac 1N (1-e^{z_0})^{-N}(1+O(N^{-5/112})). \tag{19}\cssId{texmlid8}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{\bar{z}_3(N)}^{\bar{z}_2(N)}e^{f(z,N)}dz = - \overline {\int _{z_2(N)}^{z_3(N)} e^{f(z,N)}dz}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {(-1)^{l-1}}{\pi N^l} \Im \left( \int _{z_2(N)}^{z_3(N)} e^{f(z,N)}dz \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \int _{z_1}^{z_2} \mathbf{1}_{\{\Re z \leq -N^{-7/8}\}}F(z,N) dz + \int _{z_3}^{z_4}F(z,N) dz \tag{20}\cssId{texmlid9}{}{}\\
+ + \int _{z_4}^{z_5}F(z,N)dz = O\Big (b^N \exp \Big ( -\tfrac 13 \alpha N^{17/56} \Big )\Big ). 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f(z,N) = \frac {1}{z}\Big ( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\Big )N + O(N^{33/112}) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ z\mapsto \Re \left( \frac {1}{z}\Big ( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6}\Big )\right) \tag{21}\cssId{texmlid11}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \exp &amp;\left( N \Re \left( \frac {1}{z} \Big ( \mathrm{Li}_2(e^z) - \frac {\pi ^2}{6} \Big ) \Big |_{z=z_2} \right) + O(N^{33/112}) \right) \\
+ &amp;= |1-e^{z_0}|^{-N} \exp \Big ( -\tfrac 12 \alpha N^{17/56} + O(N^{33/112})\Big ) \\
+ &amp;= O\Big (b^N \exp \Big ( -\tfrac 13 \alpha N^{17/56} \Big )\Big ), 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f(z,N) = (l-\tfrac 12)\log (-z) +O(N^{1/2}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{z_1}^{z_2} \mathbf{1}_{\{\Re z \geq -N^{-7/8}\}}F(z,N) dz = O(0.85^N). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \prod _{j=1}^N \frac {1}{|1-e^{z j/N}|} = O(0.84^N), \tag{22}\cssId{texmlid12}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \frac {1}{|1-e^{z j/N}|} = \left(1+ e^{2j \Re (z)/N} - 2\cos (5j/N) e^{j \Re (z)/N} \right)^{-1/2}. \tag{23}\cssId{texmlid16}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 1+ e^{2j \Re (z)/N} - 2\cos (5j/N) e^{j \Re (z)/N} &amp;= 2(1-\cos (5j/N))+ O(N^{-7/8}) \\
+ &amp;= 2(1-\cos (5j/N))(1+ O(N^{-7/8})).  \tag{24}\cssId{texmlid14}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \prod _{N/10 \leq j\leq N}(1-\cos (5j/N))^{-1/2} = \exp \left(-\frac 12 \sum _{N/10 \leq j\leq N} \log (1-\cos (5j/N)) \right) \tag{25}\cssId{texmlid13}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\phi (x):=-\log (1-\cos (5x/N)),
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \sum _{N/10 \leq j\leq N} \phi (j)\!=\!\int _{\lfloor N/10 \rfloor }^{N+1} \phi (x)dx -\frac 12(\phi (N+1)-\phi (\lfloor N/10 \rfloor ))\!+\! \int _{\lfloor N/10 \rfloor }^{N+1}(\{x\}-\frac 12)\phi '(x)dx. \tag{26}\cssId{eq:euler}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \int _{\lfloor N/10 \rfloor }^{N+1} | \phi '(x) | dx &amp;= \int _{ N/10 }^{N+1} | \phi '(x) | dx + O(1) \\
+ &amp;= -\int _{ N/10 }^{\pi N/5}\phi '(x) dx + \int _{\pi N/5}^{N+1}\phi '(x)dx +O(1) \\
+ &amp;= -2\phi (\pi N/5)+\phi (N/10)+\phi (N+1)+O(1) = O(1). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int \phi (x) dx = -\frac {5i x^2}{2N} + 2x \log (1-e^{5ix/N}) - x \log (1-\cos (5x/n)) - \frac 25 i N \mathrm{Li}_2(e^{5ix/N}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \int _{\lfloor N/10 \rfloor }^{N+1} \phi (x)dx = -c N + O(1), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ c = \frac {1}{40}(99 i +8\log (1-e^{i/2}) -80 \log (1-e^{5i}) -4\log (1-\cos (1/2)) \\
+ + 40 \log (1-\cos 5) -16i \mathrm{Li}_2(e^{i/2}) +16i \mathrm{Li}_2(e^{5i})) \approx 0.11262. 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \prod _{N/10 \leq j\leq N}(1-\cos (5j/N))^{-1/2} = \exp (-\tfrac 12 cN + O(1)), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \prod _{N/10 \leq j\leq N} \frac {1}{|1-e^{z j/N}|} = O(2^{-9N/20} e^{-cN/2} (1+\varepsilon )^N ) = O(0.7^N). \tag{27}\cssId{texmlid17}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ 1+ e^{2j \Re (z)/N}&amp; - 2\cos (5j/N) e^{j \Re (z)/N} \geq 1+\left[1+x+\frac {x^2}{2}+\frac {x^3}{6} \right]_{x=2j \Re (z)/N} \\
+ &amp;- 2\left[1-\frac {x^2}{2}+\frac {x^4}{24} \right]_{x=5j/N} \cdot \left[1+x+\frac {x^2}{2} \right]_{x=j \Re (z)/N}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \geq \frac {11j^2}{12N^2}(\Re (z)^2+25). \tag{28}\cssId{texmlid15}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \prod _{1\leq j\leq N/10} \frac {1}{|1-e^{z j/N}|} &amp;\leq \prod _{1\leq j\leq N/10} \sqrt {\frac {12}{11}} \frac {N}{j} ((\Re z)^2 +25)^{-1/2} \\
+ &amp;\leq \left( \frac {12}{275} \right)^{N/20} N^{N/10} \lfloor N/10 \rfloor !^{-1}(1+\varepsilon )^N \\
+ &amp; \leq \left( \left(\frac {12}{275}\right)^{1/20}(10e)^{1/10}(1+\varepsilon )\right)^N \leq 1.19^N,  \tag{29}\cssId{texmlid18}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {(-1)^{l-1}}{N^l} \frac {1}{2i\pi } \int _{|z|=5} \mathbf{1}_{\{\Re z&gt;0\}} F(z,N) dz = O(0.98^N). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \prod _{j=1}^N \frac {1}{1-e^{-zj/N}} = \exp \left( -\frac {1}{z}\Big ( \mathrm{Li}_2(e^{-z}) - \frac {\pi ^2}{6}\Big )N +O(N^{33/112}) \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ z \mapsto \Re \left(-\frac {1}{z} \Big ( \mathrm{Li}_2(e^{-z}) - \frac {\pi ^2}{6}\Big ) \right) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left|\exp \left( -\frac {1}{z}\Big ( \mathrm{Li}_2(e^{-z}) - \frac {\pi ^2}{6}\Big )N \right) \right| \leq 0.97^N, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left|\exp \left( -\frac {1}{z}\Big ( \mathrm{Li}_2(e^{-z}) - \frac {\pi ^2}{6}\Big )N \right) \right| \leq 1.39^N, 
+\end{equation*}
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:45:05 PDT 2016
+<!-- hhmts end -->
+</body> </html>

@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation*}
+f_{k,m}(z) = q^{-m} + O(q^{\ell +1}), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+G_k(z) = f_{k,0}(z) = 1 + O(q^{\ell + 1}). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\mathcal{A}_\epsilon = \left\lbrace e^{i \theta } : \frac {\pi }{2} &lt; \theta &lt; \frac {2\pi }{3} - \epsilon \right\rbrace 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\mathcal{F} = \left\lbrace |z| \geq 1, -\frac {1}{2} \leq \text{Re}(z) \leq 0 \right\rbrace \bigcup \left\lbrace |z| &gt; 1, 0 \leq \text{Re}(z) &lt; \frac {1}{2} \right\rbrace . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+E_k(z) = 1 - \frac {2k}{B_k} \sum _{n=1}^{\infty } \sigma _{k-1}(n) q^n \in M_k, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+j(z) = q^{-1} + 744 + 196884q + \cdots 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Delta (z) = \frac {1}{1728}\left( E_4(z)^3 - E_6(z)^2 \right) = q - 24q^2 + 252q^3 - 1472q^4 + \cdots . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f_{k,m}(z) = \Delta ^\ell E_{k'} F(j), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f_{k,m}(z) = \frac {1}{2\pi i} \oint _C \dfrac {\Delta ^\ell (z) E_{k'}(z) E_{14-k'}(\tau )}{\Delta ^{1+\ell }(\tau ) (j(\tau ) - j(z))} r^{-1-m} \, dr, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f_{k,m}(z) = \int _{-\frac {1}{2}+iA}^{\frac {1}{2}+iA} \frac {\Delta (z)^\ell }{\Delta (\tau )^{1+\ell }} \frac {E_{k'}(z)E_{14-k'}(\tau )}{j(\tau )-j(z)} e^{-2\pi i m \tau } \, d\tau . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left\lbrace -\frac {1}{2} &lt; \operatorname {Re}(\tau ) &lt; \frac {1}{2}, A' &lt; \operatorname {Im}(\tau ) &lt; A \right\rbrace 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \displaystyle \left|e^{\frac {ik\theta }{2}}e^{-2\pi m\sin {\theta }}f_{k,m}(e^{i\theta }) -2\cos \left(\frac {k\theta }{2} - 2\pi m\cos {\theta }\right)\right| \tag{1}\cssId{bigIneq_1.9}{}{}\\
+ \leq \max _{|x| \leq \frac {1}{2}} e^{-2\pi m (\sin \theta - .75)} \left| \dfrac {\Delta (e^{i \theta })}{\Delta (x +.75i)} \right|^\ell \left| \dfrac {E_{k'}(e^{i \theta }) E_{14-k'}(x+.75i)}{\Delta (x+.75i) (j(x+.75i) - j(e^{i \theta }))} \right| 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{multline}
+ \displaystyle \left|e^{\frac {ik\theta }{2}}e^{-2\pi m\sin {\theta }}f_{k,m}(e^{i\theta })\! -2\cos \left(\frac {k\theta }{2} - 2\pi m\cos {\theta }\right)\! - (-1)^m\frac {e^{-\pi m (2\sin \theta - \tan (\frac {\theta }{2}))}}{(2\cos (\frac {\theta }{2}))^k} \right| \tag{2}\cssId{bigIneq2_7pi12}{}{}\\
+ \leq \max _{|x| \leq \frac {1}{2}} e^{-2\pi m (\sin \theta - .65)} \left| \dfrac {\Delta (e^{i \theta })}{\Delta (x +.65i)} \right|^\ell \left| \dfrac {E_{k'}(e^{i \theta }) E_{14-k'}(x+.65i)}{\Delta (x+.65i) (j(x+.65i) - j(e^{i \theta }))} \right| 
+\end{multline}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ b(\theta ) = \frac {k\theta }{2}-2\pi m \cos \theta . \tag{3}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ b_{k+12}(\theta ) = \frac {(k+12)\theta }{2}-2\pi m \cos \theta \tag{4}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ b_{m+1}(\theta ) = \frac {k\theta }{2}-2\pi (m+1) \cos \theta . \tag{5}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\cos ( b_{k+12}(\theta ) - 3\pi ) = -\cos (b_{k+12}(\theta )),
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ b_{k+12}\left(\frac {\pi }{2}\right) - 3\pi = b_{m+1}\left(\frac {\pi }{2}\right) = b\left(\frac {\pi }{2}\right) = \frac {k\pi }{4} \tag{6}\cssId{startingValues}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ b_{k+12}\left(\frac {2\pi }{3}\right) - 3\pi = b_{m+1}\left(\frac {2\pi }{3}\right) = b\left(\frac {2\pi }{3}\right) + \pi . \tag{7}\cssId{endingValues}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ b(\theta ) &lt; b_{k+12}(\theta ) - 3\pi &lt; b(\theta ) + \pi ,  \tag{8}\cssId{BiggerThan1}{}{}\\
+ b(\theta ) &lt; b_{m+1}(\theta ) &lt; b(\theta ) + \pi .  \tag{9}\cssId{BiggerThan2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \alpha _2 - \beta _1 &lt; \beta _2 - \beta _1 &lt; \dfrac {2\pi }{k + 2\sqrt {3}m\pi } &lt; \dfrac {6}{m\pi } 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\alpha _3 - \beta _1 &lt; \alpha _3 - \alpha _1 &lt; \frac {4\pi }{k + 12 + 2\sqrt {3}m\pi }.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left|b_{m+1}^{''}(\theta )\right| &lt; (m+1)\pi 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \alpha _3-\alpha _1 &lt; \dfrac {4\pi }{k + 2\pi \sqrt {3} (m+1)}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \dfrac {-4(m+1){\pi }^2}{k + 2(m+1)\pi \sqrt {3}}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \pi \sqrt {3} - \dfrac {4(m+1){\pi }^2}{k + 2(m+1)\pi \sqrt {3}} &gt; 0 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left| \Delta (e^{i\theta }) \right| &lt; .00481,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left| \Delta (x + .75i) \right| &gt; 0.00721.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \left| \dfrac {\Delta (e^{i \theta })}{\Delta (x +.75i)} \right| &lt; .66713. \tag{10}\cssId{deltaQuot1.9}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \left| e^{\frac {ik \theta }{2}}G_k(e^{i \theta }) - 2\cos \left(\frac {k\theta }{2}\right) \right| &lt; 1.985. \tag{11}\cssId{texmlid1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \left| e^{\frac {ik \theta }{2}}G_k(e^{i \theta }) - 2\cos \left(\frac {k\theta }{2}\right) \right| &lt; 2.97 (.66713)^\ell . \tag{12}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\left| e^{\frac {ik \theta }{2}}G_k(e^{i \theta }) - 2\cos \left(\frac {k\theta }{2}\right) \right| &lt; C
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \dfrac {\pi C(k)}{2k} &lt; \frac {1}{2} \left( \dfrac {\pi }{k}-\dfrac {\pi }{k+12} \right), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ H_k(\theta ) = 2\cos \left(\frac {k\theta }{2}\right)+\dfrac {1}{(2\cos (\frac {\theta }{2}))^k}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+F_k(\theta ) = 2\cos \left(\frac {k\theta }{2}\right)+\dfrac {1}{(2\cos (\frac {\theta }{2}))^k} + R_k(\theta ).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ |\alpha -\alpha ^*|&lt;\frac {\pi }{3k} \tag{13}\cssId{pi3kBound}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {(7\ell +1)\pi }{k}-\frac {7\pi }{12}=\frac {\pi }{k}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {7\pi }{12}+\frac {2\pi }{k}-\frac {(7(\ell +1)+1)\pi }{k+12}=\frac {2\pi }{k}-\frac {\pi }{k+12}&gt;\frac {\pi }{k}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {\pi }{k}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ &amp;\frac {\pi }{k}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 0), \tag{14}\cssId{LotsOfLowerBounds}{}{}\\
+ &amp;\frac {5\pi }{3k}-\frac {2\pi }{3(k+12)}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 4), \\
+ &amp;\frac {3\pi }{2k}-\frac {\pi }{2(k+12)}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 6), \\
+ &amp;\frac {4\pi }{3k}-\frac {\pi }{3(k+12)}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 8), \\
+ &amp;\frac {7\pi }{6k}-\frac {\pi }{6(k+12)}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 10), \\
+ &amp;\frac {11\pi }{6k}-\frac {5\pi }{6(k+12)}-\frac {\pi }{3k}-\frac {\pi }{3(k+12)}, \ (k' = 14) . 
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \left|\frac {d}{d\theta }(H_k(\theta )+H_{k+12}(\theta ))\right| \leq 4k+24 \tag{15}\cssId{DerivBound}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \frac {2\pi }{k+6}\left(\frac {k+6}{3}-n-1\right)&amp;&lt;\frac {2\pi }{3}-\frac {(2n+1)\pi }{k}-\frac {\pi }{3k}, \\
+ \frac {2\pi }{k+6}\left(\frac {k+6}{3}-n\right)&amp;&gt;\frac {2\pi }{3}-\frac {(2n+1)\pi }{k+12}+\frac {\pi }{3(k+12)}, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 4\sin \left(3\left( \frac {2\pi }{3}-\frac {(2n+1)\pi }{k+12}\right) \right)\sin \left(\frac {k+6}{2}\left(\frac {2\pi }{3}-\frac {(2n+1)\pi }{k+12} \right) \right), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 4\sin \left(\frac {3(2n+1)\pi }{k+12} \right)\sin \left(\frac {(2n+1)(k+6)\pi }{2(k+12)}\right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {\pi }{4}&lt;\frac {(2n+1)(k+6)\pi }{2(k+12)}-n\pi &lt;\frac {\pi }{2}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ -4\sin \left(\frac {2(3n+1)\pi }{k+12} \right)\sin \left(\frac {(k+6)(3n+1)\pi }{3(k+12)} \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T_{0,6}(k,n)=\frac {1-\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}-\frac {(2n+1)\pi }{k} \right)\right)\right)^{-12}}{\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}-\frac {(2n+1)\pi }{k+12}+\frac {\pi }{3(k+12)}\right) \right)\right)^{k}}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \sin \left(\frac {2(3n+1)}{k+12}\right)-T_{0,6}(k,1). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{0,6}(k)=\frac {1}{4k+24}\left(\sin \left(\frac {3\pi }{k+12}\right)-T_{0,6}(k,1) \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 2.24(.44)^{(k-6)/12}\frac {20}{7k}&lt;\frac {1}{2}B_{0,6}(k), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T_{4,10}(k,n)=\frac {1-\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}-\frac {(6n+5)\pi }{3k} \right)\right)\right)^{-12}}{\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}-\frac {(6n+5)\pi }{3(k+12)}+ \frac {\pi }{3(k+12)}\right)\right)\right)^{k}}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{4,10}(k)=\frac {1}{4k+24}\left(\sin \left(\frac {4\pi }{3(k+12)}\right)-T_{4,10}(k,0) \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 2.24(.44)^{(k-10)/12}\frac {20}{7k}&lt;\frac {1}{2}B_{4,10}(k) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{8,14}(k)=\frac {1}{4k+24}\left(\sin \left(\frac {7\pi }{k+12} \right)-T_{8,14}(k,0) \right), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T_{8,14}(k,n)=\frac {1-\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}-\frac {(6n+7)\pi }{3k} \right)\right)\right)^{-12}}{\left(2\cos \left(\frac {1}{2}\left(\frac {2\pi }{3}- \frac {(6n+7)\pi }{3(k+12)}+\frac {\pi }{3(k+12)}\right)\right)\right)^{k}}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ 2.24(.44)^{(k-14)/12}\frac {20}{7k}&lt;\frac {1}{2}B_{8,14}(k), 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\mathcal{A}_\epsilon = \left\lbrace e^{i \theta } : \frac {\pi }{2} &lt; \theta &lt; \frac {2\pi }{3} - \epsilon \right\rbrace 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ L_{k,m}(\theta ) = \frac {k\pi }{4} + \frac {k+4m \pi }{2} \left(\theta - \frac {\pi }{2} \right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ b_{k+12}(\alpha _1)&amp;=\frac {2n_1+1}{2}\pi -R_m(\alpha _1),\\
+ b_{k+12}(\beta _1) &amp;= \frac {2n_1+1}{2}\pi ,\\
+ b(\alpha _2) &amp;= \frac {2n_2+1}{2}\pi -R_m(\alpha _2),\\
+ b(\beta _2) &amp;= \frac {2n_2+1}{2}\pi . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {R_m(\alpha _1)}{\beta _1-\alpha _1}&gt;\frac {R_m(\alpha _2)}{\beta _2-\alpha _2}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \dfrac {\pi }{k + 4m \pi } - \dfrac {\pi }{k+12 + 4m \pi } 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ b(\theta ) = L_{k,m}(\theta ) + \frac {b''(\xi )}{2}\left(\theta -\frac {\pi }{2} \right) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ L_{k,m}(\theta ) \leq b(\theta ) + \pi m \left(\frac {\pi }{k+2\pi \sqrt {3} m} \right)^2 = b(\theta ) + \frac {1}{12\pi m} - \frac {k}{12\sqrt {3}\pi ^2 m^2} + \cdots \leq b(\theta ) + \frac {1}{m}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \frac {\pi (2+k+4\pi m)}{2(k+4\pi m)} -\frac {\pi (2+k+4\pi (m+1))}{2(k+4\pi (m+1))} -\frac {2}{(m+1)(k+2\pi \sqrt {3}(m+1))}, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{multline*}
+ \left|e^{\frac {ik \theta }{2}}e^{-2\pi m\sin {\theta }}f_{k,m}(e^{i\theta }) -2\cos \left(\frac {k\theta }{2} - 2\pi m\cos {\theta }\right) \right| \\
+ &lt; 2.97 (.49)^m (.67)^\ell + \frac {e^{-\pi m (2\sin \rho - \tan (\frac {\rho }{2}))}}{(2\cos (\frac {\rho }{2}))^k}, 
+\end{multline*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {d}{d\theta }\left(2\cos (b(\theta )) \right)=-(k+4\pi m\sin \theta )\sin (b(\theta )). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \sin \left(b\left(\alpha ^* \pm \frac {\pi }{2(|k|+4\pi m)}\right)\right)=\sin x\cos y \pm \cos x\sin y, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \left|\frac {d}{d\theta }\left(2\cos (b(\theta )) \right) \right| = |\sin (b(\theta ))| |k + 4\pi m \sin \theta | &gt; E\left(k+2\sqrt {3}\pi m\right). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {1}{E(k+2\sqrt {3}\pi m)} \left( 2.97 (.49)^m (.67)^\ell + \frac {e^{-\pi m (2\sin \rho - \tan (\frac {\rho }{2}))}}{(2\cos (\frac {\rho }{2}))^k} \right) &lt; \frac {1}{2} M(k,m). 
+\end{equation*}
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:44:51 PDT 2016
+<!-- hhmts end -->
+</body> </html>

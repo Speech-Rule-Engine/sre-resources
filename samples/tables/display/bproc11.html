@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation*}
+ \lambda (2j) = \frac {1}{2} - \frac {1}{2({\lfloor n/2 \rfloor }+1-j)}; 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ F u_1 &amp;= (-1)^mv_m &amp; v_1 &amp;= Vu_m\\
+ Fv_2 &amp;= u_1 &amp; u_2 &amp;= Vv_1 \\
+ F v_3 &amp;= u_2 &amp;u_3 &amp;= Vv_2 \\
+ \vdots &amp;&amp;\vdots \\
+ F v_m &amp;= u_{m-1} &amp;u_m &amp;= V v_{m-1}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {{\langle u_i, v_j \rangle }}&amp; = (-1)^i\delta _{ij},\\
+ {{\langle u_i,u_j \rangle }} = {{\langle v_i,v_j \rangle }} &amp;= 0. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ Fv_0 &amp;= -u_0 &amp; u_0 &amp;= Vv_0. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathbb{D}}_*((X,\iota ,\lambda )[p^\infty ]) \cong M(2({\lfloor n/2 \rfloor }+1-j) \oplus N^{r(j)}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathbb{D}}_*((X,\iota ,\lambda )[p^\infty ]) \cong \begin{cases}
+ M(n), &amp; n\text{ odd}, \\
+ M(n-1) \oplus N, &amp; n\text{ even}. 
+\end{cases} 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ VM/pM &amp;= k \{v_1, u_2, u_3, \cdots , u_n\}, \\
+ M/VM &amp;= k \{u_1, v_2, v_3, \cdots , v_n\}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \operatorname {Hom}_{{\mathcal{O}}_L\otimes k}(VM/pM,M/VM) &amp;= k\{ v_1^*v_2, v_1^*v_3, \cdots , v_1^*v_n, u_2^*u_1, u_3^*u_1, \cdots , u_n^*u_1\} \\
+ &amp; \subset \operatorname {Hom}_k(VM/pM,M/VM)\\
+&amp; = (VM/pM)^* \otimes (M/VM), 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\widetilde{R}}' = k[\![t(v_1v_2), t(v_1v_3), \cdots , t(v_1v_n), t(u_2u_1), \cdots , t(u_nu_1)]\!]. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {\widetilde{F}} u_1 &amp;= -v_n &amp; v_1 &amp;= {\widetilde{V}}(u_n + {\underline {t}}(u_nu_1)u_1)\\
+ {\widetilde{F}}v_2 &amp;= u_1 &amp; u_2 &amp;= {\widetilde{V}}(v_1 +\sum _{2 \le j \le n} {\underline {t}}(v_1v_j)v_j)\\
+ {\widetilde{F}} v_3 &amp;= u_2 + {\underline {t}}(u_2u_1)u_1&amp; u_3 &amp;= {\widetilde{V}}v_2 \\
+ \vdots &amp;&amp;\vdots \\
+ {\widetilde{F}} v_n &amp;= u_{n-1}+ {\underline {t}}(u_{n-1}u_1)u_1 &amp;u_n &amp;= {\widetilde{V}} v_{n-1}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {{\langle {\widetilde{F}}x,y \rangle }} = {{\langle x, {\widetilde{V}} \rangle }}^\sigma . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {{\langle {\widetilde{F}} x, y \rangle }} &amp;= {{\langle  u_{j-1} + {\underline {t}}(u_{j-1}u_1)u_1, v_1 + \sum _{2 \le k \le n} {\underline {t}}(v_1v_k)v_k \rangle }} \\
+ &amp;= {\underline {t}}(v_1v_{j-1}){{\langle u_{j-1}, v_{j-1} \rangle }} + {\underline {t}}(u_{j-1}u_1){{\langle u_1, v_1 \rangle }} \\
+ &amp;= (-1)^{j-1}{\underline {t}}(v_1v_{j-1}) - {\underline {t}}(u_{j-1}u_1), 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {{\langle x, {\widetilde{V}}y \rangle }} &amp;= {{\langle v_j,u_2 \rangle }} \\
+ &amp;= 0. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\widetilde{R}} = k[\![s_2, \cdots , s_n]\!], 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+{\widetilde{R}} = \operatorname {Spf}k[\![s_2, \cdots ,s_n]\!].
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {\widetilde{F}} u_1 &amp;= -v_n &amp; v_1 &amp;= {\widetilde{V}}(u_n - {\underline {s}}_nu_1)\\
+ {\widetilde{F}}v_2 &amp;= u_1 &amp; u_2 &amp;= {\widetilde{V}}(v_1 +\sum _{2 \le j \le n} (-1)^j {\underline {s}}_jv_j)\\
+ {\widetilde{F}} v_3 &amp;= u_2 + {\underline {s}}_2u_1&amp; u_3 &amp;= {\widetilde{V}}v_2 \\
+ \vdots &amp;&amp;\vdots \\
+ {\widetilde{F}} v_n &amp;= u_{n-1}+ {\underline {s}}_{n-1}u_1 &amp;u_n &amp;= {\widetilde{V}} v_{n-1}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathcal{M}}^{/z}_{&lt;j} := {\mathcal{M}}^{/z} \cap ({\mathcal{M}}^\sigma \cup \bigcup _{1 \le i &lt; j} {\mathcal{M}}^{\xi _{2i}}) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathcal{M}}^{/z}_{&lt;j} = \operatorname {Spf}\frac {k[\![s_2, \cdots , s_n]\!]}{(s_{2j}, s_{2(j+1)}, \cdots , s_{2{\lfloor n/2 \rfloor }})} \subset {\mathcal{M}}^{/z} = \operatorname {Spf}k[\![s_2, \cdots , s_n]\!]. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \{u_1,v_n,u_{n-1}, v_{n-2},u_{n-3}, \cdots , v_1, u_n, v_{n-1}, u_{n-2}, \cdots , v_2, u_1\}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lambda (C) = \frac {{\mathrm{weight}}(C)}{{\mathrm{length}}(C)}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \min _{C \subset \Gamma \text{ a cycle through }u_1} \lambda (C). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \phi (s_{2j}) = \phi (s_{2(j+1)}) = \cdots = \phi (2{\lfloor n/2 \rfloor }) =0. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ {\widetilde{F}} v_0 &amp;= -u_0-{\underline {s}}_0u_1 &amp; u_0 &amp;= {\widetilde{V}} v_0 \\
+ {\widetilde{F}} u_1 &amp;= -v_{n-1} &amp; v_1 &amp;= {\widetilde{V}}(u_{n-1} - {\underline {s}}_{n-1}u_1)\\
+ {\widetilde{F}}v_2 &amp;= u_1 &amp; u_2 &amp;= {\widetilde{V}}(v_1 +\sum _{2 \le j \le n-1} (-1)^j {\underline {s}}_jv_j)\\
+ {\widetilde{F}} v_3 &amp;= u_2 + {\underline {s}}_2u_1&amp; u_3 &amp;= {\widetilde{V}}v_2 \\
+ \vdots &amp;&amp;\vdots \\
+ {\widetilde{F}} v_{n-1} &amp;= u_{n-2}+ {\underline {s}}_{n-2}u_1 &amp;u_{n-1} &amp;= {\widetilde{V}} v_{n-2}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ {\mathcal{M}}^{/z}\cap (\bigcup _{1 \le i \le j} {\mathcal{M}}^{\xi _{2i}}) = \operatorname {Spf}\frac {k[\![s_0, s_2, s_3, \cdots , s_n]\!]}{(s_{2j},s_{2(j+1)}, \cdots , s_{n})}. 
+\end{equation*}
+\]
+</P>
+
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:56:27 PDT 2016
+<!-- hhmts end -->
+</body> </html>

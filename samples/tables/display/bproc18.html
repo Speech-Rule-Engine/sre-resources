@@ -1,0 +1,664 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{align}
+ T(f)(x) = \int _{\mathbb{R}^d} K(x, y) f(y) dy .  \tag{2.1}\cssId{CZ1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ |K(x, y) - K(x', y)| &amp; + |K(y, x) - K(y, x')| \lesssim \frac {|x - x'|^\delta }{|x-y|^{d+\delta }}  \tag{2.2}\cssId{CZ2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|f\|_{\textit {BMO}} := \sup _{Q} \frac {1}{|Q|} \int _Q|f(x) - \operatorname *{ave}_Q f|dx,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\operatorname *{ave}_Q f : = \frac {1}{|Q|} \int _Q f(x) dx.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \textit {BMO}(\mathbb{R}^d) : = \big \{ f \in L^1_{\text{loc}}(\mathbb{R}^d):\, \| f \|_{\textit {BMO}} &lt; \infty \big \}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \phi ^{x_0, R}(x) = \phi \Big (\frac {x-x_0}{R}\Big ).  \tag{2.3}\cssId{scaling}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \big | \big \langle T(\phi _1^{x_1, R}), \phi _2^{x_2, R}\big \rangle \big |\lesssim R^d  \tag{2.4}\cssId{WBP1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \frac {1}{|Q|} \bigg |\int _{\widetilde{Q}} b(x) dx \bigg | \geq c_0.  \tag{2.5}\cssId{AC1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ |\widetilde{Q}| \geq \frac {c_0}{\|b\|_{L^\infty }}|Q|.  \tag{2.6}\cssId{AC2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|f\|_{C^\eta } = \sup _{x\ne y}\frac {|f(x) - f(y)|}{|x-y|^\eta }.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \langle T (M_{b_1} f), M_{b_0}g \rangle  = \int _{\mathbb{R}^{2d}} K(x, y) b_1(y) f(y) b_0(x) g(x) dx dy,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\langle  T(b_1), f \rangle  = \langle \beta , f \rangle  \quad \text{for all mean-zero }f \in b_0 C_0^\eta .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle  T(b_1), b_0 f \rangle  = \langle \beta ,b_0 f \rangle  \quad \text{for all }f \in C_0^\eta \text{ such that } \int b_0 f dx = 0.  \tag{2.7}\cssId{Tb1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+  \|T(\phi ^{x_0, R})\|_{L^2}+\|T^*(\phi ^{x_0, R})\|_{L^2}\lesssim R^\frac {d}{2} \tag{2.8}\cssId{S1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|T(b_1\phi ^{x_0, R})\|_{L^2}\lesssim R^\frac {d}{2}, \tag{2.9}\cssId{TbS1}{}{}\\
+ \|T^*(b_0\phi ^{x_0, R})\|_{L^2}\lesssim R^\frac {d}{2} . \tag{2.10}\cssId{TbS2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+|\partial _x^\alpha \partial _\xi ^\beta \sigma (x, \xi )|\lesssim (1+|\xi |)^{1-|\beta |},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+T_\sigma (f)(x)=\int _{\mathbb{R}^d} \sigma (x, \xi )f(\xi )e^{ix\cdot \xi }\,d\xi 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+[T_\sigma , M_a]=T_\sigma (af)-aT(f)
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ T(f, g)(x) = \int _{\mathbb{R}^{2d}} K(x, y, z) f(y) g(z) dy dz,  \tag{3.1}\cssId{BCZ1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+|K(x, y, z)| \lesssim \big (|x-y|+ |x-z|\big )^{-2d}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ |K(x, y, z) - K(x', y, z)| \lesssim \frac {|x - x'|^\delta }{\big (|x-y|+ |x-z|\big )^{2d+\delta }}  \tag{3.2}\cssId{BCZ2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \big | \langle T(\phi _1^{x_1, R}, \phi _2^{x_2, R}), \phi _3^{x_3, R}  \rangle  \big |\lesssim R^d  \tag{3.3}\cssId{BWBP1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \langle T (M_{b_1} f_1), M_{b_2} f_2),M_{b_0}f_0 \rangle  = \int _{\mathbb{R}^{3d}} K(x, y, z) b_0(x) f_0(x) b_1(y) f_1(y) b_2(z) f_2(z) dx dy dz,  \tag{3.4}\cssId{tri1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|T(b_1\phi ^{x_1, R}, b_2\phi ^{x_2, R})\|_{L^2}\lesssim R^\frac {d}{2}, \tag{3.5}\cssId{BTbS1}{}{}\\
+ \|T^{*1}(b_0\phi ^{x_0, R}, b_2\phi ^{x_2, R})\|_{L^2}\lesssim R^\frac {d}{2}, \tag{3.6}\cssId{BTbS2}{}{}\\
+ \|T^{*2}(b_1\phi ^{x_1, R}, b_0\phi ^{x_0, R})\|_{L^2}\lesssim R^\frac {d}{2}  \tag{3.7}\cssId{BTbS3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|T(b_1\phi ^{x_0, R})\|_{L^2} \lesssim \|b_1\|_{L^\infty }\|\phi ^{x_0, R}\|_{L^2} \lesssim R^\frac {d}{2}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \big | \big \langle M_{b_0}T M_{b_1}( \phi _1^{x_1, R}), \phi _2^{x_2, R}\big \rangle \big | \lesssim \|b_0\|_{L^\infty } \|T (b_1 \phi _1^{x_1, R})\|_{L^2}\|\phi _2^{x_2, R}\|_{L^2} \lesssim R^d 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(f), g \rangle  :&amp; = \langle T(f \psi ), g \rangle  + \langle T(f(1-\psi )), g \rangle  \\
+ &amp; = \langle T(f \psi ), g \rangle  + \int _{\mathbb{R}^{2d}} \big [K(x, y) - K(x_0, y)\big ] f(y)(1-\psi (y)) g(x)dx dy.  \tag{4.1}\cssId{L1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(b_1), g \rangle  = \lim _{R \to \infty } \langle T(b_1\phi _R), g \rangle .  \tag{4.2}\cssId{L2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(b_1\phi _R), g \rangle  = \langle T(b_1\psi \phi _R), g \rangle  + \langle T(b_1(1-\psi ) \phi _R), g \rangle .  \tag{4.3}\cssId{L3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(b_1\psi \phi _R), g \rangle  = \langle T(b_1\psi ), g \rangle   \tag{4.4}\cssId{L4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \lim _{R \to \infty } \langle T&amp; (b_1 (1-\psi ) \phi _R), g \rangle  = \lim _{R \to \infty }\int _{\mathbb{R}^{2d}} K(x, y) b_1(y) (1-\psi (y)) \phi _R(y) g(x) dy dx \\
+ &amp; = \lim _{R \to \infty }\int _{\mathbb{R}^{2d}} \big [K(x, y)- K(x_0, y)\big ] b_1(y) (1-\psi (y)) \phi _R(y) g(x) dy dx \\
+ &amp; = \int _{\mathbb{R}^{2d}} \big [K(x, y)- K(x_0, y)\big ] b_1(y) (1-\psi (y)) g(x) dy dx \\
+ &amp; = \langle T(b_1 (1-\psi )), g \rangle ,  \tag{4.5}\cssId{L5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|T(b_1 \phi _R)\|_{\textit {BMO}} \lesssim 1,  \tag{4.6}\cssId{L6}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \lim _{j \to \infty } \langle T(b_1\phi _{R_j}), g \rangle  = \langle \beta , g \rangle   \tag{4.7}\cssId{L7}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ T(b_1\phi _R) = T(b_1 \phi _Q\phi _R) + T\big (b_1 (1-\phi _Q)\phi _R\big ),  \tag{4.8}\cssId{L8}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \phi _Q(x)\phi _R(x) = \phi (\tfrac {R}{r}\tfrac {x}{R}-\tfrac {x_0}{r}\big )\phi \big (\tfrac {x}{R}\big ) = [ \psi _1 \phi ]^{0, R}(x)  \tag{4.9}\cssId{L8a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \int _{Q} \big |T(b_1 \phi _Q \phi _R) \big | dx \leq |Q|^\frac {1}{2} \big \|T\big (b_1 [\psi _1 \phi ]^{0, R}\big )\big \|_{L^2} \lesssim R^\frac {d}{2} |Q|^\frac {1}{2} \lesssim |Q|.  \tag{4.10}\cssId{L9a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \phi _Q(x) \phi _R(x) = \phi (\tfrac {x-x_0}{r}\big ) \phi \big (\tfrac {r}{R} \tfrac {x-x_0}{r} + \tfrac {x_0}{R}\big ) = [\phi \psi _2]^{x_0, r}(x)  \tag{4.11}\cssId{L8b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \int _{Q} \big |T(b_1 \phi _Q \phi _R) \big | dx \leq |Q|^\frac {1}{2} \big \|T\big (b_1 [\phi \psi _2]^{x_0, r}\big )\big \|_{L^2} \lesssim R^\frac {d}{2} |Q|^\frac {1}{2} \lesssim |Q|.  \tag{4.12}\cssId{L9b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \operatorname *{supp}(1- \phi _Q) \subset \mathbb{R}^d \setminus B_{x_0}( 3 \operatorname {diam}(Q)) \subset \mathbb{R}^d \setminus Q,  \tag{4.13}\cssId{L10}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T\big (b_1 (1-\phi _Q)\phi _R\big )(x) = \int _{\mathbb{R}^d} K(x, y) b_1(y) \big (1- \phi _Q(y) \big ) \phi _R(y) dy,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ c_{Q, R} : = \int _{\mathbb{R}^d} K(x_0, y) b_1(y) \big (1- \phi _Q(y)\big )\phi _R(y) dy,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \big | T\big (b_1 (1-\phi _Q) \phi _R\big )(x) - c_{Q, R}\big | &amp; \leq \int _{|x - x_0| \leq \operatorname {diam}(Q) \leq \frac 12 |x - y|} |K(x, y) - K(x_0, y)| dy \\
+ &amp; \lesssim 1  \tag{4.14}\cssId{L11}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \frac {1}{|Q|}\int _Q | T(b_1\phi _R)(x) - c_{Q, R}\big | dx \leq A. \tag{4.15}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \sup _{R&gt;0} \|T(b_1\phi _R) \|_{\textit {BMO}} \leq 2A.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|T(b_1\phi ^{x_1, R}, b_2\phi ^{x_2, R} )\|_{L^2} \lesssim \|b_1\|_{L^\infty }\|\phi ^{x_1, R}\|_{L^4} \|b_2\|_{L^\infty }\|\phi ^{x_2, R}\|_{L^4} \lesssim R^\frac {d}{2} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \big | \langle M_{b_0}T (b_1 \phi _1^{x_1, R}, b_2\phi _2^{x_2, R}), \phi _0^{x_0, R} \rangle  \big | \lesssim \|b_0\|_{L^\infty } \| T (b_1 \phi _1^{x_1, R}, b_2\phi _2^{x_2, R})\|_{L^2} \| \phi _0^{x_0, R} \|_{L^2} \lesssim R^d 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(f_1, f_2), g \rangle  &amp; := \langle T(f_1 \psi , f_2 \psi ), g \rangle  + \langle T(f_1 (1-\psi ), f_2 \psi ), g \rangle  \\
+ &amp; \hphantom {XX} + \langle T(f_1 \psi , f_2 (1-\psi ) ), g \rangle  + \langle T(f_1 (1-\psi ), f_2 (1-\psi ) ), g \rangle .  \tag{5.1}\cssId{B1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \langle T(b_1, b_2), g \rangle  = \lim _{R \to \infty } \langle T(b_1\phi _R, b_2\phi _R), g \rangle   \tag{5.2}\cssId{B2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|T(b_1 \phi _R, b_2 \phi _R)\|_{\textit {BMO}} \lesssim 1,  \tag{5.3}\cssId{B3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \lim _{j \to \infty } \langle T(b_1\phi _{R_j}, b_2 \phi _{R_j}), g \rangle  = \langle \beta , g \rangle   \tag{5.4}\cssId{B4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ T(b_1\phi _R, b_2 \phi _R) &amp; = T(b_1 \phi _Q\phi _R, b_2 \phi _Q\phi _R) + T\big (b_1 (1-\phi _Q)\phi _R, b_2 \phi _Q\phi _R\big )\\
+ &amp; \hphantom {X} + T\big (b_1 \phi _Q\phi _R, b_2 (1-\phi _Q)\phi _R\big ) + T\big (b_1 (1-\phi _Q)\phi _R, b_2 (1-\phi _Q)\phi _R\big ) \\
+ &amp; := \hspace{0.5mm}\text{I}\hspace{0.5mm}+\text{I   I} + \text{I   I   I}+ \text{I   V}.  \tag{5.5}\cssId{B5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \int _{Q} |\hspace{0.5mm}\text{I}\hspace{0.5mm}| dx \leq \begin{cases}
+ \vphantom {\Big |} |Q|^\frac {1}{2} \big \|T\big (b_1 [\psi _1\phi ]^{0, R}, b_2 [\psi _1\phi ]^{0, R}\big )\big \|_{L^2} \lesssim |Q|, &amp; \text{when }R\leq r, \\
+ \vphantom {\Big |} |Q|^\frac {1}{2} \big \|T\big (b_1 [\phi \psi _2]^{x_0, r}, b_2 [\phi \psi _2]^{x_0, r}\big )\big \|_{L^2} \lesssim |Q|, &amp; \text{when }R&gt; r.\\
+ 
+\end{cases}  \tag{5.6}\cssId{B6}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \text{I   I} (x) = \int _{\mathbb{R}^{2d}} K(x, y, z) b_1(y) \phi ^c_Q(y)\phi _R(y) b_2(z) \phi _Q(z) \phi _R(z) dydz 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ c^{(2)}_{Q, R} : = \int _{\mathbb{R}^{2d}} K(x_0, y, z) b_1(y) \phi ^c_Q(y)\phi _R(y) b_2(z) \phi _Q(z) \phi _R(z) dydz, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ | \text{I   I} (x) - c^{(2)}_{Q, R}\big | &amp; \leq \int _{\operatorname *{supp}\phi _Q}\int _{|x - x_0| \leq \operatorname {diam}(Q) \leq \frac 12 |x - y|} |K(x, y, z) - K(x_0, y, z)| dy dz \\
+ &amp; \lesssim 1  \tag{5.7}\cssId{B7}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ c^{(4)}_{Q, R} : = \int _{\mathbb{R}^{2d}} K(x_0, y, z) b_1(y) \phi ^c_Q(y)\phi _R(y) b_2(z) \phi _Q^c(z) \phi _R(z) dydz, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ | \text{I   V}(x) - c^{(4)}_{Q, R}\big | &amp; \leq \int _{|x - x_0| \leq \operatorname {diam}(Q) \leq \frac 12 \min ( |x - y|, |x-z|)} |K(x, y, z) - K(x_0, y, z)| dy dz \\
+ &amp; \lesssim 1  \tag{5.8}\cssId{B8}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \frac {1}{|Q|}\int _Q | T(b_1\phi _R, b_2\phi _R)(x) - \widetilde{c}_{Q, R}\big | dx \leq A, \tag{5.9}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \text{(i)} &amp; \quad |s_k(x, y)| \leq C 2^{kd}, \quad \text{for all }x, y \in \mathbb{R}^d,\\
+ \text{(ii)} &amp; \quad s_k(x, y) = 0, \quad \text{if } |x- y|\geq C2^{-k},\\
+ \text{(iii)} &amp; \quad s_k(x, y) = s_k(y, x), \quad \text{for all } x, y \in \mathbb{R}^d, \\
+ \text{(iv)} &amp; \quad |s_k(x, y) - s_k(x', y)|\leq C2^{k(d+\alpha )}|x-x'|, \quad \text{for all } x, x', y \in \mathbb{R}^d, \\
+ \text{(v)} &amp; \quad \textstyle \int s_k(x, y)b(y) dy = 1, \quad \text{for all } x \in \mathbb{R}^d. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \frac {1}{|\widetilde{Q}|} \bigg |\int _{\widetilde{Q}} b(x) dx\bigg | \geq \varepsilon .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \mathrm{(i)} &amp; \quad |u_k(x, y)| \leq C 2^{kd}, \quad \text{for all }x, y \in \mathbb{R}^d,\\
+ \mathrm{(ii)} &amp; \quad u_k(x, y) = 0, \quad \text{if } |x- y|\geq C2^{-k},\\
+ \mathrm{(iii)} &amp; \quad |u_k(x, y) - u_k(x, y')|\leq C2^{k(d+\delta )}|y-y'|, \quad \text{for all } x, y, y' \in \mathbb{R}^d, \\
+ \mathrm{(iv)} &amp; \quad \text{for all } x \in \mathbb{R}^d, \\
+ &amp; \hphantom {XXXXX} \frac {1}{C} \leq \bigg |\int u_k(x, y)b(y) dy\bigg |\leq C. \quad 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \mathrm{(v)} &amp; \quad \int v_k(x, y) dy = 1, \quad \text{for all } x \in \mathbb{R}^d,\\
+ \mathrm{(vi)} &amp; \quad \int v_k(x, y) dx = 1, \quad \text{for all } y \in \mathbb{R}^d, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 10\cdot N2^{-k} \leq \ell (Q) \leq 20\cdot N2^{-k}.  \tag{A.1}\cssId{M1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \frac {1}{|Q_2|}\bigg |\int _{Q_2}b(x)dx\bigg |\geq \varepsilon .  \tag{A.2}\cssId{M2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \frac {1}{|Q|}\bigg |\int _{Q_2}b(x)dx\bigg |\geq \frac {\varepsilon }{(20N)^d}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 2^{kd} \bigg |\int \mathbf{1}_{\widetilde{Q}^x_k}(y) b(y) dy \bigg | \geq c_0.  \tag{A.3}\cssId{N1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \ell _{x, k}:= \ell (\widetilde{Q}^x_k) \geq c_1\ell (Q^x_k) = c_12^{-k}, \qquad \text{where }c_1 = c_1(b):= \bigg (\frac {c_0}{\|b\|_{L^\infty }}\bigg )^\frac {1}{d}.  \tag{A.4}\cssId{N2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \mathbf{1}_{\widetilde{Q}^x_k}(y) = \mathbf{1}_{Q_0}(\ell _{x, k}^{-1} (y-\widetilde{x})),  \tag{A.5}\cssId{N3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \mathbf{1}_{\widetilde{Q}^x_k}*\phi _\varepsilon (y) &amp; = \int \mathbf{1}_{\widetilde{Q}^x_k}(y-z)\phi _\varepsilon (z)dz = \ell ^{-d}_{x, k} \int \mathbf{1}_{Q_0}(\ell ^{-1}_{x, k}(y-\widetilde{x}-z))\phi _h(\ell ^{-1}_{x, k}z)dz \\
+ &amp; = \mathbf{1}_{Q_0}*\phi _h(\ell ^{-1}_{x, k}(y-\widetilde{x})).  \tag{A.6}\cssId{N4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 2^{kd} \bigg |\int \mathbf{1}_{\widetilde{Q}^x_k}*\phi _\varepsilon (y) - \mathbf{1}_{\widetilde{Q}^x_k}(y)dy\bigg | &amp; = \frac {|\widetilde{Q}^x_k|}{|Q^x_k|} \bigg |\int \mathbf{1}_{\widetilde{Q}_0}*\phi _h(y) - \mathbf{1}_{\widetilde{Q}_0}(y)dy\bigg |\\
+ &amp; \leq \bigg |\int \mathbf{1}_{\widetilde{Q}_0}*\phi _h(y) - \mathbf{1}_{\widetilde{Q}_0}(y)dy\bigg | \leq \frac {c_0}{2 \|b\|_{L^\infty }},  \tag{A.7}\cssId{N5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 2^{kd} \bigg |\int \mathbf{1}_{\widetilde{Q}^x_k}*\phi _{h \ell _{x, k}}(y)b(y) dy\bigg | \geq \frac {1}{2}c_0.  \tag{A.8}\cssId{N6}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ u_k (x, y) := |Q_k|^{-1} \mathbf{1}_{\widetilde{Q}^x_k}*\phi _{h \ell _{x, k}}(y) = 2^{kd} \mathbf{1}_{\widetilde{Q}^x_k}*\phi _{h \ell _{x, k}}(y).  \tag{A.9}\cssId{N7}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \frac {1}{2}c_0 \leq \bigg |\int u_k(x, y)b(y) dy\bigg | \leq \frac {|\widetilde{Q}^x_k|}{|Q^x_k|} \|\phi _{h\ell _{x, k}}\|_{L^1} \|b\|_{L^\infty } \leq \|b\|_{L^\infty } 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ |u_k(x, y) -u_k(x, y')| &amp; \leq 2^{kd}\|\mathbf{1}_{\widetilde{Q}^x_k}*\partial (\phi _{h \ell _{x, k}})\|_{L^\infty } |y-y'|\\
+ &amp; \leq \alpha 2^{kd}|\widetilde{Q}^x_k| (h \ell _{x, k})^{-d-1} |y - y'| \\
+ &amp; \leq \alpha c_1^{-1} h^{-d-1} 2^{k(d+1)} |y - y'| 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|u_k(x, y)\|_{L^\infty } \leq 2^{kd} \|\mathbf{1}_{\widetilde{Q}^x_k}\|_{L^1} \|\phi _{h \ell _{x, k}}\|_{L^\infty } \leq \alpha 2^{kd} |\widetilde{Q}^x_k| (h\ell _{x, k})^{-d} = \alpha h^{-d} 2^{kd} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ u_k (x, y) = 2^{kd} \mathbf{1}_{Q_0}*\phi _h(\ell ^{-1}_{x, k}(y-\widetilde{x})) = 0  \tag{A.10}\cssId{N8}{}{}
+\end{align}
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:45:14 PDT 2016
+<!-- hhmts end -->
+</body> </html>

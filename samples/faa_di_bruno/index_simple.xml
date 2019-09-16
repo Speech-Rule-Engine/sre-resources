@@ -1,0 +1,20 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle scriptlevel="1">
+    <mtable rowspacing="0.1em" columnspacing="0em" displaystyle="false">
+      <mtr>
+        <mtd>
+          <mi>a</mi>
+          <mo>=</mo>
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>b</mi>
+          <mo>=</mo>
+          <mn>2</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mstyle>
+</math>

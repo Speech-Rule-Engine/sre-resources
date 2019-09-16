@@ -1,0 +1,229 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mi>D</mi>
+    <mi>x</mi>
+    <mi>n</mi>
+  </msubsup>
+  <mi>w</mi>
+  <mo>=</mo>
+  <munder>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mn>0</mn>
+      <mo>&#x2264;<!-- ≤ --></mo>
+      <mi>j</mi>
+      <mo>&#x2264;<!-- ≤ --></mo>
+      <mi>n</mi>
+    </mrow>
+  </munder>
+  <munder>
+    <mo>&#x2211;<!-- ∑ --></mo>
+    <mrow class="MJX-TeXAtom-ORD">
+      <munder>
+        <mrow class="MJX-TeXAtom-OP MJX-fixedlimits">
+          <munder>
+            <mstyle scriptlevel="1">
+              <mtable rowspacing="0.1em" columnspacing="0em" displaystyle="false">
+                <mtr>
+                  <mtd>
+                    <mstyle displaystyle="false" scriptlevel="1">
+                      <msub>
+                        <mi>k</mi>
+                        <mn>1</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <msub>
+                        <mi>k</mi>
+                        <mn>2</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <mo>&#x22EF;<!-- ⋯ --></mo>
+                      <mo>+</mo>
+                      <msub>
+                        <mi>k</mi>
+                        <mi>n</mi>
+                      </msub>
+                      <mo>=</mo>
+                      <mi>j</mi>
+                    </mstyle>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mstyle displaystyle="false" scriptlevel="1">
+                      <msub>
+                        <mi>k</mi>
+                        <mn>1</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <mn>2</mn>
+                      <msub>
+                        <mi>k</mi>
+                        <mn>2</mn>
+                      </msub>
+                      <mo>+</mo>
+                      <mo>&#x22EF;<!-- ⋯ --></mo>
+                      <mo>+</mo>
+                      <mi>n</mi>
+                      <msub>
+                        <mi>k</mi>
+                        <mi>n</mi>
+                      </msub>
+                      <mo>=</mo>
+                      <mi>n</mi>
+                    </mstyle>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mstyle displaystyle="false" scriptlevel="1">
+                      <msub>
+                        <mi>k</mi>
+                        <mn>1</mn>
+                      </msub>
+                      <mo>,</mo>
+                      <msub>
+                        <mi>k</mi>
+                        <mn>2</mn>
+                      </msub>
+                      <mo>,</mo>
+                      <mo>&#x2026;<!-- … --></mo>
+                      <mo>,</mo>
+                      <msub>
+                        <mi>k</mi>
+                        <mi>n</mi>
+                      </msub>
+                      <mo>&#x2265;<!-- ≥ --></mo>
+                      <mn>0</mn>
+                    </mstyle>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </mstyle>
+            <mo>&#x23DF;<!-- ⏟ --></mo>
+          </munder>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mtext>lower constraint
+        1</mtext>
+          </mstyle>
+        </mrow>
+      </munder>
+    </mrow>
+  </munder>
+  <msubsup>
+    <mi>D</mi>
+    <mi>u</mi>
+    <mi>j</mi>
+  </msubsup>
+  <mi>w</mi>
+  <mfrac>
+    <mover>
+      <mrow class="MJX-TeXAtom-OP MJX-fixedlimits">
+        <mover>
+          <mrow>
+            <mi>n</mi>
+            <mo>!</mo>
+            <msup>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">(</mo>
+                <msubsup>
+                  <mi>D</mi>
+                  <mi>x</mi>
+                  <mn>1</mn>
+                </msubsup>
+                <mi>u</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mo>&#x22EF;<!-- ⋯ --></mo>
+            <msup>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">(</mo>
+                <msubsup>
+                  <mi>D</mi>
+                  <mi>x</mi>
+                  <mi>n</mi>
+                </msubsup>
+                <mi>u</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msub>
+                  <mi>k</mi>
+                  <mi>n</mi>
+                </msub>
+              </mrow>
+            </msup>
+          </mrow>
+          <mo>&#x23DE;<!-- ⏞ --></mo>
+        </mover>
+      </mrow>
+      <mrow class="MJX-TeXAtom-ORD">
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mtext>&#xA0;numerator 1</mtext>
+        </mstyle>
+      </mrow>
+    </mover>
+    <munder>
+      <mrow class="MJX-TeXAtom-OP MJX-fixedlimits">
+        <munder>
+          <mrow>
+            <msub>
+              <mi>k</mi>
+              <mn>1</mn>
+            </msub>
+            <mo>!</mo>
+            <msup>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">(</mo>
+                <mn>1</mn>
+                <mo>!</mo>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msub>
+                  <mi>k</mi>
+                  <mn>1</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mo>&#x22EF;<!-- ⋯ --></mo>
+            <msub>
+              <mi>k</mi>
+              <mi>n</mi>
+            </msub>
+            <mo>!</mo>
+            <msup>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo stretchy="false">(</mo>
+                <mi>n</mi>
+                <mo>!</mo>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow class="MJX-TeXAtom-ORD">
+                <msub>
+                  <mi>k</mi>
+                  <mi>n</mi>
+                </msub>
+              </mrow>
+            </msup>
+          </mrow>
+          <mo>&#x23DF;<!-- ⏟ --></mo>
+        </munder>
+      </mrow>
+      <mrow class="MJX-TeXAtom-ORD">
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mtext>denominator 1</mtext>
+        </mstyle>
+      </mrow>
+    </munder>
+  </mfrac>
+</math>

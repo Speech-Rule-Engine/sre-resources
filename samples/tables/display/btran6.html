@@ -1,0 +1,2474 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  MMLorHTML: {MSIE: "HTML"},
+  AssistiveMML: {disabled: true},
+"fast-preview": {disabled: true},
+tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)']]
+  },
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+<title></title>
+</head>
+
+<body>
+
+
+<P>
+\[
+\begin{equation}
+ \begin{cases}
+ i \partial _t u + \Delta u = \pm \mathcal{N}(u),\\
+ u\big |_{t = 0} = u_0 \in H^s(\mathbb{R}^d), 
+\end{cases} \qquad ( t, x) \in \mathbb{R}\times \mathbb{R}^d, \tag{1.1}\cssId{NLS1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ u_\mu (t, x) := \mu ^{-1} u (\mu ^{-2}t, \mu ^{-1}x)  \tag{1.2}\cssId{scaling}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u_{0, \mu }\|_{\dot{H}^s(\mathbb{R}^d)} = \mu ^{\frac {d-2}{2} - s}\|u_0\|_{\dot{H}^s(\mathbb{R}^d)} .  \tag{1.3}\cssId{scaling2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \text{Mass: }&amp; M[u](t) := \int _{\mathbb{R}^d} |u(t, x)|^2 dx,\\
+ \text{Momentum: }&amp; P[u](t) := \operatorname *{Im}\int _{\mathbb{R}^d} u (t, x)\overline {\nabla u(t, x)} dx,\\
+ \text{Hamiltonian: } &amp; H[u](t) := \frac 12 \int _{\mathbb{R}^d} |\nabla u(t, x)|^2 dx \pm \frac 14 \int _{\mathbb{R}^d} |u(t, x)|^4 dx. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_0^\omega (x) = \sum _{n \in \mathbb{Z}^2} \frac {g_n(\omega )}{\sqrt {1+|n|^2}}e^{i n \cdot x},  \tag{1.4}\cssId{I1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u_0^\omega (x) = \sum _{n = 1}^\infty g_n (\omega ) c_n e_n(x).  \tag{1.5}\cssId{I2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \operatorname *{supp}\psi \subset [-1,1]^d \qquad \text{and} \qquad \sum _{n \in \mathbb{Z}^d} \psi (\xi -n) \equiv 1 \ \text{ for any }\xi \in \mathbb{R}^d.  \tag{1.6}\cssId{mod1a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u\|_{M_s^{p, q}(\mathbb{R}^d)} := \big \| \langle n \rangle ^s \|\psi (D-n) u \|_{L_x^p(\mathbb{R}^d)} \big \|_{\ell ^q_n(\mathbb{Z}^d)}  \tag{1.7}\cssId{mod2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+  \|u\|_{B^s_{p, q}(\mathbb{R}^d) } = \big \| 2^{js} \|\varphi _j(D) u \|_{L^p(\mathbb{R}^d)} \big \|_{\ell ^q_j(\mathbb{Z}_{\geq 0})}. \tag{1.8}\cssId{besov1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \phi = \sum _{n \in \mathbb{Z}^d} \psi (D-n) \phi ,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \phi ^\omega : = \sum _{n \in \mathbb{Z}^d} g_n (\omega ) \psi (D-n) \phi .  \tag{1.9}\cssId{R1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \bigg | \int _{\mathbb{R}} e^{\gamma x } d \mu _n^{(j)}(x) \bigg | \leq e^{c\gamma ^2}  \tag{1.10}\cssId{R2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ s_d := \frac {d-1}{d+1}\cdot s_\mathrm{crit} = \frac {d-1}{d+1} \cdot \frac {d-2}{2}.  \tag{1.11}\cssId{Sd1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ S(t) \phi ^\omega + C([-T, T]: H^{\frac {d-2}{2}} (\mathbb{R}^d)) \subset C([-T, T]:H^s(\mathbb{R}^d)).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \begin{cases}
+ i \partial _tv + \Delta v = \pm |v + z|^2(v+z),\\
+ v|_{t = 0} = 0. 
+\end{cases}  \tag{1.12}\cssId{NLS2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+u|_{t = 0} = \varepsilon \phi ^\omega 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \varepsilon S(t) \phi ^\omega + C(\mathbb{R}: H^{\frac {d-2}{2}} (\mathbb{R}^d)) \subset C(\mathbb{R}:H^s(\mathbb{R}^d)).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \| u(t) - S(t)(\varepsilon \phi ^\omega + v_+^\omega ) \|_{H^\frac {d-2}{2}(\mathbb{R}^d)} \to 0
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v(t) \|_{L^\infty ([0, T]; H^\frac {d-2}{2}(\mathbb{R}^d))} \leq R(T, \varepsilon ).  \tag{1.13}\cssId{HypA}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| w\|_{L^{d+2}_{t, x}([0, T]\times \mathbb{R}^d)} \leq C\big (\|w_0\|_{H^\frac {d-2}{2}(\mathbb{R}^d)}, T\big )  \tag{1.14}\cssId{HypB}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| w\|_{L^{d+2}_{t, x}(\mathbb{R}\times \mathbb{R}^d)} \leq C\Big (\|w\|_{L^\infty _t \dot{H}_x^\frac {d-2}{2}(\mathbb{R}\times \mathbb{R}^d)}\Big ).  \tag{1.15}\cssId{HypC}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ S(t) \phi ^\omega + C(\mathbb{R}: H^{\frac {d-2}{2}} (\mathbb{R}^d)) \subset C(\mathbb{R}:H^s(\mathbb{R}^d)).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \mathcal{E}[v](t) = \frac 12 \int _{\mathbb{R}^4} |\partial _tv(t, x)|^2 dx + \frac 12 \int _{\mathbb{R}^4}|\nabla v(t, x)|^2 dx + \frac 14 \int _{\mathbb{R}^4} |v(t, x)|^4 dx. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \psi ^\mu (\xi ) = \psi (\mu ^{-1} \xi ).  \tag{1.16}\cssId{psi}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \phi = \sum _{n \in \mathbb{Z}^d} \psi ^\mu (D- \mu n) \phi .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \phi ^{\omega , \mu } : = \sum _{n \in \mathbb{Z}^d} g_n (\omega ) \psi ^\mu (D- \mu n) \phi ,  \tag{1.17}\cssId{R3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ S(t) \phi ^\omega + C(\mathbb{R}: H^{\frac {d-2}{2}} (\mathbb{R}^d)) \subset C(\mathbb{R}:H^s(\mathbb{R}^d)).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \| u(t) - S(t)( \phi ^{\omega , \mu } + v_+^\omega ) \|_{H^\frac {d-2}{2}(\mathbb{R}^d)} \to 0
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+  u_0^\omega (x) = \sum _{n \in \mathbb{Z}^d} \frac {g_n(\omega )}{(1+|n|^2)^\frac {\alpha }{2}}e^{i n \cdot x}, \tag{1.18}\cssId{I3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \frac {2}{q} + \frac {d}{r} = \frac {d}{2}  \tag{2.1}\cssId{Admin}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| S(t) \phi \|_{L^q_t L^r_x (\mathbb{R}\times \mathbb{R}^d)} \lesssim \|\phi \|_{L^2_x(\mathbb{R}^d)}.  \tag{2.2}\cssId{Str0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| S(t) \phi \|_{L^p_{t, x} (\mathbb{R}\times \mathbb{R}^d)} \lesssim \big \||\nabla |^{\frac d2 - \frac {d+2}{p}}\phi \big \|_{L^2_x(\mathbb{R}^d)}  \tag{2.3}\cssId{Str0a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| S(t) \phi \|_{L^p_{t, x} (\mathbb{R}\times \mathbb{R}^d)} \lesssim N^{\frac d2 - \frac {d+2}{p}}\|\phi \|_{L^2_x(\mathbb{R}^d)},  \tag{2.4}\cssId{Str0b}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ P\Big ( \|S(t) \phi ^\omega \|_{L^q_t L^r_x([0, T]\times \mathbb{R}^d)}&gt; \lambda \Big ) \leq C\exp \bigg (-c \frac {\lambda ^2}{ T^\frac {2}{q}\|\phi \|_{L^2}^{2}}\bigg ) 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|S(t) \phi ^\omega \|_{L^q_tL^r_x([0, T]\times \mathbb{R}^d)} \lesssim T^\theta  \tag{2.5}\cssId{Str1a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {1}{ T^{2(\frac {1}{q}-\theta )}\|\phi \|_{L^2}^{2}}\bigg ). 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ P\Big ( \|S(t) \phi ^\omega \|_{L^q_t L^{\widetilde{r}}_x ( \mathbb{R}\times \mathbb{R}^d)} &gt; \lambda \Big ) \leq Ce^{-c \lambda ^2 \|\phi \|_{L^2}^{-2}}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|S(t) \phi ^\omega \|_{L^q_t L^{\widetilde{r}}_x ( \mathbb{R}\times \mathbb{R}^d)} \lesssim \Big ( \log \frac {1}{\varepsilon }\Big )^\frac {1}{2} \|\phi \|_{L^2(\mathbb{R}^d)} 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ P\Big ( \| \phi ^\omega \|_{ H^s( \mathbb{R}^d)} &gt; \lambda \Big ) \leq C e^{-c \lambda ^2 \|\phi \|_{ H^s}^{-2}}.  \tag{2.6}\cssId{Hs1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u \|_{\dot{S}^{s_\mathrm{crit}}(I)} := \sup \Big \{ \big \| |\nabla |^\frac {d-2}{2} u \big \|_{L^q_tL^r_x(I\times \mathbb{R}^d) }\Big \},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ a = \sum _{k = 1}^K \phi _{k - 1} \chi _{[t_{k-1}, t_k)}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ u = \sum _{j = 1}^\infty \lambda _j a_j, \quad \text{ where $a_j$'s are $U^p$-atoms and $\{\lambda _j\}_{j \in \mathbb{N}}\in \ell ^1(\mathbb{N}; \mathbb{C})$},  \tag{3.1}\cssId{X1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{U^p(\mathbb{R}; H)} : = \inf \Big \{ \|{ \mathbf{\lambda }} \|_{\ell ^1} : (<xref rid="X1" ref-type="disp-formula">3.1</xref>) \text{ holds with } \lambda = \{\lambda _j \}_{j \in \mathbb{N}} \text{ and some $U^p$-atoms } a_j\Big \}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{V^p(\mathbb{R}; H)} := \sup _{\{t_k\}_{k = 0}^K \in \mathcal{Z}} \bigg (\sum _{k = 1}^K\|u(t_k) - u(t_{k-1})\|_H^p\bigg )^\frac {1}{p}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u \|_{U^p_\Delta H^s} := \|S(-t) u\|_{U^p(\mathbb{R}; H^s)} \quad \text{and} \quad \|u \|_{V^p_\Delta H^s} := \|S(-t) u\|_{V^p(\mathbb{R}; H^s)}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ U^p(\mathbb{R}; H) \hookrightarrow V^p_\text{rc}(\mathbb{R}; H) \hookrightarrow U^q(\mathbb{R}; H) \hookrightarrow L^\infty (\mathbb{R}; H) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \big \| T(S(t) \phi _1, \dotsc , S(t) \phi _k)\big \|_{L^p_t L^q_x(\mathbb{R}\times \mathbb{R}^d)} \lesssim \prod _{j = 1}^k \|\phi _j\|_{L^2_x}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \big \| T(u_1, \dotsc , u_k)\big \|_{L^p_t L^q_x(\mathbb{R}\times \mathbb{R}^d)} \lesssim \prod _{j = 1}^k \|u_j\|_{U^p_\Delta L^2_x}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|T(u_1, \dotsc , u_k)\|_{E} \leq C_1 \prod _{j = 1}^k \|u_j\|_{U^{p_j}}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|T(u_1, \dotsc , u_k)\|_{E} \leq C_2 \prod _{j = 1}^k \|u_j\|_{U^{2}}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|T(u_1, \dotsc , u_k)\|_{E} \leq C_2 \bigg (\ln \frac {C_1}{C_2}+ 1\bigg )^k \prod _{j = 1}^k \|u_j\|_{V^2}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\eta _N(\xi ) = \eta \bigg (\frac {|\xi |}{N}\bigg ) - \eta \bigg (\frac {2|\xi |}{N}\bigg )
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u \|_{X^s (\mathbb{R})} : = \bigg ( \sum _{\begin{subarray}
+{c}N\geq 1\\
+\mathrm{dyadic}
+\end{subarray}} N^{2s} \| \mathbf{P}_N u \|_{U^2_{\Delta }L^2}^2 \bigg )^\frac {1}{2}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u \|_{Y^s(\mathbb{R})} : = \bigg ( \sum _{\begin{subarray}
+{c}N\geq 1\\
+\mathrm{dyadic}
+\end{subarray}} N^{2s} \| \mathbf{P}_N u\|_{V^2_\Delta L^2}^2\bigg )^\frac {1}{2}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ U^2_\Delta H^s \hookrightarrow X^s \hookrightarrow Y^s \hookrightarrow V^2_\Delta H^s \hookrightarrow U^p_\Delta H^s \tag{3.2}\cssId{inclusions}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u \|_{X^s(I)} = \inf \big \{ \|v\|_{X^s(\mathbb{R})}: \, v|_I = u\big \}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| F\|_{N^s(I)} = \bigg \|\int _{t_0}^t S(t - t') F(t') dt'\bigg \|_{X^s(I)}. \tag{3.3}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| S(t) \phi \|_{X^s([0, T))} &amp; \leq \|\phi \|_{H^s}, \\
+ \|F\|_{N^s([0, T))} &amp; \leq \sup _{\begin{subarray}
+{c}v \in Y^{-s}([0, T))\\
+\|v\|_{Y^{-s} }= 1
+\end{subarray}} \bigg | \int _0^T \int _{\mathbb{R}^d} F(t, x) \overline {v(t, x)} dx dt\bigg | 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| u \|_{L^q_t L^r_x([0, T)\times \mathbb{R}^d)} &amp; \lesssim \|u\|_{Y^0([0, T))}, \tag{3.4}\cssId{Ys2}{}{}\\
+ \| u \|_{L^p_{t,x}([0, T)\times \mathbb{R}^d)} &amp; \lesssim \big \||\nabla |^{\frac d2 - \frac {d+2}p} u\big \|_{Y^0([0, T))}, \tag{3.5}\cssId{Ys3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+&amp;\| \mathbf{P}_{N_1} u_1 \mathbf{P}_{N_2}u_2\|_{L^2_{t, x}([0, T)\times \mathbb{R}^d)}\tag{3.6}\cssId{Ys4}{}{}\\
+ &amp;\qquad \qquad \lesssim N_1^\frac {d-2}{2} \bigg (\frac {N_1}{N_2}\bigg )^{\frac 12-} \|\mathbf{P}_{N_1} u_1\|_{Y^0([0, T))}\|\mathbf{P}_{N_2} u_2\|_{Y^0([0, T))}.
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\|u\|_{L^q_tL^r_x}\lesssim \|u\|_{U^q_{\Delta }L^2}\lesssim \|u\|_{Y^0}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\|\mathbf{P}_{N_1}S(t) \phi _1 \mathbf{P}_{N_2}S(t) \phi _2\|_{L^2_{t,x}} \lesssim N_1^{\frac {d-2}{2}}\bigg (\frac {N_1}{N_2}\bigg )^{\frac 12} \|\mathbf{P}_{N_1}\phi _1\|_{L^2}\|\mathbf{P}_{N_2}\phi _2\|_{L^2}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|\mathbf{P}_{N_1}u_1\mathbf{P}_{N_2}u_2\|_{L^2_{t,x}}\lesssim N_1^{\frac {d-2}{2}} \bigg (\frac {N_1}{N_2}\bigg )^{\frac 12}\|\mathbf{P}_{N_1}u_1\|_{U^2_{\Delta }L^2}\|\mathbf{P}_{N_2}u_2\|_{U^2_{\Delta }L^2}. \tag{3.7}\cssId{biU2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|\mathbf{P}_{N_j}S(t) \phi _j\|_{L^4_{t,x}} &amp;\lesssim N_j^{\frac {d-2}{4}} \|\mathbf{P}_{N_j}S(t) \phi _j\|_{L^4_tL^{\frac {2d}{d-1}}_x} \lesssim N_j^{\frac {d-2}{4}} \|\mathbf{P}_{N_j}\phi _j\|_{L^2}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|\mathbf{P}_{N_1}u_1\mathbf{P}_{N_2}u_2\|_{L^2_{t,x}}\lesssim N_1^{\frac {d-2}{4}}N_2^{\frac {d-2}{4}}\|\mathbf{P}_{N_1}u_1\|_{U^4_{\Delta }L^2}\|\mathbf{P}_{N_2}u_2\|_{U^4_{\Delta }L^2}. \tag{3.8}\cssId{biU4}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ &amp;\|\mathbf{P}_{N_1}u_1 \mathbf{P}_{N_2}u_2\|_{L^2_{t,x}}\tag{3.9}\cssId{biU5}{}{}\\
+ &amp;\qquad \qquad \lesssim N_1^{\frac {d-2}{2}} \bigg (\frac {N_1}{N_2}\bigg )^{\frac 12} \bigg (\ln \Big (\frac {N_2}{N_1}\Big )+1\bigg )^2 \|\mathbf{P}_{N_1}u_1\|_{V^2_{\Delta }L^2}\|\mathbf{P}_{N_2}u_2\|_{V^2_{\Delta }L^2}.
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u \|_{L^p_{t,x}([0, T)\times \mathbb{R}^d)} \lesssim N^{\frac d2 - \frac {d+2}{p}} \| u\|_{Y^0([0, T))}.  \tag{3.10}\cssId{Ys5}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \sup _m \sum _{n} |K_{m, n}| + \sup _n \sum _{m} |K_{m, n}| &lt; \infty 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\sum _{m, n } K_{m, n} a_m b_n \lesssim \|a_m\|_{\ell ^2_m}\|b_n\|_{\ell ^2_n}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Gamma v(t) =\mp i \int _0^t S(t-t') \mathcal{N}(v+z)(t') dt',  \tag{4.1}\cssId{NLS5}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ &amp;\|\Gamma v\|_{X^\frac {d-2}{2}([0, T))} \leq C_1 \big (\|v\|_{X^\frac {d-2}{2}([0, T))} ^3 + T^\theta R^3\big ), \tag{4.2}\cssId{nl1a}{}{}\\
+ &amp;\|\Gamma v_1 - \Gamma v_2 \|_{X^\frac {d-2}{2}([0, T))}\tag{4.3}\cssId{nl1b}{}{}\\
+ &amp;\qquad \qquad \qquad \quad \leq C_2 \Big (\sum _{j = 1}^2 \|v_j\|_{X^\frac {d-2}{2}([0, T))} ^2 + T^\theta R^2\Big ) \|v_1 -v_2 \|_{X^\frac {d-2}{2}([0, T))}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \widetilde{\Gamma }v(t) = \mp i \int _0^t S(t-t') \mathcal{N}(v+\varepsilon z)(t') dt'.  \tag{4.4}\cssId{NLS6}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\widetilde{\Gamma }v\|_{X^\frac {d-2}{2}(\mathbb{R})} &amp; \leq C_3 \big (\|v\|_{X^\frac {d-2}{2}(\mathbb{R})} ^3 + R^3\big ), \tag{4.5}\cssId{nl1c}{}{}\\
+ \|\widetilde{\Gamma }v_1 - \widetilde{\Gamma }v_2 \|_{X^\frac {d-2}{2}(\mathbb{R})} &amp; \leq C_4 \Big (\sum _{j = 1}^2 \|v_j\|_{X^\frac {d-2}{2}(\mathbb{R})} ^2 + R^2\Big ) \|v_1 -v_2 \|_{X^\frac {d-2}{2}(\mathbb{R})}  \tag{4.6}\cssId{nl1d}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Gamma _N v(t) =\mp i \int _0^t S(t-t')\mathbf{P}_{\leq N} \mathcal{N}(v+z)(t') dt'.  \tag{4.7}\cssId{NNLS1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\mathbf{P}_{\leq N} \mathcal{N}(v+z)\|_{L^1_t ([0, T); H^{\frac {d-2}{2}}_x)} &amp; \lesssim N^\frac {d-2}{2} \| \mathcal{N}(v+z)\|_{L^1_t L^2_x}\\
+ &amp; \lesssim N^\frac {d-2}{2} \| v\|_{L^3_t([0, T); L^6_x)}^3 + N^\frac {d-2}{2} \| z\|_{L^3_t([0, T); L^6_x)}^3.  \tag{4.8}\cssId{NNLS2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| v\|_{L^3_t([0, T); L^6_x)} \lesssim \big \| \langle \nabla  \rangle ^\frac {d-2}{3}v\big \|_{L^3_t([0, T); L^\frac {6d}{3d-4}_x)} \lesssim \big \| v \|_{X^\frac {d-2}{3}([0, T))} &lt; \infty .  \tag{4.9}\cssId{NNLS3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\Gamma _N v(t)\|_{X^\frac {d-2}{2}} \lesssim \sup _{\begin{subarray}
+{c}v_4 \in Y^{0}([0, T))\\
+\|v_4\|_{Y^{0}} = 1
+\end{subarray}} \bigg | \int _0^T \int _{\mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} \mathcal{N}(v+z)(t, x) \overline {v_4(t, x)} dx dt\bigg |,  \tag{4.10}\cssId{nl1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \bigg | \int _0^T \int _{\mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} ( w_1 w_2 w_3 )v_4 dx dt\bigg |,  \tag{4.11}\cssId{nl2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T\int _{ \mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} v_1 v_2 v_3 v_4 dx dt \bigg | &amp; \leq \| \langle \nabla  \rangle ^\frac {d-2}{2} v_1\|_{L^\frac {2(d+2)}{d}_{t, x}} \|v_2\|_{L^{d+2}_{t, x}}\|v_3\|_{L^{d+2}_{t, x}} \|v_4\|_{L^{\frac {2(d+2)}{d}}_{t, x}}\\
+ &amp; \lesssim \prod _{j = 1}^3 \|v_j\|_{Y^\frac {d-2}{2}} \|v_4\|_{Y^0} \lesssim \prod _{j = 1}^3 \|v_j\|_{X^\frac {d-2}{2}}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\bigg |\int _0^T\int _{ \mathbb{R}^d} z_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg |\\
+ &amp;\qquad \qquad \lesssim \|z_1\|_{L^{d+2}_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{4}z_2\|_{L^{4}_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{4} z_3 \|_{L^{4}_{t, x}}\| v_4 \|_{L^\frac {2(d+2)}{d}_{t, x}}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (- c\frac {R^2}{T^{\frac {2}{d+2}-}\|\phi \|_{L^2}^2}\bigg ) + C\exp \bigg (- c\frac {R^2}{T^{\frac {1}{2}-}\|\phi \|_{H^{\frac {d-2}{4}+}}^2}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|z_2 \langle \nabla  \rangle ^\frac {d-2}{2}z_3\|_{L^2_{t, x}} &amp; \lesssim N_3^\frac {d-2}{2} \|z_2\|_{L^4_{t, x} }^\alpha \|z_3\|_{L^4_{t, x} }^\alpha \|z_2 z_3\|_{L^2_{t, x}}^{1-\alpha }\\
+ &amp; \lesssim N_2^{\frac {d-1}{2}-s-\frac {d-1}{2}\alpha -} N_3^{\frac {d-3}{2} - s+\frac {1}{2}\alpha +} \prod _{j = 2}^3\big (\|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x} }^\alpha \|\mathbf{P}_{N_j} \phi ^\omega \|_{H^{s}}^{1-\alpha }\big ).  \tag{4.12}\cssId{T1a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{ \mathbb{R}^d} z_1 z_2 &amp; \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3\|_{L^2_{t, x}} \|z_1 v_4\|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{\frac {d-1}{2} - s-}N_2^{\frac {d-1}{2} - s-\frac {d-1}{2}\alpha -} N_3^{\frac {d-4}{2}-s +\frac {1}{2}\alpha +} \\
+ &amp; \hphantom {XXXXXX} \times \|\mathbf{P}_{N_1} \phi ^\omega \|_{H^{s}} \prod _{j = 2}^3\big (\|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x} }^\alpha \|\mathbf{P}_{N_j} \phi ^\omega \|_{H^{s}}^{1-\alpha }\big ) \|v_4\|_{Y^0}\\
+ &amp; \lesssim N_3^{\frac {d-2}{2} - \frac {d+1}{d-1} s + } \|\mathbf{P}_{N_1} \phi ^\omega \|_{H^{s}} \prod _{j = 2}^3\big (\|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x} }^\alpha \|\mathbf{P}_{N_j} \phi ^\omega \|_{H^{s}}^{1-\alpha }\big ) \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {1}{2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) + C\exp \bigg (-c \frac {R^2}{ \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ s&gt; \frac {d-1}{d+1}\cdot \frac {d-2}{2}=s_d  \tag{4.13}\cssId{nl3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T\int _{ \mathbb{R}^d} z_1 z_2 &amp; \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|z_2\|_{L^4_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^4_{t, x}}\|z_1 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{\frac {d-1}{2}-s-} N_2^{-s} N_3^{\frac {d-3}{2}-s+} \|\mathbf{P}_{N_1}\phi ^\omega \|_{H^s} \prod _{j = 2}^3 \|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x}} \|v_4\|_{Y^0}\\
+ &amp; \lesssim N_3^{\frac {d-2}{2} - \frac {d+1}{d-1} s + } \|\mathbf{P}_{N_1}\phi ^\omega \|_{H^s} \prod _{j = 2}^3 \|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x}} \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {1}{2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) + C\exp \bigg (-c \frac {R^2}{ \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{\mathbb{R}^d} z_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | &amp; \lesssim N_3^{\frac {d-2}{2} - \frac {d+1}{d-1} s } \prod _{j =1}^3 \| \langle \nabla  \rangle ^s z_j\|_{L^\frac {6(d+2)}{d+4}_{t, x}} \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {d+4}{3(d+2)}-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg | &amp;\int _0^T \int _{\mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} v_1 v_2 z_3 v_4 dx dt \bigg |\\
+ &amp;\qquad \qquad \lesssim \sum _{N_1 \gtrsim N_2, N_3} \|\langle \nabla  \rangle ^{\frac {d-2}{2}}\mathbf{P}_{N_1}v_1 \mathbf{P}_{N_2} v_2\|_{L^2_{t,x}}\|\mathbf{P}_{N_3}z_3\|_{L^{d+2}_{t,x}} \|v_4\|_{L^{\frac {2(d+2)}{d}}_{t,x}}\\
+ &amp;\qquad \qquad \lesssim \sum _{N_1 \geq N_2} \bigg (\frac {N_2}{N_1}\bigg )^{\frac {1}{2}-}\prod _{j = 1}^2 \|\mathbf{P}_{N_j}v_j\|_{X^\frac {d-2}{2}} \sum _{N_3} \|\mathbf{P}_{N_3}z_3\|_{L^{d+2}_{t, x}} \|v_4\|_{Y^{0}}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\lesssim \prod _{j = 1}^2 \|v_j\|_{X^\frac {d-2}{2}} \| \langle \nabla  \rangle ^{0+}z_3\|_{L^{d+2}_{t, x}} \|v_4\|_{Y^{0}}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {2}{d+2}-} \|\phi \|_{H^{0+}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{\mathbb{R}^d} v_1 v_2 &amp; \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|v_1\|_{L^\frac {2(d+2)}{d}_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^{d+2}_{t, x}}\|v_2 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{-\frac {d-2}{2}}N_2^{\frac 12-}N_3^{\frac {d-3}{2}-s+} \|v_1\|_{X^\frac {d-2}{2}} \|v_2\|_{X^{\frac {d-2}2}} \|\langle \nabla  \rangle ^{s} z_3\|_{L^{d+2}_{t, x}} \|v_4\|_{Y^0}\\
+ &amp; \lesssim N_3^{\frac {d-3}{d-1}\frac {d-2}{2} - s + } \|v_1\|_{X^\frac {d-2}{2}} \|v_2\|_{X^{\frac {d-2}2}} \|\langle \nabla  \rangle ^{s} z_3\|_{L^{d+2}_{t, x}} \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {2}{d+2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ s &gt; \frac {d-3}{d-1} \cdot \frac {d-2}{2}.  \tag{4.14}\cssId{nl4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|v_1 \langle \nabla  \rangle ^\frac {d-2}{2}z_3\|_{L^2_{t, x}} &amp; \lesssim N_3^\frac {d-2}{2} \|v_1\|_{L^{\frac {2(d+2)}{d}}_{t, x} }^\alpha \|z_3\|_{L^{d+2}_{t, x} }^\alpha \|v_1 z_3\|_{L^2_{t, x}}^{1-\alpha }\\
+ &amp; \lesssim N_1^{\frac 12 -\frac {d-1}2 \alpha -} N_3^{\frac {d-3}{2} - s+\frac {1}{2}\alpha +} \|v_1\|_{X\frac {d-2}{2}} \|\langle \nabla  \rangle ^s z_3\|_{L^{d+2}_{t, x} }^\alpha \|\mathbf{P}_{N_3} \phi ^\omega \|_{H^{s}}^{1-\alpha }.  \tag{4.15}\cssId{nl4a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T &amp; \int _{\mathbb{R}^d} v_1 v_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|v_1 \langle \nabla  \rangle ^\frac {d-2}{2}z_3\|_{L^2_{t, x}} \|v_2 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{\frac 12 -\frac {d-1}2 \alpha -} N_2^{\frac 12-} N_3^{\frac {d-4}{2} - s+\frac {1}{2}\alpha +} \|v_1\|_{X^\frac {d-2}{2}} \|v_2\|_{X^{\frac {d-2}2}}\\
+ &amp;\hphantom {XXXXXX}\times \|\langle \nabla  \rangle ^s z_3\|_{L^{d+2}_{t, x} }^\alpha \|\mathbf{P}_{N_3} \phi ^\omega \|_{H^{s}}^{1-\alpha } \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {2}{d+2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) + C\exp \bigg (-c \frac {R^2}{ \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{\mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} v_1 z_2 z_3 v_4 dx dt \bigg | &amp; \lesssim \|v_1\|_{X^{\frac {d-2}{2}}} \|z_2\|_{L^{d+2}_{t, x}} \|z_3\|_{L^{d+2}_{t, x}} \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {2}{d+2}-} \|\phi \|_{H^{0+}}^{2}}\bigg )  \tag{4.16}\cssId{T4b}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\bigg |\int _0^T \int _{ \mathbb{R}^d} v_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg |\\
+ &amp;\qquad \qquad \lesssim \|v_1\|_{X^\frac {d-2}{2}} \|\langle \nabla  \rangle ^\frac {d-2}{4}z_2\|_{L^4_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{4} z_3 \|_{L^4_{t, x}}\|v_4 \|_{Y^0}\\
+ &amp;\qquad \qquad \lesssim N_3^{\frac {d-2}{2} - 2s} \|v_1\|_{X^\frac {d-2}{2}} \|\langle \nabla  \rangle ^s z_2\|_{L^4_{t, x}} \|\langle \nabla  \rangle ^s z_3 \|_{L^4_{t, x}} \|v_4 \|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {1}{2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{ \mathbb{R}^d} &amp; v_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|z_2\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^2_{t, x}}\|v_1 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{\frac 12 -}N_2^{\frac {d-1}{2}-s-\frac {d-1}{2}\alpha -} N_3^{\frac {d-4}{2}-s+\frac {1}{2}\alpha +} \|v_1\|_{X^\frac {d-2}{2}}\\
+ &amp;\hphantom {XXXXXX}\times \prod _{j = 2}^3\big (\|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x} }^\alpha \|\mathbf{P}_{N_j} \phi ^\omega \|_{H^{s}}^{1-\alpha }\big ) \|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {1}{2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) + C\exp \bigg (-c \frac {R^2}{ \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ s &gt; \frac {(d-2)^2}{2d} = \frac {d-2}{d}\cdot \frac {d-2}{2}  \tag{4.17}\cssId{nl5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{ \mathbb{R}^d} v_1 z_2 &amp; \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|z_2\|_{L^4_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^4_{t, x}}\|v_1 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{\frac 12 - } N_2^{-s} N_3^{\frac {d-3}{2} - s+} \|v_1\|_{X^\frac {d-2}{2}} \prod _{j = 2}^3 \|\langle \nabla  \rangle ^s z_j\|_{L^4_{t, x}}\|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac 12-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg |\int _0^T \int _{\mathbb{R}^d} &amp; v_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg | \lesssim \|v_1\|_{L^\frac {2(d+2)}{d}_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^{d+2}_{t, x}}\|z_2 v_4 \|_{L^2_{t, x}}\\
+ &amp; \lesssim N_1^{ - \frac {d-2}{2}} N_2^{\frac {d-1}{2} - s-} N_3^{\frac {d-3}{2}-s+} \|v_1\|_{X^{\frac {d-2}2}} \|\mathbf{P}_{N_2}\phi ^\omega \|_{H^s} \|\langle \nabla  \rangle ^s z_3\|_{L^{d+2}_{t, x}}\|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ \|\phi \|_{H^{s}}^{2}}\bigg ) + C\exp \bigg (-c \frac {R^2}{ T^{\frac 2{d+2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\bigg |\int _0^T \int _{\mathbb{R}^d} v_1 z_2 \langle \nabla  \rangle ^\frac {d-2}{2} z_3 v_4 dx dt \bigg |\\
+ &amp;\qquad \qquad \lesssim \|v_1\|_{L^\frac {2(d+2)}{d}_{t, x}} \|z_2\|_{L^{d+2}_{t, x}} \|\langle \nabla  \rangle ^\frac {d-2}{2} z_3 \|_{L^{d+2}_{t, x}}\| v_4 \|_{L^\frac {2(d+2)}{d}_{t, x}}\\
+ &amp;\qquad \qquad \lesssim N_1^{- \frac {d-2}2 } N_2^{-s} N_3^{\frac {d-2}2 -s} \|v_1\|_{X^\frac {d-2}{2}} \prod _{j = 2}^3 \|\langle \nabla  \rangle ^s z_j\|_{L^{d+2}_{t, x}}\|v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{ T^{\frac {2}{d+2}-} \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \widetilde{\Gamma }_N v(t) =\mp i \int _0^t S(t-t')\mathbf{P}_{\leq N} \mathcal{N}(v+\varepsilon z)(t') dt' 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\mathbf{P}_{\leq N} \mathcal{N}(v+\varepsilon z)\|_{L^1_t (\mathbb{R}; H^{\frac {d-2}{2}}_x)} &amp; \lesssim N^\frac {d-2}{2} \| v\|_{L^3_t(\mathbb{R}; L^6_x)}^3 + \varepsilon ^3 N^\frac {d-2}{2} \| z\|_{L^3_t(\mathbb{R}; L^6_x)}^3.  \tag{4.18}\cssId{NNLS5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\text{Case (2):} \ R^3,\quad \text{Case (3):} \ R\prod _{j = 1}^2 \|v_j\|_{X^\frac {d-2}{2}(\mathbb{R})}, \quad \text{Case (4):} \ R^2 \|v_1\|_{X^\frac {d-2}{2}(\mathbb{R})}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \leq C\exp \bigg (-c \frac {R^2}{\varepsilon ^2 \|\phi \|_{H^{s}}^{2}}\bigg ) 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ C_1 \eta _1^2 \leq \frac {1}{2} \qquad \text{and}\qquad 2C_2 \eta _1^2 \leq \frac {1}{4}.  \tag{5.1}\cssId{T0a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ T^\theta = \min \bigg ( \frac {\eta _1}{2C_1R^3}, \frac {1}{4C_2R^2}\bigg ).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{\eta _1} := \{ u\in X^\frac {d-2}{2}([0, T))\cap C([0, T); H^\frac {d-2}{2}):\, \|u\|_{X^\frac {d-2}{2}([0, T))} \leq \eta _1\}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\leq C \exp \bigg (-c \frac {R^2}{\|\phi \|_{H^s}^2}\bigg ) \sim C \exp \bigg (-c \frac {1}{T^\gamma \|\phi \|_{H^s}^2}\bigg )
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ 2 C_3 \eta _2^2 \leq 1\qquad \text{and}\qquad 3C_4 \eta _2^2 \leq \frac {1}{2},  \tag{5.2}\cssId{small0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\widetilde{\Gamma }v\|_{X^\frac {d-2}{2}(\mathbb{R})} &amp; \leq 2 C_3\eta _2^3 \leq \eta _2, \tag{5.3}\cssId{small1}{}{}\\
+ \|\widetilde{\Gamma }v_1 - \widetilde{\Gamma }v_2 \|_{X^\frac {d-2}{2}(\mathbb{R})} &amp; \leq 3 C_4 \eta _2^2 \|v_1 -v_2 \|_{X^\frac {d-2}{2}(\mathbb{R})} \leq \frac {1}{2} \|v_1 -v_2 \|_{X^\frac {d-2}{2}(\mathbb{R})}  \tag{5.4}\cssId{small2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{\eta _2} := \{ u\in X^\frac {d-2}{2}(\mathbb{R})\cap C(\mathbb{R}; H^\frac {d-2}{2}):\, \|u\|_{X^\frac {d-2}{2}(\mathbb{R})} \leq \eta _2\}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ S(-t) v(t) = \mp i \int _0^t S(-t') \mathcal{N}(v + \varepsilon z)(t') dt' \to v_+^\omega  \tag{5.5}\cssId{small2a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ I(t_1, t_2) &amp; := S(t_2) \big (w(t_2) - w(t_1) ), \\
+ \widetilde{I}(t_1, t_2)&amp; :=\mp i \int _{0}^{t_2} S(t_2-t') \chi _{[t_1, \infty )}(t')\mathcal{N}(v + \varepsilon z)(t') dt'. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ I(t_1, t_2) = \mp i S(t_2) \int _{t_1}^{t_2} S(-t') \mathcal{N}(v + \varepsilon z)(t') dt' = \widetilde{I}(t_1, t_2). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\widetilde{I}(t_1, \cdot )\|_{X^\frac {d-2}{2}(\mathbb{R}_+)} &amp; \lesssim \sup _{\begin{subarray}
+{c}v_4 \in Y^{0}(\mathbb{R}_+)\\
+\|v_4\|_{Y^{0}} = 1
+\end{subarray}} \bigg |\int _0^\infty \int _{ \mathbb{R}^d} \chi _{[t_1, \infty )}(t) \langle \nabla  \rangle ^\frac {d-2}{2} v\overline { v} v v_4 dx dt \bigg | \\
+ &amp; \leq \| \langle \nabla  \rangle ^\frac {d-2}{2} v\|_{L^\frac {2(d+2)}{d}_{t, x}([t_1, \infty ))} \|v\|_{L^{d+2}_{t, x}([t_1, \infty ))}^2.  \tag{5.6}\cssId{small3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \| \langle \nabla  \rangle ^\frac {d-2}{2} v\|_{L^\frac {2(d+2)}{d}_{t, x}(\mathbb{R})} + \|v\|_{L^{d+2}_{t, x}(\mathbb{R})}\lesssim \|v\|_{X^\frac {d-2}{2}(\mathbb{R})} \leq \eta _2.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lim _{t_1\to \infty } \| \widetilde{I}(t_1, t_2) \|_{X^\frac {d-2}{2}([0, \infty ))} = 0.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \lim _{t_1\to \infty }&amp; \sup _{t_2 &gt; t_1} \| w(t_2) - w(t_1) \|_{H^\frac {d-2}{2}} = \lim _{t_1\to \infty } \sup _{t_2 &gt; t_1} \| I(t_1, t_2) \|_{H^\frac {d-2}{2}}\\
+ &amp; = \lim _{t_1\to \infty } \| \widetilde{I}(t_1, t_2) \|_{L^\infty _{t_2}([0, \infty ); H^\frac {d-2}{2})} \lesssim \lim _{t_1\to \infty } \| \widetilde{I}(t_1, t_2) \|_{X^\frac {d-2}{2}([0, \infty ))} = 0. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \begin{cases}
+ i \partial _tv + \Delta v = |v + f|^2(v+f),\\
+ v|_{t = t_0} = v_0, 
+\end{cases}  \tag{6.1}\cssId{ZNLS1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u\|_{Z(I)} := \bigg ( \sum _{\begin{subarray}
+{c}N\geq 1 \\
+ \text{ dyadic}
+\end{subarray}} N^{d-2} \|\mathbf{P}_{N} u\|_{L^4_{t, x}(I\times \mathbb{R}^d)}^4 \bigg )^\frac {1}{4}.  \tag{6.2}\cssId{Z0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{Z(I)} \lesssim \| \langle \nabla  \rangle ^\frac {d-2}{4} u \|_{L^4_{t, x}(I\times \mathbb{R}^d)} \lesssim \|u\|_{X^\frac {d-2}{2}(I)}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{Z_\theta (I)} := \|u\|_{Z(I)}^\theta \|u\|_{X^\frac {d-2}{2}(I)}^{1-\theta }.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u\|_{Z_\theta (I)} \leq C_0 \|u\|_{X^\frac {d-2}{2}(I)}  \tag{6.3}\cssId{Z0a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| \mathbf{P}_{N_1} u_1 \mathbf{P}_{N_2}u_2\|_{L^2_{t, x}(I\times \mathbb{R}^d)} &amp; \lesssim \bigg (\frac {N_1}{N_2}\bigg )^{\frac 12(1-\theta )-} \|\mathbf{P}_{N_1} u_1\|_{Z_\theta (I)}\|\mathbf{P}_{N_2} u_2\|_{Y^0(I)}.  \tag{6.4}\cssId{Z1a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| \mathbf{P}_{N_1} u_1 \mathbf{P}_{R}\mathbf{P}_{N_2}u_2\|_{L^2_{t, x}(I)} &amp; \leq \|\mathbf{P}_{N_1} u_1 \|_{L^4_{t, x}} \|\mathbf{P}_{R}\mathbf{P}_{N_2}u_2\|_{L^4_{t, x}}\\
+ &amp; \lesssim N_1^\frac {d-2}{4} \|\mathbf{P}_{N_1} u_1 \|_{L^4_{t, x}(I)} \|\mathbf{P}_{R}\mathbf{P}_{N_2}u_2\|_{Y^0(I)}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| \mathbf{P}_{N_1} u_1 &amp; \mathbf{P}_{N_2}u_2\|_{L^2_{t, x}(I)} \sim \Big (\sum _{R} \| \mathbf{P}_{N_1} u_1 \mathbf{P}_R \mathbf{P}_{N_2}u_2\|^2_{L^2_{t, x}(I)}\Big )^\frac {1}{2}\\
+ &amp; \lesssim \|\mathbf{P}_{N_1} u_1\|_{Z(I)} \Big (\sum _{R} \|\mathbf{P}_{R}\mathbf{P}_{N_2} u_2\|^2_{Y^0(I)}\Big )^\frac {1}{2} \lesssim \|\mathbf{P}_{N_1} u_1\|_{Z(I)} \|\mathbf{P}_{N_2} u_2\|_{Y^0(I)}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|f\|_{W^s(I)} := \max \Big (\|\langle \nabla  \rangle ^s f \|_{L^4_{t, x}(I)} , \|\langle \nabla  \rangle ^sf\|_{L^{d+2}_{t, x}(I)}, \|\langle \nabla  \rangle ^sf\|_{L^\frac {6(d+2)}{d+4}_{t, x}(I)}\Big ).  \tag{6.5}\cssId{W1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ s \in (s_d, s_\mathrm{crit}] \qquad \text{and} \qquad 0 &lt; \alpha &lt; 1- \frac {2}{d-1} s,  \tag{6.6}\cssId{NL2a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg \| \prod _{j = 1}^3(v_j &amp; + f)^* \bigg \|_{N^\frac {d-2}{2}(I)} \lesssim \sum _{j = 1}^3 \|v_j\|_{X^\frac {d-2}{2}(I)} \prod _{\begin{subarray}
+{c}k = 1\\
+k\ne j
+\end{subarray}}^3\|v_k\|_{Z_\theta (I)}\\
+ &amp; \hphantom {X} + \prod _{\begin{subarray}
+{c}j, k =1\\
+j\ne k
+\end{subarray}}^3 \|v_j\|_{X^\frac {d-2}{2}(I)}\|v_k\|_{X^\frac {d-2}{2}(I)} \Big ( \|f\|_{W^s(I)} + \|f\|_{Y^s(I)}^{1-\alpha } \|f\|_{W^s(I)}^\alpha \Big ) \\
+ &amp; \hphantom {X} + \sum _{j = 1}^3 \|v_j\|_{X^{\frac {d-2}{2}}(I)} \Big ( \|f\|_{Y^s(I)} \|f\|_{W^s(I)} + \|f\|_{Y^s(I)}^{2-2\alpha } \|f\|_{W^s(I)}^{2\alpha } + \|f\|_{W^s(I)}^2\Big )\\
+ &amp; \hphantom {X} + \|f \|_{Y^s(I)}\|f\|_{W^s(I)}^2 + \|f\|_{Y^s(I)}^{3-2\alpha } \|f\|_{W^s(I)}^{2\alpha } + \|f\|_{W^s(I)}^3 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\|v_0\|_{H^{\frac {d-2}{2}}}\leq R \quad \text{ and } \quad \|f\|_{Y^s(I)}\leq M
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|S(t-t_0)v_0\|_{Z_\theta (I)}\leq \eta \qquad \text{and} \qquad \|f\|_{W^s(I)} \leq \eta ^{\frac {4-\alpha }{\alpha }}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|v - S(t-t_0) v_0\|_{X^\frac {d-2}{2}(I)} \lesssim \eta ^{3-2\theta }.  \tag{6.7}\cssId{LWP2a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Gamma v(t) := S(t-t_0) v_0 -i \int _{t_0}^t S(t -t') \mathcal{N}(v+f)(t') dt'  \tag{6.8}\cssId{LWP2b}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{R, M, \eta } = \{ v \in X^\frac {d-2}{2}(I)\cap C(I; H^\frac {d-2}{2}): \, \|v\|_{X^\frac {d-2}{2}(I)}\leq 2\widetilde{R}, \ \|v\|_{Z_\theta (I)} \leq 2\eta \},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \eta _0 \ll \widetilde{R}^{-\frac {1}{2\theta -1}}.  \tag{6.9}\cssId{LWP2c}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\Gamma v\|_{X^\frac {d-2}{2}(I)} &amp; \leq \|S(t-t_0)v_0\|_{X^\frac {d-2}{2}(I)} + \|\Gamma v - S(t-t_0) v_0\|_{X^\frac {d-2}{2}(I)} \\
+ &amp; \leq \|v_0\|_{H^\frac {d-2}{2}} + C \eta ^2 \widetilde{R} \leq 2\widetilde{R}  \tag{6.10}\cssId{LWP2d}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| \Gamma v_1 - \Gamma v_2 \|_{X^\frac {d-2}{2}(I)} \leq \frac 12 \| v_1 - v_2 \|_{X^\frac {d-2}{2}(I)} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|\Gamma v\|_{Z_\theta (I)} &amp; \leq \big (\|S(t-t_0) v_0\|_{Z(I)} + C \eta ^2 \widetilde{R}\big )^{\theta } \big (\|S(t-t_0) v_0\|_{X^\frac {d-2}{2}(I)} + C \eta ^2\widetilde{R} \big )^{1-\theta }\\
+ &amp; \leq \eta + C \eta ^{2\theta }\widetilde{R} +C\eta ^{2-\theta }\widetilde{R}^{1-\theta }+ C\eta ^2 \widetilde{R} \leq 2 \eta 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \bigg | \iint _{I\times \mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} ( w_1 w_2 w_3 )v_4 dx dt\bigg |,  \tag{6.11}\cssId{Znl1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\bigg |\iint _{ I\times \mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} v_1 v_2 v_3 v_4 dx dt \bigg | \\
+ &amp;\qquad \lesssim \sum _{N_1\sim N_4\gtrsim N_2, N_3} N_1^\frac {d-2}{2} \|\mathbf{P}_{N_1} v_1\mathbf{P}_{N_3} v_3\|_{L^2_{t, x}} \|\mathbf{P}_{N_2}v_2\mathbf{P}_{N_4} v_4\|_{L^2_{t, x}}\\
+ &amp;\qquad \lesssim \sum _{N_1, \dotsc , N_4} \bigg (\frac {N_2N_3}{N_1N_4}\bigg )^{\frac 12(1-\theta )-} \|\mathbf{P}_{N_1} v_1\|_{Y^\frac {d-2}{2}}\|\mathbf{P}_{N_2}v_2\|_{Z_\theta } \|\mathbf{P}_{N_3}v_3\|_{Z_\theta } \|\mathbf{P}_{N_4}v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp; \lesssim \|v_1\|_{X^\frac {d-2}{2}(I)}\|v_2\|_{Z_\theta (I)} \|v_3\|_{Z_\theta (I)}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp;\bigg | \iint _{ I\times \mathbb{R}^d} \langle \nabla  \rangle ^\frac {d-2}{2} v_1 v_2 v_3 v_4 dx dt \bigg |\\
+ &amp;\quad \lesssim \sum _{N_1 \sim N_2 \geq N_3, N_4} N_1^\frac {d-2}{2} \|\mathbf{P}_{N_1} v_1\mathbf{P}_{N_3} v_3\|_{L^2_{t, x}} \|\mathbf{P}_{N_2}v_2\mathbf{P}_{N_4} v_4\|_{L^2_{t, x}}\\
+ &amp;\quad \lesssim \sum _{N_1 \sim N_2 \geq N_3, N_4} \bigg (\frac {N_3}{N_1}\bigg )^{\frac 12(1-\theta )-} \|\mathbf{P}_{N_1} v_1\|_{Y^\frac {d-2}{2}} \|\mathbf{P}_{N_3}v_3\|_{Z_\theta } \|\mathbf{P}_{N_2}v_2\|_{L^4_{t, x}} \|\mathbf{P}_{N_4}v_4\|_{L^4_{t, x}}\\
+ &amp; \quad \lesssim \sum _{N_1 \sim N_2 \geq N_3, N_4} \bigg (\frac {N_3}{N_1}\bigg )^{\frac 12(1-\theta )-} \bigg (\frac {N_4}{N_2}\bigg )^\frac {d-2}{4} \|\mathbf{P}_{N_1} v_1\|_{Y^\frac {d-2}{2}} \|\mathbf{P}_{N_3}v_3\|_{Z_\theta }\\
+ &amp; \hphantom {XXXXXXXXXXXXXXXX} \times N_2^\frac {d-2}{4} \|\mathbf{P}_{N_2}v_2\|_{L^4_{t, x}} \|\mathbf{P}_{N_4}v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp; \lesssim \|v_2\|_{Z}\|v_3\|_{Z_\theta } \sum _{N_1 \gg N_4} \bigg (\frac {N_4}{N_1}\bigg )^\frac {d-2}{4} \|\mathbf{P}_{N_1} v_1\|_{Y^\frac {d-2}{2}} \|\mathbf{P}_{N_4}v_4\|_{Y^0}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp; \lesssim \|v_1\|_{Y^\frac {d-2}{2}} \|v_2\|_{Z_\theta } \|v_3\|_{Z_\theta } \|v_4\|_{Y^0} \lesssim \|v_1\|_{X^\frac {d-2}{2}(I)} \|v_2\|_{Z_\theta (I)}\|v_3\|_{Z_\theta (I)}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|f\|_{L^{d+2}_{t, x}}^2 \|\langle \nabla  \rangle ^{\frac {d-2}{4}+}f\|_{L^{4}_{t, x}}^2 \leq \|f\|^3_{W^s(I)}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|f\|_{Y^s}^{3-2\alpha } \|\langle \nabla  \rangle ^s f\|_{L^4_{t, x} }^{2\alpha } \leq \|f\|_{Y^s(I)}^{3-2\alpha } \|f\|_{W^s(I)}^{2\alpha }
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|f \|_{Y^s(I)} \|\langle \nabla  \rangle ^s f\|_{L^4_{t, x}}^2 \leq \|f \|_{Y^s(I)}\|f\|_{W^s(I)}^2
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \| \langle \nabla  \rangle ^s f\|_{L^\frac {6(d+2)}{d+4}_{t, x}}^3 \leq \|f\|_{W^s(I)}^3
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^\frac {d-2}{2}}^2 \| \langle \nabla  \rangle ^s f\|_{L^{d+2}_{t, x}} \leq \|v\|_{X^\frac {d-2}{2}(I)}^2 \|f\|_{W^s(I)}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^\frac {d-2}{2}}^2 \| \langle \nabla  \rangle ^s f\|_{L^{d+2}_{t, x}} \leq \|v\|_{X^\frac {d-2}{2}(I)}^2 \|f\|_{W^s(I)}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^\frac {d-2}{2}}^2 \| f\|_{Y^s}^{1-\alpha } \| \langle \nabla  \rangle ^s f\|_{L^{d+2}_{t, x}}^\alpha \leq \|v\|_{X^\frac {d-2}{2}(I)}^2 \| f\|_{Y^s(I)}^{1-\alpha } \|f\|_{W^s(I)}^\alpha 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|f\|_{L^{d+2}_{t, x}}^2 \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{W^s(I)}^2
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|\langle \nabla  \rangle ^s f\|_{L^4_{t, x}}^2 \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{W^s(I)}^2
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|f\|_{Y^s}^{2-2\alpha } \|\langle \nabla  \rangle ^s f\|_{L^4_{t, x} }^{2\alpha } \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{Y^s(I)}^{2-2\alpha } \|f\|_{W^s(I)}^{2\alpha }
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|\langle \nabla  \rangle ^s f\|_{L^4_{t, x}}^2 \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{W^s(I)}^2
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|f\|_{Y^s} \|\langle \nabla  \rangle ^s f\|_{L^{d+2}_{t, x}} \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{Y^s(I)} \|f\|_{W^s(I)}
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lesssim \|v\|_{X^{\frac {d-2}{2}}} \|\langle \nabla  \rangle ^s f\|_{L^{d+2}_{t, x}}^2 \leq \|v\|_{X^{\frac {d-2}{2}}(I)} \|f\|_{W^s(I)}^2
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ i \partial _tv + \Delta v = |v|^2 v + e, \tag{7.1}\cssId{PNLS1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| v\|_{Z(I)} + \|v\|_{L^\infty (I; H^\frac {d-2}{2}(\mathbb{R}^d))} \leq R  \tag{7.2}\cssId{PP1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u_0 - v(t_0) \|_{H^\frac {d-2}{2}(\mathbb{R}^d)} + \|e\|_{N^\frac {d-2}{2}(I)} \leq \varepsilon  \tag{7.3}\cssId{PP2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u\|_{X^\frac {d-2}{2}(I)}+\|v\|_{X^\frac {d-2}{2}(I)} &amp; \leq C(R), \tag{7.4}\\
+ \|u - v\|_{X^\frac {d-2}{2}(I)} &amp; \leq C(R)\varepsilon ,  \tag{7.5}\cssId{PP3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v\|_{Z(I_j)} \leq \varepsilon _1  \tag{7.6}\cssId{PP3y}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|e\|_{N^\frac {d-2}{2}(I_j)} \leq \varepsilon &lt; \varepsilon _0  \tag{7.7}\cssId{PP3x}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|S(t - t_*) v(t_*)\|_{Z_\theta (J)} \leq \eta _0 \qquad \text{and} \qquad \|e\|_{N^\frac {d-2}{2}(J)} \leq \varepsilon _0  \tag{7.8}\cssId{PP3b}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v - S(t - t_*) v(t_*) \|_{X^\frac {d-2}{2}(J)} \leq C \|S(t - t_*) v(t_*)\|_{Z_\theta (J)}^{3-2\theta } + 2 \|e\|_{N^\frac {d-2}{2}(J)}.  \tag{7.9}\cssId{PP3a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \eta _0 \ll R^{-\frac {1}{2\theta -1}} \qquad \text{and} \qquad \varepsilon _0 \ll R^{-\frac {2}{2\theta -1}}. \tag{7.10}\cssId{PP4a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\eta := \|S(t - t_*) v(t_*)\|_{Z_\theta (J)} \leq \eta _0 \qquad \text{and} \quad \varepsilon : = \|e\|_{N^\frac {d-2}{2}(J)} \leq \varepsilon _0.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Gamma v(t) := S(t-t_*) v (t_*) -i \int _{t_*}^t S(t -t')\mathcal{N}(v)(t') dt' -i \int _{t_*}^t S(t -t')e(t') dt'  \tag{7.11}\cssId{PP4}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ B_{R, \eta , \varepsilon } = \big \{ v \in X^\frac {d-2}{2}(J)\cap C(J; H^\frac {d-2}{2}): \, \|v\|_{X^\frac {d-2}{2}(J)}\leq 2 R, \ \|v\|_{Z_\theta (J)} \leq 2 (\eta + \varepsilon ^{\frac {\theta }{2}+\frac 14})\big \}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\Gamma v\|_{X^\frac {d-2}{2}(J)} &amp; \leq \|v(t_\ast )\|_{H^\frac {d-2}{2}} + C (\eta +\varepsilon ^{\frac {\theta }{2}+\frac 14})^2 R + \varepsilon \\
+ &amp; \leq \|v(t_\ast )\|_{H^\frac {d-2}{2}} + C \eta ^2 R+ 2\varepsilon \leq 2 R  \tag{7.12}\cssId{PP5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| \Gamma v_1 - \Gamma v_2 \|_{X^\frac {d-2}{2}(J)} &amp; \leq C(\eta + \varepsilon ^{\frac {\theta }{2}+\frac 14})R \| v_1 - v_2 \|_{X^\frac {d-2}{2}(J)} \leq \frac 12 \| v_1 - v_2 \|_{X^\frac {d-2}{2}(J)} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|\Gamma v\|_{Z_\theta (J)} &amp; \leq \big (\|S(t-t_\ast ) v(t_\ast )\|_{Z(J)} + C \eta ^2 R+ \varepsilon \big )^{\theta }\\
+ &amp; \hphantom {XXXXXXX} \times \big (\|S(t-t_\ast ) v(t_\ast )\|_{X^\frac {d-2}{2}(J)} + C \eta ^2 R + \varepsilon \big )^{1-\theta }\\
+ &amp; \leq \eta + C \eta ^{2\theta } R + C \eta ^{2-\theta } R^{1-\theta } + C\eta ^\theta \varepsilon ^{1-\theta } + C\varepsilon ^\theta R^{1-\theta } \leq 2 (\eta + \varepsilon ^{\frac {\theta }{2}+\frac 14}) 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|S(t - t_j) v(t_j) \|_{Z_\theta (I_j)} &amp; \leq \varepsilon _2 \qquad \text{and} \qquad \|v \|_{Z_\theta (I_j)} \leq \varepsilon _2.  \tag{7.13}\cssId{PP7}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ h(\tau ) &amp; \leq \|S(t - t_j) v(t_j) \|_{X^\frac {d-2}{2}([t_j, t_j + \tau ])}^{1-\theta } \|S(t - t_j) v(t_j) \|_{Z([t_j, t_j + \tau ])}^{\theta } \\
+ &amp; \leq C R^{1-\theta }\big (\varepsilon _1 + \varepsilon _2^{3-2\theta } + \|e\|_{N^\frac {d-2}{2}(I_j)}\big )^\theta \\
+ &amp; \leq C R^{1-\theta } \varepsilon _2^{\theta (3-2\theta )} + CR^{1-\theta }\big (\varepsilon _1 + \|e\|_{N^\frac {d-2}{2}(I_j)}\big )^\theta .  \tag{7.14}\cssId{PP8}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ CR^{1-\theta }\varepsilon _2^{\theta (3-2\theta )}\leq C\big (R\eta _0^{(2\theta -1)}\big )^{1-\theta }\varepsilon _2\ll \varepsilon _2.  \tag{7.15}\cssId{PP8a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ h(\tau ) &amp; \leq \tfrac 12 \varepsilon _2 + C R^{1-\theta }(\varepsilon _1 + \varepsilon _0 )^{\theta } \leq \varepsilon _2  \tag{7.16}\cssId{PP9}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v\|_{Z_\theta (I_j)} = \|v\|_{Z(I_j)}^\theta \|v\|_{X^\frac {d-2}{2}(I_j)}^{1-\theta } \leq C \varepsilon _1^\theta R^{1-\theta }.  \tag{7.17}\cssId{PP9a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|v\|_{X^\frac {d-2}{2}(I_j)} \leq 2R  \tag{7.18}\cssId{PP10}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| u(t_j) - v(t_j) \|_{H^\frac {d-2}{2}} \leq \varepsilon &lt; \varepsilon _0.  \tag{7.19}\cssId{PP10a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u - v\|_{Z_\theta (J_j)} \leq 6C_0\varepsilon ,  \tag{7.20}\cssId{PP11}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w\|_{X^\frac {d-2}{2}(J_j)} &amp; \leq \| u(t_j) - v(t_j)\|_{H^\frac {d-2}{2}} + C_1\Big \{ \|v\|_{X^\frac {d-2}{2}(J_j)}\|v\|_{Z_\theta (J_j)}\|w\|_{X^\frac {d-2}{2}(J_j)} \\
+ &amp; \hphantom {XXXXX} + \|v\|_{X^\frac {d-2}{2}(J_j)}\|w\|_{X^\frac {d-2}{2}(J_j)}\|w\|_{Z_\theta (J_j)} \\
+ &amp; \hphantom {XXXXX} + \|w\|_{X^\frac {d-2}{2}(J_j)}\|w\|_{Z_\theta (J_j)}^2\Big \} + \|e\|_{N^\frac {d-2}{2}(J_j)}\\
+ &amp; \leq 2 \varepsilon + C_2 (\varepsilon _0 + \varepsilon _2) R \|w\|_{X^\frac {d-2}{2}(J_j)}. 
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w\|_{X^\frac {d-2}{2}(J_j)} \leq 4 \varepsilon .  \tag{7.21}\cssId{PP12}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w\|_{Z_\theta (J_j)} \leq C_0 \|w\|_{X^\frac {d-2}{2}(J_j)} \leq 4 C_0 \varepsilon .  \tag{7.22}\cssId{PP13}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\|u(t_1)-v(t_1)\|_{H^{\frac {d-2}{2}}}\leq 4C\varepsilon .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|u\|_{X^{\frac {d-2}{2}}(I)}+\|v\|_{X^{\frac {d-2}{2}}(I)} &amp;\lesssim L R \lesssim C(R), \\
+ \|u - v\|_{X^\frac {d-2}{2}(I)} &amp; \lesssim L\varepsilon \lesssim C(R)\varepsilon . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|f\|_{W^s(I)} \leq C |I|^{\beta } \qquad \text{and}\qquad \|f\|_{Y^s([0, T])} \leq M  \tag{7.23}\cssId{P0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| v\|_{L^\infty ([0, T]; H^\frac {d-2}{2}(\mathbb{R}^d))} \leq R  \tag{7.24}\cssId{P0a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|f\|_{W^s([t_0, t_0+\tau _*))} \leq C |\tau _*|^{\beta } 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\| w\|_{L^{d+2}_{t, x}([0, T])} \leq C(R, T) &lt; \infty .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w\|_{X^\frac {d-2}{2}([0, T])} &amp; \leq \|v_0\|_{H^\frac {d-2}{2}} + \big \||\nabla |^\frac {d-2}{2} w\big \|_{L^\frac {2(d+2)}{d}_{t, x}([0, T])} \|w\|_{L^{d+2}_{t, x}([0, T])}^2 \\
+ &amp; \leq C'''(R, T) &lt; \infty .  \tag{7.25}\cssId{P1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|w\|_{Z_\theta (I_j)} \sim \eta .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+S(t-t_j) w(t_j) = w(t) +i \int _{t_j}^t S(t - t') |w|^2w(t') dt'.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|S(t-t_j) w(t_j) \|_{Z_\theta (I_j)} &amp;\leq \|w\|_{Z_\theta (I_j)} + C \|w\|_{X^\frac {d-2}{2}(I_j)} \|w\|_{Z_\theta (I_j)}^2 \leq \eta + C(R, T) \eta ^2. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|S(t-t_j) w(t_j) \|_{Z_\theta (I_j)} \leq 2 \eta  \tag{7.26}\cssId{P2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|v\|_{X^\frac {d-2}{2} (I_0)} &amp; \leq \|S(t- t_0) v(t_0)\|_{X^\frac {d-2}{2}(I_0)} + \|v - S(t- t_0) v(t_0)\|_{X^\frac {d-2}{2}(I_0)} \\
+ &amp; \leq R + C\eta ^{3-2\theta } \leq 2R, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|f\|_{W^s([t_0, t_0+ \tau ))} \leq C\tau ^\beta \leq \eta ^\frac {4-\alpha }{\alpha },  \tag{7.27}\cssId{P4a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|e\|_{N^\frac {d-2}{2}(I_0)} \leq C(R, M) \tau ^{\alpha \beta }.  \tag{7.28}\cssId{P4b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|e\|_{N^\frac {d-2}{2}(I_0)} \leq \varepsilon . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| w - v\|_{X^\frac {d-2}{2}(I_0)} \leq C_0(R) \varepsilon .  \tag{7.29}\cssId{P5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w(t_1) - v(t_1) \|_{H^\frac {d-2}{2}} \leq C_1(R) \varepsilon .  \tag{7.30}\cssId{P6}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|S(t - t_1) v(t_1)\|_{Z_\theta (I_1)} &amp;\leq \|S(t-t_1)w(t_1)\|_{Z_\theta (I_1)}+\|S(t-t_1)(w(t_1)-v(t_1))\|_{Z_\theta (I_1)}\\
+ &amp;\leq 2 \eta + C'_1(R) \varepsilon \leq 3\eta 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|v\|_{X^\frac {d-2}{2} (I_1)} &amp; \leq R + C\eta ^{3-2\theta } \leq 2R, 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|e\|_{N^\frac {d-2}{2}(I_1)} \leq C(R, M) \tau ^{\alpha \beta }\leq \varepsilon  \tag{7.31}\cssId{P7}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| w - v\|_{X^\frac {d-2}{2}(I_1)} \leq C_0(R) (C_1(R) + 1)\varepsilon . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \|w(t_2) - v(t_2) \|_{H^\frac {d-2}{2}} \leq C_2(R) \varepsilon . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|w(t_j) - v(t_j) \|_{H^\frac {d-2}{2}} \leq C_j(R) \varepsilon \tag{7.32}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ M = M(T, \varepsilon ) \sim \|\phi \|_{H^s}\Big (\log \frac {1}{\varepsilon }\Big )^\frac {1}{2}.  \tag{8.1}\cssId{asGWP0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Omega _1 := \big \{ \omega \in \Omega :\, \|S(t) \phi ^\omega \|_{Y^s([0, T])} \leq M\big \},
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ P( \Omega _1^c) &lt; \frac {\varepsilon }{3}.  \tag{8.2}\cssId{asGWP1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ [0, T] = \bigcup _{j = 0}^{[\frac T{ \tau _*}]} [j \tau _*, (j + 1) \tau _*] \cap [0, T] 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Omega _2 = \Big \{ \omega \in \Omega : \| S(t) \phi ^\omega \|_{W^s([j \tau _*, (j+1)\tau _*])} \leq C \tau _*^\frac {1}{2(d+2)}, \, j = 0, \dotsc , \big [\tfrac T{\tau _*}\big ] \Big \}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ P(\Omega _2^c) &amp; \leq \sum _{j = 0}^{[\frac {T}{\tau _*}] } P\Big ( \| S(t) \phi ^\omega \|_{W^s([j\tau _*, (j+1)\tau _*])}\geq C\tau _*^\frac {1}{2(d+2)}\Big ) \lesssim \frac {T}{\tau _*} \exp \bigg (-\frac {c}{\tau _*^\frac {1}{d+2} \|\phi \|_{H^s}^2}\bigg ).\\
+ 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ &amp; \lesssim \frac {T}{\tau _\ast }\cdot \tau _* \exp \bigg (-\frac {c}{2\tau _*^\frac {1}{d+2} \|\phi \|_{H^s}^2}\bigg ) = T \exp \bigg (-\frac {1}{2\tau _*^\frac {1}{d+2} \|\phi \|_{H^s}^2}\bigg ). 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ P(\Omega _2^c) &lt; \frac {\varepsilon }{3}.  \tag{8.3}\cssId{asGWP4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ P(\widetilde{\Omega }_{T, \varepsilon }^c) &lt; \varepsilon .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\phi _\mu (x) := \mu ^{-1} \phi (\mu ^{-1}x),
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ f_\mu (t,x):=\mu ^{-1}f(\mu ^{-2}t,\mu ^{-1}x).
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\phi _\mu \|_{\dot{H}^s(\mathbb{R}^d)} = \mu ^{\frac {d-2}{2} - s}\|\phi \|_{\dot{H}^s(\mathbb{R}^d)} .  \tag{9.1}\cssId{D1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \begin{cases}
+ i \partial _t u_\mu + \Delta u_\mu = \pm |u_\mu |^{2}u_\mu , \\
+ u_\mu \big |_{t = 0} = u_{0, \mu } = (\phi ^{\omega , \mu })_\mu , 
+\end{cases} \tag{9.2}\cssId{NLS3}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \begin{cases}
+ i \partial _tv_\mu + \Delta v_\mu = \pm |v_\mu + z_\mu |^2(v_\mu +z_\mu ),\\
+ v_\mu |_{t = 0} = 0. 
+\end{cases}  \tag{9.3}\cssId{NLS4}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \mathcal{F}_x\Big [\big (S(t)\phi ^{\omega ,\mu }\big )_\mu \Big ](\xi ) = \mu ^{d-1}e^{-i\frac {t}{\mu ^2}|\mu \xi |^2} \widehat{\phi ^{\omega ,\mu }}(\mu \xi ) = e^{-it|\xi |^2}\widehat{\phi ^{\omega , \mu }_\mu }( \xi ) =\widehat{z_\mu }(t, \xi ). \tag{9.4}\cssId{S_mu}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \Gamma _\mu v_\mu (t) =\mp i \int _0^t S(t-t') \mathcal{N}(v_\mu +z_\mu )(t') dt'.  \tag{9.5}\cssId{NLS7}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \psi (D-n) \phi _\mu =\big ( \psi ^\mu (D-\mu n) \phi )_\mu . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \phi ^{\omega , \mu }_\mu = (\phi ^{\omega , \mu })_\mu = \sum _{n \in \mathbb{Z}^d} g_n(\omega ) \psi (D-n) \phi _\mu .  \tag{9.6}\cssId{D2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Omega _{1, \mu } = \Big \{ \omega \in \Omega :\, \|S(t) \phi ^{\omega , \mu }_\mu \|_{L^q_t W^{s, q}_x ( \mathbb{R}\times \mathbb{R}^d)} \leq \eta _2, \, q = 4, \tfrac {6(d+2)}{d+4}, d+2\Big \} . 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Omega _{2, \mu } = \big \{ \omega \in \Omega :\, \| \phi ^{\omega , \mu }_\mu \|_{H^s(\mathbb{R}^d)} \leq \eta _2\big \}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ P( \Omega _{ \mu }^c) \leq C\exp \bigg ( -c \frac {\eta _2^2}{ \|\phi _\mu \|_{H^s}^2}\bigg ) \leq C\exp \bigg ( -c \frac {\eta _2^2}{ \mu ^{d-2 -2 s}\|\phi \|_{H^s}^2}\bigg ) 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \mu _0 \sim \Bigg (\frac {\eta _2}{\|\phi \|_{H^s} \big (\log \frac {1}{\varepsilon }\big )^\frac {1}{2}}\Bigg )^\frac {1}{\frac {d-2}{2}-s},  \tag{9.7}\cssId{D2a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ P( \Omega _\mu ^c) &lt;\varepsilon  \tag{9.8}\cssId{D3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\lim _{t\to \infty }\big \|u_\mu (t)-S(t)\big (\phi ^{\omega ,\mu }_\mu +v_{+,\mu }\big )\big \|_{H^{\frac {d-2}{2}}}=0.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+S(t)(\phi ^{\omega ,\mu }_\mu +v_{+,\mu }) =\big (S(t)(\phi ^{\omega ,\mu }+v_+)\big )_{\mu },
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\lim _{t\to \infty }\big \|u-S(t)\big (\phi ^{\omega ,\mu }+v_+\big )\big \|_{H^{\frac {d-2}{2}}}=0.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \sum _{j = 1}^{\infty } |\widetilde{\lambda }_j| \leq \sum _{j = 1}^{\infty } | \lambda _j|. \tag{A.1}\cssId{U0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u\cdot \chi _I\|_{U^p(\mathbb{R})}\leq \|u\|_{U^p(\mathbb{R})} \tag{A.2}\cssId{bound_chi_I}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ u \cdot \chi _I= \sum _{j = 1}^\infty \lambda _j a_j \chi _I = \sum _{j = 1}^\infty \lambda _j \sum _{k = 1}^{K_j} \phi _{k-1}^j \chi _{[t^j_{k-1}, t^j_k)\cap I} . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \widetilde{\lambda }_j &amp; = \Big ( \sum _{k \in A_j(I) } \|\phi _k^j\|_{H}^p\Big )^\frac {1}{p} \lambda _j ,\tag{A.3}\cssId{U0a}{}{}\\
+ \widetilde{a}_j &amp; = \frac {1}{\big ( \sum _{k \in A_j(I) } \|\phi _k^j\|_{H}^p\big )^\frac {1}{p}} \sum _{k \in A_j(I) } \phi _{k-1}^j \chi _{[t^j_{k-1}, t^j_k)\cap I} , 
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+A_j(I) = \big \{ k \in \{1, \dotsc , K_j\}: [t^j_{k-1}, t^j_k)\cap I \ne \emptyset \big \}, 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \Big ( \sum _{k \in A_j(I) } \|\phi _k^j\|_{H}^p\Big )^\frac {1}{p} \leq \Big ( \sum _{k = 1}^{K_j} \|\phi _k^j\|_{H}^p \Big )^\frac {1}{p} = 1,
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\|u\cdot \chi _I\|_{U^p(\mathbb{R})}\leq \sum _{j=1}^\infty |\lambda _j|
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{U^p(I)} = \inf _v\big \{ \|v\|_{U^p(\mathbb{R})}:\, v|_I = u\big \}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u\|_{U^p(I) }\leq \sum _{j = 1}^\infty \|u\|_{U^p(I_j) }.  \tag{A.4}\cssId{U1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v_j\|_{U^p(\mathbb{R}) } \leq \|u\|_{U^p(I_j) } +\frac {\varepsilon }{2^j}  \tag{A.5}\cssId{U1a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u\|_{U^p(I)} &amp; \leq \Big \|\sum _{j= 1}^\infty v_j \cdot \chi _{I_j} \Big \|_{U^p(\mathbb{R})} \leq \sum _{j= 1}^\infty \| v_j \cdot \chi _{I_j} \|_{U^p(\mathbb{R})} \leq \sum _{j = 1}^\infty \| v_j \|_{U^p(\mathbb{R})} \\
+ &amp; \leq \sum _{j = 1}^\infty \|u\|_{U^p(I_j)} + \varepsilon .  \tag{A.6}\cssId{U1d}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \|u\|_{X^s(I) }\leq \sum _{j = 1}^\infty \|u\|_{X^s(I_j) }. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ u_\mathcal{P}(t) = \begin{cases}
+ u(t), &amp; \text{if } t = \tau _j,\\
+ u(\tau _j+), &amp; \text{if } \tau _{j} &lt; t &lt; \tau _{j+1},\\
+ 
+\end{cases} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u_{\mathcal{P}}\|_{U^p(\mathbb{R})} \leq \|u\|_{U^p(\mathbb{R})}.  \tag{A.7}\cssId{U3a}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \| u - u_{\mathcal{P}}\|_{U^p(\mathbb{R})} &lt; \varepsilon .  \tag{A.8}\cssId{U3aa}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ a_\mathcal{P} = \sum _{j = 1}^n a(\tau _j) \chi _{[\tau _j, \tau _{j+1})},  \tag{A.9}\cssId{U3b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ a(\tau _j) = \begin{cases}
+ \phi _{k-1}, &amp; \text{if }\tau _j \in [t_{k-1}, t_k) \text{ for some }k, \\
+ 0, &amp; \text{otherwise.} 
+\end{cases} 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ a_\mathcal{P} = \sum _{\ell = 1}^L a(\tau _{j_\ell } ) \chi _{[\tau _{j_\ell }, \tau _{j_{\ell +1}})} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\lambda := \Big (\sum _{\ell = 1}^L \|a(\tau _{j_\ell })\|_H^p\Big )^\frac {1}{p} \leq \Big (\sum _{k = 1}^K \|\phi _{k-1}\|_H^p\Big )^\frac {1}{p} = 1.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+b = \sum _{\ell = 1}^L \frac {a(\tau _{j_\ell } )}{\lambda } \chi _{[\tau _{j_\ell }, \tau _{j_{\ell +1}})}.
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| u_{\mathcal{P}}\|_{U^p(\mathbb{R})} = \bigg \|\sum _{j = 1}^\infty \lambda _j \cdot (a_j)_{\mathcal{P}}\bigg \|_{U^p(\mathbb{R})} \leq \sum _{j = 1}^\infty |\lambda _j| \|(a_j)_{\mathcal{P}}\|_{U^p(\mathbb{R})} \leq \sum _{j = 1}^\infty |\lambda _j| .  \tag{A.10}\cssId{U3c}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u - u_J\|_{U^p(\mathbb{R})} \leq \sum _{j = J+1}^\infty |\lambda _j| &lt; \frac {\varepsilon }{2}.  \tag{A.11}\cssId{U3d}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| u - u_{\mathcal{P}}\|_{U^p(\mathbb{R})} &amp; \leq \| u - u_J\|_{U^p(\mathbb{R})} +\| u_J -( u_J)_{\mathcal{P}}\|_{U^p(\mathbb{R})} + \|( u - u_J)_{\mathcal{P}}\|_{U^p(\mathbb{R})}\\
+ &amp; &lt; \frac {\varepsilon }{2} + 0 + \frac {\varepsilon }{2} = \varepsilon . 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|u \|_{U^p([a, t_* - \delta _n))} &lt; \|u \|_{U^p([a, t_* ))} - \varepsilon .  \tag{A.12}\cssId{U4a0}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v_\delta \|_{U^p(\mathbb{R}) }\leq \|u \|_{U^p([a, t_* - \delta ))} + \frac {\varepsilon }{4}.  \tag{A.13}\cssId{U4a1}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ v_\delta = \sum _{j = 1}^\infty \lambda _j^\delta a_j^\delta = \sum _{j = 1}^\infty \lambda _j^\delta \sum _{k = 1}^{K_j^\delta } \phi _{k-1}^{\delta , j} \chi _{[t^{\delta , j}_{k-1}, t^{\delta , j}_k)} ,  \tag{A.14}\cssId{U4a}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation}
+ \|v_\delta \|_{U^p(\mathbb{R})} = \|\widetilde{v}_\delta \|_{U^p(\mathbb{R})}.  \tag{A.15}\cssId{U4a2}{}{}
+\end{equation}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| u \|_{U^p([a, t_*))} \leq \|\widetilde{v}\|_{U^p(\mathbb{R})} \leq \|\widetilde{v}_{\mathcal{P}}\|_{U^p(\mathbb{R})} + \frac {\varepsilon }{8}.  \tag{A.16}\cssId{U4b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| u(t_1) - u(t_2) \|_H &lt; \frac {\varepsilon }{8 \cdot (\#\mathcal{P}+1)}  \tag{A.17}\cssId{U4c}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \widetilde{v}_{\mathcal{P}} - (\widetilde{v}_\delta )_{\mathcal{P}} &amp; = \sum _{\begin{subarray}
+{c}\tau _j \in \mathcal{P}\\
+ \tau _j &gt; t_* - \delta 
+\end{subarray}} \big ( u (\tau _j) - u (t_* - \delta )\big )\chi _{[\tau _j, \tau _{j+1})}\\
+ &amp; = \sum _{\begin{subarray}
+{c}\tau _j \in \mathcal{P}\\
+ \tau _j \in ( t_* - \delta , t_*)
+\end{subarray}} \big ( u (\tau _j) - u (t_* - \delta )\big )\chi _{[\tau _j, \tau _{j+1})} + \big (u(t_*) - u(t_* - \delta ) \big )\chi _{[t_*, \infty )}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| \widetilde{v}_{\mathcal{P}} - (\widetilde{v}_\delta )_{\mathcal{P}}\|_{U^p(\mathbb{R})} &amp; \leq \sum _{\begin{subarray}
+{c}\tau _j \in \mathcal{P}\\
+ \tau _j \in ( t_* - \delta , t_*)
+\end{subarray}} \| u (\tau _j) - u (t_* - \delta )\|_{H} + \| u(t_*) - u(t_* - \delta )\|_H \\
+ &amp; &lt; \frac {\varepsilon }{8}  \tag{A.18}\cssId{U4d}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| u \|_{U^p([a, t_*))} &amp; \leq \|(\widetilde{v}_{\delta _n})_{\mathcal{P}}\|_{U^p(\mathbb{R})} + \frac {\varepsilon }{4} \leq \|\widetilde{v}_{\delta _n}\|_{U^p(\mathbb{R})} + \frac {\varepsilon }{4} \leq \|u \|_{U^p([a, t_* - \delta _n))} + \frac {\varepsilon }{2}\\
+ &amp; \leq \|u \|_{U^p([a, t_*))} - \frac {\varepsilon }{2} 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|\widetilde{v}_0\|_{U^p(\mathbb{R})} \leq \|u \|_{U^p([a, t_*))} + \frac {\varepsilon }{4}.  \tag{A.19}\cssId{U5b}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \sum _{j = J+1}^\infty |\lambda _j| &lt; \frac {\varepsilon }{4}.  \tag{A.20}\cssId{U5c}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+\lambda _0 := \|w_J(t_*)\|_H, \quad \phi := \lambda _0^{-1} w_J(t_*), \quad \text{and} \quad a_0 := \chi _{[t_*, \infty )} \phi .
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \| \widetilde{w}\|_{U^p(\mathbb{R})} \leq |\lambda _0| + \sum _{j = J+1}^\infty |\lambda _j| &lt; \frac { \varepsilon }{2},  \tag{A.21}\cssId{U5d}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{equation*}
+ \lambda _0 = \bigg \| w(t_*) - \sum _{j = J+1}^\infty \lambda _j a_j(t_*)\bigg \|_H =\bigg \|\sum _{j = J+1}^\infty \lambda _j a_j(t_*)\bigg \|_H \leq \sum _{j = J+1}^\infty |\lambda _j| &lt; \frac {\varepsilon }{4}. 
+\end{equation*}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \| u \|_{U^p([a, t_*+\delta ))} &amp; \leq \| \widetilde{v}_0\|_{U^p([a, t_*+\delta ))} + \|\widetilde{w} \|_{U^p([a, t_*+\delta ))} \leq \| \widetilde{v}_0\|_{U^p(\mathbb{R})} + \| \widetilde{w} \|_{U^p(\mathbb{R})} \\
+ &amp; \leq \| u \|_{U^p([a, t_*))} +\frac 34 \varepsilon 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u \|_{X^s([a, t))} = \|u\cdot \chi _{[a, t)}\|_{X^s(\mathbb{R})}.  \tag{A.22}\cssId{UP0}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u \|_{X^s([a, t))} \leq \| v\|_{X^s(\mathbb{R})}.  \tag{A.23}\cssId{UP1}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u\cdot \chi _{[a, t)} \|_{X^s(\mathbb{R})} = \|v\cdot \chi _{[a, t)} \|_{X^s(\mathbb{R})} \leq \| v\|_{X^s(\mathbb{R})}.  \tag{A.24}\cssId{UP2}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \|u \|_{X^s([a, t))} &amp; = \|u\cdot \chi _{[a, t)}\|_{X^s(\mathbb{R})} = \bigg (\sum _{\begin{subarray}
+{c}N\geq 1\\
+ \text{dyadic}
+\end{subarray}} N^{2s} \|\mathbf{P}_N u \cdot \chi _{[a, t)} \|^2_{U^2_\Delta (\mathbb{R}; L^2)}\bigg )^\frac {1}{2} \\
+ &amp; = \bigg (\sum _{\begin{subarray}
+{c}N\geq 1\\
+ \text{dyadic}
+\end{subarray}} N^{2s} \|\mathbf{P}_N u \|^2_{U^2_\Delta ([a, t); L^2)}\bigg )^\frac {1}{2},  \tag{A.25}\cssId{UP3}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \bigg (\sum _{j = J}^\infty 2^{2js} \|\mathbf{P}_{2^j} v \|^2_{U^2_\Delta (\mathbb{R}; L^2)}\bigg )^\frac {1}{2}&lt;\frac {\varepsilon }{4}. 
+\end{align*}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ \bigg (\sum _{j = J}^\infty 2^{2js} \|\mathbf{P}_{2^j} u \|^2_{U^2_\Delta ([a, t); L^2)}\bigg )^\frac {1}{2}&lt;\frac {\varepsilon }{4}  \tag{A.26}\cssId{UP4}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align}
+ 2^{js}\Big | \|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*); L^2)} - \|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*+\delta ); L^2)} \Big | &lt; \frac \varepsilon {2 J^\frac {1}{2}}  \tag{A.27}\cssId{UP5}{}{}
+\end{align}
+\]
+</P>
+
+<P>
+\[
+\begin{align*}
+ \Big |\| u \|_{X^s([a, t_*))} &amp; - \| u \|_{X^s([a, t_*+\delta ))} \Big |\\
+ &amp;\leq \bigg (\sum _{j = 0}^\infty 2^{2js} \big (\|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*); L^2)} - \|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*+\delta ); L^2)}\big )^2 \bigg )^\frac {1}{2}\\
+ &amp; \leq J^\frac {1}{2} \max _{j = 0, \dotsc , J-1} 2^{js}\Big | \|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*); L^2)} - \|\mathbf{P}_{2^j} u \|_{U^2_\Delta ([a, t_*+\delta ); L^2)} \Big | +\frac {\varepsilon }{2}\\
+ &amp; &lt; \varepsilon 
+\end{align*}
+\]
+</P>
+
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Sun Oct  9 10:45:50 PDT 2016
+<!-- hhmts end -->
+</body> </html>
