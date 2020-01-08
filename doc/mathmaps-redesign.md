@@ -2,18 +2,18 @@
 
 ## Build unit tests for characters
 
-- [ ] English 
-  - [ ] Default
-  - [ ] Mathspeak
-  - [ ] Clearspeak
-- [ ] Spanish
-  - [ ] Default
-  - [ ] Mathspeak
-- [ ] English 
-  - [ ] Default
-  - [ ] Mathspeak
-  - [ ] Clearspeak
-- [ ] Nemeth
+- [x] English 
+  - [x] Default
+  - [x] Mathspeak
+  - [x] Clearspeak
+- [x] Spanish
+  - [x] Default
+  - [x] Mathspeak
+- [x] English 
+  - [x] Default
+  - [x] Mathspeak
+  - [x] Clearspeak
+- [x] Nemeth
 
 ## Cleanup ideas
 
@@ -61,7 +61,7 @@
 
 * Per alphabet have range for upper and lower.  Additionally substitution. 
 
-    Example: fraktur fonts: [1D514, 211C] for fraktur cap R
+    Example: fraktur fonts: `[1D514, 211C]` for fraktur cap R
     
 * Generate alphabets programmatically, filling the mappings 
   (maybe later filling the rule directly?)
