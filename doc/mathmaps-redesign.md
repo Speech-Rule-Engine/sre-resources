@@ -22,11 +22,14 @@
 #### Default (ChromeVox) rule set
 
 - [ ] Rename short as brief
+    * Remap short to brief in the API
+    * Should we keep alternative?
 - [ ] Rewrite all alphabets 
     - [ ] to use capital letters for caps
     - [ ] to make default same as clearspeak
     - [ ] remove latin character etc. naming?
 - [ ] Rewrite numbers to digits 
+    * Digits larger than 9. Automatically generate? __No decided against__
 
 
 #### Other rule sets
@@ -39,15 +42,16 @@
 
 - [ ] Generate alphabets automatically,
     - [ ] use localised font and cap/upper
-    - [ ] extend to latin-rest character sets parathesized, squared, circled etc.
-            What about diacritical marks (combining)?
+- [ ] extend to latin-rest character sets parenthesized, squared, circled etc.
+    - [ ] Add pseudo fonts for these.
+    What about diacritical marks (combining)? __No not systematic enough__
 
 
 ### Digits
 
 - [ ] Simplify math digits
 - [ ] Standardize circled/negative circled etc.
-
+- [ ] Pseudo fonts as in alphabets
 
 ## General Redesign
 
@@ -81,3 +85,18 @@
 
 Same as alphabets
 
+
+### Locales
+
+Should only be loaded when they are actually used. 
+That includes both loading and generation of alphabet rules.
+
+
+### Testing:
+
+Initially we need to check loading time vs. generation time of alphabets.
+
+
+### Semantic 
+
+Exploit this in semantic attributes!
