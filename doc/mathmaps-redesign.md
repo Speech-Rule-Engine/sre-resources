@@ -32,6 +32,7 @@
     - [ ] Fix all the tests.
 - [x] Rewrite numbers to digits 
     * Digits larger than 9. Automatically generate? __Yes__
+    * For default keep named numbers rather than digits.
 - [ ] Fixes in the general rule set:
     - [ ] Problem with prefix + of. That should not happen. see issue 320
 
@@ -55,7 +56,9 @@
 - [x] Generate alphabets automatically,
     - [x] use localised font and cap/upper
 - [ ] extend to latin-rest character sets parenthesized, squared, circled etc.
-    - [ ] Add pseudo fonts for these.
+    - [X] Add pseudo fonts for these.
+    - [ ] Needs multiple mappings per style super/sup sub etc. and functions for
+      combination, i.e. bold 1 vs. 1 comma.
     What about diacritical marks (combining)? __No not systematic enough__
 - [ ] Greek lamda in en should maybe be lambda!
 - [ ] italic should be removed from italic mathfont characters!
