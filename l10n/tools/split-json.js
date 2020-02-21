@@ -4,7 +4,7 @@ let xmldom = require('xmldom-sre');
 let SplitJson = {};
 
 // Mathmaps path
-SplitJson.PATH_ = '/home/sorge/git/speech-rule-engine/src/mathmaps';
+SplitJson.PATH_ = '/home/sorge/git/sre/speech-rule-engine/src/mathmaps';
 
 SplitJson.OUTPUT_PATH_ = '/tmp/output';
 
@@ -14,11 +14,13 @@ SplitJson.TEMPLATE_PATH_ = '/tmp/ods';
 
 SplitJson.ODS_PATH_ = '/tmp/spreadsheets';
 
-SplitJson.ODS_TEMPLATE_ = '/home/sorge/git/speech-rule-engine/resources/l10n/templates/ods';
+SplitJson.ODS_TEMPLATE_ = '/home/sorge/git/sre-resources/l10n/templates/ods';
 
 SplitJson.INPUT_PATH_ = '/tmp/input';
 
-SplitJson.WWW_BASE_PATH = '/home/sorge/git/speech-rule-engine/resources/www';
+SplitJson.WWW_BASE_PATH = '/home/sorge/git/sre/sre-webpages/resources/www';
+
+SplitJson.UNICODE_PATH = '/home/sorge/git/sre/others/unicode-table-data/loc';
 
 /**
  * Subpath to dir containing ChromeVox JSON definitions for symbols.
@@ -72,32 +74,25 @@ SplitJson.UNUSED_PATH_ = 'unused';
  */
 SplitJson.SYMBOLS_FILES_ = [
   // Greek
-  'greek-capital.js', 'greek-small.js', 'greek-scripts.js',
-  'greek-mathfonts-bold.js', 'greek-mathfonts-italic.js',
-  'greek-mathfonts-sans-serif-bold.js', 'greek-symbols.js',
-  
+  'greek-scripts.js', 'greek-symbols.js',
+  'greek-rest.js',
+
   // Hebrew
   'hebrew_letters.js',
 
   // Latin
-  'latin-lower-double-accent.js', 'latin-lower-normal.js',
-  'latin-lower-phonetic.js', 'latin-lower-single-accent.js',
-  'latin-rest.js', 'latin-upper-double-accent.js',
-  'latin-upper-normal.js', 'latin-upper-single-accent.js',
-
-  // Latin Mathfonts
-  'latin-mathfonts-bold-fraktur.js', 'latin-mathfonts-bold.js',
-  'latin-mathfonts-bold-script.js', 'latin-mathfonts-double-struck.js',
-  'latin-mathfonts-fraktur.js', 'latin-mathfonts-italic.js',
-  'latin-mathfonts-monospace.js', 'latin-mathfonts-sans-serif-bold.js',
-  'latin-mathfonts-sans-serif-italic.js', 'latin-mathfonts-sans-serif.js',
-  'latin-mathfonts-script.js',
+  'latin-lower-double-accent.js', 'latin-lower-phonetic.js',
+  'latin-lower-single-accent.js', 'latin-rest.js',
+  'latin-upper-double-accent.js', 'latin-upper-single-accent.js',
 
   // Math Symbols
   'math_angles.js', 'math_arrows.js', 'math_characters.js',
-  'math_delimiters.js', 'math_digits.js', 'math_geometry.js',
+  'math_delimiters.js', 'math_geometry.js',
   'math_harpoons.js', 'math_non_characters.js', 'math_symbols.js',
-  'math_whitespace.js', 'other_stars.js'
+  'math_whitespace.js', 'other_stars.js',
+
+  // Digits
+  'digits_rest.js'
 
 ];
 
@@ -207,6 +202,16 @@ SplitJson.makePath = function(base, iso, kind) {
   return outputPath;
 };
 
+
+/**
+ * Splits a single locale mapping into the appropriate single files given by the
+ * model (normally 'en').
+ * @param {string} kind Type of json mapping (e.g., symbols).
+ * @param {Array.<string>} files List of filenames.
+ * @param {Object.<json>} locale The locale of json mappings.
+ * @param {string} iso The iso code of the locale.
+ * @param {string} model The iso code of the model locale (usually 'en').
+ */
 SplitJson.splitFile = function(kind, files, locale, iso, model) {
   let inputPath = `${SplitJson.PATH_}/${model}/${kind}/`;
   let outputPath = SplitJson.makePath(SplitJson.OUTPUT_PATH_, iso, kind);
@@ -581,26 +586,169 @@ SplitJson.moveFiles = function(locale) {
 };
 
 
-SplitJson.sortKeys = function(keys) {
-  let closure = function(x, y) {
-    let xn = parseInt(x, 16);
-    let yn = parseInt(y, 16);
-    if (isNaN(xn)) {
-      return 1;
-    }
-    if (isNaN(yn)) {
-      return -1;
-    }
-    if (xn < yn) {
-      return -1;
-    }
-    if (xn > yn) {
-      return 1;
-    }
-    return 0;
-  };
-  return keys.sort(closure);
+SplitJson.compareKeys_ = function(x, y) {
+  let xn = parseInt(x, 16);
+  let yn = parseInt(y, 16);
+  if (isNaN(xn)) {
+    return 1;
+  }
+  if (isNaN(yn)) {
+    return -1;
+  }
+  if (xn < yn) {
+    return -1;
+  }
+  if (xn > yn) {
+    return 1;
+  }
+  return 0;
 };
+
+
+/**
+ * Sort keys wrt. hex codes.
+ * @param {Array.<string>} keys The keys.
+ * @return {Array.<string>} The sorted keys.
+ */
+SplitJson.sortKeys = function(keys) {
+  return keys.sort(SplitJson.compareKeys_);
+};
+
+
+/**
+ * Removes the undefined key from the locale (this is usually the )
+ * @param {Object.<json>} locale The mapping.
+ * @return {Object.<json>} The cleaned locale.
+ */
+SplitJson.cleanLocale = function(locale) {
+  delete locale[undefined];
+  return locale;
+};
+
+SplitJson.compareKeys = function(loc1, loc2) {
+  SplitJson.cleanLocale(loc1);
+  SplitJson.cleanLocale(loc2);
+  let keys1 = SplitJson.sortKeys(Object.keys(loc1));
+  let keys2 = SplitJson.sortKeys(Object.keys(loc2));
+  let only1 = [];
+  let only2 = [];
+  while (keys1.length && keys2.length) {
+    let key1 = keys1.shift();
+    let key2 = keys2.shift();
+    switch (SplitJson.compareKeys_(key1, key2)) {
+    case 0: continue;
+    case -1:
+      only1.push(key1);
+      keys2.unshift(key2);
+      break;
+    case 1:
+      only2.push(key2);
+      keys1.unshift(key1);
+      break;
+    }
+  }
+  if (keys1.length) {
+    only1 = only1.concat(keys1);
+  } else {
+    only2 = only2.concat(keys2);
+  }
+  return [only1, only2];
+};
+
+
+/**
+ * Gets all default mappings from Json elements.
+ * @param {Array.<json>} json A json list.
+ * @return {Array.<string>} A list of string for the default.default mapping.
+ */
+SplitJson.getDefaultDefault = function(json) {
+  let result = [];
+  for (let obj of json) {
+    if (!obj.mappings || !obj.mappings.default ||
+        !obj.mappings.default.default) continue;
+    result.push(obj.mappings.default.default);
+  }
+  return result;
+};
+
+
+
+/**
+ *  
+ * Handling and looking up unicode characters in the localised Unicode Tables.
+ *
+ */
+SplitJson.UNICODE_MAPPINGS = {};
+
+SplitJson.loadUnicodeFile = function(file, dir, iso) {
+  file = dir ? `${dir}/${file}` : file;
+  let content = fs.readFileSync(`${SplitJson.UNICODE_PATH}/${iso}/symbols/${file}`, 'utf8');
+  let lines = content.split('\n');
+  let result = {};
+  for (let line of lines) {
+    if (!line.length) continue;
+    let [key, str] = line.split(':');
+    result[key.trim()] = str.trim();
+  }
+  return result;
+};
+
+
+SplitJson.baseFileName = function(hex) {
+  let base = hex.slice(0, -2) + '00';
+  let dir = (base.length > 4) ? 'plane' + base[0] : '';
+  return [base, dir];
+};
+
+
+SplitJson.getUnicodeString = function(hex, iso = 'en') {
+  let [base, dir] = SplitJson.baseFileName(hex);
+  let mapping = SplitJson.UNICODE_MAPPINGS[base];
+  if (mapping) {
+    return mapping[hex];
+  }
+  mapping = SplitJson.loadUnicodeFile(base + '.txt', dir, iso);
+  SplitJson.UNICODE_MAPPINGS[base] = mapping;
+  return mapping[hex];
+};
+
+SplitJson.lookupMissingUnicode = function(list, ref, iso) {
+  SplitJson.UNICODE_MAPPINGS = {};
+  let result = {};
+  for (let code of list) {
+    result[code] = {
+      category: ref[code].category,
+      key: code,
+      mappings: {default: {default: SplitJson.getUnicodeString(code, iso)}}
+    };
+  }
+  return result;
+};
+
+
+/**
+ * Completes a locale from the unicode mappings.
+ * @param {string} iso The locale.
+ */
+SplitJson.completeLocale = function(iso) {
+  let locale = SplitJson.loadLocale(SplitJson.SYMBOLS_FILES_, `${SplitJson.PATH_}/${iso}/symbols/`);
+  let english = SplitJson.loadLocale(SplitJson.SYMBOLS_FILES_, `${SplitJson.PATH_}/en/symbols/`);
+  let [left, right] = SplitJson.compareKeys(english, locale);
+  if (right.length) {
+    console.log('Warning: There are superfluous symbols in locale: ' + iso);
+  }
+  console.log(Object.keys(locale).length);
+  console.log(Object.keys(english).length);
+  let addition = SplitJson.lookupMissingUnicode(left, english, iso);
+  console.log(Object.keys(addition).length);
+  Object.assign(locale, addition);
+  console.log(Object.keys(locale).length);
+  SplitJson.splitFile(SplitJson.SYMBOLS_, SplitJson.FILES_MAP_.get(SplitJson.SYMBOLS_),
+                      locale, iso, 'en');
+  SplitJson.splitFile(SplitJson.SYMBOLS_, SplitJson.FILES_MAP_.get(SplitJson.SYMBOLS_),
+                      addition, iso + '-new', 'en');
+};
+
 
 // SplitJson.defaultFiles = function() {
 //   SplitJson.allFiles(SplitJson.SYMBOLS_FILES_, SplitJson.FUNCTIONS_FILES_)
@@ -611,21 +759,7 @@ module.exports = SplitJson;
 // SplitJson.splitFiles(SplitJson.SYMBOLS_PATH_,
 //                       SplitJson.SYMBOLS_FILES_, french, 'fr', 'symbols');
 // where french contained the locale.
-// TODO: make an outer directory of the iso locale.
 
+// Combine and minimise json!
+// jq -c -s add *.js
 
-// Missing maths fonts:
-// latin:
-// bold-italic: seq 0x1d468 0x1d49b | while read n; do printf "%04X\n" $n; done > /tmp/latin-mathfonts-bold-italic
-// sans-serif bold italic: seq 0X1D63C 0X1D66F | while read n; do printf "%04X\n" $n; done > /tmp/latin-mathfonts-sans-serif-bold-italic
-//
-// greek:
-// Bold Italic : seq 0X1D71C 0X1D755 | while read n; do printf "%04X\n" $n; done > /tmp/greek-mathfonts-bold-italic
-// sans-serif bold italic: seq 0X1D790 0X1D7C9 | while read n; do printf "%04X\n" $n; done > /tmp/greek-mathfonts-sans-serif-bold-italic
-//
-// cp latin-mathfonts-bold-script.js latin-mathfonts-bold-italic.js
-// cp latin-mathfonts-sans-serif-bold.js latin-mathfonts-sans-serif-bold-italic.js
-// 
-// cp greek-mathfonts-bold.js greek-mathfonts-bold-italic.js
-// cp greek-mathfonts-sans-serif-bold.js greek-mathfonts-sans-serif-bold-italic.js
-//
