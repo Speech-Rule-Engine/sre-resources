@@ -70,6 +70,8 @@
 - [x] Simplify math digits
 - [x] Standardize circled/negative circled etc.
 - [x] Pseudo fonts as in alphabets
+- [ ] Spanish: Check if ordinals are correct.
+- [ ] Spanish: Add wordOrdinals method.
 
 ### Functions
 
