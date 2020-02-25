@@ -41,13 +41,14 @@
 
 - [x] Add numbers to the localised digits
 - [x] Remove every dashed element (this could be problematic on French locale, etc.)
+    - [ ] French Hyphenated numerals.
 - [ ] French: Make alternatives for parentheses clearspeak defaults?
 - [ ] Clearspeak
     - [ ] Incorporate preferences into cyclometric function mappings
     - [ ] Adapt handling of cyclometric functions without argument in the speech rules
     - [ ] Rewrite sub/superscripts and parenthesis in math_symbols
     - [ ] super and subscript numbers in clearspeak/mathspeak
-    - [ ] French: Handling of triangle for delta
+    - [x] French: Handling of triangle for delta
 
 
 
@@ -70,6 +71,12 @@
 - [x] Standardize circled/negative circled etc.
 - [x] Pseudo fonts as in alphabets
 
+### Functions
+
+- [ ] Short vs default for mathspeak etc.
+- [x] French: Add the inverse hyperbolic and cyclo functions
+- [ ] Localisation of elementary functions like lcm, gcd, etc
+
 ## General Redesign
 
 - [ ] Alphabet handling
@@ -77,6 +84,9 @@
 - [ ] File handling
 - [ ] Locale loading
 - [ ] JSON file creation for distribution
+    ```bash
+        jq -c -s add *.js
+    ```
 
 ### Alphabets
 

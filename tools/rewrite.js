@@ -1,4 +1,5 @@
 // Some stuff for rewriting.
+// Should be combined with the split json tools.
 
 stuff = '';
 
