@@ -1,0 +1,228 @@
+,"Math","English","Spanish Translation",
+0,"=image(""https://equatio-api.texthelp.com/svg/%5Cpi%5Capprox3.14159"")","pi almost-equals 3.14159","pi aproximado 3,14159",
+1,"102+2,214+15=2,331","102 plus 2,214 plus 15 equals 2,331","102 más 2214 más 15 igual 2331",
+2,"59×0=0","59 times 0 equals 0","59 por 0 igual 0",
+3,"=image(""https://equatio-api.texthelp.com/svg/3--2"")","3 minus negative 2","3 menos menos 2",
+4,"-y","negative y","menos y",
+5,-32,"negative 32","menos 32",
+6,"t2e4","Number t 2 e 4","número t 2 e 4",
+7,"#FF0000","Number number-sign F F 0 0 0 0","número almuhadilla F F 0 0 0 0",
+8,"0x15FF+0x2B01=0x4100","Number 0 x 1 5 F F plus Number 0 x 2 B 0 1 equals Number 0 x 4 1 0 0","número 0 x 1 5 F F más número 0 x 2 B 0 1 igual número 0 x 4 1 0 0",
+9,"I,II,III,IV,V.","upper I comma UpperWord I I comma UpperWord I I I comma UpperWord I V comma 
+upper V period","mayúscula I coma mayúscula I I coma mayúscula I I I coma mayúscula I V coma mayúscula V punto",
+10,"=image(""https://equatio-api.texthelp.com/svg/d%3D%5Csqrt%7B%5Cleft(X-x%5Cright)%5E2-%5Cleft(Y-y%5Cright)%5E2%7D"")","d equals StartRoot left-parenthesis upper X minus x right-parenthesis 
+squared minus left-parenthesis upper Y minus y right-parenthesis squared 
+EndRoot","d igual empezar raíz cuadrada paréntesis izquierdo mayúscula X menos x paréntesis derecho al cuadrado menos paréntesis izquierdo mayúscula Y menos y paréntesis derecho al cuadrado finalizar raíz cuadrada",
+11,"If A→B and B→C then A→C.","If upper A right-arrow upper B and upper B right-arrow upper C then upper A 
+right-arrow upper C period","Si mayúscula A flecha derecha mayúscula B y mayúscula B flecha derecha mayúscula C entonces mayúscula A flecha derecha mayúscula C punto",
+12,"[x]","bold left-bracket x bold right-bracket","negrita corchete izquierdo x negrita corchete derecho",
+13,"=image(""https://equatio-api.texthelp.com/svg/%5Coint%20E%5Ccdot%20d%5Cmathbf%7Bl%7D%3D-%5Cfrac%7Bd%5CPhi%20B%7D%7Bdt%7D"")","contour-integral upper E dot d bold l equals minus StartFraction d upper 
+Phi upper B Over d t EndFraction","integral de contorno mayúscula E punto medio d negrita l igual menos empezar fracción d mayúscula Phi mayúscula B entre d t finalizar fracción",
+14,"=image(""https://equatio-api.texthelp.com/svg/-%5Cfrac%7B1%7D%7Bb%7D"")","minus StartFraction 1 Over b EndFraction","menos empezar fracción 1 entre b finalizar fracción",
+15,"=image(""https://equatio-api.texthelp.com/svg/-%5Cfrac%7Ba%7D%7Bb%7D"")","minus StartFraction a Over b EndFraction","menos empezar fracción a entre b finalizar fracción",
+16,"=image(""https://equatio-api.texthelp.com/svg/-3%5Cfrac%7B1%7D%7B2%7D"")","negative 3 and one-half","menos 3 más empezar fracción 1 entre 2 finalizar fracción",
+17,"Uppercase({α,β,γ,δ,ϵ,φ})={Α,Β,Γ,Δ,Ε,Φ}","Uppercase left-parenthesis StartSet alpha comma beta comma gamma comma 
+delta comma epsilon comma phi EndSet right-parenthesis equals StartSet 
+upper Alpha comma upper Beta comma upper Gamma comma upper Delta comma 
+upper Epsilon comma upper Phi EndSet","mayúscula paréntesis izquierdo empezar llave alfa coma beta coma gamma coma delta coma epsilon coma phi finalizar llave paréntesis izquierdo igual empezar llave mayúscula Alfa coma mayúscula Beta coma mayúscula Gamma coma mayúscula Delta coma mayúscula Epsilon coma mayúscula Phi finalizar llave",
+18,"y-1","y minus 1","y menos 1",
+19,"(1-to-1)","left-parenthesis 1 hyphen to hyphen 1 right-parenthesis","paréntesis izquierdo 1 a 1 paréntesis derecho","X"
+20,-1,"negative 1","menos 1",
+21,"The Fibonacci numbers are: {0,1,1,2,3,5,8,…}","The Fibonacci numbers are colon StartSet 0 comma 1 comma 1 comma 2 comma 3 
+comma 5 comma 8 comma ellipsis EndSet","los números de Fibonacci son dos puntos empezar llave 0 coma 1 coma 1 coma 2 coma 3 coma 5 coma 8 coma puntos suspensivos finalizar llave",
+22,"|4-7|=3","StartAbsoluteValue 4 minus 7 EndAbsoluteValue equals 3","empezar valor absoluto 4 menos 7 finalizar valor absoluto igual 3",
+23,"=image(""https://equatio-api.texthelp.com/svg/%5Cleft%7Ca%5Cpm%5Cleft%7Cb-c%5Cright%7C%5Cright%7C%5Cne%5Cleft%7Ca%5Cright%7C%5Cpm%5Cleft%7Cb-c%5Cright%7C"")","StartAbsoluteValue a plus-or-minus StartAbsoluteValue b minus c 
+EndAbsoluteValue EndAbsoluteValue not-equals StartAbsoluteValue a 
+EndAbsoluteValue plus-or-minus StartAbsoluteValue b minus c EndAbsoluteValue","empezar valor absoluto a más menos empezar valor absoluto b menos c finalizar valor absoluto finalizar valor absoluto no es igual a empezar valor absoluto a finalizar valor absoluto más menos empezar valor absoluto b menos c finalizar valor absoluto",
+24,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B1%7D%7Bx%7D"")","StartFraction 1 Over x EndFraction","empezar fracción 1 entre x finalizar fracción",
+25,"=image(""https://equatio-api.texthelp.com/svg/a-%5Cfrac%7Bb%2Bc%7D%7Bd-e%7D%5Ctimes%20f"")","a minus StartFraction b plus c Over d minus e EndFraction times f","a menos empezar fracción b más c entre d menos e finalizar fracción por f",
+26,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B%5Cfrac%7Bx%7D%7By%7D%7D%7Bz%7D%5Cne%5Cfrac%7Bx%7D%7B%5Cfrac%7By%7D%7Bz%7D%7D"")","StartStartFraction StartFraction x Over y EndFraction OverOver z 
+EndEndFraction not-equals StartStartFraction x OverOver StartFraction y 
+Over z EndFraction EndEndFraction","empezar empezar fracción empezar fracción x entre y finalizar fracción entre entre z finalizar finalizar fracción no es igual a empezar empezar fracción x entre entre empezar fracción y entre z finalizar fracción finalizar finalizar fracción",
+27,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B%5Cfrac%7B(1-x)%5Cfrac%7Bd%7D%7Bdx%7D(2x)-2x%5Cfrac%7Bd%7D%7Bdx%7D(1-x)%7D%7B(1-x)%5E2%7D%7D%7B1%2B%5Cleft(%5Cfrac%7B2x%7D%7B1-x%7D%5Cright)%7D%5E2"")","StartStartStartFraction StartStartFraction left-parenthesis 1 minus x 
+right-parenthesis StartFraction d Over d x EndFraction left-parenthesis 2 x 
+right-parenthesis minus 2 x StartFraction d Over d x EndFraction 
+left-parenthesis 1 minus x right-parenthesis OverOver left-parenthesis 1 
+minus x right-parenthesis squared EndEndFraction OverOverOver 1 plus 
+left-parenthesis StartFraction 2 x Over 1 minus x EndFraction 
+right-parenthesis squared EndEndEndFraction","empezar empezar empezar fracción empezar empezar fracción paréntesis izquierdo 1 menos x paréntesis derecho empezar fracción d entre d x finalizar fracción paréntesis izquierdo 2 x paréntesis derecho menos 2 x empezar fracción d entre d x finalizar fracción paréntesis izquierdo 1 menos x paréntesis derecho entre entre paréntesis izquierdo 1 menos x paréntesis derecho al cuadrado finalizar finalizar fracción entre entre entre 1 más paréntesis izquierdo empezar fracción 2 x entre 1 menos x finalizar fracción paréntesis derecho al cuadrado finalizar finalizar finalizar fracción",
+28,"=image(""https://equatio-api.texthelp.com/svg/a_0%2B%5Cfrac%7B1%7D%7Ba_1%2B%5Cfrac%7B1%7D%7Ba_2%2B%5Cfrac%7B1%7D%7B...%2Ba_n%7D%7D%7D"")","a 0 plus StartStartStartStartFraction 1 OverOverOverOver a 1 plus 
+StartStartStartFraction 1 OverOverOver a 2 plus StartStartFraction 1 
+OverOver ellipsis plus StartFraction 1 Over a Subscript n Baseline 
+EndFraction EndEndFraction EndEndEndFraction EndEndEndEndFraction","a subíndice 0 linea base más empezar empezar empezar empezar fracción 1 entre entre entre entre a subíndice 1 linea base más empezar empezar empezar fracción 1 entre entre entre a subíndice 2 linea base más empezar empezar fracción 1 entre entre puntos suspensivos más empezar fracción 1 entre a subíndice n linea base finalizar fracción finalizar finalizar fracción finalizar finalizar finalizar fracción finalizar finalizar finalizar finalizar fracción",
+29,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B1%7D%7B2%7D%2B%5Cfrac%7B2%7D%7B2%7D%2B%5Cfrac%7B3%7D%7B2%7D%2B%5Cfrac%7B4%7D%7B2%7D%2B...%3D%5Csum_%7Bn%3D1%7D%5E%7B%5Cinfty%7D%5Cfrac%7Bn%7D%7B2%7D"")","one-half plus two-halves plus three-halves plus four-halves plus ellipsis 
+equals sigma-summation Underscript n equals 1 Overscript infinity 
+Endscripts StartFraction n Over 2 EndFraction","empezar fracción 1 entre 2 finalizar fracción más empezar fracción 2 entre 2 finalizar fracción más empezar fracción 3 entre 2 finalizar fracción más empezar fracción 4 entre 2 finalizar fracción más puntos suspensivos igual sumatorio bajoíndice n igual 1 sobreíndice infinito finalizar índices empezar fracción n entre 2 finalizar fracción",
+30,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B20%7D%7B5%7D%5Ctimes%5Cfrac%7B1%7D%7B100%7D%3D%5Cfrac%7B1%7D%7B25%7D"")","StartFraction 20 Over 5 EndFraction times StartFraction 1 Over 100 
+EndFraction equals one-twenty-fifth","empezar fracción 20 entre 5 finalizar fracción por empezar fracción 1 entre 100 finalizar fracción igual 1 entre 25",
+31,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B%5Cfrac%7B3%7D%7B5%7D%7D%7B8%7D%3D%5Cfrac%7B3%7D%7B5%7D%5Ctimes%5Cfrac%7B1%7D%7B8%7D"")","StartFraction three-fifths Over 8 EndFraction equals three-fifths times 
+one-eighth","empezar empezar fracción empezar fracción 3 entre 5 finalizar fracción entre entre 8 finalizar finalizar fracción igual empezar fracción 3 entre 5 finalizar fracción por empezar fracción 1 entre 8 finalizar fracción",
+32,"=image(""https://equatio-api.texthelp.com/svg/3%5Cfrac%7B5%7D%7B8%7D%3D%5Cfrac%7B29%7D%7B8%7D"")","3 and five-eighths equals StartFraction 29 Over 8 EndFraction","3 más empezar fracción 5 entre 8 finalizar fracción igual empezar fracción 29 entre 8 finalizar fracción",
+33,"=image(""https://equatio-api.texthelp.com/svg/a_0%2B%5Cfrac%7Bb_1%7D%7Ba_1%2B%5Cfrac%7Bb_2%7D%7Ba_2%2B%5Cfrac%7Bb_3%7D%7Ba_3%2B...%7D%7D%7D%3Da_0%2B%5Cfrac%7Bb_1%7D%7Ba_1%7D%2B%5Cfrac%7Bb_2%7D%7Ba_2%7D%2B..."")","a 0 plus ContinuedFraction b 1 Over a 1 plus StartFraction b 2 Over a 2 
+plus StartFraction b 3 Over a 3 plus ellipsis equals a 0 plus StartFraction 
+b 1 Over a 1 EndFraction plus StartFraction b 2 Over a 2 EndFraction plus 
+ellipsis","a subíndice 0 linea base más fracción continua b subíndice 1 linea base entre a subíndice 1 linea base más empezar fracción b subíndice 2 linea base entre a subíndice 2 linea base más empezar fracción b subíndice 3 linea base entre a subíndice 3 linea base más puntos suspensivos igual a subíndice 0 linea base más empezar fracción b subíndice 1 linea base entre a subíndice 1 linea base finalizar fracción más empezar fracción b subíndice 2 linea base entre a subíndice 2 linea base finalizar fracción más puntos suspensivos",
+34,"=image(""https://equatio-api.texthelp.com/svg/x%20%5E%7B3%7D%20%2B%206%20x%20%5E%7B2%7D%20-%20x%20%3D%2030"")","x cubed plus 6 x squared minus x equals 30","x al cubo más 6 x al cuadrado menos x igual 30",
+35,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7Bd%5E2y%7D%7Bdx%5E2%7D%2B%5Cleft(ax%5E2%2Bbx%2Bc%5Cright)y%3D0"")","StartFraction d squared y Over d x squared EndFraction plus 
+left-parenthesis a x squared plus b x plus c right-parenthesis y equals 0","empezar fracción d al cuadrado y entre d x al cuadrado finalizar fracción más paréntesis izquierdo a x al cuadrado más b x más c paréntesis derecho y igual 0",
+36,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7B%5Cfrac%7B1%7D%7B2%7D%7D"")","x Superscript one-half","x superíndice empezar fracción 1 entre 2 finalizar fracción","x exponente 1 entre 2"
+37,"=image(""https://equatio-api.texthelp.com/svg/x_n"")","x Subscript n","x subíndice n",
+38,"=image(""https://equatio-api.texthelp.com/svg/x%5Ea"")","x Superscript a","x superíndice a",
+39,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7Bm%2Bn%7D"")","x Superscript m plus n","x superíndice m más n",
+40,"=image(""https://equatio-api.texthelp.com/svg/T_%7Bn-1%7D%2B5%3D0"")","upper T Subscript n minus 1 Baseline plus 5 equals 0","mayúscula T subíndice n menos 1 línea base más 5 igual 0",
+41,"=image(""https://equatio-api.texthelp.com/svg/x%20%5E%7B%20m%20%2B%20n%20%7D%20%3D%20x%20%5E%7B%20m%20%7D%20x%20%5E%7B%20n%7D"")","x Superscript m plus n Baseline equals x Superscript m Baseline x 
+Superscript n","x superíndice m más n línea base igual x superíndice m línea base x superíndice n",
+42,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7Ba_n%2Ba_%7Bn-1%7D%7D"")","x Superscript a Super Subscript n Superscript plus a Super Subscript n 
+minus 1","x superíndice a super subíndice n superíndice más a super subíndice n menos 1",
+43,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7Ba_b%7D"")","x Superscript a Super Subscript b","x superíndice a super subíndice b",
+44,"=image(""https://equatio-api.texthelp.com/svg/x_%7Ba%5Eb%7D"")","x Subscript a Sub Superscript b","x subíndice a sub superíndice b",
+45,"=image(""https://equatio-api.texthelp.com/svg/y%5E%7Ba%5E%7Bb_c%7D%7D%5Cne%20y%5E%7Ba%5Ebc%7D"")","y Superscript a Super Superscript b Super Super Subscript c Baseline 
+not-equals y Superscript a Super Superscript b Superscript c","y superíndice a super superíndice b super super subíndice c línea base no es igual a y superíndice a super superíndice b superíndice c",
+46,"=image(""https://equatio-api.texthelp.com/svg/y%5E%7Ba%5E%7B_cb%7D%7D"")","y Superscript a Super Super Subscript c Super Superscript b","y superíndice a super super subíndice c super superíndice b",
+47,"=image(""https://equatio-api.texthelp.com/svg/y%5E%7Ba%5E%7B_c%7D%7D"")","y Superscript a Super Super Subscript c",,
+48,"=image(""https://equatio-api.texthelp.com/svg/y_%7Ba_%7B%5Ec%7D%7D"")","y Subscript a Sub Sub Superscript c",,
+49,"=image(""https://equatio-api.texthelp.com/svg/y_%7Ba_%7B%5Ec%7D_b%7D"")","y Subscript a Sub Sub Superscript c Sub Subscript b",,
+50,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7Ba%5Eb%7D"")","x Superscript a Super Superscript b",,
+51,"=image(""https://equatio-api.texthelp.com/svg/x_%7Ba_b%7D"")","x Subscript a Sub Subscript b",,
+52,"=image(""https://equatio-api.texthelp.com/svg/T%5E%7B%5Cleft(x%5Ea%2By%5Eb%5Cright)%7D"")","upper T Superscript left-parenthesis x Super Superscript a Superscript plus 
+y Super Superscript b Superscript right-parenthesis","mayúscula T superíndice paréntesis izquierdo z super superíndice a superíndice más y super superíndice b superíndice paréntesis derecho",
+53,"=image(""https://equatio-api.texthelp.com/svg/x_1"")","x Subscript 1","x subíndice 1",
+54,"=image(""https://equatio-api.texthelp.com/svg/x_%7B-1%7D"")","x Subscript negative 1","x subíndice menos 1",
+55,"=image(""https://equatio-api.texthelp.com/svg/x_%7B10%2C000%7D"")","x Subscript 10,000","x subíndice 10000",
+56,"=image(""https://equatio-api.texthelp.com/svg/x_%7B1.3%7D"")","x Subscript 1.3","x subíndice 1,3",
+57,"=image(""https://equatio-api.texthelp.com/svg/4%5Ctext%7BFe%7D%2B3O_2%5Crightarrow2%5Ctext%7BFe%7D_2O_3"")","4 upper F e plus 3 upper O 2 right-arrow 2 upper F e 2 upper O 3",,
+58,"=image(""https://equatio-api.texthelp.com/svg/a_%7B2%2C3%7D"")","a Subscript 2 comma 3","a subíndice 2 coma 3",
+59,"=image(""https://equatio-api.texthelp.com/svg/T_%7Bn_1%2Bn_0%7D"")","upper T Subscript n Subscript 1 plus n Subscript 0",,
+60,"=image(""https://equatio-api.texthelp.com/svg/%5Clog_2%5Cleft(x%5Cright)%3D%5Cfrac%7B%5Clog_%7B10%7D%5Cleft(x%5Cright)%7D%7B%5Clog_%7B10%7D%5Cleft(2%5Cright)%7D"")","log Subscript 2 Baseline left-parenthesis x right-parenthesis equals 
+StartFraction log Subscript 10 Baseline left-parenthesis x 
+right-parenthesis Over log Subscript 10 Baseline left-parenthesis 2 
+right-parenthesis EndFraction",,
+61,"=image(""https://equatio-api.texthelp.com/svg/%5CPhi_5"")","upper Phi 5","mayúscula Phi subíndice 5",
+62,"=image(""https://equatio-api.texthelp.com/svg/%5Cln%20x%3D%5Cint_1%5Ex%5Cfrac%7Bdt%7D%7Bt%7D"")","ln x equals integral Subscript 1 Superscript x Baseline StartFraction d t 
+Over t EndFraction","ln x igual integral subíndice 1 superíndice x línea base empezar fracción d t entre t finalizar fracción",
+63,"=image(""https://equatio-api.texthelp.com/svg/%5C%24n2%3D2*%5C%24n%2B1%3B"")","dollar-sign n Baseline 2 equals 2 asterisk dollar-sign n plus 1 semicolon",,
+64,"=image(""https://equatio-api.texthelp.com/svg/_%7Bcd%7D%5E%7Bab%7Dx_%7Bef%7D%5E%7Bgh%7D"")","Subscript c d Superscript a b Baseline x Subscript e f Superscript g h",,
+65,"=image(""https://equatio-api.texthelp.com/svg/_%7Bcd%7D%5E%7Bab%7Dx_%7Bef%7D%5E%7Bgh%7D"")","Subscript c d Superscript a b Baseline x Subscript e f Superscript g h",,
+66,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%5E%7Bl%7D%7D"")","Subscript a Superscript b Baseline x Subscript c Sub Superscript l",,
+67,"=image(""https://equatio-api.texthelp.com/svg/_a%5Ebx_%7Bc_%7Bl%7D%7D%5Ed"")","Subscript a Superscript b Baseline x Subscript c Sub Subscript l 
+Superscript d",,
+68,"=image(""https://equatio-api.texthelp.com/svg/_a%5Ebx_%7Bc_%7Bl%5E%7Bk%7D%7De%7D%5Ed"")","Subscript a Superscript b Baseline x Subscript c Sub Subscript l Sub Sub 
+Superscript k Subscript e Superscript d",,
+69,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%5E%7Bl%7D%7D%5E%7Bd%7D"")","Subscript a Superscript b Baseline x Subscript c Sub Superscript l 
+Superscript d",,
+70,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bck%5E%7Bl%7D%7D%5E%7Bd%7D"")","Subscript a Superscript b Baseline x Subscript c k Sub Superscript l 
+Superscript d",,
+71,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D"")","Subscript a Superscript b Baseline x Subscript c Superscript d Baseline 
+Subscript a Superscript b Baseline x Subscript c Superscript d",,
+72,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D"")","Subscript a Superscript b Baseline x Subscript c Superscript d",,
+73,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D"")","Subscript a Superscript b Baseline x Subscript c",,
+74,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx%5E%7Bd%7D"")","Subscript a Superscript b Baseline x Superscript d",,
+75,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx"")","Subscript a Superscript b Baseline x",,
+76,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7Dr"")","Subscript a Superscript b Baseline x Subscript c Baseline r",,
+77,"=image(""https://equatio-api.texthelp.com/svg/_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7Dr"")","Subscript a Superscript b Baseline x Subscript c Superscript d Baseline r",,
+78,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%7B_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D%7D"")","StartRoot Subscript a Superscript b Baseline x Subscript c Superscript d 
+Baseline EndRoot",,
+79,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%7B_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D%7Dr"")","StartRoot Subscript a Superscript b Baseline x Subscript c Superscript d 
+Baseline EndRoot r",,
+80,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B1%7D%7B_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D%7D"")","StartFraction 1 Over Subscript a Superscript b Baseline x Subscript c 
+Superscript d Baseline EndFraction",,
+81,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B1%7D%7B_%7Ba%7D%5E%7Bb%7Dx_%7Bc%7D%5E%7Bd%7D%7Dr"")","StartFraction 1 Over Subscript a Superscript b Baseline x Subscript c 
+Superscript d Baseline EndFraction r",,
+82,"=image(""https://equatio-api.texthelp.com/svg/T_0%5E2"")","upper T subscript 0 squared",,
+83,"=image(""https://equatio-api.texthelp.com/svg/%7BT_0%7D%5E2"")","upper T 0 squared",,
+84,"=image(""https://equatio-api.texthelp.com/svg/T_%7B0%7D%5E%7B3%7D"")","upper T 0 cubed",,
+85,"=image(""https://equatio-api.texthelp.com/svg/%7BT_0%7D%5E3"")","upper T 0 cubed",,
+86,"=image(""https://equatio-api.texthelp.com/svg/T_%7Bn-1%7D%5E%7B2%7D"")","upper T Subscript n minus 1 Superscript 2",,
+87,"=image(""https://equatio-api.texthelp.com/svg/x'"")","x prime","x prima",
+88,"=image(""https://equatio-api.texthelp.com/svg/f'''%5Cleft(y%5Cright)%3D%5Cfrac%7Bdf''%5Cleft(y%5Cright)%7D%7Bdy%7D"")","f triple-prime left-parenthesis y right-parenthesis equals StartFraction d 
+f double-prime left-parenthesis y right-parenthesis Over d y EndFraction","f triple prima paréntesis izquierdo y paréntesis derecho igual empezar fracción d f doble prima paréntesis izquierdo y paréntesis derecho entre d y finalizar fracción",
+89,"=image(""https://equatio-api.texthelp.com/svg/%5Crho'%3D%5Crho'_%2B%2B%5Crho'_-"")","rho prime equals rho prime Subscript plus Baseline plus rho prime Subscript 
+minus","rho prima igual rho prima subíndice más línea base más rho prima subíndice menos",
+90,"=image(""https://equatio-api.texthelp.com/svg/x'_%7B10%7D"")","x prime subscript 10","x prima subíndice 10",
+91,"=image(""https://equatio-api.texthelp.com/svg/T'_n"")","upper T prime Subscript n",,
+92,"=image(""https://equatio-api.texthelp.com/svg/%5Cleft%5B%20%5Cbegin%7Bmatrix%7D%20x%5E%7Bn%7D%26%20y%5E%7Bn%7D%26z%5E%7Bn%7D%5C%5C%20x%5E%7Bn%2B1%7D%26%20y%5E%7Bn%2B1%7D%20%20%26z%5E%7Bn%2B1%7D%5Cend%7Bmatrix%7D%5Cright%5D"")","Start 2 By 3 Matrix 1st Row 1st Column x Superscript n 2nd Column y 
+Superscript n 3rd Column z Superscript n 2nd Row 1st Column x Superscript n 
+plus 1 2nd Column y Superscript n plus 1 3rd Column z Superscript n plus 1 
+EndMatrix","empezar matriz 2 por 3 primera fila primera columna x exponente n segunda columna y exponente n tercera columna z exponente n segunda fila primera columna x exponente n más 1 segunda columna y exponente n más 1 tercera columna z exponente n más 1 finalizar matriz",
+93,"=image(""https://equatio-api.texthelp.com/svg/%7Bx_%7Ba%7D%7D%5Eb"")","x Subscript a Baseline Superscript b",,
+94,"=image(""https://equatio-api.texthelp.com/svg/%7Bx%5E%7Bb%7D%7D_a"")","x Superscript b Baseline Subscript a",,
+95,"=image(""https://equatio-api.texthelp.com/svg/%5Clog%5E%7B4%7D%5C%2C%20%5E%7Bb%7Dx"")","log Superscript 4 Superscript b Baseline x",,
+96,"=image(""https://equatio-api.texthelp.com/svg/T_%7Bn%7D_%7Ba%7Dy"")","upper T Subscript n Subscript a Baseline y",,
+97,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%7B2%7D"")","StartRoot 2 EndRoot",,
+98,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%7Bm%2Bn%7D"")","StartRoot m plus n EndRoot",,
+99,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%5Bm%2Bn%5D%7Bx%2By%7D"")","RootIndex m plus n StartRoot x plus y EndRoot",,
+100,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%5Bn%5D%7Bx%5Em%7D%3D%5Cleft(%5Csqrt%5Bn%5D%7Bx%7D%5Cright)%5Em%3Dx%5E%7B%5Cfrac%7Bm%7D%7Bn%7D%7D%2C%5C%20x%3E0"")","RootIndex n StartRoot x Superscript m Baseline EndRoot equals 
+left-parenthesis RootIndex n StartRoot x EndRoot right-parenthesis 
+Superscript m Baseline equals x Superscript StartFraction m Over n 
+EndFraction Baseline comma x greater-than 0",,
+101,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%5B3%5D%7Bx%7D%3Dx%5E%7B%5Cfrac%7B1%7D%7B3%7D%7D"")","RootIndex 3 StartRoot x EndRoot equals x Superscript one-third",,
+102,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%7B%5Csqrt%7Bx%2B1%7D%2B%5Csqrt%7By%2B1%7D%7D"")","NestedStartRoot StartRoot x plus 1 EndRoot plus StartRoot y plus 1 EndRoot 
+NestedEndRoot",,
+103,"=image(""https://equatio-api.texthelp.com/svg/%5Csqrt%5Bn%5D%7B%5Csqrt%5Bm%5D%7Bx%7D%7D%3D%5Csqrt%5Bm%5D%7B%5Csqrt%5Bn%5D%7Bx%7D%7D"")","NestedRootIndex n NestedStartRoot RootIndex m StartRoot x EndRoot 
+NestedEndRoot equals NestedRootIndex m NestedStartRoot RootIndex n 
+StartRoot x EndRoot NestedEndRoot",,
+104,"=image(""https://equatio-api.texthelp.com/svg/x%5E%7Be-2%7D%3D%5Csqrt%7Bx%5Csqrt%5B3%5D%7Bx%5Csqrt%5B4%5D%7Bx%5Csqrt%5B5%5D%7Bx...%7D%7D%7D%7D%2C%5C%20x%5Cin%5Cmathbb%7BR%7D"")","x Superscript e minus 2 Baseline equals Nested3StartRoot x 
+NestedTwiceRootIndex 3 NestedTwiceStartRoot x NestedRootIndex 4 
+NestedStartRoot x RootIndex 5 StartRoot x ellipsis EndRoot NestedEndRoot 
+NestedTwiceEndRoot Nested3EndRoot comma x element-of double-struck upper R",,
+105,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac2%5Cpi%3D%5Cfrac%7B%5Csqrt2%7D2%5Cfrac%7B%5Csqrt%7B2%2B%5Csqrt2%7D%7D2%5Cfrac%7B%5Csqrt%7B2%2B%5Csqrt%7B2%2B%5Csqrt2%7D%7D%7D2%5Cdots"")","StartFraction 2 Over pi EndFraction equals StartFraction StartRoot 2 
+EndRoot Over 2 EndFraction StartFraction NestedStartRoot 2 plus StartRoot 2 
+EndRoot NestedEndRoot Over 2 EndFraction StartFraction NestedTwiceStartRoot 
+2 plus NestedStartRoot 2 plus StartRoot 2 EndRoot NestedEndRoot 
+NestedTwiceEndRoot Over 2 EndFraction ellipsis",,
+106,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B5x%5Ccancel%20y%7D%7B2%5Ccancel%20y%7D%3D%5Cfrac52x"")","StartFraction 5 x CrossOut y EndCrossOut Over 2 CrossOut y EndCrossOut 
+EndFraction equals five-halves x",,
+107,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B12%7D%7B18%7D%3D%5Cfrac%7B%5Coverset2%7B%5Ccancel%7B12%7D%7D%7D%7B%5Cunderset3%7B%5Ccancel%7B18%7D%7D%7D%3D%5Cfrac23"")","StartFraction 12 Over 18 EndFraction equals StartFraction CrossOut 12 With 
+2 EndCrossOut Over CrossOut 18 With 3 EndCrossOut EndFraction equals 
+two-thirds",,
+108,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B12%7D%7B18%7D%3D%5Cfrac%7B%5Cunderset%7B%5Ccancel%7B12%7D%7D2%7D%7B%5Coverset%7B%5Ccancel%7B18%7D%7D3%7D%3D%5Cfrac23"")","StartFraction 12 Over 18 EndFraction equals StartFraction CrossOut 12 With 
+2 EndCrossOut Over CrossOut 18 With 3 EndCrossOut EndFraction equals 
+two-thirds",,
+109,"=image(""https://equatio-api.texthelp.com/svg/%5Cddot%20x"")","ModifyingAbove x With two-dots",,
+110,"=image(""https://equatio-api.texthelp.com/svg/%5Coverrightarrow%7Bx%2By%7D"")","ModifyingAbove x plus y With right-arrow",,
+111,"=image(""https://equatio-api.texthelp.com/svg/%5Cwidehat%20x"")","ModifyingAbove x With caret",,
+112,"=image(""https://equatio-api.texthelp.com/svg/%5Cunderset%CB%99x"")","ModifyingBelow x With dot",,
+113,"=image(""https://equatio-api.texthelp.com/svg/%5Cwidetilde%20x"")","x overTilde",,
+114,"=image(""https://equatio-api.texthelp.com/svg/%5Coverline%20x"")","x overbar",,
+115,"=image(""https://equatio-api.texthelp.com/svg/%5Cunderset%5Csim%20y"")","y underTilde",,
+116,"=image(""https://equatio-api.texthelp.com/svg/%5Coverline%7B%5Coverline%20x%7D"")","x overbar overbar",,
+117,"=image(""https://equatio-api.texthelp.com/svg/%5Cunderset%5C_%7B%5Cunderset%5C_%7B%5Coverline%7B%5Coverline%20y%7D%7D%7D"")","y overbar overbar underbar underbar",,
+118,"=image(""https://equatio-api.texthelp.com/svg/%5Cunderset%7B%5Cast%7D%7B%5Cunderline%7Ba%2Bb%7D%7D"")","ModifyingBelow Below ModifyingBelow a plus b With bar With asterisk",,
+119,"=image(""https://equatio-api.texthelp.com/svg/%5Coverline%7B%5Cwidetilde%7Bx%2By%7D%7D"")","ModifyingAbove Above ModifyingAbove x plus y With tilde With bar",,
+120,"=image(""https://equatio-api.texthelp.com/svg/%5Csum_%7Bn%3D1%7D%5E%5Cinfty%20a_n"")","sigma-summation Underscript n equals 1 Overscript infinity Endscripts a 
+Subscript n",,
+121,"=image(""https://equatio-api.texthelp.com/svg/%5Cunderset%7Bb%3D3%7D%7B%5Cunderset%7Ba%3D5%7D%7B%5Cunderline%7Bx%2By%7D%7D%7D"")","ModifyingBelow x plus y With bar Underscript a equals 5 UnderUnderscript b 
+equals 3 Endscripts",,
+122,"=image(""https://equatio-api.texthelp.com/svg/%5Coverset%7Bm%3D2%7D%7B%5Coverset%7Bn%3D1%7D%7B%5Coverline%7Bx%2By%7D%7D%7D"")","ModifyingAbove x plus y With bar Overscript n equals 1 OverOverscript m 
+equals 2 Endscripts",,
+123,"=image(""https://equatio-api.texthelp.com/svg/%5Coperatorname%7Blog%7D_bx"")","log Subscript b Baseline x","log subíndice b línea base x",
+124,"=image(""https://equatio-api.texthelp.com/svg/%5Ccos%5C%20y"")","cosine y","coseno ",
+125,"=image(""https://equatio-api.texthelp.com/svg/%5Csin%5C%20x"")","sine x","seno x",
+126,"=image(""https://equatio-api.texthelp.com/svg/%5Cfrac%7B60%5Ccancel%7B%5Cmathrm%7Bmi%7D%7D%7D%7B%5Ccancel%7B%5Cmathrm%7Bhr%7D%7D%7D%5Ctimes%5Cfrac%7B5%2C280%5Cmathrm%7Bft%7D%7D%7B1%5Ccancel%7B%5Cmathrm%7Bmi%7D%7D%7D%5Ctimes%5Cfrac%7B1%5Ccancel%7B%5Cmathrm%7Bhr%7D%""&""7D%7D%7B60%5Cmin%7D%3D%5Cfrac%7B5%2C280%5Cmathrm%7Bft%7D%7D%5Cmin"")","StartFraction 60 CrossOut miles EndCrossOut Over CrossOut hours EndCrossOut 
+EndFraction times StartFraction 5,280 feet Over 1 CrossOut miles 
+EndCrossOut EndFraction times StartFraction 1 CrossOut hours EndCrossOut 
+Over 60 minutes EndFraction equals StartFraction 5,280 feet Over minutes 
+EndFraction",,
+127,"=image(""https://equatio-api.texthelp.com/svg/1%5Cmathrm%20J%3D1%5Cmathrm%7Bkg%7D%5Ccdot%5Cmathrm%20m%5E2%5Ccdot%5Cmathrm%20s%5E%7B-2%7D"")","1 joules equals 1 kilograms dot meters squared dot seconds Superscript 
+negative 2","1 joules igual 1 kilogramo por metro al cuadrado por segundos exponente menos 2",
+128,"=image(""https://equatio-api.texthelp.com/svg/m%5Cmathrm%20m%3D100m%5Cmathrm%7Bcm%7D%3D%5Cfrac%20m%7B1%2C000%7D%5Cmathrm%7Bkm%7D"")","m meters equals 100 m centimeters equals StartFraction m Over 1,000 
+EndFraction kilometers","m metros igual 100 m centímetros igual empezar fracción m entre 1000 finalizar fracción kilómetros",
+129,"=image(""https://equatio-api.texthelp.com/svg/1%5Cmathrm%7Bmi%7D%5Capprox1.6%5Cmathrm%7Bkm%7D"")","1 miles almost-equals 1.6 kilometers","1 milla igual aproximado 1.6 kilómetros",
+130,"=image(""https://equatio-api.texthelp.com/svg/1%5Cmathrm%7Bin%7D%5Capprox2.54%5Cmathrm%7Bcm%7D"")","1 inches equals 2.54 centimeters","1 pulgada igual 2.54 centímetros",
+131,"=image(""https://equatio-api.texthelp.com/svg/%5Cbegin%7Barray%7D%7Bccccc%7DH_2%26%2B%26F_2%26%5Crightarrow%262HF%5C%5C%5Ctext%7Bhydrogen%7D%26%26%5Ctext%7Bfluorine%7D%26%26%5Ctext%7Bhydrogen%7D%5Chspace%7B4.pt%7D%5Ctext%7Bfluoride%7D%5Cend%7Barray%7D"")","StartLayout 1st Row 1st Column upper H 2 2nd Column plus 3rd Column upper F 
+2 4th Column right-arrow 5th Column 2 upper H upper F 2nd Row 1st Column 
+hydrogen 2nd Column Blank 3rd Column fluorine 4th Column Blank 5th Column 
+hydrogen fluoride EndLayout",,
+132,"=image(""https://equatio-api.texthelp.com/svg/x%3D%5Cbegin%7Bcases%7D%20y%20%3C%200%260%5C%5C%20y%5Cgeq%200%262y%5Cend%7Bcases%7D"")","x equals StartLayout Enlarged left-brace 1st Row 1st Column y less-than 0 
+2nd Column 0 2nd Row 1st Column y greater-than-or-equal-to 0 2nd Column 2 y 
+EndLayout","x igual empezar esquema llave izquierda alargada primera fila primera columna y menor que 0 segunda columna 0 segunda fila primera columna y mayor o igual que 0 segunda columna 2 y finalizar esquema",
+133,"=image(""https://equatio-api.texthelp.com/svg/%5Cbegin%7Bbmatrix%7Dx%2Ba%26x%2Bb%26x%2Bc%5C%5Cy%2Ba%26y%2Bb%26y%2Bc%5C%5Cz%2Ba%26z%2Bb%26z%2Bc%5Cend%7Bbmatrix%7D"")","Start 3 By 3 Matrix 1st Row 1st Column x plus a 2nd Column x plus b 3rd 
+Column x plus c 2nd Row 1st Column y plus a 2nd Column y plus b 3rd Column 
+y plus c 3rd Row 1st Column z plus a 2nd Column z plus b 3rd Column z plus 
+c EndMatrix","empezar matriz 3 por 3 primera fila primera columna x más a segunda columna x más b tercera columna x más c segunda fila primera columna y más a segunda columna y más b tercera columna y más c tercera fila primera columna z más a segunda columna z más b tercera columna z más c finalizar matriz",
+134,"=image(""https://equatio-api.texthelp.com/svg/%5Cbegin%7Bvmatrix%7Da%2B1%26b%5C%5Cc%26d%5Cend%7Bvmatrix%7D%3D%7B(a%2B1)%7Dd-bc"")","Start 2 By 2 Determinant 1st Row 1st Column a plus 1 2nd Column b 2nd Row 
+1st Column c 2nd Column d EndDeterminant equals left-parenthesis a plus 1 
+right-parenthesis d minus b c","empezar Determinante 2 por 2 primera fila primera columna a más 1 segunda columna b segunda fila primera columna c segunda columna d finalizar determinante igual paréntesis izquierdo a más 1 paréntesis derecho d menos b c",
+135,"=image(""https://equatio-api.texthelp.com/svg/%5Cbegin%7Bvmatrix%7Da%26b%5C%5Cc%26d%5Cend%7Bvmatrix%7D%3Dad-bc"")","Start 2 By 2 Determinant 1st Row a b 2nd Row c d EndDeterminant equals a d 
+minus b c","empezar Determinante 2 por 2 primera fila a b segunda fila c d finalizar determinante igual a d menos b c",
+136,"=image(""https://equatio-api.texthelp.com/svg/%5Cbegin%7Bpmatrix%7Dx%5C%5Cy%5Cend%7Bpmatrix%7D"")","StartBinomialOrMatrix x Choose y EndBinomialOrMatrix",,
