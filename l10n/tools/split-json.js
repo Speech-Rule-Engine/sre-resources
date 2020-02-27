@@ -4,9 +4,11 @@ let xmldom = require('xmldom-sre');
 let SplitJson = {};
 
 // Mathmaps path
+SplitJson.L10N_PATH_ = '/home/sorge/git/sre/sre-resources/l10n';
+
 SplitJson.PATH_ = '/home/sorge/git/sre/speech-rule-engine/src/mathmaps';
 
-SplitJson.OUTPUT_PATH_ = '/tmp/output';
+SplitJson.OUTPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/split-forms';
 
 SplitJson.HTML_PATH_ = '/tmp/html';
 
@@ -14,9 +16,9 @@ SplitJson.TEMPLATE_PATH_ = '/tmp/ods';
 
 SplitJson.ODS_PATH_ = '/tmp/spreadsheets';
 
-SplitJson.ODS_TEMPLATE_ = '/home/sorge/git/sre-resources/l10n/templates/ods';
+SplitJson.ODS_TEMPLATE_ = SplitJson.L10N_PATH_ + '/l10n/templates/ods';
 
-SplitJson.INPUT_PATH_ = '/tmp/input';
+SplitJson.INPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/int-forms';
 
 SplitJson.WWW_BASE_PATH = '/home/sorge/git/sre/sre-webpages/resources/www';
 

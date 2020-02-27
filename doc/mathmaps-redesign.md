@@ -49,6 +49,12 @@
     - [ ] Rewrite sub/superscripts and parenthesis in math_symbols
     - [ ] super and subscript numbers in clearspeak/mathspeak
     - [x] French: Handling of triangle for delta
+- [ ] Nemeth: work on
+  - [x] digits_rest (vulgar fractions)
+  - [x] digits_rest (circled/squared numbers)
+  - [x] latin_rest (remove what is not needed)
+  - [x] remove nablas and partial diffs
+  - [ ] Greek alternative letters.
 
 
 
@@ -81,14 +87,30 @@
 
 ## General Redesign
 
-- [ ] Alphabet handling
-- [ ] Digit handling
+- [x] Alphabet handling
+- [x] Digit handling
 - [ ] File handling
 - [ ] Locale loading
 - [ ] JSON file creation for distribution
     ```bash
         jq -c -s add *.js
     ```
+### Redesigning JSON files and Make
+
+- Use `jq` instead of `json-minify`? While jq is available on every platform, it
+  forces a new non-javascript dependency. That will make it more difficult for
+  others to compile SRE as well as make a move to webpackaging harder.
+- `jscompress` could also combine json files. However it is not available on `npm`.
+- Keep a structure similar to what we have for the IE maps to minimise efforts.
+
+- [ ] Initial step with front-loading
+  - [ ] Combine JSON files into a single file, one per locale.
+  - [ ] Load each locale file
+  - [ ] Combine parsing mechanism of IE with general one.
+  - [ ] How to deal with IE? Initially have a single mapping with locales.
+- [ ] Change front-loading to selective loading by locale only
+  - [ ] Default loading of English? Unless locale is given a priori?
+
 
 ### Alphabets
 
