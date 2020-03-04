@@ -1,0 +1,34 @@
+Shapes:
+
+Black filled square ⠫⠸⠲
+White hollow square ⠫⠲
+White circle: ⠫⠉
+Black filled circle: ⠫⠸⠉
+
+Numbers contained:
+5 in circle ⠫⠉⠸⠫⠼⠢⠻   in circle ⠫⠉⠸⠫⠼X⠻  Number 
+5 in square ⠫⠲⠸⠫⠼⠢⠻
+
+in negative square ⠫⠸⠲⠸⠫
+
+double cirled ⠫⠉⠸⠫⠫⠉⠸⠫XX⠻⠻
+
+black square containing white circe containing number ⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼XX⠻⠻
+
+10-80:
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠂⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠆⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠒⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠲⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠢⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠖⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠶⠴⠻⠻
+⠫⠸⠲⠸⠫⠫⠉⠸⠫⠼⠦⠴⠻⠻
+
+
+
+invisible times:
+,
+      "mathspeak": {
+        "nemeth": "⠈⠡"
+      }

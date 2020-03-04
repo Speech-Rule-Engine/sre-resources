@@ -24,12 +24,12 @@
 - [x] Rename short as brief __short/alternative are removed__
     * Remap short to brief in the API
     * Should we keep alternative?
-- [ ] Rewrite all alphabets 
+- [x] Rewrite all alphabets 
     - [x] to use capital letters for caps
     - [x] to make default same as clearspeak
       Exceptions: Relations ("is equal to"); Delimiters open/close
     - [x] remove latin character etc. naming?
-    - [ ] Fix all the tests.
+    - [x] Fix all the tests.
 - [x] Rewrite numbers to digits 
     * Digits larger than 9. Automatically generate? __Yes__
     * For default keep named numbers rather than digits.
@@ -44,7 +44,7 @@
     - [ ] French Hyphenated numerals.
 - [ ] French: Make alternatives for parentheses clearspeak defaults?
 - [ ] Clearspeak
-    - [ ] Incorporate preferences into cyclometric function mappings
+    - [x] Incorporate preferences into cyclometric function mappings
     - [ ] Adapt handling of cyclometric functions without argument in the speech rules
     - [ ] Rewrite sub/superscripts and parenthesis in math_symbols
     - [ ] super and subscript numbers in clearspeak/mathspeak
@@ -62,9 +62,9 @@
 
 - [x] Generate alphabets automatically,
     - [x] use localised font and cap/upper
-- [ ] extend to latin-rest character sets parenthesized, squared, circled etc.
+- [x] extend to latin-rest character sets parenthesized, squared, circled etc.
     - [X] Add pseudo fonts for these.
-    - [ ] Needs multiple mappings per style super/sup sub etc. and functions for
+    - [x] Needs multiple mappings per style super/sup sub etc. and functions for
       combination, i.e. bold 1 vs. 1 comma.
     What about diacritical marks (combining)? __No not systematic enough__
 - [ ] Greek lamda in en should maybe be lambda!
@@ -81,17 +81,18 @@
 
 ### Functions
 
-- [ ] Short vs default for mathspeak etc.
+- [x] Short vs default for mathspeak etc.
 - [x] French: Add the inverse hyperbolic and cyclo functions
-- [ ] Localisation of elementary functions like lcm, gcd, etc
+- [x] Localisation of elementary functions like lcm, gcd, etc
+        Done for French and Spanish
 
 ## General Redesign
 
 - [x] Alphabet handling
 - [x] Digit handling
-- [ ] File handling
-- [ ] Locale loading
-- [ ] JSON file creation for distribution
+- [x] File handling
+- [x] Locale loading
+- [x] JSON file creation for distribution (not used!)
     ```bash
         jq -c -s add *.js
     ```
@@ -103,13 +104,13 @@
 - `jscompress` could also combine json files. However it is not available on `npm`.
 - Keep a structure similar to what we have for the IE maps to minimise efforts.
 
-- [ ] Initial step with front-loading
-  - [ ] Combine JSON files into a single file, one per locale.
-  - [ ] Load each locale file
-  - [ ] Combine parsing mechanism of IE with general one.
-  - [ ] How to deal with IE? Initially have a single mapping with locales.
-- [ ] Change front-loading to selective loading by locale only
-  - [ ] Default loading of English? Unless locale is given a priori?
+- [x] Initial step with front-loading
+  - [x] Combine JSON files into a single file, one per locale.
+  - [x] Load each locale file
+  - [x] Combine parsing mechanism of IE with general one.
+  - [x] How to deal with IE? Initially have a single mapping with locales.
+- [x] Change front-loading to selective loading by locale only
+  - [x] Default loading of English? Unless locale is given a priori?
 
 
 ### Alphabets
@@ -153,3 +154,9 @@ Initially we need to check loading time vs. generation time of alphabets.
 Exploit this in semantic attributes!
 
 - [ ] <mn>-1</mn> should be treated like <mo>-</mo><mn>1</mn>
+
+## German
+
+- [ ] Get box characters names from Wikipedia
+- [ ] Still some English equals etc. 
+- [ ] Clearspeak:  Propagate the font rules for SayCaps from German to English, French.
