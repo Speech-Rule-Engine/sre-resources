@@ -3,10 +3,12 @@ let shell = require('shelljs');
 let xmldom = require('xmldom-sre');
 let SplitJson = {};
 
-// Mathmaps path
-SplitJson.L10N_PATH_ = '/home/sorge/git/sre/sre-resources/l10n';
 
-SplitJson.PATH_ = '/home/sorge/git/sre/speech-rule-engine/src/mathmaps';
+SplitJson.BASE_PATH_ = '/home/sorge/git/sre/';
+// Mathmaps path
+SplitJson.L10N_PATH_ = SplitJson.BASE_PATH_ + 'sre-resources/l10n';
+
+SplitJson.PATH_ = SplitJson.BASE_PATH_ + 'speech-rule-engine/src/mathmaps';
 
 SplitJson.OUTPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/split-forms';
 
@@ -20,9 +22,9 @@ SplitJson.ODS_TEMPLATE_ = SplitJson.L10N_PATH_ + '/l10n/templates/ods';
 
 SplitJson.INPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/int-forms';
 
-SplitJson.WWW_BASE_PATH = '/home/sorge/git/sre/sre-webpages/resources/www';
+SplitJson.WWW_BASE_PATH = SplitJson.BASE_PATH_ + 'sre-webpages/resources/www';
 
-SplitJson.UNICODE_PATH = '/home/sorge/git/sre/others/unicode-table-data/loc';
+SplitJson.UNICODE_PATH = SplitJson.BASE_PATH_ + 'others/unicode-table-data/loc';
 
 /**
  * Subpath to dir containing ChromeVox JSON definitions for symbols.
