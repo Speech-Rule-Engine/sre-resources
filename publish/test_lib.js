@@ -21,13 +21,7 @@ let sreTest = {
   test: function(id) {
     var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
     var test = xmls.serializeToString(document.getElementById(id));
-    // Edge takes too long to render. So a little timeout!
-    let promise = new Promise((res) => {
-      setTimeout(() => {
-        res(SRE.toSpeech(test));}, 200);
-    });
-    return promise.then((x) => {console.log(x);});
-
+    console.log(SRE.toSpeech(test));
   },
 
 
@@ -39,10 +33,20 @@ let sreTest = {
   },
 
   runAllTests: function() {
-    sreTest.runTests().
-      then(() => {return sreTest.runTests({locale: 'fr'});}).
-      then(() => {return sreTest.runTests({locale: 'es', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
+    // Edge takes too long to render. So a little timeout!
+    let promise = new Promise((res, rej) => {
+      if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
+        setTimeout(res(), 200);
+      } else {
+        res();
+      }
+    });
+    promise.then(() => {
+      sreTest.runTests().
+        then(() => {return sreTest.runTests({locale: 'fr'});}).
+        then(() => {return sreTest.runTests({locale: 'es', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
+    });
   }
   
-};
+}
