@@ -1,53 +1,58 @@
-var tests = function() {
-  runTests();
-  for (let loc of sre.Variables.LOCALES) {
-    runTests(loc);
-  }
-};
+let sreTest = {
 
-
-// var runTests = function() {
-//   if (!SRE.engineReady()) {
-//     setTimeout(runTests, 200);
-//     return;
-//   }
-//   var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
-//   var test1 = xmls.serializeToString(document.getElementById('test1'));
-//   var test2 = xmls.serializeToString(document.getElementById('test2'));
-//   var test3 = xmls.serializeToString(document.getElementById('test3'));
-//   console.log(SRE.toSpeech(test1));
-//   console.log(SRE.toSpeech(test2));
-//   console.log(SRE.toSpeech(test3));
-// };
-
-
-var runTests = function(loc) {
-  SRE.setupEngine({locale: loc, domain: loc === 'nemeth' ? 'default' : 'mathspeak'});
-  var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
-  var test1 = xmls.serializeToString(document.getElementById('test1'));
-  var test2 = xmls.serializeToString(document.getElementById('test2'));
-  var test3 = xmls.serializeToString(document.getElementById('test3'));
-  let toSpeechAsync = function(x) {
+  setup: function(features) {
+    SRE.setupEngine(features);
     let count = 0;
     return new Promise((res, rej) => {
       function checkSRE() {
         if (SRE && SRE.engineReady()) {
-          console.log(SRE.toSpeech(test1));
-          console.log(SRE.toSpeech(test2));
-          console.log(SRE.toSpeech(test3));
-          res(x);
+          res();
         } else if (count < 30) {
           count++;
           setTimeout(checkSRE, 200);
         } else {
-          rej(x);
+          rej();
         }
       }
       checkSRE();
     });
-  };
-  // Edge takes too long to render. So a little timeout!
-  let promise = new Promise((res) => {
-    setTimeout(() => {res(toSpeechAsync(test1));}, 200);});
-  return promise.then((x) => {console.log(x);});
+  },
+  
+  test: function(id) {
+    const xmls = new sre.SystemExternal.xmldom.XMLSerializer();
+    const element = document.getElementById(id);
+    const next = element.nextSibling;
+    const test = xmls.serializeToString(element);
+    const speech = SRE.toSpeech(test);
+    const div = document.createElement('div');
+    div.textContent = speech;
+    document.body.insertBefore(div, next);
+    console.log(speech);
+  },
+
+
+  runTests: function(features = {}) {
+    let promise = sreTest.setup(features);
+    return promise.then(() => {return sreTest.test('test1');})
+      .then(() => {return sreTest.test('test2');})
+      .then(() => {return sreTest.test('test3');});
+  },
+
+  runAllTests: function() {
+    // Edge takes too long to render. So a little timeout!
+    let promise = new Promise((res, rej) => {
+      if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
+        setTimeout(res(), 200);
+      } else {
+        res();
+      }
+    });
+    promise.then(() => {
+      sreTest.runTests().
+        then(() => {return sreTest.runTests({locale: 'fr'});}).
+        then(() => {return sreTest.runTests({locale: 'es', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
+    });
+  }
+  
 };
