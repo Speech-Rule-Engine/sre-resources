@@ -11,41 +11,13 @@
 }
 </script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="http://82.43.107.166/git/sre/speech-rule-engine/lib/sre_browser.js"></script>
-<script>
-var dummy = function() {
-var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
-  test1 = xmls.serializeToString(document.getElementById('test1'));
-  test2 = xmls.serializeToString(document.getElementById('test2'));
-  test3 = xmls.serializeToString(document.getElementById('test3'));
-  console.log(SRE.toSpeech(test1));
-  let toSpeechAsync = function(x) {
-    let count = 0;
-    return new Promise((res, rej) => {
-      function checkSRE() {
-        if (SRE && SRE.engineReady()) {
-          res(SRE.toSpeech(x));
-        } else if (count < 30) {
-          count++;
-          setTimeout(checkSRE, 200);
-        } else {
-          rej(x);
-        }
-      }
-      checkSRE();
-    });
-  };
-  // Edge takes too long to render. So a little timeout!
-  let promise = new Promise((res) => {
-    setTimeout(() => {res(toSpeechAsync(test1));}, 200)});
-  promise.then((x) => {console.log(x);});
-}
-</script>
+<script src="http://82.43.107.166/git/sre/speech-rule-engine/lib/sre_browser.js"></script>
+<script src="test_lib.js"></script>
 
 <title></title>
 </head>
 
-<body onload="dummy();">
+<body onload="sreTest.runAllTests();">
 <h1></h1>
 
 &#x2A6D;&#x0338;
@@ -95,6 +67,6 @@ var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Sun Mar  1 23:12:09 GMT 2020
+Last modified: Fri May  8 15:01:49 BST 2020
 <!-- hhmts end -->
 </body> </html>
