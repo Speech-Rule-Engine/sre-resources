@@ -19,9 +19,15 @@ let sreTest = {
   },
   
   test: function(id) {
-    var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
-    var test = xmls.serializeToString(document.getElementById(id));
-    console.log(SRE.toSpeech(test));
+    const xmls = new sre.SystemExternal.xmldom.XMLSerializer();
+    const element = document.getElementById(id);
+    const next = element.nextSibling;
+    const test = xmls.serializeToString(element);
+    const speech = SRE.toSpeech(test);
+    const div = document.createElement('div');
+    div.textContent = speech;
+    document.body.insertBefore(div, next);
+    console.log(speech);
   },
 
 
@@ -49,4 +55,4 @@ let sreTest = {
     });
   }
   
-}
+};

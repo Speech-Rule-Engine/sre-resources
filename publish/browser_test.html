@@ -4,21 +4,22 @@
 <!-- "xpath": "https://rawgit.com/google/wicked-good-xpath/master/dist/wgxpath.install.js", -->
 <script type="text/x-sre-config">
 {
-"json": "http://82.43.107.166/git/sre/speech-rule-engine/lib/mathmaps",
+"json": "http://82.43.107.166/test/node_modules/speech-rule-engine/lib/mathmaps",
 "domain": "clearspeak",
 "style": "Roots_RootEnd:Fraction_EndFrac",
 "markup": "punctuation"
 }
 </script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="http://82.43.107.166/git/sre/speech-rule-engine/lib/sre_browser.js"></script>
+  <script src="http://82.43.107.166/test/node_modules/speech-rule-engine/lib/sre_browser.js"></script>
 <script src="test_lib.js"></script>
 
 <title></title>
 </head>
 
 <body onload="sreTest.runAllTests();">
-<h1></h1>
+<h1 id="header"></h1>
+<script>document.getElementById('header').innerHTML = 'Test Version ' + SRE.version;</script>
 
 &#x2A6D;&#x0338;
 
@@ -67,6 +68,6 @@
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Fri May  8 15:01:49 BST 2020
+Last modified: Fri May  8 15:51:05 BST 2020
 <!-- hhmts end -->
 </body> </html>

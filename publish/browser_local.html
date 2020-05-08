@@ -4,24 +4,22 @@
 <!-- "xpath": "https://rawgit.com/google/wicked-good-xpath/master/dist/wgxpath.install.js", -->
 <script type="text/x-sre-config">
 {
-"domain": "mathspeak",
-"style": "sbrief",
-"json": "http://82.43.107.166/git/sre/speech-rule-engine/lib/mathmaps"
+"json": "http://82.43.107.166/git/sre/speech-rule-engine/lib/mathmaps",
+"domain": "clearspeak",
+"style": "Roots_RootEnd:Fraction_EndFrac",
+"markup": "punctuation"
 }
 </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="http://82.43.107.166/git/sre/speech-rule-engine/lib/sre_browser.js"></script>
-<script>
-var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
-  test1 = xmls.serializeToString(document.getElementById('test1'));
-  test2 = xmls.serializeToString(document.getElementById('test2'));
-  test3 = xmls.serializeToString(document.getElementById('test3'));
-</script>
+<script src="test_lib.js"></script>
 
 <title></title>
 </head>
 
-<body onload="tests();">
-<h1></h1>
+<body onload="sreTest.runAllTests();">
+<h1 id="header"></h1>
+<script>document.getElementById('header').innerHTML = 'Local Version ' + SRE.version;</script>
 
 &#x2A6D;&#x0338;
 
@@ -31,9 +29,9 @@ var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
   <mo>=</mo>
   <mfrac>
     <mrow>
-      <mo>&#x2212;</mo>
-      <mi>b</mi>
-      <mo>&#xB1;</mo>
+      <mo extid="0">&#x2212;</mo>
+      <mi extid="1">b</mi>
+      <mo extid="2">&#xB1;</mo>
       <msqrt>
         <mrow>
           <msup>
@@ -70,6 +68,6 @@ var xmls = new sre.SystemExternal.xmldom.XMLSerializer();
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Sun Mar  1 23:17:29 GMT 2020
+Last modified: Fri May  8 15:51:01 BST 2020
 <!-- hhmts end -->
 </body> </html>
