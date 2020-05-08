@@ -40,7 +40,7 @@ corresponding XML representation, while roles and fonts are attributes.
 \section{Types}
 \label{sec:types}
 
-Types are immutable. Their idea is to capture the basic nature of a symbol.
+Types are immutable. Their idea is to capture the basic natur of a symbol.
 
 \subsection{Primitive Types}
 \label{sec:primitive types}
@@ -498,8 +498,523 @@ unknown & 1 & whatever we could not interpret/process& & \\
 empty & 0 & & \\
 \end{tabular}
 
-\textbf{Note, this is an evolving document. At the time of reading this grammar
-  is probably incomplete.}
+
+\section{Rules}\label{sec:rules}
+
+
+\subsection{Tree Operations}
+
+\def\treeto{\raisebox{20pt}{\ensuremath{\longrightarrow}}}
+\newcommand{\expr}{\ensuremath{e}}
+\newcommand{\ex}[1]{\ensuremath{\expr_{#1}}}
+\newcommand{\opr}{\ensuremath{\circ}}
+\newcommand{\op}[1]{\ensuremath{\opr_{#1}}}
+\newcommand{\ops}[1]{\ifcase#1{\opr}\or{\star}\or{\triangle}\or{\bullet}\else\fi}
+\newcommand{\rel}{\ensuremath{\sim}}
+\newcommand{\re}[1]{\ensuremath{\rel_{#1}}}
+\newcommand{\rels}[1]{\ifcase#1{\ll}\or{\rel}\or{\equiv}\or{\gg}\else\fi}
+
+\subsubsection{Infix}
+
+\begin{tikzpicture}
+  \node {}
+    [edge from parent fork down]
+    child {node {$\ex1$}}
+    child {node {$\opr$}}
+    child {node {$\ex2$}}
+    child {node {$\opr$}}
+    child {node {$\cdots$}}
+    child {node {$\opr$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+\treeto
+\begin{tikzpicture}
+  \node {Infix: \opr}
+    [edge from parent fork down]
+    child {node {$\ex1$}}
+    child {node {$\ex2$}}
+    child {node {$\cdots$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+
+
+\subsubsection{Prefix}
+
+\begin{tikzpicture}
+  \node {}
+    [edge from parent fork down]
+    child {node {$\ops0$}}
+    child {node {$\cdots$}}
+    child {node {$\ops1$}}
+    child {node {$\expr$}}
+    ;
+\end{tikzpicture}
+\treeto
+\begin{tikzpicture}
+  \node {Prefix: $\ops1\cdots\ops2$}
+    [edge from parent fork down]
+    child {node {$\expr$}}
+    ;
+\end{tikzpicture}
+
+
+\subsubsection{Postfix}
+
+\begin{tikzpicture}
+  \node {}
+    [edge from parent fork down]
+    child {node {$\expr$}}
+    child {node {$\ops0$}}
+    child {node {$\cdots$}}
+    child {node {$\ops1$}}
+    ;
+\end{tikzpicture}
+\treeto
+\begin{tikzpicture}
+  \node {Postfix: $\ops1\cdots\ops2$}
+    [edge from parent fork down]
+    child {node {$\expr$}}
+    ;
+\end{tikzpicture}
+
+
+\subsubsection{Relseq}
+
+\begin{tikzpicture}
+  \node {}
+    [edge from parent fork down]
+    child {node {$\ex 1$}}
+    child {node {$\rel$}}
+    child {node {$\ex 2$}}
+    child {node {$\rel$}}
+    child {node {$\cdots$}}
+    child {node {$\rel$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+\treeto
+\begin{tikzpicture}
+  \node {Relseq: \rel}
+    [edge from parent fork down]
+    child {node {$\ex 1$}}
+    child {node {$\ex 2$}}
+    child {node {$\cdots$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+
+
+\subsubsection{Multirel}
+
+\begin{tikzpicture}
+  \node {}
+    [edge from parent fork down]
+    child {node {$\ex 1$}}
+    child {node {$\rels1$}}
+    child {node {$\ex 2$}}
+    child {node {$\rels2$}}
+    child {node {$\cdots$}}
+    child {node {$\rels3$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+\treeto
+\begin{tikzpicture}
+  \node {Multirel: $\rels1 \rels2 \ldots \rels3$}
+    [edge from parent fork down]
+    child {node {$\ex 1$}}
+    child {node {$\ex 2$}}
+    child {node {$\cdots$}}
+    child {node {$\ex n$}}
+    ;
+\end{tikzpicture}
+
+
+\subsection{Operator}
+
+\textcolor{red}{The following might be rubbish\ldots}
+
+The general operator rules are as follows:
+
+\AXC{$A + B$}\RL{$infixop_1$}\UIC{+ A B}\DisplayProof\qquad 
+\AXC{$\Phi + A$}\RL{$infixop_2$ with $\Phi\equiv + A_1\ldots A_n$}\UIC{$+ A_1 \ldots A_n A$}\DisplayProof 
+
+
+\section{Schema}
+\label{sec:schema}
+
+A simple schema, ignoring attributes for the time being.
+
+\begin{lstlisting}
+<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="relseq" type="relseqType" />
+  <xsd:complexType name="relseqType">
+    <xsd:sequence>
+      <xsd:element name="content" type="contentType" />
+      <xsd:element name="children" type="childrenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="childrenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="infixop" type="infixopType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="infixopType">
+    <xsd:sequence>
+      <xsd:element name="content" type="contentType" />
+      <xsd:element name="children" type="childrenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="childrenType">
+    <xsd:sequence>
+      <xsd:element name="infixop" type="infixopType" />
+      <xsd:element maxOccurs="unbounded" name="identifier" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="infixopType">
+    <xsd:sequence>
+      <xsd:element name="content" type="contentType" />
+      <xsd:element name="children" type="childrenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="childrenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="identifier" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="contentType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="operator" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+\end{lstlisting}
+
+
+
+\section{Examples}
+\label{sec:examples}
+
+
+\subsection{Operators}
+\label{sec:operators}
+
+\subsubsection{Trivial}
+\label{sec:trivial-ops}
+
+
+\begin{lstlisting}
+  <mi>a</mi>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+\end{lstlisting}
+\begin{lstlisting}
+<infixop>+
+  <content>
+    <operator>+</operator>
+    <operator>+</operator>
+  </content>
+  <children>
+    <identifier>a</identifier>
+    <identifier>b</identifier>
+    <identifier>c</identifier>
+  </children>
+</infixop>
+\end{lstlisting}
+
+
+
+Simple Schema:
+\begin{lstlisting}
+<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="infixop" type="infixopType" />
+  <xsd:complexType name="infixopType">
+    <xsd:sequence>
+      <xsd:element name="content" type="contentType" />
+      <xsd:element name="children" type="childrenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="childrenType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="identifier" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="contentType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="operator" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+\end{lstlisting}
+
+\subsubsection{Combined}
+\label{sec:combined-ops}
+
+
+\begin{lstlisting}
+  <mi>a</mi>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mo>-</mo>
+  <mi>d</mi>
+  <mo>-</mo>
+  <mi>e</mi>
+\end{lstlisting}
+\begin{lstlisting}
+<infixop>-
+<content><operator>-</operator><operator>-</operator></content>
+<children>
+  <infixop>+
+  <content><operator>+</operator><operator>+</operator></content>
+  <children>
+    <identifier>a</identifier>
+    <identifier>b</identifier>
+    <identifier>c</identifier>
+  </children>
+  </infixop>
+  <identifier>d</identifier>
+  <identifier>e</identifier>
+</children>
+</infixop>
+\end{lstlisting}
+
+Simple Schema:
+\begin{lstlisting}
+<?xml version="1.0" encoding="utf-16"?>
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="infixop" type="infixopType" />
+  <xsd:complexType name="infixopType">
+    <xsd:sequence>
+      <xsd:element name="content" type="contentType" />
+      <xsd:element name="children" type="childrenType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="childrenType">
+    <xsd:sequence>
+      <xsd:element name="infixop" type="infixopType" />
+      <xsd:element maxOccurs="unbounded" name="identifier" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="contentType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="operator" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
+\end{lstlisting}
+
+
+
+\subsection{Relations}
+\label{sec:relations}
+
+\begin{lstlisting}
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+  <mo>=</mo>
+  <mi>c</mi>
+\end{lstlisting}
+
+\begin{lstlisting}
+<relseq>=
+<content>
+  <relation>=</relation>
+  <relation>=</relation>
+</content>
+<children>
+  <identifier>a</identifier>
+  <identifier>b</identifier>
+  <identifier>c</identifier>
+</children>
+</relseq>
+\end{lstlisting}
+
+\subsection{Mixed Operators and Relation}
+\label{sec:operators-relations}
+
+\begin{lstlisting}
+  <mi>a</mi>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mo>-</mo>
+  <mi>d</mi>
+  <mo>-</mo>
+  <mi>e</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mo>-</mo>
+  <mi>d</mi>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+  <mo>-</mo>
+  <mi>e</mi>
+  <mo>=</mo>
+  <mi>a</mi>
+  <mo>+</mo>
+  <mi>b</mi>
+  <mo>-</mo>
+  <mi>d</mi>
+  <mo>-</mo>
+  <mi>e</mi>
+  <mo>+</mo>
+  <mi>c</mi>
+\end{lstlisting}
+
+\pagebreak
+\scriptsize
+\begin{lstlisting}
+  <relseq>
+    =
+    <content>
+      <relation>=</relation>
+      <relation>=</relation>
+    </content>
+    <children>
+      <infixop>
+        -
+        <content>
+          <operator>-</operator>
+          <operator>-</operator>
+        </content>
+        <children>
+          <infixop>
+            +
+            <content>
+              <operator>+</operator>
+              <operator>+</operator>
+            </content>
+            <children>
+              <identifier>a</identifier>
+              <identifier>b</identifier>
+              <identifier>c</identifier>
+            </children>
+          </infixop>
+          <identifier>d</identifier>
+          <identifier>e</identifier>
+        </children>
+      </infixop>
+      <infixop>
+        -
+        <content>
+          <operator>-</operator>
+        </content>
+        <children>
+          <infixop>
+            +
+            <content>
+              <operator>+</operator>
+              <operator>+</operator>
+            </content>
+            <children>
+              <infixop>
+                -
+                <content>
+                  <operator>-</operator>
+                </content>
+                <children>
+                  <identifier>a</identifier>
+                  <identifier>d</identifier>
+                </children>
+              </infixop>
+              <identifier>b</identifier>
+              <identifier>c</identifier>
+            </children>
+          </infixop>
+          <identifier>e</identifier>
+        </children>
+      </infixop>
+      <infixop>
+        +
+        <content>
+          <operator>+</operator>
+        </content>
+        <children>
+          <infixop>
+            -
+            <content>
+              <operator>-</operator>
+              <operator>-</operator>
+            </content>
+            <children>
+              <infixop>
+                +
+                <content>
+                  <operator>+</operator>
+                </content>
+                <children>
+                  <identifier>a</identifier>
+                  <identifier>b</identifier>
+                </children>
+              </infixop>
+              <identifier>d</identifier>
+              <identifier>e</identifier>
+            </children>
+          </infixop>
+          <identifier>c</identifier>
+        </children>
+      </infixop>
+    </children>
+  </relseq>
+\end{lstlisting}
+
+\section{Examples}
+
+\begin{lstlisting}
+<math>
+  <mi>5</mi>
+  <mo>=</mo>
+  <mi>3</mi>
+  <mo>+</mo>
+  <mi>2</mi>
+</math>
+
+<stree>
+  <relseq role="equality" id="6">
+    =
+    <content>
+      <relation role="equality" id="1">=</relation>
+    </content>
+    <children>
+      <number role="integer" font="italic" id="0">5</number>
+      <infixop role="addition" id="5">
+        +
+        <content>
+          <operator role="addition" id="3">+</operator>
+        </content>
+        <children>
+          <number role="integer" font="italic" id="2">3</number>
+          <number role="integer" font="italic" id="4">2</number>
+        </children>
+      </infixop>
+    </children>
+  </relseq>
+</stree>
+
+<math>
+  <mrow semantic-type="relseq" semantic-role="equality" id="6" semantic-content="1" semantic-children="0,5">
+    <mi semantic-type="number" semantic-role="integer" id="0" semantic-parent="0">5</mi>
+    <mo semantic-type="relation" semantic-role="equality" id="1" semantic-operator="=" semantic-parent="1">=</mo>
+    <mrow semantic-type="infixop" semantic-role="addition" id="5" semantic-content="3" semantic-children="2,4" semantic-parent="5">
+      <mi semantic-type="number" semantic-role="integer" id="2" semantic-parent="2">3</mi>
+      <mo semantic-type="operator" semantic-role="addition" id="3" semantic-operator="+" semantic-parent="3">+</mo>
+      <mi semantic-type="number" semantic-role="integer" id="4" semantic-parent="4">2</mi>
+    </mrow>
+  </mrow>
+</math>
+\end{lstlisting}
 
 \end{document}
 
