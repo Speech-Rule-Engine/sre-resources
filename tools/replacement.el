@@ -72,3 +72,33 @@
 (fset 'replace-prefix-tests
    [?\C-s ?\' ?\' left ?\C-x ?o ?\C-s ?< ?/ ?t ?r ?> left ?\C-r ?< ?t ?d ?> ?\C-r left right right right right right ?\C-  ?\C-s ?< ?/ ?t ?d ?> left left left left left ?\M-w ?\C-e right ?\C-x ?o ?\C-y ?\C-e down ?\C-a])
 
+
+(defun sre-extract-text-string ()
+  (interactive)
+  (search-forward "[t] \"")
+  (backward-char 1)
+  (forward-char 1)
+  (let ((start (point))
+        (end (progn
+               (search-forward "\"")
+               (backward-char 1)
+               (point)
+               )))
+    (copy-region-as-kill start end))
+  (other-window 1)
+  (yank)
+  (newline)
+  (other-window 1)
+  )
+
+
+(defun sre-extract-all-text-strings ()
+  (interactive)
+  (let ((result t))
+    (while result
+      (condition-case ex
+          (sre-extract-text-string)
+          ('error (setq result nil))))
+    )
+  )
+

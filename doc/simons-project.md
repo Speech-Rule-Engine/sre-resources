@@ -7,10 +7,10 @@
 
 
 * __Alternative:__ We could in some instances just reparse the tree, and make
-  decisions on role/type wrt. to the already propagated semantic table. 
+  decisions on role/type wrt. to the already propagated semantic table.
 * Only if the semantic table contains twice the same expression with different
   semantic assignment.
-  
+
 * Leaf map: id to node, symbol to ids? Maybe directly: Symbol to nodes?
 * Branch map: basic string to nodes.  Here base string is the xml string without
   attributes.  *Does that make sense?*
@@ -33,7 +33,7 @@ Three parts: default, collator, ordering
   * Default is used to either rewrite a tree or to be used for a parse.
 
 
-  * Defaults can also be pre-filled. 
+  * Defaults can also be pre-filled.
   * We need to extend the semantic parser to allow for defaults.
 
 
@@ -52,7 +52,7 @@ https://tex.stackexchange.com/questions/196574/a-notation-for-continued-fraction
     * Get feedback loop if a function occurs in operation with other clearly non-functions
       (e.g., Clearspeak ). This would need a branch node lookup/comparison.
 
-# Improved removal of mrows: 
+# Improved removal of mrows:
   * bracketing goes wrong in:
   sre.NobleEnglishTest.prototype.testSample_38
 
@@ -71,3 +71,14 @@ Improve:
 Try this:
 https://math.meta.stackexchange.com/questions/28253/how-to-set-name-above-a-part-of-a-matrix
 
+
+# New puncutation algorithm:
+
+Better treatment of ellipses
+
+* if ellipses:
+  first element: if next element is punctuation, then not punctuation, o/w punctuation
+  last element: if previous element punctuation, then not punctuation, o/w punctuation
+  middle element:
+     previous element and next element punctuation -> then not punctuation
+     previous element and next element text -> not punctuation

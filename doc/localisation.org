@@ -97,3 +97,6 @@ Semantic post-processor
 **** Label for multi line equations: etiqueta
 
 
+* Clearspeak Preferences:
+
+** In the front end you will want to have the preference names localised.
