@@ -10,6 +10,16 @@
   
 ### Async version
 
+* Make a fresh install in tmp
+
+``` bash
+cd /tmp
+rm -rf node_modules speech-rule-engine
+git clone git@github.com:zorkow/speech-rule-engine.git
+cd speech-rule-engine
+npm install
+```
+
 * Test that the package really works 
 
 ``` bash
@@ -28,7 +38,7 @@ npm install ./speech-rule-engine-*.tgz
 * Copy the file to tmp execute it with node directly
    
 ``` bash
-cd /special/sorge/test
+cd /var/www/html/test
 cp /home/sorge/git/sre/sre-resources/publish/pipe-direct.js .
 node pipe-direct.js
 ```

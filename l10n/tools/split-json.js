@@ -120,7 +120,7 @@ SplitJson.FUNCTIONS_FILES_ = [
  */
 SplitJson.UNITS_FILES_ = [
   'energy.js', 'length.js', 'memory.js', 'other.js', 'speed.js',
-  'temperature.js', 'time.js', 'volume.js', 'weight.js'
+  'temperature.js', 'time.js', 'volume.js', 'weight.js', 'currency.js'
 ];
 
 
@@ -729,6 +729,26 @@ SplitJson.lookupMissingUnicode = function(list, ref, iso) {
   return result;
 };
 
+
+SplitJson.initialCurrency = function(iso) {
+  let locale = SplitJson.loadLocale( ['currency.json'], `${SplitJson.INPUT_PATH_}/${iso}/`);
+  let keys = Object.keys(locale);
+  let result = [];
+  for (let key of keys) {
+    let rest = locale[key];
+    result.push(rest);
+    if (typeof key === 'undefined') continue;
+    if (key.match(/^0x/)) {
+      let newKey = SplitJson.numberToUnicode(parseInt(key, 16));
+      delete locale[key];
+      rest.key = newKey;
+      locale[newKey] = rest;
+    }
+    rest.names = [rest.key];
+  }
+  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/currency.js`,
+                   JSON.stringify(result, null, 2));
+};
 
 /**
  * Completes a locale from the unicode mappings.

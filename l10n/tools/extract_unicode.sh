@@ -5,7 +5,7 @@ outdir=$2
 tmp=`mktemp`
 tmp2=`mktemp`
 
-declare -a languages=("cs" "da" "de" "el" "es" "fi" "fr" "is" "it" "ja" "nl" "no" "se" "zh")
+declare -a languages=("cs" "da" "de" "el" "en" "es" "fi" "fr" "is" "it" "ja" "nl" "no" "se" "zh")
 
 extract_unicode () {
     grep "char ?.*==" $unicode | grep -v "Blind" | grep -v "exists(" | awk -F= '{print $3":"$5}' | sed s/0x// | sed s/\)//g | sed s/\;\}\;//g | sed s/\ // | sed s/\ // > $tmp
