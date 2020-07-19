@@ -1,0 +1,53 @@
+
+* Grammar
+
+** Deal with plural, etc. in the actual unicode mappings not as a correction.
+
+* Unit Heuristic
+
+** Multi-character normal, test as unit
+
+** Fold in the clearspeak unit heuristic
+
+* Unit Semantics
+
+** Improve the semantic recognition to deal with numeric or identifier elements
+
+** Reciprocal units
+
+* Missing tests:
+
+** Multipled combinations of units
+
+** Spanish for basic unit-combine
+
+l* Have unit rules independent of the actual speech rule set.
+
+* Locale workings:
+
+** General:
+
+*** Combined units left most is wrt. numerical prefix: Singular, plural
+
+*** Fractions: Left most in unit below fraction is singular.
+
+** English:
+
+*** Single unit: singular if there is a one, otherwise plural.
+
+*** Deal with degrees?
+
+*** Deal with other things
+
+
+*** ISSUE:
+
+
+```
+<math><mn>1</mn><mi>a</mi><mo>*</mo><mn>2</mn><mi>b</mi><mo>·</mo><mi>c</mi></math>```
+
+as in 
+
+```
+<math><mrow><mn>1</mn><mi mathvariant="normal" class="MathML-Unit">J</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal" class="MathML-Unit">kg</mi><mo>·</mo><mn>2</mn><msup><mi mathvariant="normal" >m</mi><mn>2</mn></msup><mo>*</mo><msup><mi mathvariant="normal" >s</mi><mrow><mo>-</mo><mn>2</mn></mrow></msup></mrow></math>
+```

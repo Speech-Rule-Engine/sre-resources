@@ -1,0 +1,29 @@
+None:
+a/b
+
+Case 1:
+aa/b
+
+aa/bb
+
+Case 2:
+a/b/c
+
+a/ba/d
+
+
+case 3 false:
+
+<math>
+<mrow><mi>c</mi><mo>/</mo>
+<mi>d</mi></mrow><mo>*</mo>
+<mi>a</mi>
+</math>
+
+case 3 true:
+
+<math>
+<mrow><mi>c</mi><mo>/</mo>
+<mi>d</mi></mrow><mo>*</mo>
+<mrow><mi>a</mi><mo>/</mo><mi>b</mi></mrow>
+</math>
