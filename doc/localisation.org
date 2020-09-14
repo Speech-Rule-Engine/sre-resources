@@ -100,3 +100,26 @@ Semantic post-processor
 * Clearspeak Preferences:
 
 ** In the front end you will want to have the preference names localised.
+
+# New Sep 11 2020
+
+* Clearspeak: 
+
+** testVertLine001 should be equivalent to divides in French, German
+
+** Improve treatment of evaluate.
+
+** Move new rules to French and German
+
+* Exact speech, Rules etc.
+
+** Move direct-speech rules to all locales.
+
+** Simplify alternative rules etc.
+
+** Ordering constraints
+
+* Prefix rules
+
+** Add specialised constraints for prefix rules: `name(../..)="xyz"`.
+
