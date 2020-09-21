@@ -17,6 +17,7 @@ done
 
 sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"speech":/g' tmp1
 
+exit
 sed -i '/^[[:blank:]]*\/\/.*$/d' tmp1
 
 sed -i '/^[[:blank:]]*\/\*\*/,/\*\//d;' tmp1 
