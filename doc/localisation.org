@@ -123,3 +123,11 @@ Semantic post-processor
 
 ** Add specialised constraints for prefix rules: `name(../..)="xyz"`.
 
+
+# TODO:
+
+* Fix DE regexp for numbers (example: Pi test!)
+* Fix FR, DE, ES simple square and simple cube
+* Check for all Sample_13_1_1, 13_1_2: Spanish seems to have it right!
+* Maybe specialise the English tests and have some of the Mathspeak ones in common.
+* Add fl oz to units.

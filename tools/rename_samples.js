@@ -14,10 +14,12 @@ for (let key of Object.keys(json.tests)) {
     held.push(key);
     continue;
   }
-  if (key.match(/^Sample.*_/)) {
+  if (key.match(/^Sample.*/)) {
+  // if (key.match(/^Sample.*_/)) {
     console.log(held);
     held.forEach(x => {
-      rename[x] = lastName + '_0_' + x.split('_').slice(1).join('_');
+      let rest = x.split('_').slice(1);
+      rename[x] = rest.length ? lastName + '_0_' + rest.join('_') : lastName + '_0';
     });
     held = [];
     let samples = key.split('_');
@@ -25,7 +27,8 @@ for (let key of Object.keys(json.tests)) {
       lastSample = samples[0];
       count++;
     }
-    rename[key] = lastName + '_' + count + '_' + samples.slice(1).join('_');
+    let rest = samples.slice(1);
+    rename[key] = rest.lenght ? lastName + '_' + count + '_' + rest.join('_') : lastName + '_' + count;
     continue;
   }
   held = [];

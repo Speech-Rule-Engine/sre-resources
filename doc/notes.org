@@ -217,3 +217,4 @@ https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation
 
 ** Custom string functions needs to return spans rather than strings.
 
+* TODO French: Implied times on Clearspeak is odd!

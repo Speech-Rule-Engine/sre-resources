@@ -47,3 +47,38 @@ FillTest.missingTests = function(expected, base, constructor) {
   let [missing, tests] = FillTest.findMissing(expected, base);
   console.log(FillTest.runMissing(missing, tests, constructor));
 };
+
+
+FillTest.runTest = function(expected, constructor) {
+  let obj = new constructor();
+  obj.jsonFile = expected;
+  let missing = [];
+  try {
+    obj.prepare();
+  } catch (e) {
+    missing = e.value;
+  }
+  // let [missing, tests] = FillTest.findMissing(expected, obj.baseFile);
+  let result = {};
+  try {
+    obj.setUpTest();
+  } catch (e) {}
+  console.log(obj.baseTests);
+  let tests = obj.baseTests.tests;
+  for (let miss of missing) {
+    console.log(miss);
+    let test = tests[miss];
+    test.expected = '';
+    try {
+      obj.method.apply(obj, obj.pick(test));
+    } catch (e) {
+      result[miss] = {"expected": e.actual};
+    }
+  }
+  try {
+    obj.tearDownTest();
+  } catch (e) {}
+  return JSON.stringify(result, null, 2);
+};
+
+

@@ -91,3 +91,38 @@ Goal:
 * Have single input file
 * Corresponding output files for enrich, stree
 * rebuild should be automatic
+
+
+## Base tests assessment
+
+These are tests on base and if they can be converted to JSON:
+
+* `walker_test`
+* `walker_markup_test` (Maybe?)
+* `api_test` will be doable but a bit tricky
+* `clearspeak_annotation_test` Maybe
+* `color_picker_test` Yes, spacing out the multi-tests
+* `direct_speech_test` Yes, but be careful with the domain change. Push into other tests.
+* `dom_test` What does that do?
+* [X] `enrich_mathml_test`, `enrich_speech_test`, `rebuild_stree_test`, `semantic_tree_test` all from same base input.
+* `markup_test` Yes, be careful with `setupEngine` calls.
+* `math_alphabets_test` Generalise for all locales. Push into font tests.
+* `semantic_api_test` What does that do?
+* `semantic_rule_test` Yes.
+* `speech_rule_test` initially not.
+
+
+# Bugs
+
+* SemanticsAnnotationXml_0: There is a highlighter bug.
+* SemanticsAnnotationXml_1: Rebuild does not work. Enrich is incorrect? Semantic tree is probably not correct?
+* SemanticsAnnotationXml_2 to 4: Annotation is simply ignored!
+
+Check with Davide again!
+
+* issue279 in Mathspeak only works in English!
+
+# TODO: 
+
+* Combine summary and collapse tests. Generalise to clearspeak?
+

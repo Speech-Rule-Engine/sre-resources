@@ -15,16 +15,16 @@ while [ $count -le 100 ]; do
     ((count++))
 done
 
-sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"speech":/g' tmp1
+sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"expected":/g' tmp1
 
-exit
+# exit
 sed -i '/^[[:blank:]]*\/\/.*$/d' tmp1
 
 sed -i '/^[[:blank:]]*\/\*\*/,/\*\//d;' tmp1 
 
 sed -i '/^.*goog\..*$/d' tmp1
 
-sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"speech":/g' tmp1
+sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"expected":/g' tmp1
 
 sed -i 'N; s/function()\n.*{$/function() {/g' tmp1
 sed -i 'N; s/\ =\n\ *function() {$/\ =\ function()\ {/g' tmp1
@@ -35,7 +35,7 @@ sed -i 's/^[[:blank:]]*var\ \([a-z]*\)\ =\ /"\1":\ /g' tmp1
 
 count=0
 while [ $count -le 100 ]; do
-    sed -i "0,/^\ *mml\ =\ /s//},\n\"Sample_$((count))\": {\n\"test\": true,\n\"mathml\":\ /g" tmp1
+    sed -i "0,/^\ *mml\ =\ /s//},\n\"Sample$((count))\": {\n\"test\": true,\n\"input\":\ /g" tmp1
     ((count++))
 done
 
@@ -67,35 +67,43 @@ sed -i 's/"test":\ "[a-z]*"/"test":\ false/g' tmp1
 
 sed -i "s/'\(default\|brief\|sbrief\)'),/\n\"preference\":\ \"\1\",/g" tmp1
 
-sed -i "s/mml/mathml/g" tmp1
+sed -i "s/mml/input/g" tmp1
+
+sed -i "s/this\.\(.*\)\ =\ /\"\1\":\ /g" tmp1
 
 echo "}}" >> tmp1
 
-# sed -i "s/',/',\n\"speech\":\ /g" tmp1
+# sed -i "s/',/',\n\"expected\":\ /g" tmp1
 
-# sed -i "s/\"speech\":\ \ preference),/\n\"mathml\":/g" tmp1
+# sed -i "s/\"expected\":\ \ preference),/\n\"input\":/g" tmp1
 
-# sed -i "s/'),/',\n\"mathml\":\ /g" tmp1
+# sed -i "s/'),/',\n\"input\":\ /g" tmp1
 
 cp tmp1 tmp-save
 
 # Emacs to replace stuff
-emacs tmp1 -batch -l ~/git/sre/sre-resources/tools/rewrite-tests.el --eval="(rewrite-mml-json-test)" -f save-buffer
+# emacs tmp1 -batch -l ~/git/sre/sre-resources/tools/rewrite-tests.el --eval="(rewrite-mml-json-test)" -f save-buffer
 # From here on some manipulations.
 echo "let fs = require('fs'); fs.writeFileSync('tmp2', JSON.stringify(require('./tmp1').tmp, null, 2));" | node
 
 echo tmp1:
-grep speech tmp1  | wc
+grep expected tmp1  | wc
 echo tmp2:
-grep speech tmp2  | wc
+grep expected tmp2  | wc
 echo tmp-save:
-grep speech tmp-save  | wc
+grep expected tmp-save  | wc
 
 exit
+
+###
+# Now run
+# node ~/git/sre/sre-resources/tools/rename_samples.js
+
+
 # rm tmp1 tmp2
 
 ### Single liners to speed things up!
 # for i in *.js; do echo $i; ~/git/sre/sre-resources/tools/test_rewrite.sh $i de; done
 # for i in *-base.json; do echo $i;  name=`echo $i| sed s/_english_/_/| sed s/-base//;`; mv $i ../../json/mathspeak/$name; done
-# for i in *.json; do name=`echo $i | sed s/_french//`; mv $i ../$name; done
+# for i in *.json; do name=`echo $i | sed s/_english//`; mv $i ../mathspeak/$name; done
 # for i in *.json; do name=`echo $i| sed s/_german_/_/| sed s/-base//;`; echo $i; diff $i ../../json/mathspeak/$name; done > /tmp/out
