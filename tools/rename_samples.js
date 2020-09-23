@@ -8,18 +8,19 @@ let count = 0;
 let rename = {}; // or do it directly?
 let held = [];
 
+let nemeth = process.argv.indexOf('nemeth') !== -1;
 // Temporary removed the underscore _
 for (let key of Object.keys(json.tests)) {
+  if (key.match(/^_.*/)) continue;
   if (key.match(new RegExp('^' + lastName))) {
     held.push(key);
     continue;
   }
   if (key.match(/^Sample.*/)) {
   // if (key.match(/^Sample.*_/)) {
-    console.log(held);
     held.forEach(x => {
       let rest = x.split('_').slice(1);
-      rename[x] = rest.length ? lastName + '_0_' + rest.join('_') : lastName + '_0';
+      rename[x] = (!nemeth && rest.length) ? lastName + '_0_' + rest.join('_') : lastName + '_0';
     });
     held = [];
     let samples = key.split('_');
@@ -28,11 +29,11 @@ for (let key of Object.keys(json.tests)) {
       count++;
     }
     let rest = samples.slice(1);
-    rename[key] = rest.lenght ? lastName + '_' + count + '_' + rest.join('_') : lastName + '_' + count;
+    rename[key] = (!nemeth && rest.length) ? lastName + '_' + count + '_' + rest.join('_') : lastName + '_' + count;
     continue;
   }
   held = [];
-  lastName = key.split('_')[0];
+  lastName = nemeth ? key : key.split('_')[0];
   count = 0;
   held.push(key);
 }

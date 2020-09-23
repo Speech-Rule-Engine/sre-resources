@@ -15,6 +15,11 @@ while [ $count -le 100 ]; do
     ((count++))
 done
 
+## Nemeth specific
+sed -i '/this.executeRuleTest(mml, nemeth);/d' tmp1
+sed -i 's/^\s*var\ nemeth\ =/"expected":/g' tmp1
+###
+
 sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"expected":/g' tmp1
 
 # exit
@@ -29,12 +34,15 @@ sed -i 's/^.*this\.executeRuleTest([a-zA-Z]*,/"expected":/g' tmp1
 sed -i 'N; s/function()\n.*{$/function() {/g' tmp1
 sed -i 'N; s/\ =\n\ *function() {$/\ =\ function()\ {/g' tmp1
 
+## Nemeth specific:
+sed -i 's/^sre\.[A-Za-z0-9]*\.prototype\.\([a-z]*\)_\([a-zA-Z0-9].*\)\ =\ function()\ {$/"\2": {\n"test":\ "\1",/g' tmp1
+##
 sed -i 's/^sre\.[A-Za-z]*\.prototype\.\([a-z]*\)\([A-Z].*\)\ =\ function()\ {$/"\2": {\n"test":\ "\1",/g' tmp1
 
 sed -i 's/^[[:blank:]]*var\ \([a-z]*\)\ =\ /"\1":\ /g' tmp1
 
 count=0
-while [ $count -le 100 ]; do
+while [ $count -le 250 ]; do
     sed -i "0,/^\ *mml\ =\ /s//},\n\"Sample$((count))\": {\n\"test\": true,\n\"input\":\ /g" tmp1
     ((count++))
 done
@@ -65,11 +73,15 @@ sed -i 's/"test":\ "test"/"test":\ true/g' tmp1
 
 sed -i 's/"test":\ "[a-z]*"/"test":\ false/g' tmp1
 
-sed -i "s/'\(default\|brief\|sbrief\)'),/\n\"preference\":\ \"\1\",/g" tmp1
+sed -i "s/'\(default\|brief\|sbrief\|Caps_SayCaps\)'),/\n\"preference\":\ \"\1\",/g" tmp1
 
 sed -i "s/mml/input/g" tmp1
 
 sed -i "s/this\.\(.*\)\ =\ /\"\1\":\ /g" tmp1
+
+## Nemeth cleanup
+sed -i "s/';/',/g" tmp1
+##
 
 echo "}}" >> tmp1
 
