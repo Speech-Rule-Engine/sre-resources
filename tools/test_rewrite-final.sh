@@ -1,7 +1,7 @@
 #! /bin/bash
 ### Mathspeak rewrite 
 
-rules=mathspeak
+rules=output
 name=`basename $1 .js`
 
 # name=`echo $name | sed "s/_\(english\|spanish\|german\|french\)//"`
@@ -18,6 +18,7 @@ sed -i '/^\s*"active": .*$/d' $name-base.json
 sed -i '/^\s*"expected": .*$/d' $name-base.json
 
 sed -i '/^\s*"input": .*$/d' $name.json
+sed -i '/^\s*"id": .*$/d' $name.json
 sed -i '/^\s*"test": .*$/d' $name.json
 sed -i "s/^\(\s*\)\(\"information\":\)/\1\"base\":\ \"json\/$rules\/$name.json\",\n\1\2/" $name.json
 sed -i '/^\s*"preference": .*$/d' $name.json

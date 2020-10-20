@@ -1,6 +1,7 @@
 let fs = require('fs');
 let shell = require('shelljs');
 let xmldom = require('xmldom-sre');
+let path = require('path');
 let SplitJson = {};
 
 
@@ -54,7 +55,16 @@ SplitJson.UNITS_ = 'units';
 
 
 /**
- * Name of prefix for units file.
+ * Name of currency file/directory.
+ * @type {string}
+ * @const
+ * @private
+ */
+SplitJson.CURRENCY_ = 'currency';
+
+
+/**
+ * Name of prefix for prefix file.
  * @type {string}
  * @const
  * @private
@@ -120,9 +130,13 @@ SplitJson.FUNCTIONS_FILES_ = [
  */
 SplitJson.UNITS_FILES_ = [
   'energy.js', 'length.js', 'memory.js', 'other.js', 'speed.js',
-  'temperature.js', 'time.js', 'volume.js', 'weight.js', 'currency.js'
+  'temperature.js', 'time.js', 'volume.js', 'weight.js'// , 'currency.js' // ???
 ];
 
+
+SplitJson.CURRENCY_FILE_ = 'currency.js';
+
+SplitJson.PREFIX_FILE_ = 'prefix.js';
 
 /**
  * Array of JSON filenames containing unit unused unicode translations.
@@ -139,7 +153,8 @@ SplitJson.UNUSED_FILES_ = [
 SplitJson.FILES_MAP_ = new Map([
   [SplitJson.SYMBOLS_, SplitJson.SYMBOLS_FILES_],
   [SplitJson.FUNCTIONS_, SplitJson.FUNCTIONS_FILES_],
-  [SplitJson.UNITS_, SplitJson.UNITS_FILES_]
+  [SplitJson.UNITS_, SplitJson.UNITS_FILES_],
+  [SplitJson.CURRENCY_, [SplitJson.CURRENCY_FILE_]]
 ]);
 
 //  'units_spanish.js'
@@ -158,7 +173,10 @@ SplitJson.loadLocale = function(files, path) {
     if (content) {
       JSON.parse(content).forEach(function(x) {
         let key = x['key'];
-        if (key && key.length === 5 && key[0] === '0') {
+        if (key && key.match(/^0x/)) {
+          key = SplitJson.numberToUnicode(parseInt(key, 16));
+          x['key'] = key;
+        } else if (key && key.length === 5 && key[0] === '0') {
           key = key.slice(1);
           x['key'] = key;
         }
@@ -170,18 +188,27 @@ SplitJson.loadLocale = function(files, path) {
 };
 
 
-SplitJson.intoFile = function(src, dest, locale, iso) {
+SplitJson.intoFile = function(src, dest, locale, iso, miss = null) {
   let content = fs.readFileSync(src);
   if (!content) return;
   let list = JSON.parse(content);
-  let result = SplitJson.splitContent(list, locale);
+  let [result, missing] = SplitJson.splitContent(list, locale);
   result.unshift({"locale": iso});
+  if (miss) {
+    let base = path.basename(src);
+    fs.writeFileSync(miss + '/' + base, JSON.stringify(missing, null, 2));
+    for (let ms of missing) {
+      if (!ms.key) continue;
+      fs.appendFileSync(miss + '.csv', `"${base}","${ms.key}","${ms.mappings.default.default}"\n`);
+    }
+  }
   fs.writeFileSync(dest, JSON.stringify(result, null, 2));
 };
 
 
 SplitJson.splitContent = function(list, locale) {
   let result = [];
+  let missing = [];
   for (let element of list) {
     let key = element['key'];
     let loc = locale[key];
@@ -192,17 +219,22 @@ SplitJson.splitContent = function(list, locale) {
       if (element.names) {
         loc.names = element.names;
       }
+      if (element.si) {
+        loc.si = element.si;
+      }
       result.push(loc);
       delete locale[key];
+    } else {
+      missing.push(element);
     }
   }
-  return result;
+  return [result, missing];
 };
 
 
 SplitJson.makePath = function(base, iso, kind) {
   let outputPath = `${base}/${iso}/${kind}/`;
-  shell.mkdir('-p', outputPath);
+  fs.mkdirSync(outputPath, {recursive: true});
   return outputPath;
 };
 
@@ -217,10 +249,14 @@ SplitJson.makePath = function(base, iso, kind) {
  * @param {string} model The iso code of the model locale (usually 'en').
  */
 SplitJson.splitFile = function(kind, files, locale, iso, model) {
+  kind = kind === 'currency' ? 'units' : kind;
   let inputPath = `${SplitJson.PATH_}/${model}/${kind}/`;
   let outputPath = SplitJson.makePath(SplitJson.OUTPUT_PATH_, iso, kind);
+  fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}-missing`, {recursive: true});
   files.forEach(function(x) {
-    SplitJson.intoFile(inputPath + x, outputPath + x, locale, iso);
+    SplitJson.intoFile(inputPath + x, outputPath + x, locale, iso,
+                       kind === 'symbols' ? null :
+                       `${SplitJson.OUTPUT_PATH_}/${iso}-missing`);
   });
 };
 
@@ -234,9 +270,9 @@ SplitJson.splitFiles = function(kind, iso, model) {
   for(var key in locale) {
     values.push(locale[key]);
   }
-  console.log(values.length);
   // Here we do the unused ones.
-  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/rest-${kind}-${iso}.js`,
+  fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}-rest`, {recursive: true});
+  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-rest/${kind}.js`,
                    JSON.stringify(values, null, 2));
 };
 
@@ -244,9 +280,29 @@ SplitJson.splitFiles = function(kind, iso, model) {
 
 
 SplitJson.allFiles = function(iso) {
+  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-missing.csv`, '');
   SplitJson.splitFiles(SplitJson.SYMBOLS_, iso, 'en');
   SplitJson.splitFiles(SplitJson.FUNCTIONS_, iso, 'en');
   SplitJson.splitFiles(SplitJson.UNITS_, iso, 'en');
+  SplitJson.splitFiles(SplitJson.CURRENCY_, iso, 'en');
+  SplitJson.rewritePrefix(iso);
+};
+
+
+SplitJson.rewritePrefix = function(iso) {
+  let locale = SplitJson.loadLocale(
+    ['prefix.json'], `${SplitJson.INPUT_PATH_}/${iso}/`);
+  let result = [];
+  for (let key of Object.keys(locale)) {
+    if (!key || !locale[key].key) continue;
+    let mappings = locale[key].mappings;
+    let map = {};
+    map[key] = mappings.default.default;
+    result.push(map);
+  }
+  fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si`, {recursive: true});
+  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si/prefixes.js`,
+                   JSON.stringify(result, null, 2));
 };
 
 
@@ -390,6 +446,7 @@ SplitJson.toHTML = function(iso = 'en', compare = true) {
   SplitJson.localeToHTML(iso, SplitJson.SYMBOLS_, compare);
   SplitJson.localeToHTML(iso, SplitJson.FUNCTIONS_, compare);
   SplitJson.localeToHTML(iso, SplitJson.UNITS_, compare);
+  SplitJson.localeToHTML(iso, SplitJson.CURRENCY_, compare);
   // SplitJson.localeToHTML(iso, SplitJson.PREFIX_, compare);
 };
 
@@ -404,6 +461,7 @@ SplitJson.toOds = function(iso = 'en') {
   SplitJson.odsCreate(iso, SplitJson.SYMBOLS_);
   SplitJson.odsCreate(iso, SplitJson.FUNCTIONS_);
   SplitJson.odsCreate(iso, SplitJson.UNITS_);
+  SplitJson.odsCreate(iso, SplitJson.CURRENCY_);
   // SplitJson.localeToHTML(iso, SplitJson.PREFIX_, compare);
 };
 
@@ -730,22 +788,24 @@ SplitJson.lookupMissingUnicode = function(list, ref, iso) {
 };
 
 
-SplitJson.initialCurrency = function(iso) {
-  let locale = SplitJson.loadLocale( ['currency.json'], `${SplitJson.INPUT_PATH_}/${iso}/`);
+SplitJson.cleanCurrency = function(locale, name = true) {
   let keys = Object.keys(locale);
   let result = [];
   for (let key of keys) {
     let rest = locale[key];
     result.push(rest);
     if (typeof key === 'undefined') continue;
-    if (key.match(/^0x/)) {
-      let newKey = SplitJson.numberToUnicode(parseInt(key, 16));
-      delete locale[key];
-      rest.key = newKey;
-      locale[newKey] = rest;
+    if (name) {
+      rest.names = [rest.key];
     }
-    rest.names = [rest.key];
   }
+  return result;
+};
+
+
+SplitJson.initialCurrency = function(iso) {
+  let locale = SplitJson.loadLocale( ['currency.json'], `${SplitJson.INPUT_PATH_}/${iso}/`);
+  let result = SplitJson.cleanCurrency(locale, true);
   fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/currency.js`,
                    JSON.stringify(result, null, 2));
 };

@@ -104,16 +104,22 @@ In the form of a
 ## Symbol extraction workflow
 
 * Extract MathPlayer files
-* Clean them up
+  ``` bash
+  ./extract.sh ../../../others/MathPlayer/Rules/ /tmp
+  ```
+* Clean them up (if necesary)
 * Copy them to `speech-rule-engine` directory
 * Complete them with unicode mappings
+  ``` bash
+  node split-json.js
+  ```
 * Check and copy them to `speech-rule-engine` directory again.
 * Make sure to keep the unused files as they contain some hints on how to
   transform alphabets and fonts
 
 
 ``` javascript
-    require('/home/sorge/sre/sre-resources/l10n/tools/split-json.js');
+    require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
 ```
 
 ``` javascript

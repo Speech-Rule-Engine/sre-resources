@@ -63,10 +63,8 @@ FillTest.runTest = function(expected, constructor) {
   try {
     obj.setUpTest();
   } catch (e) {}
-  console.log(obj.baseTests);
   let tests = obj.baseTests.tests;
   for (let miss of missing) {
-    console.log(miss);
     let test = tests[miss];
     test.expected = '';
     try {

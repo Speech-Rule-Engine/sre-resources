@@ -1,3 +1,42 @@
+(defun rewrite-exact-number (numbers)
+  (interactive numbers)
+  (dolist (x numbers)
+    (let ((input
+           (progn
+             (search-forward "\"input\": \"<")
+             (let ((beg (point)))
+               (search-forward "\",")
+               (backward-char 2)
+               (kill-ring-save beg (point))
+               )
+             )))
+    (dotimes (y x)
+      (search-forward "\"input\": \"\"")
+      (backward-char 1)
+      (yank)
+      (print y)
+      )
+    )
+    ))
+
+(defun rewrite-inputs-times ()
+  (interactive)
+  (rewrite-exact-number '(2 2 2 2 2 1 2 4 9 4 5 8))
+  )
+
+(defun rewrite-empty-test ()
+  (interactive)
+  (query-replace-regexp ",
+    \".*\": {
+      \"test\": true,
+      \"input\": \"\"
+    }" "")
+  )
+
+
+
+
+
 (defun rewrite-mml-json-test ()
   (interactive)
   (search-forward "\"tests\": {")

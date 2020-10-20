@@ -11,25 +11,21 @@ sed -i '/^\/\/$/d' tmp1
 # sed -i "s/^\/\/\(.*\)$/\"_comment_\": \"\1\",/g" tmp1
 count=0
 while [ $count -le 100 ]; do
-    sed -i "0,/^[[:blank:]]*\*\ \(.*\)$/s//\"_comment$((count))_\": \"\1\",/g" tmp1
+    sed -i "0,/^[[:blank:]]*\/\/\(.*\)$/s//\"_comment$((count))_\": \"\1\",/g" tmp1
     ((count++))
 done
 
 ## Nemeth specific
-sed -i '/this.executeRuleTest(mml, nemeth);/d' tmp1
+sed -i '/this\.executeRuleTest(mml, nemeth);/d' tmp1
 sed -i 's/^\s*var\ nemeth\ =/"expected":/g' tmp1
 ###
 
-sed -i 's/^.*this\.executeRuleTest(\({.*}\),/"input":\ \1,\n"expected":/g' tmp1
+sed -i "s/^.*this\.executeRuleTest([a-zA-Z]*,\ \([0-9]*\),/\"id\":\ \1,\n\"expected\":/g" tmp1
 
-# sed -i '/^[[:blank:]]*\/\/.*$/d' tmp1
+# exit
+sed -i '/^[[:blank:]]*\/\/.*$/d' tmp1
 
-# sed -i '/^[[:blank:]]*\/\*\*/,/\*\//d;' tmp1 
-
-sed -i '/\/\*\*.*$/d' tmp1
-
-sed -i '/^[[:blank:]]*\*\//d;' tmp1 
-
+sed -i '/^[[:blank:]]*\/\*\*/,/\*\//d;' tmp1 
 
 sed -i '/^.*goog\..*$/d' tmp1
 
@@ -47,7 +43,7 @@ sed -i 's/^[[:blank:]]*var\ \([a-z]*\)\ =\ /"\1":\ /g' tmp1
 
 count=0
 while [ $count -le 250 ]; do
-    sed -i "0,/;\n\ *\"input\"/s//},\n\"Sample$((count))\": {\n\"test\": true,\n\"input\":\ /g" tmp1
+    sed -i "0,/),$/s//\n},\n\"Sample$((count))\":\ {\n\"test\":\ true,\n\"input\":\ \"\",/" tmp1
     ((count++))
 done
 
@@ -125,4 +121,34 @@ exit
 # for i in *.json; do name=`echo $i| sed s/_german_/_/| sed s/-base//;`; echo $i; diff $i ../../json/mathspeak/$name; done > /tmp/out
 
 
-count=0; while [ $count -le 250 ]; do sed -i "0,/\"Sample_0\"/s//\"Juxta_$((count))\"/g" tmp1; ((count++)); done
+## Run manually
+
+~/git/sre/sre-resources/tools/test_rewrite-prefix.sh prefix_english_test.js en
+count=0
+while [ $count -le 250 ]; do
+    sed -i "0,/),$/s//\n},\n\"Sample$((count))\":\ {\n\"test\":\ true,\n\"input\":\ \"\",/" tmp1
+    ((count++))
+done
+echo "let fs = require('fs'); fs.writeFileSync('tmp2', JSON.stringify(require('./tmp1').tmp, null, 2));" | node
+node ~/git/sre/sre-resources/tools/rename_samples.js
+sed -i "s/\"SquareRoot_0_0\"/\"SquareRoot_0\"/" tmp3
+sed -i "s/\"Root\"/\"Root_0\"/" tmp3
+emacs tmp3 -batch -l ~/git/sre/sre-resources/tools/rewrite-tests.el --eval="(rewrite-inputs-times)" -f save-buffer
+emacs tmp3 -l ~/git/sre/sre-resources/tools/rewrite-tests.el
+~/git/sre/sre-resources/tools/test_rewrite-final.sh  prefix_english_test.js tmp3
+
+
+~/git/sre/sre-resources/tools/test_rewrite-prefix.sh prefix_german_test.js de
+count=0
+while [ $count -le 250 ]; do
+    sed -i "0,/),$/s//\n},\n\"Sample$((count))\":\ {\n\"test\":\ true,\n\"input\":\ \"\",/" tmp1
+    ((count++))
+done
+echo "let fs = require('fs'); fs.writeFileSync('tmp2', JSON.stringify(require('./tmp1').tmp, null, 2));" | node
+node ~/git/sre/sre-resources/tools/rename_samples.js
+sed -i "s/\"SquareRoot_0_0\"/\"SquareRoot_0\"/" tmp3
+sed -i "s/\"Root\"/\"Root_0\"/" tmp3
+emacs tmp3 -batch -l ~/git/sre/sre-resources/tools/rewrite-tests.el --eval="(rewrite-inputs-times)" -f save-buffer
+emacs tmp3 -l ~/git/sre/sre-resources/tools/rewrite-tests.el
+~/git/sre/sre-resources/tools/test_rewrite-final.sh  prefix_german_test.js tmp3
+
