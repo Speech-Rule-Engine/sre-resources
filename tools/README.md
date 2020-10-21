@@ -23,7 +23,7 @@ Braille related tools
 * `extract_units.sh`: Extract unit values from MP files.
 * `numbers.js`: Numbers rewriting methods (combine wtih `split-json` ?)
 * `rewrite.js`: Some symbol files rewriting methods (combine wtih `split-json` ?)
-* `split-json.js`: Main methods to generate l10n files.
+* `split-json.js`: Main methods to generate l10n files. This needs `shelljs`.
 
 
 ## Misc

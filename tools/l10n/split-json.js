@@ -19,7 +19,7 @@ SplitJson.TEMPLATE_PATH_ = '/tmp/ods';
 
 SplitJson.ODS_PATH_ = '/tmp/spreadsheets';
 
-SplitJson.ODS_TEMPLATE_ = SplitJson.L10N_PATH_ + '/l10n/templates/ods';
+SplitJson.ODS_TEMPLATE_ = SplitJson.L10N_PATH_ + '/templates/ods';
 
 SplitJson.INPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/int-forms';
 
@@ -129,7 +129,7 @@ SplitJson.FUNCTIONS_FILES_ = [
  * @private
  */
 SplitJson.UNITS_FILES_ = [
-  'energy.js', 'length.js', 'memory.js', 'other.js', 'speed.js',
+  'area.js', 'energy.js', 'length.js', 'memory.js', 'other.js', 'speed.js',
   'temperature.js', 'time.js', 'volume.js', 'weight.js'// , 'currency.js' // ???
 ];
 
@@ -188,11 +188,21 @@ SplitJson.loadLocale = function(files, path) {
 };
 
 
-SplitJson.intoFile = function(src, dest, locale, iso, miss = null) {
+// Loads a (src) source file for the model.
+// 
+// Looks up as much as possible translations in locale
+//
+// Needs the iso variable prefix with locale.
+// 
+// Writes the split file to dest.
+// 
+// Outputs missing translations into appropriate file in miss directory if
+// provided.
+SplitJson.intoFile = function(src, dest, locale, iso, addempty, miss = null) {
   let content = fs.readFileSync(src);
   if (!content) return;
   let list = JSON.parse(content);
-  let [result, missing] = SplitJson.splitContent(list, locale);
+  let [result, missing] = SplitJson.splitContent(list, locale, addempty);
   result.unshift({"locale": iso});
   if (miss) {
     let base = path.basename(src);
@@ -206,12 +216,15 @@ SplitJson.intoFile = function(src, dest, locale, iso, miss = null) {
 };
 
 
-SplitJson.splitContent = function(list, locale) {
+// That's the actual splitting method.
+// List is the model to work with. Locale the potential translations.
+// Returns the list of translations and the list of missing elements.
+// Optionally add non-existent elements as empties.
+SplitJson.splitContent = function(list, locale, addempty = false) {
   let result = [];
   let missing = [];
   for (let element of list) {
-    let key = element['key'];
-    let loc = locale[key];
+    let loc = SplitJson.findContent(element, locale);
     if (loc) {
       if (element.category) {
         loc.category = element.category;
@@ -223,12 +236,49 @@ SplitJson.splitContent = function(list, locale) {
         loc.si = element.si;
       }
       result.push(loc);
-      delete locale[key];
+      delete locale[element['key']];
     } else {
+      if (addempty && element && element.key) {
+        loc = {key: element['key']};
+        if (element.category) {
+          loc.category = element.category;
+        }
+        if (element.names) {
+          loc.names = element.names.slice();
+        }
+        if (element.si) {
+          loc.si = element.si;
+        }
+        loc.mappings = {default: { default: '', singular: '', dual: '' }};
+        result.push(loc);
+      }
       missing.push(element);
     }
   }
   return [result, missing];
+};
+
+
+/**
+ * Finds the content element. Tries to take names into account.
+ * @param {json} element From the model locale.
+ * @param {json} locale The locale list.
+ * @return {jons} The element in the locale, if found.
+ */
+SplitJson.findContent = function(element, locale) {
+  let key = element['key'];
+  let loc = locale[key];
+  if (loc) {
+    return loc;
+  }
+  if (element.names) {
+    for (let name of element.names) {
+      if (locale[name]) {
+        return locale[name];
+      }
+    }
+  }
+  return null;
 };
 
 
@@ -247,25 +297,28 @@ SplitJson.makePath = function(base, iso, kind) {
  * @param {Object.<json>} locale The locale of json mappings.
  * @param {string} iso The iso code of the locale.
  * @param {string} model The iso code of the model locale (usually 'en').
+ * @param {boolean} addempty Add non-existent elements as empty (in unit or function).
  */
-SplitJson.splitFile = function(kind, files, locale, iso, model) {
+SplitJson.splitFile = function(kind, files, locale, iso, model, addempty) {
   kind = kind === 'currency' ? 'units' : kind;
   let inputPath = `${SplitJson.PATH_}/${model}/${kind}/`;
   let outputPath = SplitJson.makePath(SplitJson.OUTPUT_PATH_, iso, kind);
   fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}-missing`, {recursive: true});
   files.forEach(function(x) {
     SplitJson.intoFile(inputPath + x, outputPath + x, locale, iso,
+                       addempty,
                        kind === 'symbols' ? null :
                        `${SplitJson.OUTPUT_PATH_}/${iso}-missing`);
   });
 };
 
 
-SplitJson.splitFiles = function(kind, iso, model) {
+// Splits all files of a particular kind for a given iso locale.
+SplitJson.splitFiles = function(kind, iso, model, addempty) {
   let files = SplitJson.FILES_MAP_.get(kind);
   let locale = SplitJson.loadLocale(
     [`${kind}.json`], `${SplitJson.INPUT_PATH_}/${iso}/`);
-  SplitJson.splitFile(kind, files, locale, iso, model);
+  SplitJson.splitFile(kind, files, locale, iso, model, addempty);
   let values = [];
   for(var key in locale) {
     values.push(locale[key]);
@@ -282,8 +335,8 @@ SplitJson.splitFiles = function(kind, iso, model) {
 SplitJson.allFiles = function(iso) {
   fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-missing.csv`, '');
   SplitJson.splitFiles(SplitJson.SYMBOLS_, iso, 'en');
-  SplitJson.splitFiles(SplitJson.FUNCTIONS_, iso, 'en');
-  SplitJson.splitFiles(SplitJson.UNITS_, iso, 'en');
+  SplitJson.splitFiles(SplitJson.FUNCTIONS_, iso, 'en', true);
+  SplitJson.splitFiles(SplitJson.UNITS_, iso, 'en', true);
   SplitJson.splitFiles(SplitJson.CURRENCY_, iso, 'en');
   SplitJson.rewritePrefix(iso);
 };
@@ -299,6 +352,9 @@ SplitJson.rewritePrefix = function(iso) {
     let map = {};
     map[key] = mappings.default.default;
     result.push(map);
+    if (key === 'µ') {
+      result.push({'μ': mappings.default.default});
+    }
   }
   fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si`, {recursive: true});
   fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si/prefixes.js`,
@@ -309,8 +365,9 @@ SplitJson.rewritePrefix = function(iso) {
 SplitJson.getFromMapping = function(mappings) {
   return (mappings.mathspeak && mappings.mathspeak.default) ?
     mappings.mathspeak.default :
-    (mappings.default.short ? mappings.default.short :
-     mappings.default.default);
+    (mappings.clearspeak ? Object.values(mappings.clearspeak)[0] :
+     (mappings.default ? mappings.default.default :
+      Object.values(mappings.default)[0]));
 };
 
 SplitJson.localeToTable = function(content, kind) {
@@ -351,10 +408,16 @@ SplitJson.htmlRow = function(...row) {
   return '<tr><td>' + row.join('</td><td>') + '</td></tr';
 };
 
+
+/**
+ * @type {Map.<string, string[]>} Maps the type of symbol files into HTML
+ *     columns.
+ */
 SplitJson.HTML_CAPTIONS_ = new Map([
   [SplitJson.SYMBOLS_, ['Char', 'Unicode', 'English', 'Locale']],
   [SplitJson.FUNCTIONS_, ['Function', 'Alt. Names', 'English', 'Locale']],
   [SplitJson.UNITS_, ['Unit', 'Alt. Names', 'English', 'Plural', 'Singular', 'Dual']],
+  [SplitJson.CURRENCY_, ['Unit', 'Alt. Names', 'English', 'Plural', 'Singular', 'Dual']],
   ['unitsen', ['Unit', 'Alt. Names', 'Plural', 'Singular', 'Dual']]
 ]);
 
@@ -369,7 +432,7 @@ SplitJson.compareLocaleToTable = function(english, locale, kind) {
       continue;
     }
     let eng_text = SplitJson.getFromMapping(mappings);
-    let loc_map = locale[key];
+    let loc_map = SplitJson.findContent(english[key], locale);
     let loc_text = '';
     if (loc_map) {
       loc_map = loc_map.mappings;
@@ -421,9 +484,10 @@ SplitJson.localeToHTML = function(locale = 'en',
   let localeContent = null;
   let path = SplitJson.makePath(SplitJson.HTML_PATH_, locale, kind);
   for (let file of fileList) {
-    let content = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${locale}/${kind}/`);
+    console.log(file);
+    let content = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${locale}/${kind === 'currency' ? 'units' : kind}/`);
     if (compare) {
-      localeContent = SplitJson.loadLocale([file], `${SplitJson.PATH_}/en/${kind}/`);
+      localeContent = SplitJson.loadLocale([file], `${SplitJson.PATH_}/en/${kind === 'currency' ? 'units' : kind}/`);
     }
     let name = file.split('.')[0];
     files.push(name);
@@ -468,7 +532,6 @@ SplitJson.toOds = function(iso = 'en') {
 SplitJson.odsCreate = function(iso, kind) {
   SplitJson.localeToOds(iso, SplitJson.TEMPLATE_PATH_, kind);
   let outputPath = `${SplitJson.ODS_PATH_}/${iso}/`;
-  console.log(outputPath);
   shell.mkdir('-p', outputPath);
   let file = `${kind}-${iso}.ods`;
   shell.cd(SplitJson.TEMPLATE_PATH_);
@@ -482,6 +545,7 @@ SplitJson.localeToOds = function(locale = 'en',
                                  kind = SplitJson.SYMBOLS_) {
   let tables = [];
   let fileList = SplitJson.FILES_MAP_.get(kind);
+  kind = kind === 'currency' ? 'units' : kind;
   for (let file of fileList) {
     let content = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${locale}/${kind}/`);
     let english = SplitJson.loadLocale([file], `${SplitJson.PATH_}/en/${kind}/`);
@@ -508,6 +572,9 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       '<table:table-column table:style-name="co1"' +
       ' table:number-columns-repeated="3"' +
       ' table:default-cell-style-name="Default"/>';
+  start += SplitJson.odsRow(...SplitJson.HTML_CAPTIONS_.get(kind))
+    .replace('Locale', 'Italian')
+    .replace(/table-cell\ /g, 'table-cell table:style-name="ce1" ');
   let secure = {
     '003C': '&lt;',
     '003E': '&gt;',
@@ -522,7 +589,7 @@ SplitJson.odsTable = function(name, english, locale, kind) {
     }
     // Not sure what that does.
     let eng_text = SplitJson.getFromMapping(mappings);
-    let loc_map = locale[key];
+    let loc_map = SplitJson.findContent(english[key], locale);
     let loc_text = '';
     if (loc_map) {
       loc_map = loc_map.mappings;
@@ -543,8 +610,8 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       break;
     default:
       table.push(SplitJson.odsRow(
-      secure[key] || SplitJson.numberToUnicode(parseInt(key, 16)),
-        eng_text, loc_text));
+        secure[key] || SplitJson.numberToUnicode(parseInt(key, 16)),
+        key, eng_text, loc_text));
     }
   }
   return start + table.join('') + '</table:table>';
@@ -619,7 +686,11 @@ SplitJson.odsFile = function(table, path = '/tmp/ods') {
     ' style:use-optimal-row-height="true"/></style:style><style:style' +
     ' style:name="ta1" style:family="table"' +
     ' style:master-page-name="Default"><style:table-properties' +
-    ' table:display="true" style:writing-mode="lr-tb"/></style:style>' +
+    ' table:display="true" style:writing-mode="lr-tb"/>' +
+    '</style:style>' +
+    '<style:style style:name="ce1" style:family="table-cell" style:parent-style-name="Default">' +
+    '<style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>' +
+    '</style:style>' +
     '</office:automatic-styles><office:body><office:spreadsheet>' +
     '<table:calculation-settings table:automatic-find-labels="false"' +
     ' table:use-regular-expressions="false" table:use-wildcards="true"/>';
@@ -749,8 +820,15 @@ SplitJson.loadUnicodeFile = function(file, dir, iso) {
   let result = {};
   for (let line of lines) {
     if (!line.length) continue;
-    let [key, str] = line.split(':');
-    result[key.trim()] = str.trim();
+    let [key, str, ...rest] = line.split(':');
+    if (rest.length) {
+      str = [str, ...rest].join(': ');
+    }
+    str = str.trim();
+    if (str) {
+      str = str[0].toLowerCase() + str.substring(1); 
+    }
+    result[key.trim()] = str;
   }
   return result;
 };

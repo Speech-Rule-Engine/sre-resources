@@ -108,104 +108,336 @@ In the form of a
   ./extract.sh ../../../others/MathPlayer/Rules/ /tmp
   ```
 * Clean them up (if necesary)
-* Copy them to `speech-rule-engine` directory
-* Complete them with unicode mappings
-  ``` bash
-  node split-json.js
-  ```
-* Check and copy them to `speech-rule-engine` directory again.
-* Make sure to keep the unused files as they contain some hints on how to
-  transform alphabets and fonts
+* Extractions are already available in the `transform` subdirectory.
 
-
-``` javascript
-    require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
-```
-
-``` javascript
-SplitJson.completeLocale(locale);
-```
-
-Grep embellished characters in unicode-table-data. Full grep:
-
-``` bash
-echo "sre.AlphabetGenerator.Embellish.SUPER" > /tmp/embellished
-grep '2070' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.SUB" >> /tmp/embellished
-grep '2080' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '24EA' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '3251' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '32B1' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PARENTHESIZED" >> /tmp/embellished
-grep '2474' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PERIOD" >> /tmp/embellished
-grep '2488' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLED" >> /tmp/embellished
-grep '2775' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLED" >> /tmp/embellished
-grep '24EB' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.DOUBLECIRCLED" >> /tmp/embellished
-grep '24F5' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLEDSANSSERIF" >> /tmp/embellished
-grep '277F' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLEDSANSSERIF" >> /tmp/embellished
-grep '278A' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.COMMA" >> /tmp/embellished
-grep '1F101' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '24B6' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '24D0' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PARENTHESIZED" >> /tmp/embellished
-grep '1F110' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PARENTHESIZED" >> /tmp/embellished
-grep '249C' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.SQUARED" >> /tmp/embellished
-grep '1F130' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVESQUARED" >> /tmp/embellished
-grep '1F170' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLED" >> /tmp/embellished
-grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-```
-
-Minimal grep:
-
-``` bash
-echo "sre.AlphabetGenerator.Embellish.SUPER" > /tmp/embellished
-grep '2070' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.SUB" >> /tmp/embellished
-grep '2080' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLED" >> /tmp/embellished
-grep '24EA' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PARENTHESIZED" >> /tmp/embellished
-grep '2474' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.PERIOD" >> /tmp/embellished
-grep '2488' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLED" >> /tmp/embellished
-grep '2775' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.DOUBLECIRCLED" >> /tmp/embellished
-grep '24F5' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.CIRCLEDSANSSERIF" >> /tmp/embellished
-grep '277F' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVECIRCLEDSANSSERIF" >> /tmp/embellished
-grep '278A' loc/$LOCALE/symbols/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.COMMA" >> /tmp/embellished
-grep '1F101' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.SQUARED" >> /tmp/embellished
-grep '1F130' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-echo "sre.AlphabetGenerator.Embellish.NEGATIVESQUARED" >> /tmp/embellished
-grep '1F170' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
-```
-
-## Transformations
+## Transformations and initial MathMaps
 
 This transform information from other systems/repositories to create unicode mappings.
 
 Structure of the `transform` directory:
   * `pre-forms` contains everything harvested from MathPlayer mappings
   * `int-forms` contains cleaned up versions of `pre-forms`. E.g., with the English parts removed.
-  * `split-forms` contains split up versions of the int-forms.
-  * __copy the `iso` files not the `iso-new` files__
+  * `split-forms` contains split up versions of the int-forms. These are generated with 
+
+``` javascript
+    require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
+    SplitJson.allFiles(locale);
+```
+  
+* Copy the `iso` directory from `split-forms` to `speech-rule-engine` mathmaps directory
+* __copy the `iso` files not the `iso-new` files__
+
+
+## Completing symbol maps
+
+* Copy the `locale` subdirectory from `split-forms` to the mathmaps directory. 
+* Complete them with unicode mappings, which are assumed to be in
+  `git/sre/others/unicode-table-data/`.
+* Complete the symbols mappings with
+
+``` javascript
+SplitJson.completeLocale(locale);
+```
+  This assumes the locale mappings already in the mathmaps directory! It writes the completed 
+  mappings to the `split-forms` directory again.
+* Check and copy them to `speech-rule-engine` directory again.
+
+
+### Finalising symbol mappings
+
+* Make sure to keep the unused files as they contain some hints on how to
+  transform alphabets, fonts and number sets.
+* Also manually correct symbols `0x0394` in `greek-rest.js` for clearspeak
+  triangle.
+* Likewise add clearspeak entries for `0x00B2` and `0x00B3` in `digit-rest.js`.
+
+### Finalising unit/function mappings
+
+* Try completing the `locale-missing.csv` entries. 
+* For those elements exist empty entries in the respective `units` and `functions` files.
+* Copy these to the respective entries in the files in the units and functions subdirectories.
+* Correct celsius and fahrenheit in `temperature.js` manually.
+* Fill in as much as possible manually.
+
+## Alphabet generation
+
+* Hints at how capital letters, fonts etc. are called might be in `local-rest/symbols.js`
+
+### Fonts
+
+Grep fonts for alphabets
+
+```bash
+echo 'normal:' > /tmp/fonts
+grep '0041' loc/$LOCALE/symbols/* >> /tmp/fonts
+echo 'fullwidth:' >> /tmp/fonts
+grep 'FF21' loc/$LOCALE/symbols/* >> /tmp/fonts
+echo 'bold:' >> /tmp/fonts
+grep '1D400' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'italic:' >> /tmp/fonts
+grep '1D434' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'bold-italic:' >> /tmp/fonts
+grep '1D468' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'script:' >> /tmp/fonts
+grep '1D49C' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'bold-script:' >> /tmp/fonts
+grep '1D4D0' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'fraktur:' >> /tmp/fonts
+grep '1D504' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'double-struck:' >> /tmp/fonts
+grep '1D538' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'bold-fraktur:' >> /tmp/fonts
+grep '1D56C' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'sans-serif:' >> /tmp/fonts
+grep '1D5A0' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'sans-serif-italic:' >> /tmp/fonts
+grep '1D5D4' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'sans-serif-bold:' >> /tmp/fonts
+grep '1D608' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'sans-serif-bold-italic:' >> /tmp/fonts
+grep '1D63C' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+echo 'monospace:' >> /tmp/fonts
+grep '1D670' loc/$LOCALE/symbols/plane1/* >> /tmp/fonts
+```
+
+
+### Embellished characters
+
+Grep embellished characters in unicode-table-data. Minimal grep:
+
+``` bash
+echo "super" > /tmp/embellished
+grep '2070' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "sub" >> /tmp/embellished
+grep '2080' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled" >> /tmp/embellished
+grep '24EA' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "parenthesized" >> /tmp/embellished
+grep '2474' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "period" >> /tmp/embellished
+grep '2488' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "negative-circled" >> /tmp/embellished
+grep '24EB' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "double-circled" >> /tmp/embellished
+grep '24F5' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled-sans-serif" >> /tmp/embellished
+grep '277F' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "negative-circled-sans-serif" >> /tmp/embellished
+grep '278A' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "comma" >> /tmp/embellished
+grep '1F101' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+echo "squared" >> /tmp/embellished
+grep '1F130' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+echo "negative-squared" >> /tmp/embellished
+grep '1F170' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+```
+
+Full grep in case elements are missing or not translated:
+
+``` bash
+echo "super:" > /tmp/embellished
+grep '2070' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "sub:" >> /tmp/embellished
+grep '2080' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled:" >> /tmp/embellished
+grep '24EA' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled:" >> /tmp/embellished
+grep '3251' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled:" >> /tmp/embellished
+grep '32B1' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "parenthesized:" >> /tmp/embellished
+grep '2474' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "period:" >> /tmp/embellished
+grep '2488' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "negative-circled:" >> /tmp/embellished
+grep '2775' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "negative-circled:" >> /tmp/embellished
+grep '24EB' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "double-circled:" >> /tmp/embellished
+grep '24F5' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled-sans-serif:" >> /tmp/embellished
+grep '277F' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "negative-circled-sans-serif:" >> /tmp/embellished
+grep '278A' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "comma:" >> /tmp/embellished
+grep '1F101' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled:" >> /tmp/embellished
+grep '24B6' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "circled:" >> /tmp/embellished
+grep '24D0' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "parenthesized:" >> /tmp/embellished
+grep '1F110' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+echo "parenthesized:" >> /tmp/embellished
+grep '249C' loc/$LOCALE/symbols/* >> /tmp/embellished
+echo "squared:" >> /tmp/embellished
+grep '1F130' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+echo "negative-squared:" >> /tmp/embellished
+grep '1F170' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+echo "negative-circled:" >> /tmp/embellished
+grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
+```
+
+
+### Alphabets
+
+#### Latin Capital
+
+``` bash
+    grep '0041' loc/$LOCALE/symbols/* > /tmp/latin-capital
+    grep '0042' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0043' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0044' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0045' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0046' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0047' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0048' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0049' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004A' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004B' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004C' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004D' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004E' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '004F' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0050' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0051' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0052' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0053' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0054' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0055' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0056' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0057' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0058' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '0059' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+    grep '005A' loc/$LOCALE/symbols/* >> /tmp/latin-capital
+```
+
+
+#### Latin Small
+
+``` bash
+grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0062' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0063' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0064' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0065' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0066' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0067' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0068' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0069' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006A' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006B' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006C' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006D' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006E' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '006F' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0070' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0071' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0072' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0073' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0074' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0075' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0076' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0077' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0078' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0079' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '007A' loc/$LOCALE/symbols/* >> /tmp/latin-small
+```
+
+
+#### Greek Capital
+
+``` bash
+    grep '0391' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0392' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0393' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0394' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0395' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0396' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0397' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0398' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0399' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039A' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039B' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039C' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039D' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039E' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '039F' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A0' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A1' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03F4' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A3' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A4' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A5' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A6' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A7' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A8' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '03A9' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+```
+
+
+#### Greek Small
+
+``` bash
+    grep '2207' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B1' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B2' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B3' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B4' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B5' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B6' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B7' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B8' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03B9' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BA' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BB' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BC' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BD' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BE' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03BF' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C0' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C1' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C2' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C3' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C4' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C5' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C6' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C7' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C8' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03C9' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '2202' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03F5' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03D1' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03F0' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03D5' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03F1' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '03D6' loc/$LOCALE/symbols/* >> /tmp/greek-small
+```
+
+
+### Numbers
+
+``` bash
+    grep '0030' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0031' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0032' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0033' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0034' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0035' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0036' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0037' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0038' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0039' loc/$LOCALE/symbols/* >> /tmp/digits
+```
+
+
+## Clearspeak specific
+
+* Power methods could be found in `locale-rest/functions.js`
+* Number sets could be found in `locale-rest/symbols.js`
+
+
+# Messages
+
+# Numbers
+
+
