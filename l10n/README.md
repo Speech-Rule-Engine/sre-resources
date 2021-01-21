@@ -18,7 +18,7 @@ Create both online forms and spreadsheets for
 
 #### JSON files
 
-We can automate the following processes: 
+We can automate the following processes:
 
 * JSON to HTML: index file with links to the single tables.
 * JSON to ODS: single spreadsheets with single sheets per file.
@@ -26,7 +26,7 @@ We can automate the following processes:
 
 #### Messages
 
-We can automate: 
+We can automate:
 
 * locale_XX.js to HTML: index file with links to the single tables.
 * locale_XX.js to ODS: single spreadsheets with single sheets per message category.
@@ -47,7 +47,7 @@ We can automate:
 
 * Extraction of messages, checking for `[t] "mmm"` elements. The `mmm` is then
   the English to be localised.
-  
+
 Replacement can't really be automated, as they might differ per locale.
 
 
@@ -67,8 +67,8 @@ Replacement can't really be automated, as they might differ per locale.
 
 #### Shell scripts
 
-- [ ] Extract unicode 
-- [ ] Helper extraction from JSON/Messages/etc. for locale
+- [x] Extract unicode
+- [x] Helper extraction from JSON/Messages/etc. for locale
 - [ ] Locale update (inverse)
 
 
@@ -76,26 +76,27 @@ Replacement can't really be automated, as they might differ per locale.
 
 #### Create online forms from Json:
 
-- [ ] Symbols 
-- [ ] Units
-- [ ] Functions
+- [x] Symbols
+- [x] Units
+- [x] Functions
 
-In the form of a 
+In the form of a
 
 
 #### Create spreadsheets from Json:
 
-- [ ] Symbols
-- [ ] Units
-- [ ] Functions
+- [x] Symbols
+- [x] Units
+- [x] Functions
 
-In the form of a 
+In the form of a
 
 
 #### Templates:
 
-- [ ] Empty Spreadsheet (without content.xml) for generation of JSON
-- [ ] Numbers Spreadsheet
+- [x] Empty Spreadsheet (without content.xml) for generation of JSON
+- [x] AlphaNum Spreadsheet: Alphabets and numerals
+- [x] Messages: Prefix, summaries, roles, mathspeak, clearspeak, etc.
 - [ ] Rules Spreadsheet
 
 
@@ -117,20 +118,20 @@ This transform information from other systems/repositories to create unicode map
 Structure of the `transform` directory:
   * `pre-forms` contains everything harvested from MathPlayer mappings
   * `int-forms` contains cleaned up versions of `pre-forms`. E.g., with the English parts removed.
-  * `split-forms` contains split up versions of the int-forms. These are generated with 
+  * `split-forms` contains split up versions of the int-forms. These are generated with
 
 ``` javascript
     require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
     SplitJson.allFiles(locale);
 ```
-  
+
 * Copy the `iso` directory from `split-forms` to `speech-rule-engine` mathmaps directory
 * __copy the `iso` files not the `iso-new` files__
 
 
 ## Completing symbol maps
 
-* Copy the `locale` subdirectory from `split-forms` to the mathmaps directory. 
+* Copy the `locale` subdirectory from `split-forms` to the mathmaps directory.
 * Complete them with unicode mappings, which are assumed to be in
   `git/sre/others/unicode-table-data/`.
 * Complete the symbols mappings with
@@ -138,7 +139,7 @@ Structure of the `transform` directory:
 ``` javascript
 SplitJson.completeLocale(locale);
 ```
-  This assumes the locale mappings already in the mathmaps directory! It writes the completed 
+  This assumes the locale mappings already in the mathmaps directory! It writes the completed
   mappings to the `split-forms` directory again.
 * Check and copy them to `speech-rule-engine` directory again.
 
@@ -153,7 +154,7 @@ SplitJson.completeLocale(locale);
 
 ### Finalising unit/function mappings
 
-* Try completing the `locale-missing.csv` entries. 
+* Try completing the `locale-missing.csv` entries.
 * For those elements exist empty entries in the respective `units` and `functions` files.
 * Copy these to the respective entries in the files in the units and functions subdirectories.
 * Correct celsius and fahrenheit in `temperature.js` manually.
@@ -315,7 +316,7 @@ grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
 #### Latin Small
 
 ``` bash
-grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
+    grep '0061' loc/$LOCALE/symbols/* > /tmp/latin-small
     grep '0062' loc/$LOCALE/symbols/* >> /tmp/latin-small
     grep '0063' loc/$LOCALE/symbols/* >> /tmp/latin-small
     grep '0064' loc/$LOCALE/symbols/* >> /tmp/latin-small
@@ -347,7 +348,7 @@ grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
 #### Greek Capital
 
 ``` bash
-    grep '0391' loc/$LOCALE/symbols/* >> /tmp/greek-capital
+    grep '0391' loc/$LOCALE/symbols/* > /tmp/greek-capital
     grep '0392' loc/$LOCALE/symbols/* >> /tmp/greek-capital
     grep '0393' loc/$LOCALE/symbols/* >> /tmp/greek-capital
     grep '0394' loc/$LOCALE/symbols/* >> /tmp/greek-capital
@@ -378,7 +379,7 @@ grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
 #### Greek Small
 
 ``` bash
-    grep '2207' loc/$LOCALE/symbols/* >> /tmp/greek-small
+    grep '2207' loc/$LOCALE/symbols/* > /tmp/greek-small
     grep '03B1' loc/$LOCALE/symbols/* >> /tmp/greek-small
     grep '03B2' loc/$LOCALE/symbols/* >> /tmp/greek-small
     grep '03B3' loc/$LOCALE/symbols/* >> /tmp/greek-small
@@ -417,7 +418,7 @@ grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
 ### Numbers
 
 ``` bash
-    grep '0030' loc/$LOCALE/symbols/* >> /tmp/digits
+    grep '0030' loc/$LOCALE/symbols/* > /tmp/digits
     grep '0031' loc/$LOCALE/symbols/* >> /tmp/digits
     grep '0032' loc/$LOCALE/symbols/* >> /tmp/digits
     grep '0033' loc/$LOCALE/symbols/* >> /tmp/digits
@@ -439,5 +440,3 @@ grep '0061' loc/$LOCALE/symbols/* >> /tmp/latin-small
 # Messages
 
 # Numbers
-
-

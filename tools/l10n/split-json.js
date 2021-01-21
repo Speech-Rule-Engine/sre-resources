@@ -925,3 +925,95 @@ module.exports = SplitJson;
 // Combine and minimise json!
 // jq -c -s add *.js
 
+// For the following we need npm install csv-parser
+const csv = require('csv-parser');
+
+SplitJson.fromCsv = function (input, output, type, lname) {
+  let oldJson = JSON.parse(fs.readFileSync(output, 'utf8'));
+  let oldLocale = SplitJson.loadLocale([output]);
+  return new Promise((resolve, reject) => {
+    console.log(input);
+    fs.createReadStream(input)
+      .pipe(csv())
+      .on('data', (row) => {
+        SplitJson.csvPicker(type, oldLocale, row, lname, input);
+      })
+      .on('end', () => {
+        for (let oldElement of oldJson) {
+          let key = oldElement.key;
+          if (!key) continue;
+          let newElement = oldLocale[key];
+          if (!newElement) {
+            console.log('Element for unicode not found: ' + key);
+            continue;
+          }
+          Object.assign(oldElement.mappings, newElement.mappings);
+        }
+        resolve(oldJson);
+    });
+  }).then(() => {
+    fs.writeFileSync(output, JSON.stringify(oldJson, null, 2) + '\n', 'utf8');
+  });
+};
+
+
+
+
+SplitJson.csvPicker = function(type, locale, row, lname, input) {
+  if (type === SplitJson.UNITS_) {
+    return;
+  }
+  SplitJson.symbolsCsvPicker(
+    locale, row, lname, 
+    type === SplitJson.SYMBOLS_ ? 'Unicode' : 'Function',
+    input
+  );
+};
+
+
+/**
+ * Picks a value from a CSV row and sets it in the given locale structure.
+ * This methods is implemented for symbols.
+ * @param {Object} locale The locale object.
+ * @param {Object} row The csv row.
+ * @param {string} localeCol The column name with the locale translation.
+ * @param {string} keyCol The column with the key.
+ * @param {string} input Current input file.
+ */
+SplitJson.symbolsCsvPicker = function(locale, row, localeCol, keyCol, input) {
+  let key = row[keyCol];
+  console.log(key);
+  let element = locale[key];
+  console.log('Element: ' + element);
+  if (!element) {
+    console.log(`Element for ${keyCol} not found: ${key}`);
+    return;
+  }
+  if (!element.mappings.default || typeof element.mappings.default.default === 'undefined') {
+    console.log(`Inspect element ${key} manually in ${input}`);
+    return;
+  }
+  element.mappings.default.default = row[localeCol];
+};
+
+
+/**
+ * Update the locale files for a particular,
+ * @param {string} locale Locale name.
+ * @param {string} type Element type.
+ * @param {string} csvPath Path of the csv files.
+ * @param {string=} lname The locale name of the row. Defaults to `Locale`.
+ */
+SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
+  let inPath = `${SplitJson.PATH_}/${locale}/${type}/`;
+  let files = SplitJson.FILES_MAP_.get(type);
+  files.reduce(
+    (promise, file) => {
+      let input = csvPath + path.basename(file, '.js') + '.csv';
+      return promise.then(() => SplitJson.fromCsv(input, inPath + file, type, lname));
+    },
+    new Promise(r => r())
+  );
+};
+
+// SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
