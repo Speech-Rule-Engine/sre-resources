@@ -331,3 +331,65 @@ quickTest2 = function(mml) {
 };
 
 
+// Rewrites JSON rule files from JSON-like to proper JSON.
+// Assumes that the JSON is given as `expr = {...}` in the file.
+rewriteJsonFile = function(file, dir) {
+  require(`${dir}/${file}.js`);
+  fs.writeFileSync(`${dir}/${file}.json`, JSON.stringify(expr, null, 2));
+  delete require.cache[require.resolve(`${dir}/${file}.js`)];
+};
+
+
+const csv = require('csv-parser');
+// Rewrites the english json, replacing the locale messages from the CSV.
+getCsvMapping = async function(file, mapping, locale = "Locale", english = "English") {
+  return new Promise((resolve, reject) => {
+    fs.createReadStream(file)
+      .pipe(csv())
+      .on('data', (row) => {
+        console.log(row);
+        mapping[row[english]] = row[locale];
+      })
+      .on('end', () => {
+        resolve(mapping);
+    });
+  });
+};
+
+
+getTextString = function(text) {
+  if (text.match(/^\".*\"$/)) {
+    return text.slice(1, text.length - 1);
+  }
+  return null;
+};
+
+
+rewriteSpeechRuleFile = async function(json, csv) {
+  let english = JSON.parse(fs.readFileSync(json));
+  let mapping = {};
+  let promise = await getCsvMapping(csv, mapping);
+  let newRules = [];
+  for (let rule of english.rules) {
+    if (rule[0] === 'Rule') {
+      let action = sre.SpeechRule.Action.fromString(rule[3]);
+      let components = action.components;
+      for (let action of components) {
+        if (action.type === 'TEXT') {
+          let text = getTextString(action.content);
+          if (text) {
+            if (mapping[text]) {
+              action.content = `"${mapping[text]}"`;
+            } else {
+              console.log('Missing mapping for: ' + text);
+            }
+          }
+        }
+      }
+      rule[3] = action.toString();
+    }
+    newRules.push(rule);
+  }
+  english.rules = newRules;
+  fs.writeFileSync('/tmp/out.json', JSON.stringify(english, null, 2));
+};
