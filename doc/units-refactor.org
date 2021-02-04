@@ -51,3 +51,13 @@ as in
 ```
 <math><mrow><mn>1</mn><mi mathvariant="normal" class="MathML-Unit">J</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal" class="MathML-Unit">kg</mi><mo>·</mo><mn>2</mn><msup><mi mathvariant="normal" >m</mi><mn>2</mn></msup><mo>*</mo><msup><mi mathvariant="normal" >s</mi><mrow><mo>-</mo><mn>2</mn></mrow></msup></mrow></math>
 ```
+
+* Issues
+
+** Anything with spaces is currently not working (e.g., proj lim)
+
+** Unicode characters on upper plane together with other characters is not working.
+
+** Combine units/functions with respect to locale whenever the engine is updated with a new locale.
+
+** Make sure that units/functions/symbols are actually tested with nodes.

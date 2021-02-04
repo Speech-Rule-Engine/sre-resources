@@ -1017,3 +1017,52 @@ SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
 };
 
 // SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
+
+SplitJson.loadLocaleFileToList = function(file, path) {
+  path = path || '';
+  let content = fs.readFileSync(path + file);
+  return content ? JSON.parse(content) : [];
+};
+
+SplitJson.transformLocaleFiles = function(type, path, method, outPath = path) {
+  let files = SplitJson.FILES_MAP_.get(type);
+  for (let file of files) {
+    SplitJson.transformLocaleFile(file, path, method, outPath);
+  }
+};
+
+SplitJson.transformLocaleFile = function(file, path, method, outPath = path) {
+  let content = SplitJson.loadLocaleFileToList(file, path);
+  let result = content.map(x => method(x));
+  fs.writeFileSync(`${outPath}/${file}`, JSON.stringify(result, null, 2));
+};
+
+SplitJson.swapSingularForPlural = function(json) {
+  if (!json.mappings || !json.mappings.default ||
+      (!json.mappings.default.default && !json.mappings.default.singular)) {
+    console.log(0);
+    return json;
+  }
+  console.log(1);
+  json.mappings.default.plural = json.mappings.default.default;
+  json.mappings.default.default = json.mappings.default.singular;
+  delete json.mappings.default.singular;
+  return json;
+};
+
+
+SplitJson.removeDual = function(json) {
+  SplitJson.removeCell(json, 'dual');
+};
+
+SplitJson.removeSingular = function(json) {
+  SplitJson.removeCell(json, 'singular');
+};
+
+SplitJson.removeCell = function(json, cell) {
+  if (!json.mappings || !json.mappings.default) {
+    return json;
+  }
+  delete json.mappings.default[cell];
+  return json;
+};

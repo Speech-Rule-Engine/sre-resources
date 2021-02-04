@@ -342,8 +342,9 @@ rewriteJsonFile = function(file, dir) {
 
 const csv = require('csv-parser');
 // Rewrites the english json, replacing the locale messages from the CSV.
-getCsvMapping = async function(file, mapping, locale = "Locale", english = "English") {
-  return new Promise((resolve, reject) => {
+getCsvMapping = async function(file, locale = "Locale", english = "English") {
+  let mapping = {};
+  let promise = new Promise((resolve, reject) => {
     fs.createReadStream(file)
       .pipe(csv())
       .on('data', (row) => {
@@ -354,6 +355,7 @@ getCsvMapping = async function(file, mapping, locale = "Locale", english = "Engl
         resolve(mapping);
     });
   });
+  return await promise;
 };
 
 
@@ -365,31 +367,46 @@ getTextString = function(text) {
 };
 
 
-rewriteSpeechRuleFile = async function(json, csv) {
-  let english = JSON.parse(fs.readFileSync(json));
-  let mapping = {};
-  let promise = await getCsvMapping(csv, mapping);
-  let newRules = [];
-  for (let rule of english.rules) {
-    if (rule[0] === 'Rule') {
-      let action = sre.SpeechRule.Action.fromString(rule[3]);
-      let components = action.components;
-      for (let action of components) {
-        if (action.type === 'TEXT') {
-          let text = getTextString(action.content);
-          if (text) {
-            if (mapping[text]) {
-              action.content = `"${mapping[text]}"`;
-            } else {
-              console.log('Missing mapping for: ' + text);
-            }
-          }
+rewriteSpeechRuleAction = function(actionStr, mapping) {
+  let action = sre.SpeechRule.Action.fromString(actionStr);
+  let components = action.components;
+  for (let action of components) {
+    if (action.type === 'TEXT') {
+      let text = getTextString(action.content);
+      if (text) {
+        if (mapping[text]) {
+          action.content = `"${mapping[text]}"`;
+        } else {
+          console.log('Missing mapping for: ' + text);
         }
       }
-      rule[3] = action.toString();
+    }
+  }
+  return action.toString();
+};
+
+
+rewriteSpeechRuleFile = async function(json, csv) {
+  let english = JSON.parse(fs.readFileSync(json));
+  let mapping = await getCsvMapping(csv, 'Locale', 'English Speech Rule');
+  console.log(mapping);
+  let newRules = [];
+  for (let rule of english.rules) {
+    let type = rule[0];
+    if (type === 'Rule') {
+      rule[3] = rewriteSpeechRuleAction(rule[3], mapping);
+    }
+    if (type === 'SpecializedRule' && rule[4]) {
+      rule[4] = rewriteSpeechRuleAction(rule[4], mapping);
     }
     newRules.push(rule);
   }
   english.rules = newRules;
   fs.writeFileSync('/tmp/out.json', JSON.stringify(english, null, 2));
 };
+// example:
+// Copy the jSON from clearspeakEnglish somewhere. E.g., /tmp/csen.json
+// Assume the Italian csv file is somewhere similar, e.g., /tmp/Clearspeak\ Messages.csv
+// Then run
+// require('/home/sorge/git/sre/speech-rule-engine/lib/sre4node');
+// rewriteSpeechRuleFile('/tmp/csen.json', '/tmp/Clearspeak Messages.csv');
