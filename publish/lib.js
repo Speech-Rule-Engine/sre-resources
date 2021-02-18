@@ -40,6 +40,7 @@ let sreTest = {
 
   runAllTests: function() {
     // Edge takes too long to render. So a little timeout!
+    console.log('hello');
     let promise = new Promise((res, rej) => {
       if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
         setTimeout(res(), 200);
@@ -49,8 +50,15 @@ let sreTest = {
     });
     promise.then(() => {
       sreTest.runTests().
-        then(() => {return sreTest.runTests({locale: 'fr'});}).
+        then(() => {return sreTest.runTests({locale: 'en', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'en', domain: 'clearspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'fr', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'fr', domain: 'clearspeak', style: 'default'});}).
         then(() => {return sreTest.runTests({locale: 'es', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'it', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'it', domain: 'clearspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'de', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'de', domain: 'clearspeak', style: 'default'});}).
         then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
     });
   }
