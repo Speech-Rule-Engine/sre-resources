@@ -2,26 +2,30 @@
 * Grammar
 
 ** Deal with plural, etc. in the actual unicode mappings not as a correction.
+DONE
 
-* Unit Heuristic
+* Unit Heuristic and Semantics
 
 ** Multi-character normal, test as unit
 
 ** Fold in the clearspeak unit heuristic
-
-* Unit Semantics
+DONE: These are now separated. Mathspeak is precise. Clearspeak more natural.
 
 ** Improve the semantic recognition to deal with numeric or identifier elements
 
 ** Reciprocal units
+PARTIALLY
 
 * Missing tests:
 
 ** Multipled combinations of units
+DONE
 
 ** Spanish for basic unit-combine
+DONE
 
-l* Have unit rules independent of the actual speech rule set.
+* Have unit rules independent of the actual speech rule set.
+PARTIALLY, units are now separately checked but using the same loading and rule mechanism.
 
 * Locale workings:
 
@@ -30,21 +34,25 @@ l* Have unit rules independent of the actual speech rule set.
 *** Combined units left most is wrt. numerical prefix: Singular, plural
 
 *** Fractions: Left most in unit below fraction is singular.
+PARTIALLY, could use some fine tuning.
 
 ** English:
 
 *** Single unit: singular if there is a one, otherwise plural.
+DONE
 
 *** Deal with degrees?
+DONE
 
-*** Deal with other things
+*** Deal with other things?
 
 
 *** ISSUE:
 
 
 ```
-<math><mn>1</mn><mi>a</mi><mo>*</mo><mn>2</mn><mi>b</mi><mo>·</mo><mi>c</mi></math>```
+<math><mn>1</mn><mi>a</mi><mo>*</mo><mn>2</mn><mi>b</mi><mo>·</mo><mi>c</mi></math>
+```
 
 as in 
 
@@ -61,3 +69,8 @@ as in
 ** Combine units/functions with respect to locale whenever the engine is updated with a new locale.
 
 ** Make sure that units/functions/symbols are actually tested with nodes.
+
+** Sort out some of the whitespace issues more generally. E.g., currently they are ignored entirely
+   when translated. That's not always helpful, e.g., for the Braille output.
+
+** Move the currency denominations over for Braille. Currently simply ignore them in the tests.

@@ -50,6 +50,7 @@ We can automate:
 
 Replacement can't really be automated, as they might differ per locale.
 
+* We can do this wrt. the original English rule set.
 
 ## Tool chain:
 
@@ -113,7 +114,7 @@ In the form of a
 
 ## Transformations and initial MathMaps
 
-This transform information from other systems/repositories to create unicode mappings.
+This transforms information from other systems/repositories to create unicode mappings.
 
 Structure of the `transform` directory:
   * `pre-forms` contains everything harvested from MathPlayer mappings
@@ -127,6 +128,16 @@ Structure of the `transform` directory:
 
 * Copy the `iso` directory from `split-forms` to `speech-rule-engine` mathmaps directory
 * __copy the `iso` files not the `iso-new` files__
+
+### Starting a Locale from Scratch
+
+``` javascript
+    require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
+    SplitJson.generateFiles(locale);
+```
+
+This will automatically call the `allFiles` method and results will be in
+`split-forms` folder. Then complete as below.
 
 
 ## Completing symbol maps
@@ -166,7 +177,7 @@ SplitJson.completeLocale(locale);
 
 ### Fonts
 
-Grep fonts for alphabets
+Grep fonts for alphabets in `git/sre/others/unicode-table-data/`:
 
 ```bash
 echo 'normal:' > /tmp/fonts
@@ -430,6 +441,12 @@ grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
     grep '0039' loc/$LOCALE/symbols/* >> /tmp/digits
 ```
 
+#### Cleanup
+
+* The do some cleanup on the files. E.g., remove messages like "Latin capital
+  letter" etc.
+* Use these messages to also cleanup the locale files before generating the spreadsheets.
+
 
 ## Clearspeak specific
 
@@ -440,3 +457,47 @@ grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
 # Messages
 
 # Numbers
+
+
+# Create Spreadsheets
+
+## Symbols, Units, Functions, Currency
+
+* Replace the locale name in the `odsTable` method
+* Make symbol spreadsheets
+
+```javascript
+SplitJson.toOds(locale);
+```
+
+This generates all necessary spreadsheets in directory `/tmp/spreadsheets/iso`.
+* Spreadsheets are named:
+
+`currency-iso.ods  functions-iso.ods  symbols-iso.ods  units-iso.ods`
+where `iso` stands for the locale.
+
+## Alphanumerics 
+
+* Use the template in `l10/templates/AlphaNumerics.ods`
+* Use the cleaned up content from the generated files alphabet and digit files above
+* Copy them in to the spreadsheet.
+
+
+# Pulling Translated Content from Spreadsheets
+
+## Pulling Symbols
+
+* Save ODS files as multiple CSV.
+* Use methods in `SplitJson` module.
+
+
+``` javascript
+SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
+
+```
+
+## Pulling Messages
+
+* Create a new speech rule file by copying the English one.
+* Use functionality in `rewrite.js` (This should be integrated with the SplitJson module.)
+

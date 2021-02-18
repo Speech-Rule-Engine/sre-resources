@@ -330,6 +330,16 @@ SplitJson.splitFiles = function(kind, iso, model, addempty) {
 };
 
 
+SplitJson.generateFiles = function(iso) {
+  let base = JSON.stringify([{"locale": iso}], null, 2);
+  fs.mkdirSync(`${SplitJson.INPUT_PATH_}/${iso}`, {recursive: true});
+  fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.SYMBOLS_}.json`, base);
+  fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.FUNCTIONS_}.json`, base);
+  fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.UNITS_}.json`, base);
+  fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.CURRENCY_}.json`, base);
+  fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.PREFIX_}.json`, base);
+  SplitJson.allFiles(iso);
+};
 
 
 SplitJson.allFiles = function(iso) {
@@ -573,7 +583,7 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       ' table:number-columns-repeated="3"' +
       ' table:default-cell-style-name="Default"/>';
   start += SplitJson.odsRow(...SplitJson.HTML_CAPTIONS_.get(kind))
-    .replace('Locale', 'Italian')
+    .replace('Locale', 'Hindi')
     .replace(/table-cell\ /g, 'table-cell table:style-name="ce1" ');
   let secure = {
     '003C': '&lt;',
