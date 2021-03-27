@@ -86,7 +86,7 @@ Run on localhost.
 browser_online.html
 ```
 
-This test is run after the actual release!
+__This test is run after the actual release!__
 
 ## Keeping the tests in sync
 

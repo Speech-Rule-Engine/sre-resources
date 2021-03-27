@@ -492,12 +492,101 @@ where `iso` stands for the locale.
 
 
 ``` javascript
-SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
-
+SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/locales/it/stefano/csv-symbols/', 'Italian');
+SplitJson.elementsFromCsv('it', SplitJson.FUNCTIONS_, '/home/sorge/git/sre/sre-resources/l10n/locales/it/stefano/csv-functions/', 'Italian');
+SplitJson.elementsFromCsv('it', SplitJson.UNITS_, '/home/sorge/git/sre/sre-resources/l10n/locales/it/stefano/csv-units/', 'Italian');
 ```
 
-## Pulling Messages
+* Currencies might have to by copied over from the English locale if they do not yet exist.
+* Make sure that the locale is correct!
+
+``` javascript
+SplitJson.elementsFromCsv('it', SplitJson.CURRENCY_, '/home/sorge/git/sre/sre-resources/l10n/locales/it/stefano/csv-currency/', 'Italian');
+```
+
+* Cleaning up symbols afterwards to remove empty elements, etc.
+
+1. Removing empty elements. E.g., duals and singulars:
+
+``` javascript
+SplitJson.transformLocaleFiles(SplitJson.UNITS_, SplitJson.PATH_ + '/hi/units/', SplitJson.removeDual);
+SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, SplitJson.PATH_ + '/hi/units/', SplitJson.removeDual);
+SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, SplitJson.PATH_ + '/hi/functions/', SplitJson.removeDual);
+```
+
+``` javascript
+SplitJson.transformLocaleFiles(SplitJson.UNITS_, SplitJson.PATH_ + '/hi/units/', SplitJson.removeSingular);
+SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, SplitJson.PATH_ + '/hi/units/', SplitJson.removeSingular);
+SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, SplitJson.PATH_ + '/hi/functions/', SplitJson.removeSingular);
+```
+2. Check if there are any singular or dual elements left.
+3. Swap singular for default/plural.
+
+``` javascript
+SplitJson.transformLocaleFiles(SplitJson.UNITS_, SplitJson.PATH_ + '/hi/units/', SplitJson.swapSingularForPlural);
+SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, SplitJson.PATH_ + '/hi/units/', SplitJson.swapSingularForPlural);
+```
+
+## Pulling Locale Messages
+
+These are primarily on the `Messages` spreadsheet but also on the
+`AlphaNumerics` sheet. They go either into the `locale` message file or into the
+alphabet file.
+
+* Fonts (in `AlphaNumerics`): `FONT`
+* Embellished Characters (in `AlphaNumerics`): `EMBELLISH`
+
+
+``` javascript
+SplitJson.writeAssocList('LOC/csv-alphanumerics/Fonts.csv', '/tmp/fonts.json', 'Font Name English', 'Font Name Locale', 'Font Name English');
+SplitJson.writeAssocList('LOC/csv-alphanumerics/Embellished\ Characters.csv', '/tmp/embellished.json', 'Unicode Embellishment Name', 'Embellishment Name Locale', 'Embellishment Name English' );
+```
+
+* Roles (in `Messages`) `ROLE`
+* embellished (in `Messages`): `ENCLOSE`
+* navigate (in `Messages`): `NAVIGATE`
+
+``` javascript
+SplitJson.writeAssocList('LOC/csv-messages/Roles.csv', '/tmp/roles.json', 'Role', 'Locale', 'English');
+SplitJson.writeAssocList('LOC/csv-messages/Enclose.csv', '/tmp/enclose.json', 'Enclose Type', 'Locale', 'English');
+SplitJson.writeAssocList('LOC/csv-messages/Navigation.csv', '/tmp/navigation.json', 'English', 'Locale', 'English');
+```
+
+* Replace all the `"` with `'` and copy over to the respective enumerate
+  elements in the locale file.
+* Make sure to pay attention to combiners on fonts and embellish!
+* Replacement of navigation should be done manually element by element (it is only 3!)
+
+## Pulling Speech Rule Messages
+
+* Before generating csv files copy the mathspeak disambiguation messages without
+  procedural entry to the next sheet.
+* Mathspeak disambiguation messages work similar to the other localisable messages
+
+``` javascript
+SplitJson.writeAssocList('LOC/csv-messages/Mathspeak\ disambiguation.csv', '/tmp/mathspeak.json', 'Proc Message', 'Locale', 'English');
+```
+
+For the other messages proceed as follows:
 
 * Create a new speech rule file by copying the English one.
+
+``` shell
+mkdir src/mathmaps/LOC/rules
+cp src/mathmaps/en/rules/clearspeak_english.js src/mathmaps/LOC/rules/clearspeak_LOCALE.js
+cp src/mathmaps/en/rules/mathspeak_english.js src/mathmaps/LOC/rules/mathspeak_LOCALE.js
+cp src/mathmaps/en/rules/prefix_english.js src/mathmaps/LOC/rules/prefix_LOCALE.js
+cp src/mathmaps/en/rules/summary_english.js src/mathmaps/LOC/rules/summary_LOCALE.js
+```
+
+* Update the locale in the respective rule file.
 * Use functionality in `rewrite.js` (This should be integrated with the SplitJson module.)
 
+* __In clearspeak the `[t] "ft"` element  should remain untranslated!
+
+__This will be no longer necessary once we have the modern rule syntax.__
+
+## Pulling alphanumerics
+
+__This is currently done manually but should be improved once we have the newly
+outsourced elements.__

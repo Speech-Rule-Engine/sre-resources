@@ -249,6 +249,7 @@ SplitJson.splitContent = function(list, locale, addempty = false) {
         if (element.si) {
           loc.si = element.si;
         }
+        // TODO: Rewrite to reflect: default, plural, dual!
         loc.mappings = {default: { default: '', singular: '', dual: '' }};
         result.push(loc);
       }
@@ -935,8 +936,17 @@ module.exports = SplitJson;
 // Combine and minimise json!
 // jq -c -s add *.js
 
-// For the following we need npm install csv-parser
+
+/**
+ * 
+ * Processing CSV to fill locale files.
+ * 
+ */
+
+// For the following we need `npm install csv-parser`
 const csv = require('csv-parser');
+
+SplitJson.CSV_PATH_ = SplitJson.L10N_PATH_ + '/locales';
 
 SplitJson.fromCsv = function (input, output, type, lname) {
   let oldJson = JSON.parse(fs.readFileSync(output, 'utf8'));
@@ -967,38 +977,65 @@ SplitJson.fromCsv = function (input, output, type, lname) {
 };
 
 
-
-
-SplitJson.csvPicker = function(type, locale, row, lname, input) {
-  if (type === SplitJson.UNITS_) {
-    return;
-  }
-  SplitJson.symbolsCsvPicker(
-    locale, row, lname, 
-    type === SplitJson.SYMBOLS_ ? 'Unicode' : 'Function',
-    input
-  );
-};
+SplitJson.LOCALE_COLUMN_ = new Map([
+  [SplitJson.SYMBOLS_, 'Unicode'],
+  [SplitJson.FUNCTIONS_, 'Function'],
+  [SplitJson.UNITS_, 'Unit'],
+  [SplitJson.CURRENCY_, 'Unit']
+]);
 
 
 /**
  * Picks a value from a CSV row and sets it in the given locale structure.
  * This methods is implemented for symbols.
+ * @param {string} type The type of elements to pick.
  * @param {Object} locale The locale object.
  * @param {Object} row The csv row.
- * @param {string} localeCol The column name with the locale translation.
- * @param {string} keyCol The column with the key.
+ * @param {string} lname The locale name.
  * @param {string} input Current input file.
  */
-SplitJson.symbolsCsvPicker = function(locale, row, localeCol, keyCol, input) {
+SplitJson.csvPicker = function(type, locale, row, lname, input) {
+  let keyCol = SplitJson.LOCALE_COLUMN_.get(type);
   let key = row[keyCol];
-  console.log(key);
   let element = locale[key];
-  console.log('Element: ' + element);
+  console.log('Element: ');
+  console.log(element);
   if (!element) {
     console.log(`Element for ${keyCol} not found: ${key}`);
     return;
   }
+  if (type === SplitJson.UNITS_ || type === SplitJson.CURRENCY_) {
+    SplitJson.pickUnitFromCsv(element, row, key, input); 
+  } else {
+    SplitJson.pickSymbolFromCsv(element, row, lname, key, input); 
+  }
+};
+
+
+/**
+ * 
+ * @param {}
+ * @return {}
+ */
+SplitJson.pickUnitFromCsv = function(element, row, key, input) {
+  console.log(0);
+  if (!element.mappings.default) {
+    console.log(`Inspect element ${key} manually in ${input}`);
+    return;
+  }
+  // TODO: Change that for the future!
+  element.mappings.default.default = row['Plural'];
+  element.mappings.default.singular = row['Singular'];
+  element.mappings.default.dual = row['Dual'];
+};
+
+
+/**
+ * 
+ * @param {}
+ * @return {}
+ */
+SplitJson.pickSymbolFromCsv = function(element, row, localeCol, key, input) {
   if (!element.mappings.default || typeof element.mappings.default.default === 'undefined') {
     console.log(`Inspect element ${key} manually in ${input}`);
     return;
@@ -1015,7 +1052,7 @@ SplitJson.symbolsCsvPicker = function(locale, row, localeCol, keyCol, input) {
  * @param {string=} lname The locale name of the row. Defaults to `Locale`.
  */
 SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
-  let inPath = `${SplitJson.PATH_}/${locale}/${type}/`;
+  let inPath = `${SplitJson.PATH_}/${locale}/${type === 'currency' ? 'units' : type}/`;
   let files = SplitJson.FILES_MAP_.get(type);
   files.reduce(
     (promise, file) => {
@@ -1027,6 +1064,14 @@ SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
 };
 
 // SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
+
+
+/**
+ *  
+ * Transforming locale files by  removing empty elements and potentially
+ * swapping fields, e.g., singular to plural.
+ *
+ */
 
 SplitJson.loadLocaleFileToList = function(file, path) {
   path = path || '';
@@ -1049,7 +1094,7 @@ SplitJson.transformLocaleFile = function(file, path, method, outPath = path) {
 
 SplitJson.swapSingularForPlural = function(json) {
   if (!json.mappings || !json.mappings.default ||
-      (!json.mappings.default.default && !json.mappings.default.singular)) {
+      !json.mappings.default.default || !json.mappings.default.singular) {
     console.log(0);
     return json;
   }
@@ -1062,17 +1107,131 @@ SplitJson.swapSingularForPlural = function(json) {
 
 
 SplitJson.removeDual = function(json) {
-  SplitJson.removeCell(json, 'dual');
+  return SplitJson.removeCell(json, 'dual');
 };
 
 SplitJson.removeSingular = function(json) {
-  SplitJson.removeCell(json, 'singular');
+  return SplitJson.removeCell(json, 'singular');
 };
 
 SplitJson.removeCell = function(json, cell) {
-  if (!json.mappings || !json.mappings.default) {
+  if (!json.mappings || !json.mappings.default || json.mappings.default[cell]) {
     return json;
   }
   delete json.mappings.default[cell];
   return json;
+};
+
+
+/**
+ * 
+ * Transforming CSV files into lists for locale messages.
+ *
+ */
+SplitJson.getCsvMapping = async function(file) {
+  let mapping = [];
+  let promise = new Promise((resolve, reject) => {
+    fs.createReadStream(file)
+      .pipe(csv())
+      .on('data', (row) => {
+        mapping.push(row);
+      })
+      .on('end', () => {
+        resolve(mapping);
+    });
+  });
+  return await promise;
+};
+
+SplitJson.getAssocList = async function(file, domain = 'English',
+                                        locale = 'Locale', english = 'English') {
+  file = SplitJson.CSV_PATH_ + '/' + file;
+  let rows = await SplitJson.getCsvMapping(file);
+  let mapping = {};
+  for (let row of rows) {
+    let key = row[domain];
+    if (!key) continue;
+    let value = row[locale] || row[english];
+    mapping[key] = value;
+  }
+  return mapping;
+};
+
+
+SplitJson.writeAssocList = async function(file, out, domain = 'English',
+                                          locale = 'Locale', english = 'English') {
+  let mapping = await SplitJson.getAssocList(file, domain, locale, english);
+  fs.writeFileSync(out, JSON.stringify(mapping, null, 2));
+};
+
+// 
+//
+
+/**
+ * 
+ * Rewriting speech rule files from CSV file input.
+ * (For this we need to load SRE with require.)
+ */
+// require('/home/sorge/git/sre/speech-rule-engine/lib/sre4node');
+
+
+SplitJson.getTextString = function(text) {
+  if (text.match(/^\".*\"$/)) {
+    return text.slice(1, text.length - 1);
+  }
+  return null;
+};
+
+
+SplitJson.rewriteSpeechRuleAction = function(actionStr, mapping) {
+  let action = sre.SpeechRule.Action.fromString(actionStr);
+  let components = action.components;
+  for (let action of components) {
+    if (action.type === 'TEXT') {
+      let text = SplitJson.getTextString(action.content);
+      if (text) {
+        if (mapping[text]) {
+          action.content = `"${mapping[text]}"`;
+        } else {
+          console.log('Missing mapping for: ' + text);
+        }
+      }
+    }
+  }
+  return action.toString();
+};
+
+
+SplitJson.rewriteSpeechRuleFile = async function(json, csv) {
+  let english = JSON.parse(fs.readFileSync(json));
+  let mapping = await SplitJson.getAssocList(
+    csv, 'English Speech Rule', 'Locale', 'English Speech Rule'); // line for clear/mathspeak
+    // csv, 'English', 'Locale', 'English'); // Line for prefix and summary
+  console.log(mapping);
+  let newRules = [];
+  for (let rule of english.rules) {
+    let type = rule[0];
+    if (type === 'Rule') {
+      rule[3] = SplitJson.rewriteSpeechRuleAction(rule[3], mapping);
+    }
+    if (type === 'SpecializedRule' && rule[4]) {
+      rule[4] = SplitJson.rewriteSpeechRuleAction(rule[4], mapping);
+    }
+    newRules.push(rule);
+  }
+  english.rules = newRules;
+  fs.writeFileSync('/tmp/out.json', JSON.stringify(english, null, 2));
+};
+
+
+SplitJson.rewriteSpeechRulesLocale = function(iso, locale, csv) {
+  let outPath = SplitJson.PATH_ + '/' + iso + '/rules';
+  // SplitJson.rewriteSpeechRuleFile(outPath + `/mathspeak_${locale}.js`, 
+  //                                 csv + '/csv-messages/Mathspeak\ Messages.csv');
+  SplitJson.rewriteSpeechRuleFile(outPath + `/clearspeak_${locale}.js`, 
+                                  csv + '/csv-messages/Clearspeak\ Messages.csv');
+  // SplitJson.rewriteSpeechRuleFile(outPath + `/summary_${locale}.js`, 
+  //                                 csv + '/csv-messages/Summaries.csv');
+  // SplitJson.rewriteSpeechRuleFile(outPath + `/prefix_${locale}.js`, 
+  //                                 csv + '/csv-messages/Prefixes.csv');
 };
