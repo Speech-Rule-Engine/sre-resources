@@ -858,9 +858,13 @@ SplitJson.getUnicodeString = function(hex, iso = 'en') {
   if (mapping) {
     return mapping[hex];
   }
-  mapping = SplitJson.loadUnicodeFile(base + '.txt', dir, iso);
-  SplitJson.UNICODE_MAPPINGS[base] = mapping;
-  return mapping[hex];
+  try {
+    mapping = SplitJson.loadUnicodeFile(base + '.txt', dir, iso);
+    SplitJson.UNICODE_MAPPINGS[base] = mapping;
+    return mapping[hex];
+  } catch (e) {
+    return '';
+  }
 };
 
 SplitJson.lookupMissingUnicode = function(list, ref, iso) {
@@ -985,6 +989,14 @@ SplitJson.LOCALE_COLUMN_ = new Map([
 ]);
 
 
+// For hindi at the moment
+SplitJson.CLEAN_ENTRY = function(x) {
+  return x.replace(/:.*$/, '').trim();
+  // return x;
+};
+
+
+
 /**
  * Picks a value from a CSV row and sets it in the given locale structure.
  * This methods is implemented for symbols.
@@ -998,8 +1010,6 @@ SplitJson.csvPicker = function(type, locale, row, lname, input) {
   let keyCol = SplitJson.LOCALE_COLUMN_.get(type);
   let key = row[keyCol];
   let element = locale[key];
-  console.log('Element: ');
-  console.log(element);
   if (!element) {
     console.log(`Element for ${keyCol} not found: ${key}`);
     return;
@@ -1040,7 +1050,7 @@ SplitJson.pickSymbolFromCsv = function(element, row, localeCol, key, input) {
     console.log(`Inspect element ${key} manually in ${input}`);
     return;
   }
-  element.mappings.default.default = row[localeCol];
+  element.mappings.default.default = SplitJson.CLEAN_ENTRY(row[localeCol]);
 };
 
 
