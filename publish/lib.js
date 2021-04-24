@@ -27,7 +27,9 @@ let sreTest = {
     const div = document.createElement('div');
     div.textContent = speech;
     document.body.insertBefore(div, next);
-    console.log(speech);
+    // console.log('Trie in lib');
+    // console.log(sre.SpeechRuleEngine.getInstance().activeStore_.trie.byConstraint(['nemeth']));
+    // console.log(speech);
   },
 
 
@@ -40,7 +42,6 @@ let sreTest = {
 
   runAllTests: function() {
     // Edge takes too long to render. So a little timeout!
-    console.log('hello');
     let promise = new Promise((res, rej) => {
       if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
         setTimeout(res(), 200);

@@ -10,10 +10,16 @@
 
 ### Sync version
 
+* Make test version in `speech-rule-engine`
+
+``` bash
+make test_compile
+```
+
 * Run the usually test suite in `sre-tests`
 
 ``` bash
-npm run tests
+npm run test
 ```
 
 * Run a pipeline test in the sre directory. For example:
@@ -101,7 +107,7 @@ git submodule update --remote --merge
 
 Make sure to upgrade version in 
 
-* `src/base/variables`
+* `src/common/variables`
 * `package.json`
 
 Run `npm install`. This should upgrade the version in 
@@ -124,7 +130,8 @@ npm publish
 ## Tag releases
 
 Make sure to use tags to keep releases and tests in sync. (This only starts
-since v3.2.0-beta.1). We create annotate tags for all releases!
+since v3.2.0-beta.1). We create annotated tags for all major, minor and point
+releases!
 
 
 ### Tag SRE
@@ -134,6 +141,8 @@ version=`npm view speech-rule-engine version`
 git tag -a v$version -m "Release type $version"
 git push origin v$version
 ```
+
+Alternatively generate a tag when making release on github.
 
 ### Tag the tests
 
