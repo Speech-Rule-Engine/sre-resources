@@ -23,7 +23,7 @@ Braille related tools
 * `extract_units.sh`: Extract unit values from MP files.
 * `numbers.js`: Numbers rewriting methods (combine wtih `split-json` ?)
 * `rewrite.js`: Some symbol files rewriting methods (combine wtih `split-json` ?)
-* `split-json.js`: Main methods to generate l10n files.
+* `split-json.js`: Main methods to generate l10n files. This needs `shelljs`.
 
 
 ## Misc
@@ -36,7 +36,8 @@ Miscellaneous scripts, mostly outdated.
 
 ## Test Generation
 
-Scripts for test generation. Some of them are live!
+Scripts for test generation. Most of this is obsolete due to new functionality
+in `sre-tests`.
 
 * `char_test_output.js`: Generates json test files from base and locale
   files. This one is live and very useful.

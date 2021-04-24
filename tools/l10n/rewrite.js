@@ -331,3 +331,82 @@ quickTest2 = function(mml) {
 };
 
 
+// Rewrites JSON rule files from JSON-like to proper JSON.
+// Assumes that the JSON is given as `expr = {...}` in the file.
+rewriteJsonFile = function(file, dir) {
+  require(`${dir}/${file}.js`);
+  fs.writeFileSync(`${dir}/${file}.json`, JSON.stringify(expr, null, 2));
+  delete require.cache[require.resolve(`${dir}/${file}.js`)];
+};
+
+
+const csv = require('csv-parser');
+// Rewrites the english json, replacing the locale messages from the CSV.
+getCsvMapping = async function(file, locale = "Locale", english = "English") {
+  let mapping = {};
+  let promise = new Promise((resolve, reject) => {
+    fs.createReadStream(file)
+      .pipe(csv())
+      .on('data', (row) => {
+        console.log(row);
+        mapping[row[english]] = row[locale];
+      })
+      .on('end', () => {
+        resolve(mapping);
+    });
+  });
+  return await promise;
+};
+
+
+getTextString = function(text) {
+  if (text.match(/^\".*\"$/)) {
+    return text.slice(1, text.length - 1);
+  }
+  return null;
+};
+
+
+rewriteSpeechRuleAction = function(actionStr, mapping) {
+  let action = sre.SpeechRule.Action.fromString(actionStr);
+  let components = action.components;
+  for (let action of components) {
+    if (action.type === 'TEXT') {
+      let text = getTextString(action.content);
+      if (text) {
+        if (mapping[text]) {
+          action.content = `"${mapping[text]}"`;
+        } else {
+          console.log('Missing mapping for: ' + text);
+        }
+      }
+    }
+  }
+  return action.toString();
+};
+
+
+rewriteSpeechRuleFile = async function(json, csv) {
+  let english = JSON.parse(fs.readFileSync(json));
+  let mapping = await getCsvMapping(csv, 'Locale', 'English Speech Rule');
+  console.log(mapping);
+  let newRules = [];
+  for (let rule of english.rules) {
+    let type = rule[0];
+    if (type === 'Rule') {
+      rule[3] = rewriteSpeechRuleAction(rule[3], mapping);
+    }
+    if (type === 'SpecializedRule' && rule[4]) {
+      rule[4] = rewriteSpeechRuleAction(rule[4], mapping);
+    }
+    newRules.push(rule);
+  }
+  english.rules = newRules;
+  fs.writeFileSync('/tmp/out.json', JSON.stringify(english, null, 2));
+};
+// example:
+// Copy the jSON from clearspeakEnglish somewhere. E.g., /tmp/csen.json
+// Assume the Italian csv file is somewhere similar, e.g., /tmp/Clearspeak\ Messages.csv
+// Then run
+// require('/home/sorge/git/sre/speech-rule-engine/lib/sre4node');
+// rewriteSpeechRuleFile('/tmp/csen.json', '/tmp/Clearspeak Messages.csv');

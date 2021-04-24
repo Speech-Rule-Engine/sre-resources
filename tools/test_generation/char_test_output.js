@@ -4,6 +4,7 @@ const path = require('path');
 
 const testDir = '/home/sorge/git/sre/sre-tests/';
 const inputDir = testDir + 'input/common/';
+const expectedDir = testDir + 'expected';
 
 let FILES = {
   units: inputDir + 'units.json',
@@ -90,6 +91,7 @@ let testOutput = function(locale, keys, unit = false) {
                };
     let tests = {};
     for (let key of keys) {
+      if (key.match(/^_comment/)) continue;
       let expected = [];
       for (let style of constraints[dom]) {
         let result = getOutput(dom, modality, locale, style, key, unit);
@@ -116,6 +118,7 @@ let testFromBase = function(locale, kind) {
   return testOutput(locale, keys, isUnitTest(kind));
 }
 
+// Loads the locale symbol file from mathmaps.
 let testFromLocale = function(locale, kind) {
   let file = sre.BaseUtil.makePath(sre.SystemExternal.jsonPath) +
       locale + '.js';
@@ -169,7 +172,6 @@ let writeOutputToFile = function(dir, json, locale, dom, kind) {
 
 
 // TODO: the si units!
-
 let getNamesFor = function(json, kind) {
   let keys = Object.keys(json);
   let si = kind === 'si_units';
@@ -191,6 +193,7 @@ let getNamesFor = function(json, kind) {
 };
 
 
+// Generates the SI unit names
 let getSINamesFor = function(prefixes, names) {
   let result = [];
   prefixes = Object.keys(prefixes);
@@ -202,6 +205,9 @@ let getSINamesFor = function(prefixes, names) {
 };
 
 
+// Difference between base file and locale. Returns only elements that are not
+// in both.
+// 
 // One is from base tests
 // Two is from locale
 let diffBaseVsLocale = function(locale, kind) {
@@ -212,6 +218,7 @@ let diffBaseVsLocale = function(locale, kind) {
     let tests1 = output1[dom].tests;
     let tests2 = output2[dom].tests;
     for (const key of Object.keys(tests1)) {
+      if (key.match(/^_comment/)) console.log(key);
       if (tests2[key]) {
         delete tests2[key];
         delete tests1[key];
@@ -223,9 +230,26 @@ let diffBaseVsLocale = function(locale, kind) {
 };
 
 
-let allTests = function(dir = '/tmp') {
+let allTests = function(dir = '/tmp/symbols') {
   let symbols = ['characters', 'functions', 'units', 'si_units'];
   for (let loc of sre.Variables.LOCALES) {
     symbols.forEach(x => testOutputFromBoth(loc, x, dir));
+  }
+};
+
+
+var replaceTests = function(dir = '/tmp/symbols') {
+  let locales = fs.readdirSync(dir);
+  for (let loc of locales) {
+    let files = fs.readdirSync(`${dir}/${loc}`);
+    for (let file of files) {
+      console.log(file);
+      let oldJson = JSON.parse(
+        fs.readFileSync(`${expectedDir}/${loc}/symbols/${file}`));
+      let newJson = JSON.parse(fs.readFileSync(`${dir}/${loc}/${file}`));
+      oldJson.tests = newJson.tests;
+      fs.writeFileSync(`${expectedDir}/${loc}/symbols/${file}`,
+                       JSON.stringify(oldJson, null, 2) + '\n');
+    }
   }
 };
