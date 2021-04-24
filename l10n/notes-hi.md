@@ -2,9 +2,9 @@
 
 ## Mathspeak
 
-* "number-as-upper-word", Get the translation right.
+* [DONE] "number-as-upper-word", Get the translation right. Done via spaceout numbers.
 
-* Row elements should all be female!
+* [DONE] Row elements should all be female!
 
 ## Numbers
 
@@ -15,7 +15,8 @@
 bold? (check with India)
 गाढ़ा  (other suggestion)
 
-Check why not translated! Eg. Mathspeak 64
+[DONE] Check why not translated! Eg. Mathspeak 64
+
 
 # General
 
