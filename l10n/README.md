@@ -161,7 +161,7 @@ SplitJson.completeLocale(locale);
   transform alphabets, fonts and number sets.
 * Also manually correct symbols `0x0394` in `greek-rest.js` for clearspeak
   triangle.
-* Likewise add clearspeak entries for `0x00B2` and `0x00B3` in `digit-rest.js`.
+* Likewise add clearspeak entries for `0x00B2` and `0x00B3` in `digits_rest.js`.
 
 ### Finalising unit/function mappings
 
