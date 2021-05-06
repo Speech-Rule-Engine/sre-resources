@@ -170,6 +170,7 @@ SplitJson.completeLocale(locale);
 * Copy these to the respective entries in the files in the units and functions subdirectories.
 * Correct celsius and fahrenheit in `temperature.js` manually.
 * Fill in as much as possible manually.
+* `ln` entry for clearspeak.
 
 ## Alphabet generation
 

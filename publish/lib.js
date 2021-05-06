@@ -60,6 +60,8 @@ let sreTest = {
         then(() => {return sreTest.runTests({locale: 'it', domain: 'clearspeak', style: 'default'});}).
         then(() => {return sreTest.runTests({locale: 'de', domain: 'mathspeak', style: 'default'});}).
         then(() => {return sreTest.runTests({locale: 'de', domain: 'clearspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'hi', domain: 'mathspeak', style: 'default'});}).
+        then(() => {return sreTest.runTests({locale: 'hi', domain: 'clearspeak', style: 'default'});}).
         then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
     });
   }

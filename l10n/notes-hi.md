@@ -34,7 +34,7 @@ bold? (check with India)
 ## Functions 
 
 * [DONE] get appl-simple-inverse to work.
-* Do we need a similar inverse rule for the parenthesised case
+* Do we need a similar inverse rule for the parenthesised case [NO]
 
 ## Logarithm
 
