@@ -19,7 +19,8 @@ let sreTest = {
   },
   
   test: function(id) {
-    const xmls = new sre.SystemExternal.xmldom.XMLSerializer();
+    // const xmls = new sre.SystemExternal.xmldom.XMLSerializer();
+    const xmls = new XMLSerializer();
     const element = document.getElementById(id);
     const next = element.nextSibling;
     const test = xmls.serializeToString(element);
@@ -43,11 +44,11 @@ let sreTest = {
   runAllTests: function() {
     // Edge takes too long to render. So a little timeout!
     let promise = new Promise((res, rej) => {
-      if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
-        setTimeout(res(), 200);
-      } else {
+      // if (sre.Engine.getInstance().isEdge || sre.Engine.getInstance().isIE) {
+      //   setTimeout(res(), 200);
+      // } else {
         res();
-      }
+      // }
     });
     promise.then(() => {
       sreTest.runTests().
