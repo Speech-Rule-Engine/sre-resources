@@ -584,7 +584,7 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       ' table:number-columns-repeated="3"' +
       ' table:default-cell-style-name="Default"/>';
   start += SplitJson.odsRow(...SplitJson.HTML_CAPTIONS_.get(kind))
-    .replace('Locale', 'Norvegian')
+    .replace('Locale', 'Bengali')
     .replace(/table-cell\ /g, 'table-cell table:style-name="ce1" ');
   let secure = {
     '003C': '&lt;',
