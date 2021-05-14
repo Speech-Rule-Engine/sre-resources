@@ -11,6 +11,7 @@ let SplitJson = {};
  */
 SplitJson.REF_LANGUAGE = 'English';
 SplitJson.REF_ISO = 'en';
+SplitJson.TARGET_LANGUAGE = 'Nynorsk';
 
 
 SplitJson.BASE_PATH_ = '/home/sorge/git/sre/';
@@ -594,7 +595,7 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       ' table:number-columns-repeated="3"' +
       ' table:default-cell-style-name="Default"/>';
   start += SplitJson.odsRow(...SplitJson.HTML_CAPTIONS_.get(kind))
-    .replace('Locale', 'Catalan')
+    .replace('Locale', SplitJson.TARGET_LANGUAGE)
     .replace(/table-cell\ /g, 'table-cell table:style-name="ce1" ');
   let secure = {
     '003C': '&lt;',
