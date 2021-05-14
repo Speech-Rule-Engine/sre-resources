@@ -5,6 +5,14 @@ let path = require('path');
 let SplitJson = {};
 
 
+/**
+ *  Reference Locale settings.
+ *  These need to reset an will take effect on reload.
+ */
+SplitJson.REF_LANGUAGE = 'English';
+SplitJson.REF_ISO = 'en';
+
+
 SplitJson.BASE_PATH_ = '/home/sorge/git/sre/';
 // Mathmaps path
 SplitJson.L10N_PATH_ = SplitJson.BASE_PATH_ + 'sre-resources/l10n';
@@ -17,7 +25,9 @@ SplitJson.HTML_PATH_ = '/tmp/html';
 
 SplitJson.TEMPLATE_PATH_ = '/tmp/ods';
 
-SplitJson.ODS_PATH_ = '/tmp/spreadsheets';
+SplitJson.ODS_PATH_ = SplitJson.L10N_PATH_ + '/locales';
+
+SplitJson.ALPHANUM_TEMPLATE_ = SplitJson.L10N_PATH_ + '/templates/AlphaNumerics.ods';
 
 SplitJson.ODS_TEMPLATE_ = SplitJson.L10N_PATH_ + '/templates/ods';
 
@@ -425,10 +435,10 @@ SplitJson.htmlRow = function(...row) {
  *     columns.
  */
 SplitJson.HTML_CAPTIONS_ = new Map([
-  [SplitJson.SYMBOLS_, ['Char', 'Unicode', 'English', 'Locale']],
-  [SplitJson.FUNCTIONS_, ['Function', 'Alt. Names', 'English', 'Locale']],
-  [SplitJson.UNITS_, ['Unit', 'Alt. Names', 'English', 'Plural', 'Singular', 'Dual']],
-  [SplitJson.CURRENCY_, ['Unit', 'Alt. Names', 'English', 'Plural', 'Singular', 'Dual']],
+  [SplitJson.SYMBOLS_, ['Char', 'Unicode', SplitJson.REF_LANGUAGE, 'Locale']],
+  [SplitJson.FUNCTIONS_, ['Function', 'Alt. Names', SplitJson.REF_LANGUAGE, 'Locale']],
+  [SplitJson.UNITS_, ['Unit', 'Alt. Names', SplitJson.REF_LANGUAGE, 'Plural', 'Singular', 'Dual']],
+  [SplitJson.CURRENCY_, ['Unit', 'Alt. Names', SplitJson.REF_LANGUAGE, 'Plural', 'Singular', 'Dual']],
   ['unitsen', ['Unit', 'Alt. Names', 'Plural', 'Singular', 'Dual']]
 ]);
 
@@ -498,7 +508,7 @@ SplitJson.localeToHTML = function(locale = 'en',
     console.log(file);
     let content = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${locale}/${kind === 'currency' ? 'units' : kind}/`);
     if (compare) {
-      localeContent = SplitJson.loadLocale([file], `${SplitJson.PATH_}/en/${kind === 'currency' ? 'units' : kind}/`);
+      localeContent = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${SplitJson.REF_ISO}/${kind === 'currency' ? 'units' : kind}/`);
     }
     let name = file.split('.')[0];
     files.push(name);
@@ -559,7 +569,7 @@ SplitJson.localeToOds = function(locale = 'en',
   kind = kind === 'currency' ? 'units' : kind;
   for (let file of fileList) {
     let content = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${locale}/${kind}/`);
-    let english = SplitJson.loadLocale([file], `${SplitJson.PATH_}/en/${kind}/`);
+    let english = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${SplitJson.REF_ISO}/${kind}/`);
     let name = file.split('.')[0];
     tables.push(SplitJson.odsTable(name, english, content, kind));
   }
@@ -584,7 +594,7 @@ SplitJson.odsTable = function(name, english, locale, kind) {
       ' table:number-columns-repeated="3"' +
       ' table:default-cell-style-name="Default"/>';
   start += SplitJson.odsRow(...SplitJson.HTML_CAPTIONS_.get(kind))
-    .replace('Locale', 'Bengali')
+    .replace('Locale', 'Catalan')
     .replace(/table-cell\ /g, 'table-cell table:style-name="ce1" ');
   let secure = {
     '003C': '&lt;',
@@ -909,7 +919,7 @@ SplitJson.initialCurrency = function(iso) {
  */
 SplitJson.completeLocale = function(iso) {
   let locale = SplitJson.loadLocale(SplitJson.SYMBOLS_FILES_, `${SplitJson.PATH_}/${iso}/symbols/`);
-  let english = SplitJson.loadLocale(SplitJson.SYMBOLS_FILES_, `${SplitJson.PATH_}/en/symbols/`);
+  let english = SplitJson.loadLocale(SplitJson.SYMBOLS_FILES_, `${SplitJson.PATH_}/${SplitJson.REF_ISO}/symbols/`);
   let [left, right] = SplitJson.compareKeys(english, locale);
   if (right.length) {
     console.log('Warning: There are superfluous symbols in locale: ' + iso);
