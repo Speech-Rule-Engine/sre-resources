@@ -10,11 +10,13 @@
 
 ### Sync version
 
-* Make test version in `speech-rule-engine`
+* Transpile the files in `speech-rule-engine`
 
 ``` bash
-make test_compile
+npx tsc; npx webpack; make publish
 ```
+
+_Note, that `make publish` is temporary until we have a different method to generate locales._
 
 * Run the usually test suite in `sre-tests`
 
@@ -41,13 +43,16 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:zorkow/speech-rule-engine.git
 cd speech-rule-engine
+git checkout typescript
 npm install
 ```
+
+_Checking out typescript is temporary!_
 
 * Test that the package really works 
 
 ``` bash
-make publish
+npm run prepublishOnly
 npm pack
 rm -rf /var/www/html/test/*
 cp speech-rule-engine-*.tgz /var/www/html/test/
