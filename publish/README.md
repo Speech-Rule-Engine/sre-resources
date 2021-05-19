@@ -91,6 +91,15 @@ browser_test.html
 
 Run on localhost.
 
+* Local sre with online math maps library that are available at
+  `cdn.jsdelivr.net/npm/speech-rule-engine`.
+
+``` bash
+browser_libs.html
+```
+
+__This test is run before bumping the version number!__
+
 * Online: the latest version available on `cdn.jsdelivr.net/npm/speech-rule-engine`.
 
 ``` bash
