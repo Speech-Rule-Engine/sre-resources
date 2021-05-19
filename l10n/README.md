@@ -132,7 +132,7 @@ Structure of the `transform` directory:
 ### Starting a Locale from Scratch
 
 ``` javascript
-    require('/home/sorge/git/sre/sre-resources/l10n/tools/split-json.js');
+    require('/home/sorge/git/sre/sre-resources/tools/l10n/split-json.js');
     SplitJson.generateFiles(locale);
 ```
 
@@ -444,7 +444,7 @@ grep '1F150' loc/$LOCALE/symbols/plane1/* >> /tmp/embellished
 
 #### Cleanup
 
-* The do some cleanup on the files. E.g., remove messages like "Latin capital
+* Then do some cleanup on the files. E.g., remove messages like "Latin capital
   letter" etc.
 * Use these messages to also cleanup the locale files before generating the spreadsheets.
 
