@@ -1,12 +1,89 @@
 \documentclass{article}
 
 \usepackage[landscape]{geometry}
-\usepackage{amsmath}
-\usepackage{physics}
+% \usepackage{amsmath}
+\usepackage[arrowdel]{physics}
 \DeclareMathOperator{\ddx}{{\rm d}(\it x)}
 
 \begin{document}
 
+\section*{Different Options}
+
+
+\subsection*{Option: italicdiff}
+\[
+\diffd
+\]
+
+\[
+  \dv[n]{f}(\dv[n]{f}(\frac{x}{y})\frac{x}{y})
+  \pdv[n]{f}{x}{y}(\pdv[n]{f}{x}{y}(\frac{x}{y})\frac{x}{y})
+  \pdv{f}{x}{y}(\pdv{f}{x}{y}(\frac{x}{y})\frac{x}{y})
+\]
+\[
+  \dd[4](\dd[4](\frac{\frac{\cos}{\theta}}{\theta})\frac{\dd[4](\frac{\frac{\cos}{\theta}}{\theta})\frac{\cos}{\theta}}{\theta})
+\]
+
+\subsection*{Option: arrowdel}
+
+
+\[
+  \gradient 
+  \gradient(\frac{a}{b})
+  \gradient[\frac{a}{b}]
+  \gradient{\frac{a}{b}}
+  \grad 
+  \grad(\frac{a}{b})
+  \grad[\frac{a}{b}]
+  \grad{\frac{a}{b}}
+\]
+
+\[
+  a\dotproduct b \vdot c
+  \divergence{\frac{a}{b}c}
+  \div{\frac{a}{b}c}
+  \div{(\frac{a}{b}c)}
+  \div(\frac{a}{b}c)
+  {\bf\nabla} \cdot \left(\frac{a}{b}c\right)
+\]
+
+\[
+  \curl 
+  \curl(\frac{a}{b})
+  \curl[\frac{a}{b}]
+  \curl{\frac{a}{b}}
+\]
+
+\[
+  \laplacian 
+  \laplacian(\frac{a}{b})
+  \laplacian[\frac{a}{b}]
+  \laplacian{\frac{a}{b}}
+\]
+
+
+
+
+\newpage
+
+\section*{Debugging Issue \#2449}
+
+\[\Residue \Res \Res(A) \grad{\frac{A}{B}}\]
+
+
+\[A \qsince B\]
+
+\(\pqty {a}\)  \(\vqty {a}\)  \(\bqty {a}\)  \(\Bqty {a}\)
+
+  
+  \[
+\ip*{\frac {A}{B}} \quad \ip*{\frac {A}{B}}{b}
+\]
+\[
+\ip{\frac{A}{B}} \quad \ip{\frac{A}{B}}{b}
+\]
+  
+\newpage
 \section*{Quantities}
 
 %% NEW BEGIN
