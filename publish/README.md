@@ -41,13 +41,12 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:zorkow/speech-rule-engine.git
 cd speech-rule-engine
-npm install
+make publish
 ```
 
 * Test that the package really works 
 
 ``` bash
-make publish
 npm pack
 rm -rf /var/www/html/test/*
 cp speech-rule-engine-*.tgz /var/www/html/test/
@@ -126,6 +125,39 @@ cd speech-rule-engine
 npm install
 npm publish
 ```
+
+## Publish the IE maps
+
+IE maps are published in a seperate npm package since SRE v3.3.0. We assume that
+the repository `sre-mathmaps-ie` is in a folder of that name in parallel to
+`speech-rule-engine`.
+
+If not or you want to publish from the clean client in `/tmp` run the following first:
+
+``` bash
+cd /tmp
+git clone git@github.com:speech-rule-engine/sre-mathmaps-ie.git
+cd speech-rule-engine
+```
+
+Then run in the `speech-rule-engine` client:
+
+``` bash
+make clean_iemaps
+make iemaps
+```
+
+Then sync the version of `sre-mathmaps-ie` and publish.
+
+``` bash
+export PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g')
+cd ../sre-mathmaps-ie
+git commit -a -m "Update for release $PACKAGE_VERSION"
+npm version $PACKAGE_VERSION
+npm publish
+```
+
+
 
 ## Tag releases
 
