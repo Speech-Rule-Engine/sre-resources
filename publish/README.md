@@ -43,11 +43,8 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:zorkow/speech-rule-engine.git
 cd speech-rule-engine
-git checkout typescript
 npm install
 ```
-
-_Checking out typescript is temporary!_
 
 * Test that the package really works 
 
@@ -114,6 +111,16 @@ After running and passing the tests locally, make sure to commit the latest
 version of the submodule before making a version bump.
 
 ``` bash
+git submodule update --remote --merge
+```
+
+In case we want to keep it in sync with a different branch `[branch]` of the
+tests, do
+
+``` bash
+cd sre-tests
+git checkout [branch]
+cd ..
 git submodule update --remote --merge
 ```
 
