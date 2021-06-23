@@ -10,11 +10,13 @@
 
 ### Sync version
 
-* Make test version in `speech-rule-engine`
+* Transpile the files in `speech-rule-engine`
 
 ``` bash
-make test_compile
+npx tsc; npx webpack; make publish
 ```
+
+_Note, that `make publish` is temporary until we have a different method to generate locales._
 
 * Run the usually test suite in `sre-tests`
 
@@ -41,12 +43,13 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:zorkow/speech-rule-engine.git
 cd speech-rule-engine
-make publish
+npm install
 ```
 
 * Test that the package really works 
 
 ``` bash
+npm run prepublishOnly
 npm pack
 rm -rf /var/www/html/test/*
 cp speech-rule-engine-*.tgz /var/www/html/test/
@@ -85,6 +88,15 @@ browser_test.html
 
 Run on localhost.
 
+* Local sre with online math maps library that are available at
+  `cdn.jsdelivr.net/npm/speech-rule-engine`.
+
+``` bash
+browser_libs.html
+```
+
+__This test is run before bumping the version number!__
+
 * Online: the latest version available on `cdn.jsdelivr.net/npm/speech-rule-engine`.
 
 ``` bash
@@ -99,6 +111,16 @@ After running and passing the tests locally, make sure to commit the latest
 version of the submodule before making a version bump.
 
 ``` bash
+git submodule update --remote --merge
+```
+
+In case we want to keep it in sync with a different branch `[branch]` of the
+tests, do
+
+``` bash
+cd sre-tests
+git checkout [branch]
+cd ..
 git submodule update --remote --merge
 ```
 
