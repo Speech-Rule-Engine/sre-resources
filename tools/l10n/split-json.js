@@ -18,7 +18,7 @@ SplitJson.BASE_PATH_ = '/home/sorge/git/sre/';
 // Mathmaps path
 SplitJson.L10N_PATH_ = SplitJson.BASE_PATH_ + 'sre-resources/l10n';
 
-SplitJson.PATH_ = SplitJson.BASE_PATH_ + 'speech-rule-engine/src/mathmaps';
+SplitJson.PATH_ = SplitJson.BASE_PATH_ + 'speech-rule-engine/mathmaps';
 
 SplitJson.OUTPUT_PATH_ = SplitJson.L10N_PATH_ + '/transform/split-forms';
 
@@ -99,25 +99,25 @@ SplitJson.UNUSED_PATH_ = 'unused';
  */
 SplitJson.SYMBOLS_FILES_ = [
   // Greek
-  'greek-scripts.js', 'greek-symbols.js',
-  'greek-rest.js',
+  'greek-scripts.json', 'greek-symbols.json',
+  'greek-rest.json',
 
   // Hebrew
-  'hebrew_letters.js',
+  'hebrew_letters.json',
 
   // Latin
-  'latin-lower-double-accent.js', 'latin-lower-phonetic.js',
-  'latin-lower-single-accent.js', 'latin-rest.js',
-  'latin-upper-double-accent.js', 'latin-upper-single-accent.js',
+  'latin-lower-double-accent.json', 'latin-lower-phonetic.json',
+  'latin-lower-single-accent.json', 'latin-rest.json',
+  'latin-upper-double-accent.json', 'latin-upper-single-accent.json',
 
   // Math Symbols
-  'math_angles.js', 'math_arrows.js', 'math_characters.js',
-  'math_delimiters.js', 'math_geometry.js',
-  'math_harpoons.js', 'math_non_characters.js', 'math_symbols.js',
-  'math_whitespace.js', 'other_stars.js',
+  'math_angles.json', 'math_arrows.json', 'math_characters.json',
+  'math_delimiters.json', 'math_geometry.json',
+  'math_harpoons.json', 'math_non_characters.json', 'math_symbols.json',
+  'math_whitespace.json', 'other_stars.json',
 
   // Digits
-  'digits_rest.js'
+  'digits_rest.json'
 
 ];
 
@@ -129,7 +129,7 @@ SplitJson.SYMBOLS_FILES_ = [
  * @private
  */
 SplitJson.FUNCTIONS_FILES_ = [
-  'algebra.js', 'elementary.js', 'hyperbolic.js', 'trigonometry.js'
+  'algebra.json', 'elementary.json', 'hyperbolic.json', 'trigonometry.json'
 ];
 
 
@@ -140,14 +140,14 @@ SplitJson.FUNCTIONS_FILES_ = [
  * @private
  */
 SplitJson.UNITS_FILES_ = [
-  'area.js', 'energy.js', 'length.js', 'memory.js', 'other.js', 'speed.js',
-  'temperature.js', 'time.js', 'volume.js', 'weight.js'// , 'currency.js' // ???
+  'area.json', 'energy.json', 'length.json', 'memory.json', 'other.json', 'speed.json',
+  'temperature.json', 'time.json', 'volume.json', 'weight.json'// , 'currency.json' // ???
 ];
 
 
-SplitJson.CURRENCY_FILE_ = 'currency.js';
+SplitJson.CURRENCY_FILE_ = 'currency.json';
 
-SplitJson.PREFIX_FILE_ = 'prefix.js';
+SplitJson.PREFIX_FILE_ = 'prefix.json';
 
 /**
  * Array of JSON filenames containing unit unused unicode translations.
@@ -156,8 +156,8 @@ SplitJson.PREFIX_FILE_ = 'prefix.js';
  * @private
  */
 SplitJson.UNUSED_FILES_ = [
-  'accented_characters.js', 'currencies_music.js', 'greek_accented.js',
-  'private_area.js', 'special_symbols.js'
+  'accented_characters.json', 'currencies_music.json', 'greek_accented.json',
+  'private_area.json', 'special_symbols.json'
 ];
 
 
@@ -542,7 +542,6 @@ SplitJson.toHTML = function(iso = 'en', compare = true) {
 
 
 SplitJson.toOds = function(iso = 'en') {
-  console.log('doing it');
   shell.cp('-R', SplitJson.ODS_TEMPLATE_, '/tmp/');
   SplitJson.odsCreate(iso, SplitJson.SYMBOLS_);
   SplitJson.odsCreate(iso, SplitJson.FUNCTIONS_);
