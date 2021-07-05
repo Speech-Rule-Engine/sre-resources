@@ -345,7 +345,3 @@ sre.System.getInstance().processString();
 sre.ProcessorFactory.process();
 sre.Processor('speech').processor
 ```
-
-
-
-

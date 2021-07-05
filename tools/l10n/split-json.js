@@ -38,6 +38,8 @@ SplitJson.WWW_BASE_PATH = SplitJson.BASE_PATH_ + 'sre-webpages/resources/www';
 
 SplitJson.UNICODE_PATH = SplitJson.BASE_PATH_ + 'others/unicode-table-data/loc';
 
+SplitJson.CLDR_PATH = SplitJson.BASE_PATH_ + 'others/cldr/common/annotations';
+
 /**
  * Subpath to dir containing ChromeVox JSON definitions for symbols.
  * @type {string}
@@ -337,7 +339,7 @@ SplitJson.splitFiles = function(kind, iso, model, addempty) {
   }
   // Here we do the unused ones.
   fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}-rest`, {recursive: true});
-  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-rest/${kind}.js`,
+  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-rest/${kind}.json`,
                    JSON.stringify(values, null, 2));
 };
 
@@ -359,7 +361,7 @@ SplitJson.allFiles = function(iso) {
   SplitJson.splitFiles(SplitJson.SYMBOLS_, iso, 'en');
   SplitJson.splitFiles(SplitJson.FUNCTIONS_, iso, 'en', true);
   SplitJson.splitFiles(SplitJson.UNITS_, iso, 'en', true);
-  SplitJson.splitFiles(SplitJson.CURRENCY_, iso, 'en');
+  SplitJson.splitFiles(SplitJson.CURRENCY_, iso, 'en', true);
   SplitJson.rewritePrefix(iso);
 };
 
@@ -379,7 +381,7 @@ SplitJson.rewritePrefix = function(iso) {
     }
   }
   fs.mkdirSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si`, {recursive: true});
-  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si/prefixes.js`,
+  fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}/si/prefixes.json`,
                    JSON.stringify(result, null, 2));
 };
 
@@ -909,7 +911,7 @@ SplitJson.cleanCurrency = function(locale, name = true) {
 SplitJson.initialCurrency = function(iso) {
   let locale = SplitJson.loadLocale( ['currency.json'], `${SplitJson.INPUT_PATH_}/${iso}/`);
   let result = SplitJson.cleanCurrency(locale, true);
-  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/currency.js`,
+  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/currency.json`,
                    JSON.stringify(result, null, 2));
 };
 
@@ -1076,7 +1078,7 @@ SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
   let files = SplitJson.FILES_MAP_.get(type);
   files.reduce(
     (promise, file) => {
-      let input = csvPath + path.basename(file, '.js') + '.csv';
+      let input = csvPath + path.basename(file, '.json') + '.csv';
       return promise.then(() => SplitJson.fromCsv(input, inPath + file, type, lname));
     },
     new Promise(r => r())
@@ -1246,12 +1248,76 @@ SplitJson.rewriteSpeechRuleFile = async function(json, csv) {
 
 SplitJson.rewriteSpeechRulesLocale = function(iso, locale, csv) {
   let outPath = SplitJson.PATH_ + '/' + iso + '/rules';
-  // SplitJson.rewriteSpeechRuleFile(outPath + `/mathspeak_${locale}.js`, 
-  //                                 csv + '/csv-messages/Mathspeak\ Messages.csv');
+  SplitJson.rewriteSpeechRuleFile(outPath + `/mathspeak_${locale}.json`, 
+                                  csv + '/csv-messages/Mathspeak\ Messages.csv');
   SplitJson.rewriteSpeechRuleFile(outPath + `/clearspeak_${locale}.js`, 
                                   csv + '/csv-messages/Clearspeak\ Messages.csv');
-  // SplitJson.rewriteSpeechRuleFile(outPath + `/summary_${locale}.js`, 
-  //                                 csv + '/csv-messages/Summaries.csv');
-  // SplitJson.rewriteSpeechRuleFile(outPath + `/prefix_${locale}.js`, 
-  //                                 csv + '/csv-messages/Prefixes.csv');
+  SplitJson.rewriteSpeechRuleFile(outPath + `/summary_${locale}.json`, 
+                                  csv + '/csv-messages/Summaries.csv');
+  SplitJson.rewriteSpeechRuleFile(outPath + `/prefix_${locale}.json`, 
+                                  csv + '/csv-messages/Prefixes.csv');
+};
+
+
+
+/**
+ *  Use the CLDR for completion/initial set of elements.
+ */
+SplitJson.completeCldrLocale = function(iso) {
+  let [tts] = SplitJson.loadCldrLocale(iso);
+  SplitJson.fillSymbolFiles(iso, tts);
+  SplitJson.fillCurrencyFile(iso, tts);
+};
+
+SplitJson.loadCldrLocale = function(iso) {
+  let file = fs.readFileSync(SplitJson.CLDR_PATH + '/' + iso + '.xml', 'utf8');
+  file = file.replace(/>[ \f\n\r\t\v\u200b]+</g, '><').trim();
+  let dp = new xmldom.DOMParser();
+  let xml = dp.parseFromString(file).documentElement;
+  let children = Array.from(xml.childNodes[1].childNodes);
+  let tts = {};
+  let other = {};
+  for (let child of children) {
+    let cp = child.getAttribute('cp');
+    let type = child.getAttribute('type');
+    ((type === 'tts') ? tts : other)[cp] = child.textContent;
+  }
+  return [tts, other];
+};
+
+
+// Direct replacment on mathmaps file! 
+SplitJson.fillSymbolFiles = function(iso, tts) {
+  for (let file of SplitJson.SYMBOLS_FILES_) {
+    let content = fs.readFileSync(`${SplitJson.PATH_}/${iso}/symbols/${file}`);
+    let json = JSON.parse(content);
+    // let locale = SplitJson.loadLocale([file], `${SplitJson.PATH_}/${iso}/symbols/`);
+    for (let entry of json) {
+      if (!entry.key) continue;
+      let lookup = tts[SplitJson.numberToUnicode(parseInt(entry.key, 16))];
+      if (lookup && !entry.mappings.default.default) {
+        entry.mappings.default.default = lookup;
+      }
+    }
+    fs.writeFileSync(`${SplitJson.PATH_}/${iso}/symbols/${file}`, JSON.stringify(json, null, 2));
+  }
+};
+
+
+SplitJson.fillCurrencyFile = function(iso, tts) {
+  let currency = fs.readFileSync(`${SplitJson.PATH_}/${iso}/units/${SplitJson.CURRENCY_FILE_}`);
+  let json = JSON.parse(currency);
+  for (let entry of json) {
+    if (!entry.key) continue;
+    let lookup = null;
+    if (entry.mappings.default.singular) continue;
+    for (let name of entry.names) {
+      lookup = tts[name];
+      if (lookup) break;
+    }
+    if (lookup && !entry.mappings.default.singular) {
+      entry.mappings.default.singular = lookup;
+    }
+  }
+  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/${SplitJson.CURRENCY_FILE_}`, JSON.stringify(json, null, 2));
 };

@@ -129,17 +129,6 @@ Structure of the `transform` directory:
 * Copy the `iso` directory from `split-forms` to `speech-rule-engine` mathmaps directory
 * __copy the `iso` files not the `iso-new` files__
 
-### Starting a Locale from Scratch
-
-``` javascript
-    require('/home/sorge/git/sre/sre-resources/tools/l10n/split-json.js');
-    SplitJson.generateFiles(locale);
-```
-
-This will automatically call the `allFiles` method and results will be in
-`split-forms` folder. Then complete as below.
-
-
 ## Completing symbol maps
 
 * Copy the `locale` subdirectory from `split-forms` to the mathmaps directory.
@@ -171,6 +160,38 @@ SplitJson.completeLocale(locale);
 * Correct celsius and fahrenheit in `temperature.js` manually.
 * Fill in as much as possible manually.
 * `ln` entry for clearspeak.
+
+
+## Starting a Locale from Scratch
+
+``` javascript
+    require('/home/sorge/git/sre/sre-resources/tools/l10n/split-json.js');
+    SplitJson.generateFiles(locale);
+```
+
+This will automatically call the `allFiles` method and results will be in
+`split-forms` folder.
+
+At this point we have the following content:
+
+* `functions`: Files will be filled with complete but empty entries.
+* `si`: A file with an empty list. Those need to be added by hand.
+* `symbols`: All files with empty mappings.
+* `units`: Files will be filled with complete but empty entries.
+
+### Completing symbol maps
+
+Follow the steps from above.
+
+### Completing with CLDR
+
+Copy the latest files into the mathmaps directory and then simply run
+
+```
+SplitJson.completeCldrLocale(iso);
+```
+
+Note that this fills the files in the mathmaps directory in-place.
 
 ## Alphabet generation
 
