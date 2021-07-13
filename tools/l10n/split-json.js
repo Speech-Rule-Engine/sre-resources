@@ -1286,7 +1286,7 @@ SplitJson.loadCldrLocale = function(iso) {
 };
 
 
-// Direct replacment on mathmaps file! 
+// Direct replacement on mathmaps file! 
 SplitJson.fillSymbolFiles = function(iso, tts) {
   for (let file of SplitJson.SYMBOLS_FILES_) {
     let content = fs.readFileSync(`${SplitJson.PATH_}/${iso}/symbols/${file}`);
@@ -1321,3 +1321,213 @@ SplitJson.fillCurrencyFile = function(iso, tts) {
   }
   fs.writeFileSync(`${SplitJson.PATH_}/${iso}/units/${SplitJson.CURRENCY_FILE_}`, JSON.stringify(json, null, 2));
 };
+
+
+
+/**
+ *  
+ * Working with and rewriting the Rules files.
+ *
+ */
+SplitJson.loadRules = function(iso, file) {
+  let json = JSON.parse(fs.readFileSync(`${SplitJson.PATH_}/${iso}/rules/${file}.json`));
+  return json.rules;
+};
+  
+SplitJson.getRuleNames = function(rules) {
+  let names = [];
+  for (let rule of rules) {
+    if (rule[0] === 'Rule') {
+      let name = rule[1];
+      names.push(name);
+    }
+  }
+  let [unique, double] = SplitJson.uniqueNameList(names);
+  return [names, unique, double];
+};
+
+
+SplitJson.getRuleAllNames = function(rules) {
+  let names = [];
+  let unique = {};
+  let double = [];
+  for (let rule of rules) {
+    if (rule[0] !== 'Rule') continue;
+    let name = rule[1];
+    names.push(name);
+    if (!unique[name]) {
+      unique[name] = true;
+      continue;
+    }
+    double.push([name, `${name}-${rule[2]}`]);
+  }
+  return [names, double];
+};
+
+
+SplitJson.getSpecializedRules = function(rules) {
+  let noaction = [];
+  let actions = [];
+  for (let rule of rules) {
+    if (rule[0] === 'SpecializedRule') {
+      (rule[4] ? actions : noaction).push(rule[1]);
+    }
+  }
+  return [noaction, actions];
+};
+
+
+SplitJson.uniqueNameList = function(...lists) {
+  let double = [];
+  let unique = {};
+  for (let names of lists) {
+    for (let name of names) {
+      if (unique[name]) {
+        double.push(name);
+      } else {
+        unique[name] = true;
+      }
+    }
+  }
+  return [Object.keys(unique), double];
+};
+
+
+SplitJson.currentLocaleRules = {
+  'de': 'german',
+  'en': 'english',
+  'es': 'spanish',
+  'fr': 'french',
+  'hi': 'hindi',
+  'it': 'italian'
+};
+
+
+SplitJson.compareRuleNames = function(domain, splitter = SplitJson.getRuleNames) {
+  let splitRules = {};
+  for (let [key, name] of Object.entries(SplitJson.currentLocaleRules)) {
+    try {
+      splitRules[key] = splitter(SplitJson.loadRules(key, `${domain}_${name}`));
+    } catch (e) {
+      continue;
+    }
+  }
+  return splitRules;
+};
+
+
+// Rewrites in place!
+SplitJson.rewriteRules = function(domain, rewriter, output = null, second = null) {
+  for (let [iso, name] of Object.entries(SplitJson.currentLocaleRules)) {
+    let file = `${SplitJson.PATH_}/${iso}/rules/${domain}_${name}.json`;
+    try {
+      let json = JSON.parse(fs.readFileSync(file));
+      let rules = json.rules;
+      let result = [];
+      for (let rule of rules) {
+        let rewrite = rewriter(rule);
+        if (rewrite) {
+          result.push(rewrite);
+        }
+      }
+      json.rules = result;
+      fs.writeFileSync(
+        output ?
+          (second ? `/tmp/${output}_${name}_${second}.json` : `/tmp/${output}_${name}.json`) :
+          file, JSON.stringify(json, null, 2) + '\n');
+    } catch (e) {
+      console.log(e);
+      continue;
+    }
+  }
+};
+
+
+// Renaming
+let rename = (rule) => {
+  if (rule[0] === 'SpecializedRule' && rule[4]) {
+    rule[0] = 'SpecializedAction';
+  }
+  return rule;
+};
+
+
+// Renames rule names via a mapping of pairs.
+SplitJson.renameMapping = function(map) {
+  this.map = map;
+  this.count = 0;
+  this.next = function(value) {
+    this.reset();
+    return this.map[this.count++] || [];
+  };
+  this.prev = function() {
+    this.count--;
+  };
+  this.reset = function() {
+    if (this.count < 0 || this.count >= this.map.length) {
+      this.count = 0;
+    }
+  };
+};
+SplitJson.renameAllRulesMapping = new SplitJson.renameMapping([]);
+{
+  let ignoreFirst = true;
+  let unique = {};
+  SplitJson.renameAllRules = function(rule) {
+    if (rule[0] !== 'Rule' || (ignoreFirst && !unique[rule[1]])) {
+      unique[rule[1]] = true;
+      return rule;
+    }
+    let map = SplitJson.renameAllRulesMapping.next();
+    if (rule[1] !== map[0]) {
+      SplitJson.renameAllRulesMapping.prev();
+    } else {
+      rule[1] = map[1];
+    }
+    return rule;
+  };
+}
+
+// Renames spezialised actions into rules. Tries to also rename and rename a
+// following spezialised rule.
+{
+  let lastRule = null;
+  let lastName = '';
+  SplitJson.renameSpecializedAction = function(rule) {
+    if (rule[0] === 'SpecializedRule' && lastName) {
+      rule[1] = lastName;
+      return rule;
+    }
+    lastName = '';
+    if (rule[0] === 'Rule') {
+      lastRule = rule;
+      return rule;
+    }
+    if (rule[0] !== 'SpecializedAction') {
+      return rule;
+    }
+    lastName = `${rule[1]}-${rule[3]}`;
+    let newRule = [
+      'Rule', lastName, rule[3], rule[4],
+      ...lastRule.slice(4)
+    ];
+    return newRule;
+  };
+}
+
+SplitJson.outputRuleNames = function(kind) {
+  let names = SplitJson.compareRuleNames(kind, SplitJson.getRuleAllNames);
+  for (let [loc, [all, double]] of Object.entries(names)) {
+    fs.writeFileSync(`/tmp/${kind}_${loc}.json`, JSON.stringify(all.map(x => [x,x])).replace(/\],\[/g, '],\n ['));
+    fs.writeFileSync(`/tmp/${kind}_${loc}_double.json`, JSON.stringify(double).replace(/\],\[/g, '],\n ['));
+  }
+};
+
+
+// Actions
+let actions = (rule) => (rule[0] === 'Rule') ? ['Action', rule[1], rule[3]] : null;
+// SplitJson.rewriteRules('mathspeak', actions, 'mathspeak', 'action');
+
+// Preconditions
+let prec = (rule) => (rule[0] === 'Rule') ? ['Precondition', rule[1], rule[2], ...rule.slice(4)] : rule;
+// SplitJson.rewriteRules('mathspeak', prec, 'mathspeak');
