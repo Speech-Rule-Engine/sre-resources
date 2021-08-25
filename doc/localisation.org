@@ -131,3 +131,9 @@ Semantic post-processor
 * Check for all Sample_13_1_1, 13_1_2: Spanish seems to have it right!
 * Maybe specialise the English tests and have some of the Mathspeak ones in common.
 * Add fl oz to units.
+
+# TODO: Grammar
+
+* German: membership singular and cases.
+
+* French: membershipt singular in sets.

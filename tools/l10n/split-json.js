@@ -1420,26 +1420,31 @@ SplitJson.compareRuleNames = function(domain, splitter = SplitJson.getRuleNames)
 SplitJson.rewriteRules = function(domain, rewriter, output = null, second = null) {
   for (let [iso, name] of Object.entries(SplitJson.currentLocaleRules)) {
     let file = `${SplitJson.PATH_}/${iso}/rules/${domain}_${name}.json`;
+    let out = output ?
+        (second ? `/tmp/${output}_${name}_${second}.json` :
+         `/tmp/${output}_${name}.json`) :
+        file;
     try {
-      let json = JSON.parse(fs.readFileSync(file));
-      let rules = json.rules;
-      let result = [];
-      for (let rule of rules) {
-        let rewrite = rewriter(rule);
-        if (rewrite) {
-          result.push(rewrite);
-        }
-      }
-      json.rules = result;
-      fs.writeFileSync(
-        output ?
-          (second ? `/tmp/${output}_${name}_${second}.json` : `/tmp/${output}_${name}.json`) :
-          file, JSON.stringify(json, null, 2) + '\n');
+      SplitJson.rewriteRuleSet(file, out, rewriter);
     } catch (e) {
       console.log(e);
       continue;
     }
   }
+};
+
+SplitJson.rewriteRuleSet = function(input, output, rewriter) {
+  let json = JSON.parse(fs.readFileSync(SplitJson.PATH_ + '/' + input));
+  let rules = json.rules;
+  let result = [];
+  for (let rule of rules) {
+    let rewrite = rewriter(rule);
+    if (rewrite) {
+      result.push(rewrite);
+    }
+  }
+  json.rules = result;
+  fs.writeFileSync(output, JSON.stringify(json, null, 2) + '\n');
 };
 
 
@@ -1531,3 +1536,23 @@ let actions = (rule) => (rule[0] === 'Rule') ? ['Action', rule[1], rule[3]] : nu
 // Preconditions
 let prec = (rule) => (rule[0] === 'Rule') ? ['Precondition', rule[1], rule[2], ...rule.slice(4)] : rule;
 // SplitJson.rewriteRules('mathspeak', prec, 'mathspeak');
+
+// let rules = [ "number", "identifier-spacing", "identifier", "prefix", "postfix", "binary-operation", "implicit", "function-unknown", "function-prefix", "fences-open-close", "text", "matrix-cell", "row-simple", "line", "end-punct", "start-punct", "punctuated", "unit", "unit-combine" ];
+
+SplitJson.removeAction = function(names, remove) {
+  let list = names.splice(0);
+  return r => {
+    if (remove) {
+      if (r[1] !== list[0]) {
+        return r;
+      }
+      list.shift();
+      return null;
+    }
+    if (r[1] === list[0]) {
+      list.shift();
+      return r;
+    }
+    return null;
+  };
+};

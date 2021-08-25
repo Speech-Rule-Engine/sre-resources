@@ -1,0 +1,408 @@
+       <math><mi>H</mi><mrow><mrow><mi mathvariant="bold">x</mi></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mtext>and</mtext><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>H</mi><mrow><mrow><mi mathvariant="bold">y</mi></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mtext>.</mtext></math>
+
+
+       <mtable columnalign="left left left" columnspacing="1em" rowspacing="4pt" columnlines="solid none" rowlines="solid none"><mtr><mtd><mo>&#x22C5;</mo></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></math>
+
+
+
+
+⠨⠠⠷⠭⠀⠨⠅⠀⠽⠀⠀⠀⠀⠀
+       ⠨⠠⠷⠼⠢⠭⠤⠽⠀⠨⠅⠀⠼⠲
+
+
+       ⠠⠠⠹
+       ⠠⠹
+       ⠹
+       ⠁⠌⠉
+       ⠼
+       ⠠⠌
+       ⠹⠃⠌⠙⠼⠠⠼⠠⠠⠌⠨⠼⠢⠠⠠⠼
+
+
+
+echo "<math>
+      <mfrac>
+        <mi>x</mi>
+        <mi>y</mi>
+      </mfrac>
+</math>" | ./bin/sre -c nemeth -b braille -k layout -v
+
+
+
+ <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnspacing="1em" rowspacing="3pt" minlabelspacing=".8em">
+    <mtr>
+      <mtd>
+        <mn>0</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>3</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>3</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>4</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>4</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>5</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mn>5</mn>
+        <mo fence="false" stretchy="false">}</mo>
+        <mtext>.</mtext>
+      </mtd>
+    </mtr>
+  </mtable>
+       </math>
+
+
+⠼⠴⠬⠠⠓⠀⠨⠅⠀⠼⠒⠬⠠⠓⠀⠨⠅⠀⠨⠷⠴⠠⠀⠒⠨⠾
+    ⠀
+
+
+       <mtable columnalign="left left left" columnspacing="1em" rowspacing="4pt" columnlines="solid none" rowlines="solid none"><mtr><mtd><mo>&#x22C5;</mo></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></math>
+
+       <mrow><mo>{</mo><mtable columnalign="left left" columnspacing="1em" rowspacing=".2em"><mtr><mtd><mi>x</mi><mo>=</mo><mi>y</mi></mtd></mtr><mtr><mtd><mn>5</mn><mi>x</mi><mo>&#x2212;</mo><mi>y</mi><mo>=</mo><mn>4</mn></mtd></mtr></mtable><mo></mo></mrow>
+
+
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnspacing="1em" rowspacing="3pt" minlabelspacing=".8em">
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>2</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo stretchy="false">(</mo>
+        <mn>1</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo stretchy="false">(</mo>
+        <mn>2</mn>
+        <mstyle scriptlevel="0">
+          <mspace width="0.167em"></mspace>
+        </mstyle>
+        <mn>3</mn>
+        <mo stretchy="false">)</mo>
+        <mo fence="false" stretchy="false">}</mo>
+        <mtext>.</mtext>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+
+
+                  <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnspacing="1em" rowspacing="3pt" minlabelspacing=".8em">
+    <mtr>
+      <mtd>
+        <mn>0</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>3</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>3</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>4</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>4</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>5</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mn>5</mn>
+        <mo fence="false" stretchy="false">}</mo>
+        <mtext>.</mtext>
+      </mtd>
+    </mtr>
+  </mtable>
+                  </math>
+
+
+
+Works
+
+                  \begin{gather*}
+\phi_{\alpha}( f + g ) = (f + g)( \alpha) = f(\alpha) + g(\alpha) = \phi_{\alpha}( f ) + \phi_{\alpha}(g )\\
+\phi_{\alpha}( f g ) = (f  g)( \alpha) = f(\alpha) g(\alpha) = \phi_{\alpha}( f ) \phi_{\alpha}(g )
+                  \end{gather*}
+
+⠼⠆⠋⠰⠨⠁⠐⠷⠋⠬⠛⠾⠀⠨⠅⠀⠷⠋⠬⠛⠾⠷⠨⠁⠾⠀⠨⠅⠀⠋⠷⠨⠁⠾⠬⠛⠷⠨⠁⠾⠀⠨⠅⠀⠋⠰⠨⠁⠐⠷⠋⠾⠬⠋⠰⠨⠁⠐⠷⠛⠾
+⠋⠰⠨⠁⠐⠷⠋⠬⠛⠾⠀⠨⠅⠀⠷⠋⠬⠛⠾⠷⠨⠁⠾⠀⠨⠅⠀⠋⠷⠨⠁⠾⠬⠛⠷⠨⠁⠾⠀⠨⠅⠀⠋⠰⠨⠁⠐⠷⠋⠾⠬⠋⠰⠨⠁⠐⠷⠛⠾
+⠋⠰⠨⠁⠐⠷⠋⠛⠾⠀⠨⠅⠀⠷⠋⠛⠾⠷⠨⠁⠾⠀⠨⠅⠀⠋⠷⠨⠁⠾⠛⠷⠨⠁⠾⠀⠨⠅⠀⠋⠰⠨⠁⠐⠷⠋⠾⠋⠰⠨⠁⠐⠷⠛⠾
+
+
+
+⠋⠰⠨⠁⠐⠷⠋⠬⠛⠾⠀⠨⠅⠀⠷⠋⠬⠛⠾⠷⠨⠁⠾⠀⠨⠅⠀⠋⠷⠨⠁⠾⠬⠛⠷⠨⠁⠾⠀⠨⠅⠀⠋⠰⠨⠁⠐⠷⠋⠾⠬⠋⠰⠨⠁⠐⠷⠛⠾
+⠋⠰⠨⠁⠐⠷⠋⠛⠾⠀⠨⠅⠀⠷⠋⠛⠾⠷⠨⠁⠾⠀⠨⠅⠀⠋⠷⠨⠁⠾⠛⠷⠨⠁⠾⠀⠨⠅⠀⠋⠰⠨⠁⠐⠷⠋⠾⠋⠰⠨⠁⠐⠷⠛⠾
+
+                  \begin{gather*}
+\phi_{\alpha}( f + g ) = (f + g)( \alpha) = f(\alpha) + g(\alpha) = \phi_{\alpha}( f ) + \phi_{\alpha}(g )\\
+\phi_{\alpha}( f g ) = (f  g)( \alpha) = f(\alpha) g(\alpha) = \phi_{\alpha}( f ) \phi_{\alpha}(g )\\
+2\phi_{\alpha}( f ) = 2(f)( \alpha) = f(2\alpha)  = \phi_{2\alpha}( f ) 
+                  \end{gather*}
+
+Does not work?
+
+\begin{gather*}
+0 + H = 3 + H = \{ 0, 3 \}\\
+1 + H = 4 + H = \{ 1, 4 \}\\
+2 + H = 5 + H = \{ 2, 5 \}
+\end{gather*}
+
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnspacing="1em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mn>0</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>3</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>3</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>4</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>4</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mn>5</mn>
+        <mo>+</mo>
+        <mi>H</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mn>5</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+
+
+
+// Things that need to be corrected:
+
+* Greek letters as simple functions are not correctly translated. This is due to
+  the Unicode symbols. The problem is that we throw away information, which
+  should never happen! We need to remember the greek letter information in some
+  sort of secondary role!
+
+query[@every, "role_1", "role_2","role_3", "char_1", "char_2"];
+results in
+for every element of xpath(query string + text()) do
+    compute meaning
+    is role_i or =char_j
+
+query[@notevery, "role_1", "role_2","role_3", "char_1", "char_2"];
+results in
+there exists element of xpath(query string + text()) do
+    compute meaning
+    is !role_i and !=char_j
+
+
+* Similar issues could occur in other elements! Effectively, every rule that
+  relies on "translate()" should be made more robust by having a check
+  wrt. element sequence.
+
+* Gather environment can lead to omitted elements in the final line, if the number of lines is above 2?
+
+* Leading numerals in case statements do not need a number indicator.
+
+* Cayley tables with empty entries (in particular top left are not set correctly).
+  This is a problem because the semantic tree ignores some empty cells!
+
+* Add a rule for explicit spaces. E.g., Aata 9.4 Exercise 13.
+
+
+

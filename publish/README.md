@@ -120,6 +120,7 @@ tests, do
 ``` bash
 cd sre-tests
 git checkout [branch]
+git pull
 cd ..
 git submodule update --remote --merge
 ```
@@ -128,7 +129,7 @@ git submodule update --remote --merge
 
 Make sure to upgrade version in 
 
-* `src/common/variables`
+* `ts/common/variables`
 * `package.json`
 
 Run `npm install`. This should upgrade the version in 
@@ -172,6 +173,7 @@ make iemaps
 Then sync the version of `sre-mathmaps-ie` and publish.
 
 ``` bash
+cd /tmp/speech-rule-engine
 export PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g')
 cd ../sre-mathmaps-ie
 git commit -a -m "Update for release $PACKAGE_VERSION"
@@ -191,9 +193,9 @@ releases!
 ### Tag SRE
 
 ``` bash
-version=`npm view speech-rule-engine version`
-git tag -a v$version -m "Release type $version"
-git push origin v$version
+export SRE_VERSION=`npm view speech-rule-engine version`
+git tag -a v$SRE_VERSION -m "Release type $SRE_VERSION"
+git push origin v$SRE_VERSION
 ```
 
 Alternatively generate a tag when making release on github.
@@ -201,9 +203,9 @@ Alternatively generate a tag when making release on github.
 ### Tag the tests
 
 ``` bash
-version=`npm view speech-rule-engine version`
-git tag -a v$version -m "Tests for SRE release v$version"
-git push origin v$version
+SRE_VERSION=`npm view speech-rule-engine SRE_VERSION`
+git tag -a v$SRE_VERSION -m "Tests for SRE release v$SRE_VERSION"
+git push origin v$SRE_VERSION
 ```
 
 
