@@ -507,7 +507,12 @@ where `iso` stands for the locale.
 
 # Pulling Translated Content from Spreadsheets
 
-## Pulling Symbols
+## Step wise pulling of Symbols, Messages etc.
+
+Stepwise can help with debugging, in case some of the files/targets do not work
+correctly. There are combined methods to do pulling properly.
+
+### Pulling Symbols
 
 * Save ODS files as multiple CSV.
 * Use methods in `SplitJson` module.
@@ -549,7 +554,9 @@ SplitJson.transformLocaleFiles(SplitJson.UNITS_, SplitJson.PATH_ + '/hi/units/',
 SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, SplitJson.PATH_ + '/hi/units/', SplitJson.swapSingularForPlural);
 ```
 
-## Pulling Locale Messages
+4. Possibly remove empty elements entirely? No method yet for this.
+
+### Pulling Locale Messages
 
 These are primarily on the `Messages` spreadsheet but also on the
 `AlphaNumerics` sheet. They go either into the `locale` message file or into the
@@ -579,7 +586,7 @@ SplitJson.writeAssocList('LOC/csv-messages/Navigation.csv', '/tmp/navigation.jso
 * Make sure to pay attention to combiners on fonts and embellish!
 * Replacement of navigation should be done manually element by element (it is only 3!)
 
-## Pulling Speech Rule Messages
+### Pulling Speech Rule Messages
 
 * Before generating csv files copy the mathspeak disambiguation messages without
   procedural entry to the next sheet.
@@ -606,9 +613,39 @@ cp src/mathmaps/en/rules/summary_english.js src/mathmaps/LOC/rules/summary_LOCAL
 
 * __In clearspeak the `[t] "ft"` element  should remain untranslated!
 
-__This will be no longer necessary once we have the modern rule syntax.__
+__This will be no longer necessary once we have the modern rule syntax.
 
-## Pulling alphanumerics
+### Pulling alphanumerics
 
 __This is currently done manually but should be improved once we have the newly
 outsourced elements.__
+
+``` javascript
+SplitJson.getAlphaJSON('/nb/CSV/', '/tmp/', 'nb', 'Bokmål');
+SplitJson.getNumbersJSON('/nb/CSV/', '/tmp/', 'nb', 'Bokmål');
+```
+
+
+## One Step Pullling
+
+This assumes the following:
+
+* Localisation is done with the usual spreadsheets
+* All spreadsheets are exploded into component csv files
+* All csv files are a in common CSV directory
+
+### Pulling Symbols
+
+
+### Pulling Messages
+
+``` javascript
+SplitJson.getMessagesJSON(csv, out, iso, locale);
+```
+
+* `csv` is directory relative to the `SplitJson.CSV_PATH_`
+* `out` is absolute output directory
+* `iso` is locale iso
+* `locale` is full locale name as used in the spreadsheets
+
+### Pulling Alphanumerics

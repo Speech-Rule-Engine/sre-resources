@@ -164,3 +164,19 @@ Still failing:
 ✕ AataExpression_337 (4 ms)
 
 Semi-product
+
+===========================================
+
+Layout:
+
+===========================================
+
+* Usually everything should be left flushed? 
+  How do we deal with the general omission symbol?
+
+* What if it is multiline? Where does the omission symbol go then? Can that even happen?
+  
+* What about Cayley tables with empty elements: omission symbol or not?
+
+* How are empty rows being dealt with?
+

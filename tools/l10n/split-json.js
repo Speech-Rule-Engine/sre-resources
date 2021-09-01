@@ -1186,6 +1186,151 @@ SplitJson.writeAssocList = async function(file, out, domain = 'English',
   fs.writeFileSync(out, JSON.stringify(mapping, null, 2));
 };
 
+
+// csv directory, output directory for the message file, the locale iso 
+SplitJson.getMessagesJSON = async function(csv, out, iso, locale = 'Locale') {
+  let msg = {};
+  let json = {kind: 'messages', locale: iso, messages: msg};
+  msg.MS = await SplitJson.getAssocList(csv + 'Mathspeak\ disambiguation.csv', 'Proc Message', locale, 'English');
+  msg.MSroots = {};
+  msg.font = await  SplitJson.getAssocList(
+    csv + 'Fonts.csv', 'Font Name English', 'Font Name ' + locale, 'Font Name English');
+  msg.embellish = await  SplitJson.getAssocList(
+    csv + 'Embellished\ Characters.csv', 'Unicode Embellishment Name',
+    'Embellishment Name ' + locale, 'Embellishment Name English');
+  msg.role = await SplitJson.getAssocList(csv + 'Roles.csv', 'Role', locale, 'English');
+  msg.enclose = await SplitJson.getAssocList(csv + 'Enclose.csv', 'Enclose Type', locale, 'English');
+  msg.navigate = await SplitJson.getAssocList(csv + 'Navigation.csv', 'English', locale, 'English');
+  msg.regexp = {
+      'TEXT': 'a-zA-Z',
+      'NUMBER': '((\\d{1,3})(?=(.| ))((.| )\\d{3})*(\\,\\d+)?)|^\\d*\\,\\d+|^\\d+',
+      'DECIMAL_MARK': ',',
+      'DIGIT_GROUP': '\\.',
+      'JOINER_SUBSUPER': ' ',
+      'JOINER_FRAC': ' '
+  };
+  msg.unitTimes = '';
+  fs.writeFileSync(out + 'messages.json', JSON.stringify(json, null, 2));
+};
+
+
+SplitJson.getAlphaJSON = async function(csv, out, iso, locale = 'Locale') {
+  let [small, cap, spre, cpre] = await SplitJson.processLatin(csv, locale);
+  let [gsmall, gcap] = await SplitJson.processGreek(csv, locale);
+  let json = {kind: 'alphabets', locale: iso};
+  let msg = {};
+  json.messages = msg;
+  msg.latinSmall = small;
+  msg.latinCap = cap;
+  msg.greekSmall = gsmall;
+  msg.greekCap = gcap;
+  console.log(cpre);
+  console.log(spre);
+  msg.capPrefix = {default: cpre};
+  msg.smallPrefix = {default: spre};
+  msg.digitPrefix = {default: ''};
+  fs.writeFileSync(out + 'alphabets.json', JSON.stringify(json, null, 2));
+};
+
+SplitJson.latin = [
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'I', 'j', 'k',
+  'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+SplitJson.processLatin = async function(csv, locale) {
+  let latin = await SplitJson.getAssocList(csv + 'Latin\ Alphabet.csv', 'Character', locale, 'Character');
+  let small = [];
+  let large = [];
+  for (let char of SplitJson.latin) {
+    let value = latin[char];
+    small.push(value);
+    large.push(value.match(/^[a-zA-Z]/) ?
+               value[0].toUpperCase() + value.slice(1) : value);
+  }
+  return [small, large, latin['Small character'], latin['Large character']];
+};
+
+SplitJson.greekSmall = [
+  '𝛻', '𝛼', '𝛽', '𝛾', '𝛿', '𝜀', '𝜁', '𝜂', '𝜃', '𝜄', '𝜅', '𝜆',
+  '𝜇', '𝜈', '𝜉', '𝜊', '𝜋', '𝜌', '𝜍', '𝜎', '𝜏', '𝜐', '𝜑', '𝜒',
+  '𝜓', '𝜔', '𝜕', '𝜖', '𝜗', '𝜘', '𝜙', '𝜚', '𝜛'
+];
+
+SplitJson.greekCaps = [
+  '𝛼', '𝛽', '𝛾', '𝛿', '𝜀', '𝜁', '𝜂', '𝜃', '𝜄', '𝜅', '𝜆',
+  '𝜇', '𝜈', '𝜉', '𝜊', '𝜋', '𝜌', '𝜍', '𝜎', '𝜏', '𝜐', '𝜑', '𝜒',
+  '𝜓', '𝜔'
+];
+
+SplitJson.processGreek = async function(csv, locale) {
+  let greek = await SplitJson.getAssocList(csv + 'Greek\ Alphabet.csv', 'Character', locale, 'Character');
+  let small = [];
+  for (let char of SplitJson.greekSmall) {
+    small.push(greek[char]);
+  }
+  let large = [];
+  for (let char of SplitJson.greekCaps) {
+    let value = greek[char];
+    large.push(value.match(/^[a-zA-Z]/) ?
+               value[0].toUpperCase() + value.slice(1) : value);
+  }
+  return [small, large];
+};
+
+
+SplitJson.getNumbersJSON = async function(csv, out, iso, locale = 'Locale') {
+  let msg = {};
+  let json = {kind: 'numbers', locale: iso, messages: msg};
+  let numbers = await SplitJson.getAssocList(
+    csv + 'Numbers.csv', 'Enumerator Value', 'Number ' + locale, 'Number English');
+  msg.zero = numbers[0] || '';
+  SplitJson.addNewList(msg, numbers, 'ones', [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+    '11','12', '13', '14', '15', '16', '17', '18', '19'
+  ]);
+  SplitJson.addNewList(msg, numbers, 'tens', [
+    '20', '30', '40', '50', '60', '70', '80', '90'
+  ]);
+  SplitJson.addNewList(msg, numbers, 'large', [
+    '1000', '1000000', '1000000000', '10^12', '10^15', '10^18', '10^21',
+    '10^24', '10^27', '10^30', '10^33'
+  ]);
+  msg.ones.unshift('');
+  msg.tens.unshift('');
+  msg.tens.unshift('');
+  msg.large.unshift('');
+  msg.vulgarSep = ' ';
+  msg.numSep = '';
+  SplitJson.addNewList(msg, numbers, 'hundreds', [
+    '100', '200', '300', '400', '500', '600', '700', '800', '900'
+  ]);
+  SplitJson.addNewDict(msg, numbers, 'twenties', [
+    '21', '22', '23', '24', '25', '26', '27', '28', '29',
+  ]);
+  SplitJson.addNewDict(msg, numbers, 'thirties', [
+    '31', '32', '33', '34', '35', '36', '37', '38', '39',
+  ]);
+  msg.rest = numbers;
+  fs.writeFileSync(out + 'numbers.json', JSON.stringify(json, null, 2));
+};
+
+SplitJson.addNewList = function(msg, numbers, name, list) {
+  let result = [];
+  for (let entry of list) {
+    result.push(numbers[entry]);
+    delete numbers[entry];
+  }
+  msg[name] = result;
+};
+
+SplitJson.addNewDict = function(msg, numbers, name, list) {
+  let result = {};
+  for (let entry of list) {
+    result[entry] = numbers[entry];
+    delete numbers[entry];
+  }
+  msg[name] = result;
+};
+
 // 
 //
 
