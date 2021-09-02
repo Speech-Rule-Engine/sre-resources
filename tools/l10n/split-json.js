@@ -1087,6 +1087,34 @@ SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
 
 // SplitJson.elementsFromCsv('it', SplitJson.SYMBOLS_, '/home/sorge/git/sre/sre-resources/l10n/it/stefano/csv-symbols/', 'Italian');
 
+/*************************************************************************/
+
+/**
+ * Pulls all unicode messages and cleans up for a locale.
+ * @param {string} csv The csv input directory, relative to `SplitJson.CSV_PATH_`.
+ * @param {string} iso The locale's iso designation.
+ * @param {string} locale The locale name. This is used for messages etc.
+ * @param {string=} src The source locale name. This is used for picking the
+ *      original messages. It defaults to English.
+ */
+SplitJson.getUnicodeJSON = async function(csv, iso, locale, src = SplitJson.REF_LANGUAGE) {
+  SplitJson.elementsFromCsv(iso, SplitJson.SYMBOLS_, csv, locale);
+  SplitJson.elementsFromCsv(iso, SplitJson.FUNCTIONS_, csv, locale);
+  SplitJson.elementsFromCsv(iso, SplitJson.UNITS_, csv, locale);
+  SplitJson.elementsFromCsv(iso, SplitJson.CURRENCY_, csv, locale);
+  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeDual);
+  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeDual);
+  SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removeDual);
+  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
+  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
+  SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removeSingular);
+  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
+  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
+};
+
+
+/*************************************************************************/
+
 
 /**
  *  
@@ -1165,8 +1193,8 @@ SplitJson.getCsvMapping = async function(file) {
   return await promise;
 };
 
-SplitJson.getAssocList = async function(file, domain = 'English',
-                                        locale = 'Locale', english = 'English') {
+SplitJson.getAssocList = async function(file, domain = SplitJson.REF_LANGUAGE,
+                                        locale = 'Locale', english = SplitJson.REF_LANGUAGE) {
   file = SplitJson.CSV_PATH_ + '/' + file;
   let rows = await SplitJson.getCsvMapping(file);
   let mapping = {};
@@ -1180,27 +1208,27 @@ SplitJson.getAssocList = async function(file, domain = 'English',
 };
 
 
-SplitJson.writeAssocList = async function(file, out, domain = 'English',
-                                          locale = 'Locale', english = 'English') {
+SplitJson.writeAssocList = async function(file, out, domain = SplitJson.REF_LANGUAGE,
+                                          locale = 'Locale', english = SplitJson.REF_LANGUAGE) {
   let mapping = await SplitJson.getAssocList(file, domain, locale, english);
   fs.writeFileSync(out, JSON.stringify(mapping, null, 2));
 };
 
 
 // csv directory, output directory for the message file, the locale iso 
-SplitJson.getMessagesJSON = async function(csv, out, iso, locale = 'Locale') {
+SplitJson.getMessagesJSON = async function(csv, out, iso, locale, src = SplitJson.REF_LANGUAGE) {
   let msg = {};
   let json = {kind: 'messages', locale: iso, messages: msg};
-  msg.MS = await SplitJson.getAssocList(csv + 'Mathspeak\ disambiguation.csv', 'Proc Message', locale, 'English');
+  msg.MS = await SplitJson.getAssocList(csv + 'Mathspeak\ disambiguation.csv', 'Proc Message', locale, src);
   msg.MSroots = {};
   msg.font = await  SplitJson.getAssocList(
-    csv + 'Fonts.csv', 'Font Name English', 'Font Name ' + locale, 'Font Name English');
+    csv + 'Fonts.csv', `Font Name ${src}`, 'Font Name ' + locale, `Font Name ${src}`);
   msg.embellish = await  SplitJson.getAssocList(
     csv + 'Embellished\ Characters.csv', 'Unicode Embellishment Name',
-    'Embellishment Name ' + locale, 'Embellishment Name English');
-  msg.role = await SplitJson.getAssocList(csv + 'Roles.csv', 'Role', locale, 'English');
-  msg.enclose = await SplitJson.getAssocList(csv + 'Enclose.csv', 'Enclose Type', locale, 'English');
-  msg.navigate = await SplitJson.getAssocList(csv + 'Navigation.csv', 'English', locale, 'English');
+    'Embellishment Name ' + locale, `Embellishment Name ${src}`);
+  msg.role = await SplitJson.getAssocList(csv + 'Roles.csv', 'Role', locale, src);
+  msg.enclose = await SplitJson.getAssocList(csv + 'Enclose.csv', 'Enclose Type', locale, src);
+  msg.navigate = await SplitJson.getAssocList(csv + 'Navigation.csv', src, locale, src);
   msg.regexp = {
       'TEXT': 'a-zA-Z',
       'NUMBER': '((\\d{1,3})(?=(.| ))((.| )\\d{3})*(\\,\\d+)?)|^\\d*\\,\\d+|^\\d+',
@@ -1214,7 +1242,7 @@ SplitJson.getMessagesJSON = async function(csv, out, iso, locale = 'Locale') {
 };
 
 
-SplitJson.getAlphaJSON = async function(csv, out, iso, locale = 'Locale') {
+SplitJson.getAlphaJSON = async function(csv, out, iso, locale) {
   let [small, cap, spre, cpre] = await SplitJson.processLatin(csv, locale);
   let [gsmall, gcap] = await SplitJson.processGreek(csv, locale);
   let json = {kind: 'alphabets', locale: iso};
@@ -1277,11 +1305,11 @@ SplitJson.processGreek = async function(csv, locale) {
 };
 
 
-SplitJson.getNumbersJSON = async function(csv, out, iso, locale = 'Locale') {
+SplitJson.getNumbersJSON = async function(csv, out, iso, locale, src = SplitJson.REF_LANGUAGE) {
   let msg = {};
   let json = {kind: 'numbers', locale: iso, messages: msg};
   let numbers = await SplitJson.getAssocList(
-    csv + 'Numbers.csv', 'Enumerator Value', 'Number ' + locale, 'Number English');
+    csv + 'Numbers.csv', 'Enumerator Value', 'Number ' + locale, `Number ${src}`);
   msg.zero = numbers[0] || '';
   SplitJson.addNewList(msg, numbers, 'ones', [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',

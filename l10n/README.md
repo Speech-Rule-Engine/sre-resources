@@ -634,18 +634,37 @@ This assumes the following:
 * All spreadsheets are exploded into component csv files
 * All csv files are a in common CSV directory
 
+Arguments are as follows:
+
+* `csv`: The csv input directory, relative to `SplitJson.CSV_PATH_`.
+* `out`: The output directory for the files. This is absolute. Files are overwritten.
+* `iso`: The locale's iso designation.
+* `locale`: The locale name. This is used for messages etc.
+* `src`: Optionally the source locale name. This is used for picking the
+  original messages. It defaults to English.
+
 ### Pulling Symbols
 
+Note this does not need an out directory as it replaces directly in the sre files.
+
+``` javascript
+SplitJson.getUnicodeJSON(csv, iso, locale, src);
+```
+
+Also note that this should only be run once, otherwise there are side-effects on
+units and currency files, like superfluous `plural` entries.
 
 ### Pulling Messages
 
 ``` javascript
-SplitJson.getMessagesJSON(csv, out, iso, locale);
+SplitJson.getMessagesJSON(csv, out, iso, locale, src);
+```
+### Pulling Alphanumerics
+
+``` javascript
+SplitJson.getAlphaJSON(csv, out, iso, locale, src);
+SplitJson.getNumbersJSON(csv, out, iso, locale, src);
 ```
 
-* `csv` is directory relative to the `SplitJson.CSV_PATH_`
-* `out` is absolute output directory
-* `iso` is locale iso
-* `locale` is full locale name as used in the spreadsheets
-
-### Pulling Alphanumerics
+Note that the numbers will contain rest elements that need to be removed or
+alternatively used for additional messages.
