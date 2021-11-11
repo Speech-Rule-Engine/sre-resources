@@ -4,13 +4,36 @@
 <!-- "xpath": "https://rawgit.com/google/wicked-good-xpath/master/dist/wgxpath.install.js", -->
 <script type="text/x-sre-config">
 {
-"json": "http://localhost/git/sre/speech-rule-engine/lib/mathmaps",
+"json": "http://localhost/sre/speech-rule-engine/lib/mathmaps",
 "domain": "clearspeak",
 "style": "Roots_RootEnd:Fraction_EndFrac"
 }
 </script>
+<script>
+var SREfeature = {
+"customX": function(loc) {
+    let file = 'http://localhost/sre/speech-rule-engine/lib/mathmaps/' + loc + '.json';
+    let httpRequest = new XMLHttpRequest();
+    return new Promise((res, rej) => {
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+          console.log('hello'); 
+          let status = httpRequest.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            res(httpRequest.responseText);
+          } else {
+            rej(status);
+          }
+        }
+      };
+      httpRequest.open('GET', file, true);
+      httpRequest.send();
+    });
+  }
+}
+</script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="http://localhost/git/sre/speech-rule-engine/lib/sre.js"></script>
+<script src="http://localhost/sre/speech-rule-engine/lib/sre.js"></script>
 <script src="lib.js"></script>
 
 <!-- , -->
@@ -70,6 +93,6 @@
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Fri Jun 18 14:14:41 CEST 2021
+Last modified: Thu Sep  9 22:44:27 CEST 2021
 <!-- hhmts end -->
 </body> </html>

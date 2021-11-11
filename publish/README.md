@@ -49,7 +49,7 @@ npm install
 * Test that the package really works 
 
 ``` bash
-npm run prepublishOnly
+npm run prepublish
 npm pack
 rm -rf /var/www/html/test/*
 cp speech-rule-engine-*.tgz /var/www/html/test/

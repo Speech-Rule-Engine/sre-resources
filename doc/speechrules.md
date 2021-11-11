@@ -82,3 +82,4 @@ Italian pr -> per
 * French: Investigate `superscript-ordinal-number`
 
 
+* More cleanup: endmatrix elements.

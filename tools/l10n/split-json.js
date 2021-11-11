@@ -215,7 +215,7 @@ SplitJson.intoFile = function(src, dest, locale, iso, addempty, miss = null) {
   let content = fs.readFileSync(src);
   if (!content) return;
   let list = JSON.parse(content);
-  let [result, missing] = SplitJson.splitContent(list, locale, addempty);
+  let [result, missing] = SplitJson.splitContent(list, locale, addempty, !miss);
   result.unshift({"locale": iso});
   if (miss) {
     let base = path.basename(src);
@@ -233,7 +233,7 @@ SplitJson.intoFile = function(src, dest, locale, iso, addempty, miss = null) {
 // List is the model to work with. Locale the potential translations.
 // Returns the list of translations and the list of missing elements.
 // Optionally add non-existent elements as empties.
-SplitJson.splitContent = function(list, locale, addempty = false) {
+SplitJson.splitContent = function(list, locale, addempty = false, symbol = false) {
   let result = [];
   let missing = [];
   for (let element of list) {
@@ -263,7 +263,8 @@ SplitJson.splitContent = function(list, locale, addempty = false) {
           loc.si = element.si;
         }
         // TODO: Rewrite to reflect: default, plural, dual!
-        loc.mappings = {default: { default: '', singular: '', dual: '' }};
+        loc.mappings = symbol ? {default: { default: ''}} :
+        {default: { default: '', plural: '', dual: '' }};
         result.push(loc);
       }
       missing.push(element);
@@ -344,6 +345,10 @@ SplitJson.splitFiles = function(kind, iso, model, addempty) {
 };
 
 
+/**
+ * Generates empty files for a new locale from scratch.
+ * @param iso The iso of the locale.
+ */
 SplitJson.generateFiles = function(iso) {
   let base = JSON.stringify([{"locale": iso}], null, 2);
   fs.mkdirSync(`${SplitJson.INPUT_PATH_}/${iso}`, {recursive: true});
@@ -352,13 +357,22 @@ SplitJson.generateFiles = function(iso) {
   fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.UNITS_}.json`, base);
   fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.CURRENCY_}.json`, base);
   fs.writeFileSync(`${SplitJson.INPUT_PATH_}/${iso}/${SplitJson.PREFIX_}.json`, base);
-  SplitJson.allFiles(iso);
+  SplitJson.allFiles(iso, true);
 };
 
 
-SplitJson.allFiles = function(iso) {
+SplitJson.generateRules = function(iso, domain, name, inherits = 'base') {
+  let def = {locale: iso, domain: domain, modality: 'speech', rules: []};
+  let actions = Object.assign({kind: 'actions'}, def);
+  let base = Object.assign({inherits: inherits}, def);
+  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/rules/${domain}_${name}.json`, JSON.stringify(base, null, 2));
+  fs.writeFileSync(`${SplitJson.PATH_}/${iso}/rules/${domain}_${name}_actions.json`, JSON.stringify(actions, null, 2));
+};
+
+
+SplitJson.allFiles = function(iso, force = false) {
   fs.writeFileSync(`${SplitJson.OUTPUT_PATH_}/${iso}-missing.csv`, '');
-  SplitJson.splitFiles(SplitJson.SYMBOLS_, iso, 'en');
+  SplitJson.splitFiles(SplitJson.SYMBOLS_, iso, 'en', force);
   SplitJson.splitFiles(SplitJson.FUNCTIONS_, iso, 'en', true);
   SplitJson.splitFiles(SplitJson.UNITS_, iso, 'en', true);
   SplitJson.splitFiles(SplitJson.CURRENCY_, iso, 'en', true);
@@ -1045,9 +1059,8 @@ SplitJson.pickUnitFromCsv = function(element, row, key, input) {
     console.log(`Inspect element ${key} manually in ${input}`);
     return;
   }
-  // TODO: Change that for the future!
-  element.mappings.default.default = row['Plural'];
-  element.mappings.default.singular = row['Singular'];
+  element.mappings.default.default = row['Singular'];
+  element.mappings.default.plural = row['Plural'];
   element.mappings.default.dual = row['Dual'];
 };
 
@@ -1098,6 +1111,7 @@ SplitJson.elementsFromCsv = function(locale, type, csvPath, lname = "Locale") {
  *      original messages. It defaults to English.
  */
 SplitJson.getUnicodeJSON = async function(csv, iso, locale, src = SplitJson.REF_LANGUAGE) {
+  csv = path.join(SplitJson.CSV_PATH_, csv);
   SplitJson.elementsFromCsv(iso, SplitJson.SYMBOLS_, csv, locale);
   SplitJson.elementsFromCsv(iso, SplitJson.FUNCTIONS_, csv, locale);
   SplitJson.elementsFromCsv(iso, SplitJson.UNITS_, csv, locale);
@@ -1105,11 +1119,17 @@ SplitJson.getUnicodeJSON = async function(csv, iso, locale, src = SplitJson.REF_
   SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeDual);
   SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeDual);
   SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removeDual);
-  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
-  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
-  SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removeSingular);
-  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
-  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
+
+  // SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
+  // SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removeSingular);
+  // SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removeSingular);
+
+  SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removePlural);
+  SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.removePlural);
+  SplitJson.transformLocaleFiles(SplitJson.FUNCTIONS_, `${SplitJson.PATH_}/${iso}/functions/`, SplitJson.removePlural);
+
+  // SplitJson.transformLocaleFiles(SplitJson.UNITS_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
+  // SplitJson.transformLocaleFiles(SplitJson.CURRENCY_, `${SplitJson.PATH_}/${iso}/units/`, SplitJson.swapSingularForPlural);
 };
 
 
@@ -1162,6 +1182,10 @@ SplitJson.removeDual = function(json) {
 
 SplitJson.removeSingular = function(json) {
   return SplitJson.removeCell(json, 'singular');
+};
+
+SplitJson.removePlural = function(json) {
+  return SplitJson.removeCell(json, 'plural');
 };
 
 SplitJson.removeCell = function(json, cell) {
@@ -1367,8 +1391,7 @@ SplitJson.addNewDict = function(msg, numbers, name, list) {
  * Rewriting speech rule files from CSV file input.
  * (For this we need to load SRE with require.)
  */
-// require('/home/sorge/git/sre/speech-rule-engine/lib/sre4node');
-
+let sre = require('/home/sorge/git/sre/speech-rule-engine/js/rule_engine/speech_rule');
 
 SplitJson.getTextString = function(text) {
   if (text.match(/^\".*\"$/)) {
@@ -1379,7 +1402,7 @@ SplitJson.getTextString = function(text) {
 
 
 SplitJson.rewriteSpeechRuleAction = function(actionStr, mapping) {
-  let action = sre.SpeechRule.Action.fromString(actionStr);
+  let action = sre.Action.fromString(actionStr);
   let components = action.components;
   for (let action of components) {
     if (action.type === 'TEXT') {
@@ -1397,38 +1420,37 @@ SplitJson.rewriteSpeechRuleAction = function(actionStr, mapping) {
 };
 
 
-SplitJson.rewriteSpeechRuleFile = async function(json, csv) {
+SplitJson.rewriteSpeechRuleFile = async function(json, csv, locale, src) {
   let english = JSON.parse(fs.readFileSync(json));
-  let mapping = await SplitJson.getAssocList(
-    csv, 'English Speech Rule', 'Locale', 'English Speech Rule'); // line for clear/mathspeak
-    // csv, 'English', 'Locale', 'English'); // Line for prefix and summary
-  console.log(mapping);
+  let mapping = await SplitJson.getAssocList(csv, src, locale, src);
   let newRules = [];
   for (let rule of english.rules) {
     let type = rule[0];
-    if (type === 'Rule') {
-      rule[3] = SplitJson.rewriteSpeechRuleAction(rule[3], mapping);
-    }
-    if (type === 'SpecializedRule' && rule[4]) {
-      rule[4] = SplitJson.rewriteSpeechRuleAction(rule[4], mapping);
+    if (type === 'Action') {
+      rule[2] = SplitJson.rewriteSpeechRuleAction(rule[2], mapping);
     }
     newRules.push(rule);
   }
   english.rules = newRules;
-  fs.writeFileSync('/tmp/out.json', JSON.stringify(english, null, 2));
+  fs.writeFileSync(json, JSON.stringify(english, null, 2));
 };
 
 
-SplitJson.rewriteSpeechRulesLocale = function(iso, locale, csv) {
+SplitJson.rewriteSpeechRulesLocale = function(iso, locale, csv, src = SplitJson.REF_LANGUAGE) {
   let outPath = SplitJson.PATH_ + '/' + iso + '/rules';
-  SplitJson.rewriteSpeechRuleFile(outPath + `/mathspeak_${locale}.json`, 
-                                  csv + '/csv-messages/Mathspeak\ Messages.csv');
-  SplitJson.rewriteSpeechRuleFile(outPath + `/clearspeak_${locale}.js`, 
-                                  csv + '/csv-messages/Clearspeak\ Messages.csv');
-  SplitJson.rewriteSpeechRuleFile(outPath + `/summary_${locale}.json`, 
-                                  csv + '/csv-messages/Summaries.csv');
-  SplitJson.rewriteSpeechRuleFile(outPath + `/prefix_${locale}.json`, 
-                                  csv + '/csv-messages/Prefixes.csv');
+  let input = locale.toLowerCase();
+  SplitJson.rewriteSpeechRuleFile(outPath + `/mathspeak_${input}_actions.json`, 
+                                  csv + 'Mathspeak\ Messages.csv', locale,
+                                  `${src} Speech Rule`);
+  if (fs.existsSync(csv + 'Clearspeak\ Messages.csv')) {
+    SplitJson.rewriteSpeechRuleFile(outPath + `/clearspeak_${input}_actions.js`, 
+                                    csv + 'Clearspeak\ Messages.csv',
+                                    locale, `${src} Speech Rule`);
+  }
+  SplitJson.rewriteSpeechRuleFile(outPath + `/summary_${input}_actions.json`, 
+                                  csv + 'Summaries.csv', locale, `${src}`);
+  SplitJson.rewriteSpeechRuleFile(outPath + `/prefix_${input}_actions.json`, 
+                                  csv + 'Prefixes.csv', locale, `${src}`);
 };
 
 
