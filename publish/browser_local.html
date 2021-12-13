@@ -17,7 +17,7 @@ var SREfeature = {
     return new Promise((res, rej) => {
       httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4) {
-          console.log('hello'); 
+          console.log('Using my custom loader');
           let status = httpRequest.status;
           if (status === 0 || (status >= 200 && status < 400)) {
             res(httpRequest.responseText);
@@ -93,6 +93,6 @@ var SREfeature = {
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Thu Sep  9 22:44:27 CEST 2021
+Last modified: Mon Dec 13 16:56:31 CET 2021
 <!-- hhmts end -->
 </body> </html>
