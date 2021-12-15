@@ -37,6 +37,11 @@ let sreTest = {
       then(() => {return sreTest.runTests({locale: 'de', domain: 'clearspeak', style: 'default'});}).
       then(() => {return sreTest.runTests({locale: 'hi', domain: 'mathspeak', style: 'default'});}).
       then(() => {return sreTest.runTests({locale: 'hi', domain: 'clearspeak', style: 'default'});}).
+      then(() => {return sreTest.runTests({locale: 'ca', domain: 'mathspeak', style: 'default'});}).
+      then(() => {return sreTest.runTests({locale: 'nn', domain: 'mathspeak', style: 'default'});}).
+      then(() => {return sreTest.runTests({locale: 'nn', domain: 'clearspeak', style: 'default'});}).
+      then(() => {return sreTest.runTests({locale: 'nb', domain: 'mathspeak', style: 'default'});}).
+      then(() => {return sreTest.runTests({locale: 'nb', domain: 'clearspeak', style: 'default'});}).
       then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
   }
   

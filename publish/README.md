@@ -203,7 +203,7 @@ Alternatively generate a tag when making release on github.
 ### Tag the tests
 
 ``` bash
-SRE_VERSION=`npm view speech-rule-engine SRE_VERSION`
+SRE_VERSION=`npm view speech-rule-engine version`
 git tag -a v$SRE_VERSION -m "Tests for SRE release v$SRE_VERSION"
 git push origin v$SRE_VERSION
 ```
