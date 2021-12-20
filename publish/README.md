@@ -63,8 +63,8 @@ npm install ./speech-rule-engine-*.tgz
    
 ``` bash
 cd /var/www/html/test
-cp /home/sorge/git/sre/sre-resources/publish/pipe-direct.js .
-node pipe-direct.js
+cp /home/sorge/git/sre/sre-resources/publish/pipe-direct-new.js .
+node pipe-direct-new.js
 ```
     
     

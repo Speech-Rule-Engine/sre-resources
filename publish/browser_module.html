@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<!-- "json": "https://cdn.jsdelivr.net/npm/speech-rule-engine@2.2.1/lib/", -->
+<!-- "xpath": "https://rawgit.com/google/wicked-good-xpath/master/dist/wgxpath.install.js", -->
+<script type="text/x-sre-config">
+{
+"json": "http://localhost/sre/speech-rule-engine/lib/mathmaps",
+"domain": "clearspeak",
+"style": "Roots_RootEnd:Fraction_EndFrac"
+}
+</script>
+<script>
+var SREfeature = {
+"customX": function(loc) {
+    let file = 'http://localhost/sre/speech-rule-engine/lib/mathmaps/' + loc + '.json';
+    let httpRequest = new XMLHttpRequest();
+    return new Promise((res, rej) => {
+      httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+          console.log('Using my custom loader');
+          let status = httpRequest.status;
+          if (status === 0 || (status >= 200 && status < 400)) {
+            res(httpRequest.responseText);
+          } else {
+            rej(status);
+          }
+        }
+      };
+      httpRequest.open('GET', file, true);
+      httpRequest.send();
+    });
+  }
+}
+</script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="module">
+  import * as SRE from 'http://localhost/sre/speech-rule-engine/lib/sre.js'
+  import {sreTest} from './lib_module.js';
+  
+  sreTest.SRE = SRE;
+  document.getElementById('header').innerHTML = 'Local Version ' + SRE.version;
+  window.addEventListener('load', sreTest.runAllTests);
+</script>
+
+<!-- , -->
+<!-- "prune": "nemeth.braille", -->
+<!-- "rules": "../../mathmaps/nemeth/rules/nemeth_rules.js" -->
+<title></title>
+</head>
+
+<body>
+<h1 id="header"></h1>
+
+&#x2A6D;&#x0338;
+
+<math id="test1" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo extid="0">&#x2212;</mo>
+      <mi extid="1">b</mi>
+      <mo extid="2">&#xB1;</mo>
+      <msqrt>
+        <mrow>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>&#x2212;</mo>
+          <mn>4</mn>
+          <mi>a</mi>
+          <mi>c</mi>
+        </mrow>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mi>a</mi>
+    </mrow>
+  </mfrac>
+</mrow>
+</math>
+
+<math id="test2" xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msqrt>
+    <mi>a</mi>
+    <mo>+</mo>
+    <mi>b</mi>
+  </msqrt>
+  <mo>+</mo>
+  <mi>c</mi>
+</math>
+
+<math id="test3" xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x1D63C;</mi></math>
+
+<hr>
+<address></address>
+<!-- hhmts start -->
+Last modified: Wed Dec 15 18:36:45 CET 2021
+<!-- hhmts end -->
+</body> </html>
