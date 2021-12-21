@@ -1,0 +1,84 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mlabeledtr>
+      <mtd id="mjx-eqn:3.42">
+        <mtext>(3.42)</mtext>
+      </mtd>
+      <mtd>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>L</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mo>&#x2026;</mo>
+        <mo>,</mo>
+        <msub>
+          <mi>L</mi>
+          <mi>j</mi>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>&#x3C3;</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>&#x2212;</mo>
+            <mi>r</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mo>&#x2026;</mo>
+        <mo>,</mo>
+        <msub>
+          <mi>&#x3C3;</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>&#x2212;</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msubsup>
+          <mi>L</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+          <mo data-mjx-alternate="1">&#x2032;</mo>
+        </msubsup>
+        <mo>,</mo>
+        <mo>&#x2026;</mo>
+        <mo>,</mo>
+        <msubsup>
+          <mi>L</mi>
+          <mi>k</mi>
+          <mo data-mjx-alternate="1">&#x2032;</mo>
+        </msubsup>
+        <mo>,</mo>
+        <msubsup>
+          <mi>&#x3C3;</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+          </mrow>
+          <mi>&#x3D5;</mi>
+        </msubsup>
+        <mo>,</mo>
+        <msubsup>
+          <mi>&#x3C3;</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+          </mrow>
+          <mi>&#x3D5;</mi>
+        </msubsup>
+        <mo>,</mo>
+        <mo>&#x2026;</mo>
+        <mo>,</mo>
+        <msubsup>
+          <mi>&#x3C3;</mi>
+          <mi>&#x2113;</mi>
+          <mi>&#x3D5;</mi>
+        </msubsup>
+        <mo stretchy="false">)</mo>
+      </mtd>
+    </mlabeledtr>
+  </mtable>
+</math>

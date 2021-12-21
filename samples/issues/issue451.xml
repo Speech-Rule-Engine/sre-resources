@@ -1,0 +1,19 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>M</mi>
+  <mo stretchy="false">(</mo>
+  <mi>t</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <munder>
+    <mrow data-mjx-texclass="OP">
+      <mrow>
+        <mi mathvariant="normal">l</mi>
+        <mi mathvariant="normal">i</mi>
+        <mi mathvariant="normal">m</mi>
+      </mrow>
+    </mrow>
+    <mo stretchy="false">&#x2190;</mo>
+  </munder>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mi>M</mi>
+</math>

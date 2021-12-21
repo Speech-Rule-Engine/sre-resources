@@ -1,0 +1,14 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true">
+    <mlabeledtr>
+      <mtd id="mjx-eqn:1">
+        <mtext>(1)</mtext>
+      </mtd>
+      <mtd>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mi>y</mi>
+      </mtd>
+    </mlabeledtr>
+  </mtable>
+</math>

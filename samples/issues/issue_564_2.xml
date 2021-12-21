@@ -1,0 +1,12 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo stretchy="false">|</mo>
+  <mi>a</mi>
+  <mrow data-mjx-texclass="ORD">
+    <mi>b</mi>
+    <mi>c</mi>
+  </mrow>
+  <msup>
+    <mo stretchy="false">|</mo>
+    <mi>d</mi>
+  </msup>
+</math>

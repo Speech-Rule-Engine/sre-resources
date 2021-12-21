@@ -1,0 +1,12 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+      <munderover>
+        <mi>f</mi>
+        <mo>_</mo>
+        <mo stretchy="false">&#xAF;</mo>
+      </munderover>
+  </mrow>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+</math>

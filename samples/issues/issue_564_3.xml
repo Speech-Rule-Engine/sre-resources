@@ -1,0 +1,24 @@
+<math>
+  <mpadded mathbackground="blue">
+    <munder>
+      <mmultiscripts>
+        <mo>(</mo>
+        <mprescripts/>
+        <mn>4</mn>
+        <mn>3</mn>
+      </mmultiscripts>
+      <mo>~</mo>
+    </munder>
+  </mpadded>
+  <mi>x</mi>
+  <mpadded mathbackground="red">
+    <mover>
+      <msubsup>
+        <mo>)</mo>
+        <mn>1</mn>
+        <mn>2</mn>
+      </msubsup>
+      <mo>^</mo>
+    </mover>
+  </mpadded>
+</math>

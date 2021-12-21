@@ -1,0 +1,7 @@
+<math>
+<mmultiscripts><mo stretchy="false">(</mo><mprescripts/><mi>a</mi><mi>b</mi>
+</mmultiscripts>
+<mfrac><mfrac><mi>A</mi><mi>B</mi></mfrac><mfrac><mi>A</mi><mi>B</mi></mfrac></mfrac>
+<mmultiscripts><mo stretchy="false">)</mo><mi>a</mi><mi>b</mi><mprescripts/>
+</mmultiscripts>
+</math>

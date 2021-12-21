@@ -1,0 +1,33 @@
+<math>
+  <msup>
+    <mi>t</mi> 
+    <mfrac>
+      <mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow>
+      <mn>3</mn>
+    </mfrac>
+  </msup>
+</math>
+
+
+<math>
+  <mi>x</mi>
+  <mo>+</mo>
+  <msup>
+    <mi>t</mi> 
+    <mfrac>
+      <mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow>
+      <mn>3</mn>
+    </mfrac>
+  </msup>
+</math>
+
+<math>
+  <mi>x</mi>
+  <msup>
+    <mi>t</mi> 
+    <mfrac>
+      <mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow>
+      <mn>3</mn>
+    </mfrac>
+  </msup>
+</math>
