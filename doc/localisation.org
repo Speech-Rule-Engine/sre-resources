@@ -137,3 +137,19 @@ Semantic post-processor
 * German: membership singular and cases.
 
 * French: membershipt singular in sets.
+
+## Adaptations
+
+These need to be done pretty much all the time:
+
+### Clearspeak
+
+Symbols
+* square and cubic in digits_rest
+* greek-rest: triangle
+* Setmember symbols
+
+Functions
+* trigonometry: inverse functions when necessary
+* l n  in elementary
+

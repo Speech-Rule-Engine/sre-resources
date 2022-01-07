@@ -18,6 +18,8 @@ let sreTest = {
 
 
   runTests: function(features = {}) {
+    console.log(SRE.variables.LOCALES);
+    console.log(features.locale);
     let promise = SRE.setupEngine(features);
     PROM = promise;
     return promise.then(() => {return sreTest.test('test1');})
@@ -25,25 +27,14 @@ let sreTest = {
       .then(() => {return sreTest.test('test3');});
   },
 
-  runAllTests: function() {
-    sreTest.runTests().
-      then(() => {return sreTest.runTests({locale: 'en', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'en', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'fr', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'fr', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'es', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'it', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'it', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'de', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'de', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'hi', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'hi', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'ca', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nn', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nn', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nb', domain: 'mathspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nb', domain: 'clearspeak', style: 'default'});}).
-      then(() => {return sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});});
+  runAllTests: async function() {
+    await sreTest.runTests();
+    for (let locale of SRE.variables.LOCALES) {
+      if (locale === 'nemeth') continue;
+      await sreTest.runTests({locale: locale, domain: 'mathspeak', style: 'default'});
+      await sreTest.runTests({locale: locale, domain: 'clearspeak', style: 'default'});
+    }
+    await sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});
   }
   
 };
