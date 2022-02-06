@@ -41,7 +41,7 @@ cat ../sre-resources/samples/quadratic-line.xml | ./bin/sre -d clearspeak -c fr
 ``` bash
 cd /tmp
 rm -rf node_modules speech-rule-engine
-git clone git@github.com:zorkow/speech-rule-engine.git
+git clone git@github.com:speech-rule-engine/speech-rule-engine.git
 cd speech-rule-engine
 npm install
 ```
@@ -147,7 +147,7 @@ as well
 ``` bash
 cd /tmp
 rm -rf node_modules speech-rule-engine
-git clone git@github.com:zorkow/speech-rule-engine.git
+git clone git@github.com:speech-rule-engine/speech-rule-engine.git
 cd speech-rule-engine
 npm install
 npm publish
