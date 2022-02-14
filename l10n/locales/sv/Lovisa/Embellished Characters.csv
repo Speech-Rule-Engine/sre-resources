@@ -1,0 +1,14 @@
+Unicode Embellishment Name,Embellishment Name English,Embellishment Name Swedish,Example,Example speech
+,,,,
+super, super,upphöjd,⁰,super zero
+sub, sub,nedsänkt,₀,sub zero
+circled, circled,inringad,Ⓐ,circled cap A
+parenthesized, parenthesized,inom parantes,⑴,parenthesized one
+period, period,punkt,⒈,one period
+negative-circled, black circled,svart inringad,🅐,black circled cap A
+double-circled, double circled,dubbelinringad,⓵,double circled one
+circled-sans-serif, circled sans serif,inringad sans serif,➀,circled sans serif one
+negative-circled-sans-serif, black circled sans serif,svart inringad sans serif,➊,black circled sans serif one
+comma, comma,komma,🄂,one comma
+squared, squared,inrutad,🄰,squared cap A
+negative-squared, black squared,svart inrutad,🅲,black squared cap C

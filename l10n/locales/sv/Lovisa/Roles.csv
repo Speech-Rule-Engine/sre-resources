@@ -1,0 +1,25 @@
+Role,English,Swedish
+,,
+addition,addition,addition
+multiplication,multiplication,multiplikation
+subtraction,subtraction,subtraktion
+division,division,division
+equality,equality,likhet
+inequality,inequality,olikhet
+element,element,element
+arrow,arrow,pil
+determinant,determinant,determinant
+rowvector,row vector,radvektor
+binomial,binomial,binom
+squarematrix,square matrix,kvadratisk matris
+setempty,empty set,tom mängd
+setext,set extension,mängdutveckling
+setsingle,singleton set,
+setcollect,collection,samling
+label,label,etikett
+multiline,multiple lines,flera rader
+matrix,matrix,matris
+vector,vector,vektor
+cases,case statement,fallpåstående
+table,table,tabell
+unknown,unknown,okänd

@@ -1,0 +1,23 @@
+Font Name English,Alternative,Font Name Swedish,Example,,
+,,,,,
+bold,,fetstil,𝐀,,
+bold-fraktur,bold German,fetstil fraktur ,𝕬,,
+bold-italic,,fetstil kursiv,𝑨,,
+bold-script,,fetstil skript,𝓐,,
+caligraphic,,kalligrafisk ,,Latex font for caligraphic capital letters,https://i.stack.imgur.com/xkTOJ.png
+caligraphic-bold,,kalligrafisk fetstil,,Latex font for caligraphic capital letters,https://i.stack.imgur.com/xkTOJ.png
+double-struck,,,𝔸,,
+double-struck-italic,,,,,
+fraktur,German,fraktur,𝔄,,
+fullwidth,,fullbredd,Ａ,,
+italic,,kursiv,𝐴,,
+monospace,,,𝙰,Typewriter style,
+normal,,normal,A,,
+oldstyle,,,,Latex font for oldstyle numbers,https://i.pinimg.com/originals/ab/c9/a5/abc9a517157fdf9ab82ae6b6e85fb932.jpg
+oldstyle-bold,,,,Latex font for oldstyle numbers,https://i.pinimg.com/originals/ab/c9/a5/abc9a517157fdf9ab82ae6b6e85fb932.jpg
+script,,skript,𝒜,,
+sans-serif,,sans-serif,𝖠,,
+sans-serif-bold,,sans-serif fetstil,𝗔,,
+sans-serif-italic,,sans-serif kursiv,𝘈,,
+sans-serif-bold-italic,,sans-serif fetstil kursiv,𝘼,,
+unknown,,okänd,,,

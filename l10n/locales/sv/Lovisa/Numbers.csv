@@ -1,0 +1,73 @@
+Enumerator Value,Number English,Number Swedish
+,,
+1,one,ett
+2,two,två
+3,three,tre
+4,four,fyra
+5,five,fem
+6,six,sex
+7,seven,sju
+8,eight,åtta
+9,nine,nio
+10,ten,tio
+11,eleven,elva
+12,twelve,tolv
+13,thirteen,tretton
+14,fourteen,fjorton
+15,fifteen,femton
+16,sixteen,sexton
+17,seventeen,sjutton
+18,eighteen,arton
+19,nineteen,nitton
+,,
+20,twenty,tjugo
+21,twenty-one,tjugoett
+22,twenty-two,tjugotvå
+23,twenty-three,tjugotre
+24,twenty-four,tjugofyra
+25,twenty-five,tjugofem
+26,twenty-six,tjugosex
+27,twenty-seven,tjugosju
+28,twenty-eight,tjugoåtta
+29,twenty-nine,tjugonio
+,,
+30,thirty,trettio
+31,thirty-one,trettioett
+,,
+40,forty,fyrtio
+50,fifty,femtio
+60,sixty,sextio
+70,seventy,sjuttio
+80,eighty,åttio
+90,ninety,nittio
+ ,,
+100,hundred,hundra
+101,hundred and one,hundraett
+,,
+ ,,
+200,two hundred,tvåhundra
+300,three hundred,trehundra
+400,four hundred,fyrahundra
+500,five hundred,femhundra
+600,six hundred,sexhundra
+700,seven hundred,sjuhundra
+800,eight hundred,åttahundra
+900,nine hundred,niohundra
+,,
+1000,thousand,tusen
+2000,two thousand,tvåtusen
+,,
+1000000,million,miljon
+2000000,two million,två miljoner
+ ,,
+1000000000,billion,miljard
+2000000000,two billion,två miljarder
+ ,,
+10^12,trillion,biljon
+10^15,quadrillion,biljard
+10^18,quintillion,triljon
+10^21,sextillion,triljard
+10^24,septillion,kvadriljon
+10^27,octillion,kvadriljard
+10^30,nonillion,kvintiljon
+10^33,decillion,kvintiljard

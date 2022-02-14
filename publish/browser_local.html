@@ -12,7 +12,12 @@
 </script>
 <script>
 var SREfeature = {
-"customX": function(loc) {
+"custom": function(loc) {
+if (loc === 'de') {
+  console.log('Using normal loader');
+  console.log(SRE.localeLoader());
+  return SRE.localeLoader()('de');
+}
     let file = 'http://localhost/sre/speech-rule-engine/lib/mathmaps/' + loc + '.json';
     let httpRequest = new XMLHttpRequest();
     return new Promise((res, rej) => {
@@ -94,6 +99,6 @@ var SREfeature = {
 <hr>
 <address></address>
 <!-- hhmts start -->
-Last modified: Fri Jan 21 17:34:15 CET 2022
+Last modified: Mon Feb 14 18:27:27 CET 2022
 <!-- hhmts end -->
 </body> </html>
