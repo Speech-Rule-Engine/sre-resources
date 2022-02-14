@@ -1,0 +1,14 @@
+Unicode Embellishment Name,Embellishment Name English,Embellishment Name Danish,Comments on order,Example,Example speech,Example danish speech
+,,,,,,
+super, super,hævet,embellisment before,⁰,super zero,hævet nul
+sub, sub,sænket,embellisment before,₀,sub zero,sænket nul
+circled, circled,i cirkel,embellishment after,Ⓐ,circled cap A,stort A i cirkel
+parenthesized, parenthesized,i parentes,embellishment after,⑴,parenthesized one,et i parentes
+period, period,punktum,embellishment after,⒈,one period,et punktum
+negative-circled, black circled,i sort cirkel,embellishment after,🅐,black circled cap A,stort A i sort cirkel
+double-circled, double circled,i dobbelt cirkel,embellishment after,⓵,double circled one,et i dobbelt cirkel
+circled-sans-serif, circled sans serif,uden serif i cirkel,embellishment after,➀,circled sans serif one,et sans serif i cirkel
+negative-circled-sans-serif, black circled sans serif,uden serif i sort cirkel,embellishment after,➊,black circled sans serif one,et sans serif i sort cirkel
+comma, comma,komma,embellishment after,🄂,one comma,et komma
+squared, squared,i kvadrat,embellishment after,🄰,squared cap A,stort A i kvadrat
+negative-squared, black squared,i sort kvadrat,embellishment after,🅲,black squared cap C,stort C i sort kvadrat

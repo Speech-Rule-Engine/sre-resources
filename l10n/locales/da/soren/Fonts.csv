@@ -1,0 +1,23 @@
+Font Name English,Alternative,Font Name Danish,Comments on order,Example,,
+,,,,,,
+bold,,fed,font name after,𝐀,,
+bold-fraktur,bold German,fed fraktur,font name after,𝕬,,
+bold-italic,,fed kursiv,font name after,𝑨,,
+bold-script,,fed håndskrift,font name after,𝓐,,
+caligraphic,,kalligrafisk,font name after,,Latex font for caligraphic capital letters,https://i.stack.imgur.com/xkTOJ.png
+caligraphic-bold,,fed kalligrafisk,font name after,,Latex font for caligraphic capital letters,https://i.stack.imgur.com/xkTOJ.png
+double-struck,,dobbeltstreget,font name after,𝔸,,
+double-struck-italic,,dobbeltstreget kursiv,font name after,,,
+fraktur,German,fraktur,font name after,𝔄,,
+fullwidth,,fuldbredde,font name after,Ａ,,
+italic,,kursiv,font name after,𝐴,,
+monospace,,monospacieret,font name after,𝙰,Typewriter style,
+normal,,normal,font name after,A,,
+oldstyle,,gammeldags,font name after,,Latex font for oldstyle numbers,https://i.pinimg.com/originals/ab/c9/a5/abc9a517157fdf9ab82ae6b6e85fb932.jpg
+oldstyle-bold,,gammeldags fed,font name after,,Latex font for oldstyle numbers,https://i.pinimg.com/originals/ab/c9/a5/abc9a517157fdf9ab82ae6b6e85fb932.jpg
+script,,håndskrift,font name after,𝒜,,
+sans-serif,,sans serif,font name after,𝖠,,
+sans-serif-bold,,sans serif fed,font name after,𝗔,,
+sans-serif-italic,,sans serif kursiv,font name after,𝘈,,
+sans-serif-bold-italic,,sans serif fed kursiv,font name after,𝘼,,
+unknown,,ukendt,font name after,,,

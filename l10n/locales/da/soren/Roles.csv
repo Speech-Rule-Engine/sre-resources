@@ -1,0 +1,25 @@
+Role,English,Danish
+,,
+addition,addition,addition
+multiplication,multiplication,multiplikation
+subtraction,subtraction,subtraktion
+division,division,division
+equality,equality,lighed
+inequality,inequality,ulighed
+element,element,element
+arrow,arrow,pil
+determinant,determinant,determinant
+rowvector,row vector,rækkevektor
+binomial,binomial,binomial
+squarematrix,square matrix,kvadratisk matrix
+setempty,empty set,den tomme mængde
+setext,set extension,mængdeomfang
+setsingle,singleton set,singleton mængde
+setcollect,collection,samling
+label,label,etiket
+multiline,multiple lines,flere linjer
+matrix,matrix,matrix
+vector,vector,vektor
+cases,case statement,akkolade
+table,table,tabel
+unknown,unknown,ukendt
