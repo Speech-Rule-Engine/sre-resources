@@ -5,17 +5,22 @@ let quadratic = '<math xmlns="http://www.w3.org/1998/Math/MathML" display="block
 let simple = '<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&#x1D63C;</mi></math>';
 
 
+const runTests = async function(locale, language) {
+  console.log(`LOCALE ${language}`);
+  await sre.setupEngine({locale: locale, domain: 'clearspeak'});
+  console.log(sre.toSpeech(quadratic));
+  console.log(sre.toSpeech(simple));
+  await sre.setupEngine({locale: locale, domain: 'mathspeak'});
+  console.log(sre.toSpeech(quadratic));
+  console.log(sre.toSpeech(simple));
+};
+
 const allTests = async function() {
-  for (let locale of ['gg'].concat(sre.variables.LOCALES)) {
+  for (let [locale, language] of sre.variables.LOCALES.entries()) {
     if (locale === 'nemeth') continue;
-    console.log(`LOCALE ${locale}`);
-    await sre.setupEngine({locale: locale, domain: 'clearspeak'});
-    console.log(sre.toSpeech(quadratic));
-    console.log(sre.toSpeech(simple));
-    await sre.setupEngine({locale: locale, domain: 'mathspeak'});
-    console.log(sre.toSpeech(quadratic));
-    console.log(sre.toSpeech(simple));
+    await runTests(locale, language);
   }
+  await runTests('gg', 'GiGi');
   console.log(`LOCALE nemeth`);
   await sre.setupEngine({locale: 'nemeth', domain: 'default', modality: 'braille'});
   console.log(sre.toSpeech(quadratic));

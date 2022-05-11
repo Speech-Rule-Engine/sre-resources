@@ -81,7 +81,7 @@ Test the various HTML versions:
 ``` bash
 browser_local.html
 ```
-Make sure you have built `sre_browser.js` and run it on localhost.
+Make sure you have built `sre.js` and run it on localhost.
 
 
 * Test: version from the test package installed as in the previous section.
@@ -215,7 +215,7 @@ git push origin v$SRE_VERSION
 
 # Overview of different ways to call SRE
 
-* Browser Version: `sre_browser.js`
+* Browser Version: `sre.js`
 * Node Version: `sre.js`. This is used by all node based applications going through the exported API:
     * CLI based in repository: Start by `bin/sre`
     * CLI based in npm package: Start by `bin/sre`

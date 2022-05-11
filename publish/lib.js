@@ -29,7 +29,7 @@ let sreTest = {
 
   runAllTests: async function() {
     await sreTest.runTests();
-    for (let locale of SRE.variables.LOCALES) {
+    for (let locale of SRE.variables.LOCALES.keys()) {
       if (locale === 'nemeth') continue;
       await sreTest.runTests({locale: locale, domain: 'mathspeak', style: 'default'});
       await sreTest.runTests({locale: locale, domain: 'clearspeak', style: 'default'});
