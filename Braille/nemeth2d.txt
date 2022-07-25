@@ -406,3 +406,6 @@ there exists element of xpath(query string + text()) do
 
 
 
+---------
+
+* Rules are in 14.12.1

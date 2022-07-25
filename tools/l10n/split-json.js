@@ -1239,7 +1239,7 @@ SplitJson.writeAssocList = async function(file, out, domain = SplitJson.REF_LANG
 };
 
 
-// csv directory, output directory for the message file, the locale iso 
+// csv directory, output directory for the message file, the locale iso, the locale name
 SplitJson.getMessagesJSON = async function(csv, out, iso, locale, src = SplitJson.REF_LANGUAGE) {
   let msg = {};
   let json = {kind: 'messages', locale: iso, messages: msg};
@@ -1286,7 +1286,8 @@ SplitJson.getAlphaJSON = async function(csv, out, iso, locale) {
 
 SplitJson.latin = [
   'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'I', 'j', 'k',
-  'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+  'w', 'x', 'y', 'z'];
 
 SplitJson.processLatin = async function(csv, locale) {
   let latin = await SplitJson.getAssocList(csv + 'Latin\ Alphabet.csv', 'Character', locale, 'Character');
