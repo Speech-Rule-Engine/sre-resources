@@ -1,0 +1,13 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mi>x</mi>
+    <mi>y</mi>
+  </mfrac>
+  <mo>+</mo>
+  <msup>
+    <mi>x</mi>
+    <mn>4</mn>
+  </msup>
+  <mo>+</mo>
+  <mn>1</mn>
+</math>
