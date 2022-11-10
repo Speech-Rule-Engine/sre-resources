@@ -1,0 +1,91 @@
+// 
+
+// \begin{array}{rcrcrcr}
+// 4x & -&3y & +& z & = &-10\\
+// 2x & +&y & +&3z &= &0\\
+// -x & +&2y & -&5z &= & 17
+// \end{array}
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="right center right center right center right" columnspacing="1em" rowspacing="4pt">
+    <mtr>
+      <mtd>
+        <mn>4</mn>
+        <mi>x</mi>
+      </mtd>
+      <mtd>
+        <mo>&#x2212;</mo>
+      </mtd>
+      <mtd>
+        <mn>3</mn>
+        <mi>y</mi>
+      </mtd>
+      <mtd>
+        <mo>+</mo>
+      </mtd>
+      <mtd>
+        <mi>z</mi>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mo>&#x2212;</mo>
+        <mn>10</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mn>2</mn>
+        <mi>x</mi>
+      </mtd>
+      <mtd>
+        <mo>+</mo>
+      </mtd>
+      <mtd>
+        <mi>y</mi>
+      </mtd>
+      <mtd>
+        <mo>+</mo>
+      </mtd>
+      <mtd>
+        <mn>3</mn>
+        <mi>z</mi>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mn>0</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mo>&#x2212;</mo>
+        <mi>x</mi>
+      </mtd>
+      <mtd>
+        <mo>+</mo>
+      </mtd>
+      <mtd>
+        <mn>2</mn>
+        <mi>y</mi>
+      </mtd>
+      <mtd>
+        <mo>&#x2212;</mo>
+      </mtd>
+      <mtd>
+        <mn>5</mn>
+        <mi>z</mi>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mn>17</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+// ⠼⠲⠭⠀⠤⠀⠼⠒⠽⠀⠬⠀⠵⠀⠀⠀⠨⠅⠀⠤⠼⠂⠴
+// ⠼⠆⠭⠀⠬⠀⠽⠀⠀⠀⠬⠀⠼⠒⠵⠀⠨⠅⠀⠼⠴⠀⠀
+// ⠤⠭⠀⠀⠬⠀⠼⠆⠽⠀⠤⠀⠼⠢⠵⠀⠨⠅⠀⠼⠂⠶⠀

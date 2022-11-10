@@ -1,0 +1,6 @@
+<math alt="A C under line">
+  <mover data-semantic-type="overscore" data-semantic-role="unknown" data-semantic-id="2" data-semantic-children="0,1" data-semantic-attributes="ext-speech:A C under line">
+    <mi data-semantic-type="identifier" data-semantic-role="unknown" data-semantic-font="normal" data-semantic-id="0" data-semantic-parent="2">AC</mi>
+    <mo stretchy="true" data-semantic-type="relation" data-semantic-role="overaccent" data-semantic-annotation="accent:arrow" data-semantic-id="1">↔</mo>
+  </mover>
+</math>

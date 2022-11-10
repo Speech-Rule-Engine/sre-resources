@@ -1,0 +1,53 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="right left" columnspacing="0em 1em" rowspacing=".2em">
+    <mtr>
+      <mtd>
+        <mpadded height="0" depth="0" voffset="height">
+          <mpadded height="0" depth="0" voffset="-1height">
+            <mi>x</mi>
+            <mo>{</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em"></mspace>
+            </mstyle>
+            <mphantom>
+              <mpadded width="0">
+                <mtable columnalign="left" columnspacing="1em" rowspacing=".2em">
+                  <mtr>
+                    <mtd>
+                      <mi>b</mi>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mi>b</mi>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mpadded>
+            </mphantom>
+          </mpadded>
+          <mphantom>
+            <mpadded width="0">
+              <mtable columnalign="left" columnspacing="1em" rowspacing=".2em" align="baseline 1">
+                <mtr>
+                  <mtd>
+                    <mi>b</mi>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </mpadded>
+          </mphantom>
+        </mpadded>
+      </mtd>
+      <mtd>
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

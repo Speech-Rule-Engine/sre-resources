@@ -1,0 +1,52 @@
+// x=\left(\begin{align*}j&=lkjkl\\ &=l\\kjkljlkjkl&=k\end{align*}\right.
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">(</mo>
+    <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+      <mtr>
+        <mtd>
+          <mi>j</mi>
+        </mtd>
+        <mtd>
+          <mi></mi>
+          <mo>=</mo>
+          <mi>l</mi>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd></mtd>
+        <mtd>
+          <mi></mi>
+          <mo>=</mo>
+          <mi>l</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+          <mi>j</mi>
+          <mi>l</mi>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+        </mtd>
+        <mtd>
+          <mi></mi>
+          <mo>=</mo>
+          <mi>k</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE" fence="true" stretchy="true" symmetric="true"></mo>
+  </mrow>
+</math>

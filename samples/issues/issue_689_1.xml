@@ -1,0 +1,57 @@
+\begin{array}{cc}
+a&b\\
+\begin{array}{cc}
+c_1 & c_2\\
+c_3 & c_4
+\end{array}
+& d
+\end{array}
+<math>
+  <mtable columnspacing="1em" rowspacing="4pt" columnalign="center center" frame="" framespacing=".5em .125em">
+    <mtr>
+      <mtd>
+        <mi>a</mi>
+      </mtd>
+      <mtd>
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtable columnspacing="1em" rowspacing="4pt" columnalign="center center" frame="" framespacing=".5em .125em">
+          <mtr>
+            <mtd>
+              <msub>
+                <mi>c</mi>
+                <mn>1</mn>
+              </msub>
+            </mtd>
+            <mtd>
+              <msub>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msub>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <msub>
+                <mi>c</mi>
+                <mn>3</mn>
+              </msub>
+            </mtd>
+            <mtd>
+              <msub>
+                <mi>c</mi>
+                <mn>4</mn>
+              </msub>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+      <mtd>
+        <mi>d</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

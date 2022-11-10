@@ -1,0 +1,83 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right right left" columnspacing="0em 0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mpadded height="0" depth="0" voffset="height">
+          <mpadded height="0" depth="0" voffset="-1height">
+            <mo>{</mo>
+            <mphantom>
+              <mpadded width="0">
+                <mtable displaystyle="true" columnalign="right" columnspacing="" rowspacing="3pt">
+                  <mtr>
+                    <mtd>
+                      <mi>a</mi>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mi>b</mi>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mpadded>
+            </mphantom>
+          </mpadded>
+          <mphantom>
+            <mpadded width="0">
+              <mtable displaystyle="true" columnalign="right" columnspacing="" rowspacing="3pt" align="baseline 1">
+                <mtr>
+                  <mtd>
+                    <mi>a</mi>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </mpadded>
+          </mphantom>
+        </mpadded>
+      </mtd>
+      <mtd>
+        <mi>a</mi>
+      </mtd>
+      <mtd>
+        <mpadded height="0" depth="0" voffset="height">
+          <mpadded height="0" depth="0" voffset="-1height">
+            <mo>}</mo>
+            <mphantom>
+              <mpadded width="0">
+                <mtable displaystyle="true" columnalign="right" columnspacing="" rowspacing="3pt">
+                  <mtr>
+                    <mtd>
+                      <mi>a</mi>
+                    </mtd>
+                  </mtr>
+                  <mtr>
+                    <mtd>
+                      <mi>b</mi>
+                    </mtd>
+                  </mtr>
+                </mtable>
+              </mpadded>
+            </mphantom>
+          </mpadded>
+          <mphantom>
+            <mpadded width="0">
+              <mtable displaystyle="true" columnalign="right" columnspacing="" rowspacing="3pt" align="baseline 1">
+                <mtr>
+                  <mtd>
+                    <mi>a</mi>
+                  </mtd>
+                </mtr>
+              </mtable>
+            </mpadded>
+          </mphantom>
+        </mpadded>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

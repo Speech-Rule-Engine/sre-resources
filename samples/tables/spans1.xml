@@ -1,0 +1,27 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="center center center" columnspacing="1em" xcolumnlines="solid" rowspacing="4pt">
+    <mtr>
+      <mtd colspan="2">
+        <mi>a</mi>
+      </mtd>
+      <mtd rowspan="2">
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mi>d</mi>
+        <mi>d</mi>
+        <mi>d</mi>
+      </mtd>
+      <mtd>
+        <mi>eeeeeee</mi>
+      </mtd>
+      <mtd>
+        <mi>f</mi>
+        <mi>f</mi>
+        <mi>f</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

@@ -1,0 +1,227 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <msup>
+       <mi>a</mi>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi class="MJX-variant" mathvariant="normal">′</mi></mrow>
+       </msup>
+     <mrow class="MJX-TeXAtom-REL">
+       <mrow class="MJX-TeXAtom-VCENTER">
+         <mglyph
+            src="Images/imgbc36ca76378f648d5360a7e94ac1fd32.svg"
+            width="8pt"
+            height="3pt">
+         </mglyph></mrow></mrow>
+     <munderover>
+       <mo>∑</mo>
+       <mrow class="MJX-TeXAtom-ORD"><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi mathvariant="normal">∞</mi></mrow>
+       </munderover>
+     <msub>
+       <mi>a</mi><mrow class="MJX-TeXAtom-ORD"><mi>j</mi></mrow></msub>
+     </mrow>
+   <annotation encoding="application/x-tex"
+      >a^{\prime }\mathrel
+      {\mathchoice{\vcenter{\img[width=8pt,height=3pt]{Images/imgbc36ca76378f648d5360a7e94ac1fd32.svg}}}{\vcenter{\img[width=8pt,height=3pt]{Images/img847c94f94e3604269ef1f666d7e9e1a5.svg}}}{\vcenter{\img[width=6pt,height=3pt]{Images/img0d69f157b0aaf28c0f5b0cd8bcd34bdf.svg}}}{\vcenter{\img[width=6pt,height=3pt]{Images/imgcd6ef9b49f495ec0cf0d9803181a7ab9.svg}}}}\sum
+      _{j=1}^{\infty }a_{j}</annotation>
+   </semantics>
+ </math>
+From https://www.ams.org/journals/jams/2002-15-01/S0894-0347-01-00380-0/
+( cf. https://www.ams.org/journals/jams/2002-15-01/S0894-0347-01-00380-0/viewer/#ltxid175)
+
+after Proof of Lemma 7.2.3 and "In other words, there exists a diagram" a custom arrow
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <mtable rowspacing="4pt" columnspacing="1em">
+       <mtr>
+         <mtd style="min-width: 5.222ex;">
+           <mrow>
+             <msub>
+               <mrow class="MJX-TeXAtom-ORD">
+                 <mover><mi>I</mi><mo>~</mo></mover></mrow>
+               <mn>2</mn></msub>
+             <msub>
+               <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+               <mrow class="MJX-TeXAtom-ORD">
+                 <msub><mi>T</mi><mn>2</mn></msub></mrow>
+               </msub>
+             </mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 2.444ex;">
+           <mrow>
+             <mo stretchy="false">↓</mo>
+             <mrow class="MJX-TeXAtom-VCENTER">
+               <mglyph
+                  src="Images/imgd6ce545226fb7eb38d93d060dcab270a.svg"
+                  width="5pt"
+                  height="12pt">
+               </mglyph></mrow></mrow></mtd></mtr>
+       <mtr>
+         <mtd style="min-width: 5.667ex;">
+           <mrow>
+             <msub>
+               <mrow class="MJX-TeXAtom-ORD">
+                 <mover><mi>E</mi><mo>~</mo></mover></mrow>
+               <mn>2</mn></msub>
+             <msub>
+               <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+               <mrow class="MJX-TeXAtom-ORD">
+                 <msub><mi>T</mi><mn>2</mn></msub></mrow>
+               </msub>
+             </mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 1.111ex;">
+           <mrow><mo stretchy="false">↓</mo></mrow></mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 3ex;">
+           <mrow>
+             <msub><mi>T</mi><mn>2</mn></msub>
+             <mo>;</mo></mrow>
+           </mtd>
+         </mtr>
+       </mtable>
+     </mrow>
+   <annotation encoding="application/x-tex"
+      >\begin{equation*} \begin{array}{c}\widetilde{I}_2|_{T_2}\\\downarrow
+      \vcenter{\img[width=5pt,height=12pt]{Images/imgd6ce545226fb7eb38d93d060dcab270a.svg}}\\\widetilde{E}_2|_{T_2}\\\downarrow
+      \\T_2; \end{array} \end{equation*}</annotation>
+   </semantics>
+ </math
+>
+From https://www.ams.org/journals/jams/2019-32-01/S0894-0347-2018-00902-6/home.html
+custom bent double arrows. Following "Here we note that the writhe decreases by
+one in"
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <mo>⤱→</mo>
+     <mglyph
+        src="asmoothing.svg"
+        width="10.52pt"
+        height="9.4399996pt">
+     </mglyph></mrow>
+   <annotation encoding="application/x-tex"
+      >⤱\to \img[width=10.52pt,height=9.4399996pt]{asmoothing.svg}</annotation>
+   </semantics>
+ </math
+>
+From the same: Eqn 7.9
+
+<math
+  xmlns="http://www.w3.org/1998/Math/MathML"
+  display="block"
+  style="width: 100%;">
+ <semantics style="width: 100%;">
+   <mrow style="width: 100%;">
+     <mtable side="left" displaystyle="true" width="100%">
+       <mtr>
+         <mtd id="mjx-eqn-7.9" style="padding: 0px; min-width: 4.667ex;">
+           <mpadded style="width: 0;" width="0px">
+             <mrow><mtext>(7.9)</mtext></mrow></mpadded>
+           </mtd>
+         <mtd style="padding: 0; width: 50%;"></mtd>
+         <mtd
+            style="padding-left: 0px; padding-right: 0px; min-width: 81.444ex;">
+           <mrow>
+             <mtable
+                columnalign="right left"
+                rowspacing="3pt"
+                columnspacing="0em"
+                side="left"
+                displaystyle="true">
+               <mtr>
+                 <mtd style="min-width: 6.333ex;">
+                   <mrow><mo>⋯</mo><mo stretchy="false">⟶</mo></mrow></mtd>
+                 <mtd style="min-width: 74ex;">
+                   <mrow>
+                     <mi>H</mi>
+                     <msup>
+                       <mi>F</mi>
+                       <mrow class="MJX-TeXAtom-ORD">
+                         <mi>k</mi><mo>+</mo><mi>n</mi><mo>+</mo>
+                         <mi>w</mi></mrow>
+                       </msup>
+                     <mo stretchy="false">(</mo><mo>⤱</mo>
+                     <mo stretchy="false">)</mo>
+                     <mspace width="-.1667em"></mspace>
+                     <mo stretchy="false">⟶</mo>
+                     <mspace width="-.1667em"></mspace><mi>H</mi>
+                     <msup>
+                       <mi>F</mi>
+                       <mrow class="MJX-TeXAtom-ORD">
+                         <mo stretchy="false">(</mo><mi>k</mi><mo>+</mo>
+                         <mn>1</mn><mo stretchy="false">)</mo><mo>+</mo>
+                         <mi>n</mi><mo>+</mo><mo stretchy="false">(</mo>
+                         <mi>w</mi><mo>−</mo><mn>1</mn>
+                         <mo stretchy="false">)</mo></mrow>
+                       </msup>
+                     <mo stretchy="false">(</mo>
+                     <mglyph
+                        src="asmoothing.svg"
+                        width="10.52pt"
+                        height="9.4399996pt">
+                     </mglyph>
+                     <mo stretchy="false">)</mo>
+                     <mspace width="-.1667em"></mspace>
+                     <mo stretchy="false">⟶</mo>
+                     <mspace width="-.1667em"></mspace><mi>H</mi>
+                     <msup>
+                       <mi>F</mi>
+                       <mrow class="MJX-TeXAtom-ORD">
+                         <mo stretchy="false">(</mo><mi>k</mi><mo>+</mo>
+                         <mn>2</mn><mi>v</mi><mo>+</mo><mn>2</mn>
+                         <mo stretchy="false">)</mo><mo>+</mo>
+                         <mo stretchy="false">(</mo><mi>n</mi><mo>+</mo>
+                         <mn>1</mn><mo stretchy="false">)</mo><mo>+</mo>
+                         <mo stretchy="false">(</mo><mi>w</mi><mo>−</mo>
+                         <mn>2</mn><mi>v</mi><mo>−</mo><mn>1</mn>
+                         <mo stretchy="false">)</mo></mrow>
+                       </msup>
+                     <mo stretchy="false">(</mo>
+                     <mglyph
+                        src="hsmoothing.svg"
+                        width="9.2533331pt"
+                        height="9.2399998pt">
+                     </mglyph>
+                     <mo stretchy="false">)</mo></mrow>
+                   </mtd>
+                 </mtr>
+               <mtr>
+                 <mtd style="min-width: 0ex;"><mrow></mrow></mtd>
+                 <mtd style="min-width: 31.778ex;">
+                   <mrow>
+                     <mi></mi><mo stretchy="false">⟶</mo><mi>H</mi>
+                     <msup>
+                       <mi>F</mi>
+                       <mrow class="MJX-TeXAtom-ORD">
+                         <mo stretchy="false">(</mo><mi>k</mi><mo>+</mo>
+                         <mn>1</mn><mo stretchy="false">)</mo><mo>+</mo>
+                         <mi>n</mi><mo>+</mo><mi>w</mi></mrow>
+                       </msup>
+                     <mo stretchy="false">(</mo><mo>⤱</mo>
+                     <mo stretchy="false">)</mo><mo stretchy="false">⟶</mo>
+                     <mo>⋯</mo><mo>.</mo></mrow>
+                   </mtd>
+                 </mtr>
+               </mtable>
+             <mrow id="texmlid89"></mrow></mrow></mtd>
+         <mtd style="padding: 0; width: 50%;"></mtd></mtr></mtable></mrow>
+   <annotation encoding="application/x-tex">\begin{equation} \begin{split} \cdots \longrightarrow &amp;HF^{k+n+w}(⤱)
+      \!\longrightarrow \!
+      HF^{(k+1)+n+(w-1)}(\img[width=10.52pt,height=9.4399996pt]{asmoothing.svg})
+      \!\longrightarrow \!
+      HF^{(k+2v+2)+(n+1)+(w-2v-1)}(\img[width=9.2533331pt,height=9.2399998pt]{hsmoothing.svg})\\
+      &amp;\longrightarrow HF^{(k+1)+n+w}(⤱) \longrightarrow \cdots .
+      \end{split}\tag{7.9}\cssId{texmlid89}{} \end{equation}</annotation>
+   </semantics>
+ </math>

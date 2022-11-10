@@ -1,0 +1,36 @@
+<math>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mn>100</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mn>200</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mn>300</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mn>400</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

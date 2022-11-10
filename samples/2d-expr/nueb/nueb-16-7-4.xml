@@ -1,0 +1,49 @@
+// x=\left(\begin{array}{rcl}j&=lkjkl\\ &=l\\kjkljlkjkl&=k\end{array}\right)
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">(</mo>
+    <mtable columnalign="right center left" columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mi>j</mi>
+        </mtd>
+        <mtd>
+          <mo>=</mo>
+          <mi>l</mi>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd></mtd>
+        <mtd>
+          <mo>=</mo>
+          <mi>l</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+          <mi>j</mi>
+          <mi>l</mi>
+          <mi>k</mi>
+          <mi>j</mi>
+          <mi>k</mi>
+          <mi>l</mi>
+        </mtd>
+        <mtd>
+          <mo>=</mo>
+          <mi>k</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="OPEN">}</mo>
+  </mrow>
+</math>

@@ -1,0 +1,9 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced open="&lt;" close="&gt;">
+    <mi>a</mi>
+    <mo>|</mo>
+    <mi>a</mi>
+    <mo>|</mo>
+    <mi>a</mi>
+  </mfenced>
+</math>

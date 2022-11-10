@@ -1,0 +1,18 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mfrac>
+      <mn>1</mn>
+      <mfrac>
+        <mi>r</mi>
+        <mi>x</mi>
+      </mfrac>
+    </mfrac>
+    <mfrac>
+      <mn>2</mn>
+      <mfrac>
+        <mi>y</mi>
+        <mi>z</mi>
+      </mfrac>
+    </mfrac>
+  </mfrac>
+</math>

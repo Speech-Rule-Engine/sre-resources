@@ -18,8 +18,6 @@ let sreTest = {
 
 
   runTests: function(features = {}) {
-    console.log(SRE.variables.LOCALES);
-    console.log(features.locale);
     let promise = SRE.setupEngine(features);
     PROM = promise;
     return promise.then(() => {return sreTest.test('test1');})
@@ -35,6 +33,7 @@ let sreTest = {
       await sreTest.runTests({locale: locale, domain: 'clearspeak', style: 'default'});
     }
     await sreTest.runTests({locale: 'nemeth', domain: 'default', modality: 'braille'});
+    await sreTest.runTests({locale: 'euro', domain: 'default', modality: 'braille'});
   }
   
 };

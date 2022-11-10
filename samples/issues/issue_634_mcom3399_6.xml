@@ -1,0 +1,532 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable columnalign="right left left" columnspacing="0em 1em" rowspacing=".2em">
+    <mlabeledtr>
+      <mtd id="mjx-eqn:1.1a">
+        <mtext>(1.1a)</mtext>
+      </mtd>
+      <mtd>
+        <mpadded height="0" depth="0" voffset="height">
+          <mpadded height="0" depth="0" voffset="-1height">
+            <mstyle scriptlevel="0">
+              <mspace width="2em"></mspace>
+            </mstyle>
+            <mo>{</mo>
+            <mstyle scriptlevel="0">
+              <mspace width="0.167em"></mspace>
+            </mstyle>
+            <mphantom>
+              <mpadded width="0">
+                <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em">
+                  <mlabeledtr>
+                    <mtd>
+                      <mtext>(1.1a)</mtext>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mrow></mrow>
+                        <mi>&#x3F5;</mi>
+                        <msub>
+                          <mi>&#x2202;</mi>
+                          <mi>t</mi>
+                        </msub>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>+</mo>
+                        <mi>&#x3BC;</mi>
+                        <msub>
+                          <mi>&#x2202;</mi>
+                          <mi>x</mi>
+                        </msub>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                      </mstyle>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mstyle displaystyle="false" scriptlevel="0"></mstyle>
+                      </mstyle>
+                    </mtd>
+                  </mlabeledtr>
+                  <mtr>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mstyle scriptlevel="0">
+                          <mspace width="2em"></mspace>
+                        </mstyle>
+                        <mo>+</mo>
+                        <mfrac>
+                          <mn>1</mn>
+                          <mi>&#x3F5;</mi>
+                        </mfrac>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mfrac>
+                          <mn>1</mn>
+                          <mi>&#x3F5;</mi>
+                        </mfrac>
+                        <mrow data-mjx-texclass="ORD">
+                          <mover>
+                            <mi>f</mi>
+                            <mo stretchy="false">&#xAF;</mo>
+                          </mover>
+                        </mrow>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>,</mo>
+                      </mstyle>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mstyle displaystyle="false" scriptlevel="0">
+                          <mrow data-mjx-texclass="ORD">
+                            <mo stretchy="false">(</mo>
+                            <mi>x</mi>
+                            <mo>,</mo>
+                            <mi>&#x3BC;</mi>
+                            <mo>,</mo>
+                            <mi>t</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>&#x2208;</mo>
+                            <mo stretchy="false">[</mo>
+                            <mo>&#x2212;</mo>
+                            <mi>&#x3C0;</mi>
+                            <mo>,</mo>
+                            <mi>&#x3C0;</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>&#xD7;</mo>
+                            <mo stretchy="false">[</mo>
+                            <mo>&#x2212;</mo>
+                            <mn>1</mn>
+                            <mo>,</mo>
+                            <mn>1</mn>
+                            <mo stretchy="false">]</mo>
+                            <mo>&#xD7;</mo>
+                            <mo stretchy="false">(</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mi mathvariant="normal">&#x221E;</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>,</mo>
+                          </mrow>
+                        </mstyle>
+                      </mstyle>
+                    </mtd>
+                  </mtr>
+                  <mlabeledtr>
+                    <mtd>
+                      <mtext>(1.1b)</mtext>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mrow></mrow>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>&#x3C0;</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mo>&#x2212;</mo>
+                        <mi>&#x3C0;</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mi>t</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>,</mo>
+                      </mstyle>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mstyle displaystyle="false" scriptlevel="0">
+                          <mrow data-mjx-texclass="ORD">
+                            <mo stretchy="false">(</mo>
+                            <mi>&#x3BC;</mi>
+                            <mo>,</mo>
+                            <mi>t</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>&#x2208;</mo>
+                            <mo stretchy="false">[</mo>
+                            <mo>&#x2212;</mo>
+                            <mn>1</mn>
+                            <mo>,</mo>
+                            <mn>1</mn>
+                            <mo stretchy="false">]</mo>
+                            <mo>&#xD7;</mo>
+                            <mo stretchy="false">(</mo>
+                            <mn>0</mn>
+                            <mo>,</mo>
+                            <mi mathvariant="normal">&#x221E;</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>,</mo>
+                          </mrow>
+                          <mtext>&#xA0;</mtext>
+                        </mstyle>
+                      </mstyle>
+                    </mtd>
+                  </mlabeledtr>
+                  <mlabeledtr>
+                    <mtd>
+                      <mtext>(1.1c)</mtext>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mrow></mrow>
+                        <mi>f</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo>,</mo>
+                        <mn>0</mn>
+                        <mo stretchy="false">)</mo>
+                        <mo>=</mo>
+                        <mi>g</mi>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo>,</mo>
+                        <mi>&#x3BC;</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>,</mo>
+                      </mstyle>
+                    </mtd>
+                    <mtd>
+                      <mstyle indentshift="2em">
+                        <mstyle displaystyle="false" scriptlevel="0">
+                          <mrow data-mjx-texclass="ORD">
+                            <mo stretchy="false">(</mo>
+                            <mi>x</mi>
+                            <mo>,</mo>
+                            <mi>&#x3BC;</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>&#x2208;</mo>
+                            <mo stretchy="false">[</mo>
+                            <mo>&#x2212;</mo>
+                            <mi>&#x3C0;</mi>
+                            <mo>,</mo>
+                            <mi>&#x3C0;</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>&#xD7;</mo>
+                            <mo stretchy="false">[</mo>
+                            <mo>&#x2212;</mo>
+                            <mn>1</mn>
+                            <mo>,</mo>
+                            <mn>1</mn>
+                            <mo stretchy="false">]</mo>
+                            <mo>,</mo>
+                          </mrow>
+                          <mtext>&#xA0;</mtext>
+                        </mstyle>
+                      </mstyle>
+                    </mtd>
+                  </mlabeledtr>
+                </mtable>
+              </mpadded>
+            </mphantom>
+          </mpadded>
+          <mphantom>
+            <mpadded width="0">
+              <mtable columnalign="left left" columnspacing="1em" rowspacing=".2em" align="baseline 1">
+                <mlabeledtr>
+                  <mtd>
+                    <mtext>(1.1a)</mtext>
+                  </mtd>
+                  <mtd>
+                    <mstyle indentshift="2em">
+                      <mrow></mrow>
+                      <mi>&#x3F5;</mi>
+                      <msub>
+                        <mi>&#x2202;</mi>
+                        <mi>t</mi>
+                      </msub>
+                      <mi>f</mi>
+                      <mo stretchy="false">(</mo>
+                      <mi>x</mi>
+                      <mo>,</mo>
+                      <mi>&#x3BC;</mi>
+                      <mo>,</mo>
+                      <mi>t</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>+</mo>
+                      <mi>&#x3BC;</mi>
+                      <msub>
+                        <mi>&#x2202;</mi>
+                        <mi>x</mi>
+                      </msub>
+                      <mi>f</mi>
+                      <mo stretchy="false">(</mo>
+                      <mi>x</mi>
+                      <mo>,</mo>
+                      <mi>&#x3BC;</mi>
+                      <mo>,</mo>
+                      <mi>t</mi>
+                      <mo stretchy="false">)</mo>
+                    </mstyle>
+                  </mtd>
+                  <mtd>
+                    <mstyle indentshift="2em">
+                      <mstyle displaystyle="false" scriptlevel="0"></mstyle>
+                    </mstyle>
+                  </mtd>
+                </mlabeledtr>
+              </mtable>
+            </mpadded>
+          </mphantom>
+        </mpadded>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mrow id="eqn:transport_simple_1"></mrow>
+          <mi>&#x3F5;</mi>
+          <msub>
+            <mi>&#x2202;</mi>
+            <mi>t</mi>
+          </msub>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+          <mo>+</mo>
+          <mi>&#x3BC;</mi>
+          <msub>
+            <mi>&#x2202;</mi>
+            <mi>x</mi>
+          </msub>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+        </mstyle>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mstyle displaystyle="false" scriptlevel="0"></mstyle>
+        </mstyle>
+      </mtd>
+    </mlabeledtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mstyle scriptlevel="0">
+            <mspace width="2em"></mspace>
+          </mstyle>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>&#x3F5;</mi>
+          </mfrac>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+          <mo>=</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>&#x3F5;</mi>
+          </mfrac>
+          <mrow data-mjx-texclass="ORD">
+            <mover>
+              <mi>f</mi>
+              <mo stretchy="false">&#xAF;</mo>
+            </mover>
+          </mrow>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+          <mo>,</mo>
+        </mstyle>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mrow data-mjx-texclass="ORD">
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo>,</mo>
+              <mi>&#x3BC;</mi>
+              <mo>,</mo>
+              <mi>t</mi>
+              <mo stretchy="false">)</mo>
+              <mo>&#x2208;</mo>
+              <mo stretchy="false">[</mo>
+              <mo>&#x2212;</mo>
+              <mi>&#x3C0;</mi>
+              <mo>,</mo>
+              <mi>&#x3C0;</mi>
+              <mo stretchy="false">)</mo>
+              <mo>&#xD7;</mo>
+              <mo stretchy="false">[</mo>
+              <mo>&#x2212;</mo>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mn>1</mn>
+              <mo stretchy="false">]</mo>
+              <mo>&#xD7;</mo>
+              <mo stretchy="false">(</mo>
+              <mn>0</mn>
+              <mo>,</mo>
+              <mi mathvariant="normal">&#x221E;</mi>
+              <mo stretchy="false">)</mo>
+              <mo>,</mo>
+            </mrow>
+          </mstyle>
+        </mstyle>
+      </mtd>
+    </mtr>
+    <mlabeledtr>
+      <mtd id="mjx-eqn:1.1b">
+        <mtext>(1.1b)</mtext>
+      </mtd>
+      <mtd></mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mrow id="eqn:transport_simple_1_bc"></mrow>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mi>&#x3C0;</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+          <mo>=</mo>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mo>&#x2212;</mo>
+          <mi>&#x3C0;</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mi>t</mi>
+          <mo stretchy="false">)</mo>
+          <mo>,</mo>
+        </mstyle>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mrow data-mjx-texclass="ORD">
+              <mo stretchy="false">(</mo>
+              <mi>&#x3BC;</mi>
+              <mo>,</mo>
+              <mi>t</mi>
+              <mo stretchy="false">)</mo>
+              <mo>&#x2208;</mo>
+              <mo stretchy="false">[</mo>
+              <mo>&#x2212;</mo>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mn>1</mn>
+              <mo stretchy="false">]</mo>
+              <mo>&#xD7;</mo>
+              <mo stretchy="false">(</mo>
+              <mn>0</mn>
+              <mo>,</mo>
+              <mi mathvariant="normal">&#x221E;</mi>
+              <mo stretchy="false">)</mo>
+              <mo>,</mo>
+            </mrow>
+            <mtext>&#xA0;</mtext>
+          </mstyle>
+        </mstyle>
+      </mtd>
+    </mlabeledtr>
+    <mlabeledtr>
+      <mtd id="mjx-eqn:1.1c">
+        <mtext>(1.1c)</mtext>
+      </mtd>
+      <mtd></mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mrow id="eqn:transport_simple_1_ic"></mrow>
+          <mi>f</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo>,</mo>
+          <mn>0</mn>
+          <mo stretchy="false">)</mo>
+          <mo>=</mo>
+          <mi>g</mi>
+          <mo stretchy="false">(</mo>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mi>&#x3BC;</mi>
+          <mo stretchy="false">)</mo>
+          <mo>,</mo>
+        </mstyle>
+      </mtd>
+      <mtd>
+        <mstyle indentshift="2em">
+          <mstyle displaystyle="false" scriptlevel="0">
+            <mrow data-mjx-texclass="ORD">
+              <mo stretchy="false">(</mo>
+              <mi>x</mi>
+              <mo>,</mo>
+              <mi>&#x3BC;</mi>
+              <mo stretchy="false">)</mo>
+              <mo>&#x2208;</mo>
+              <mo stretchy="false">[</mo>
+              <mo>&#x2212;</mo>
+              <mi>&#x3C0;</mi>
+              <mo>,</mo>
+              <mi>&#x3C0;</mi>
+              <mo stretchy="false">)</mo>
+              <mo>&#xD7;</mo>
+              <mo stretchy="false">[</mo>
+              <mo>&#x2212;</mo>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mn>1</mn>
+              <mo stretchy="false">]</mo>
+              <mo>,</mo>
+            </mrow>
+            <mtext>&#xA0;</mtext>
+          </mstyle>
+        </mstyle>
+      </mtd>
+    </mlabeledtr>
+  </mtable>
+</math>

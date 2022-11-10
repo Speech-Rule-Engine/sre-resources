@@ -1,0 +1,85 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt" minlabelspacing=".8em">
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi mathvariant="bold">e</mi>
+            </mrow>
+          </mrow>
+          <mn>1</mn>
+        </msub>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>100</mn>
+        <mo>&#x22EF;</mo>
+        <mn>00</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mtext>t</mtext>
+        </msup>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi mathvariant="bold">e</mi>
+            </mrow>
+          </mrow>
+          <mn>2</mn>
+        </msub>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>010</mn>
+        <mo>&#x22EF;</mo>
+        <mn>00</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mtext>t</mtext>
+        </msup>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd></mtd>
+      <mtd>
+        <mi></mi>
+        <mrow data-mjx-texclass="ORD">
+          <mo>&#x22EE;</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <msub>
+          <mrow data-mjx-texclass="ORD">
+            <mrow data-mjx-texclass="ORD">
+              <mi mathvariant="bold">e</mi>
+            </mrow>
+          </mrow>
+          <mi>n</mi>
+        </msub>
+      </mtd>
+      <mtd>
+        <mi></mi>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>000</mn>
+        <mo>&#x22EF;</mo>
+        <mn>01</mn>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mtext>t</mtext>
+        </msup>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

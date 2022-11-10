@@ -1,0 +1,65 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mtable columnalign="center center center" columnspacing="1em" rowspacing="4pt" columnlines="solid none" rowlines="solid none">
+      <mtr>
+        <mtd></mtd>
+        <mtd>
+          <mi>N</mi>
+        </mtd>
+        <mtd>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em"></mspace>
+          </mstyle>
+          <mn>2</mn>
+          <mo stretchy="false">)</mo>
+          <mi>N</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>N</mi>
+        </mtd>
+        <mtd>
+          <mi>N</mi>
+        </mtd>
+        <mtd>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em"></mspace>
+          </mstyle>
+          <mn>2</mn>
+          <mo stretchy="false">)</mo>
+          <mi>N</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em"></mspace>
+          </mstyle>
+          <mn>2</mn>
+          <mo stretchy="false">)</mo>
+          <mi>N</mi>
+        </mtd>
+        <mtd>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mstyle scriptlevel="0">
+            <mspace width="0.167em"></mspace>
+          </mstyle>
+          <mn>2</mn>
+          <mo stretchy="false">)</mo>
+          <mi>N</mi>
+        </mtd>
+        <mtd>
+          <mi>N</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+  </math>
+</math>

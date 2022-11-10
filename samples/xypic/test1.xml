@@ -1,0 +1,97 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <xypic>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD"></mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mi>K</mi>
+        </mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <msub>
+        <mi>&#x3BA;</mi>
+        <mn>2</mn>
+      </msub>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <msub>
+        <mi>&#x3BA;</mi>
+        <mn>1</mn>
+      </msub>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mo>&#x22C5;</mo>
+        </mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mstyle mathcolor="red">
+        <mo>!</mo>
+        <mtext>&#xA0;</mtext>
+        <mo stretchy="false">(</mo>
+        <mi>u</mi>
+        <mo>,</mo>
+        <mi>v</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mi>u</mi>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mi>v</mi>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mi>A</mi>
+        </mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mi>f</mi>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mi>g</mi>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mi>B</mi>
+        </mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="1">
+      <mstyle mathcolor="brown">
+        <mo>!</mo>
+        <mtext>&#xA0;</mtext>
+        <mi>h</mi>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD"></mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD"></mrow>
+      </mstyle>
+    </mstyle>
+    <mstyle displaystyle="false" scriptlevel="0">
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mrow data-mjx-texclass="ORD">
+          <mo>&#x22C5;</mo>
+        </mrow>
+      </mstyle>
+    </mstyle>
+  </xypic>
+  <mo>,</mo>
+</math>

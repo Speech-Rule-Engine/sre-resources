@@ -1,0 +1,12 @@
+<math>
+  <mglyph alt="dice 5" src='data:image/svg+xml,
+    <svg xmlns="http://www.w3.org/2000/svg" height="42px" width="42px">
+      <rect stroke="black" fill="none" rx="5px" width="40px" height="40px"></rect>
+      <circle stroke="black" fill="black" cy="30px" cx="30px" r="5px"></circle>
+      <circle stroke="black" fill="black" cy="30px" cx="10px" r="5px"></circle>
+      <circle stroke="black" fill="black" cy="20px" cx="20px" r="5px"></circle>
+      <circle stroke="black" fill="black" cy="10px" cx="30px" r="5px"></circle>
+      <circle stroke="black" fill="black" cy="10px" cx="10px" r="5px"></circle>
+      </svg>'>
+    </mglyph>
+</math>

@@ -1,0 +1,64 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <msub>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi class="MJX-tex-caligraphic" mathvariant="script">O</mi></mrow>
+       <mi>X</mi></msub>
+     <mo stretchy="false">→</mo><mi>Hom</mi><mo>⁡</mo>
+     <mo stretchy="false">(</mo>
+     <msub>
+       <mi>C</mi>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi>M</mi><mo>,</mo><msub><mi>N</mi><mn>1</mn></msub>
+         <mrow class="MJX-TeXAtom-ORD">
+           <mrow class="MJX-TeXAtom-ORD">
+             <mrow class="MJX-TeXAtom-VCENTER">
+               <mglyph
+                  src="Images/imgf583f552c30fd83321393d3a515adc6a.svg"
+                  width="5pt"
+                  height="5pt">
+               </mglyph></mrow></mrow></mrow>
+         <msub><mi>N</mi><mn>2</mn></msub></mrow>
+       </msub>
+     <mo>,</mo>
+     <msubsup>
+       <mi>C</mi>
+       <mrow class="MJX-TeXAtom-ORD">
+         <msub><mi>N</mi><mn>1</mn></msub>
+         <mrow class="MJX-TeXAtom-ORD">
+           <mrow class="MJX-TeXAtom-ORD">
+             <mrow class="MJX-TeXAtom-VCENTER">
+               <mglyph
+                  src="Images/imgf583f552c30fd83321393d3a515adc6a.svg"
+                  width="5pt"
+                  height="5pt">
+               </mglyph></mrow></mrow></mrow>
+         <msub><mi>N</mi><mn>2</mn></msub>
+         <mo>,</mo><mi>M</mi></mrow>
+       <mo>′</mo></msubsup>
+     <mo stretchy="false">)</mo>
+     <msub>
+       <mo>⊗</mo>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mrow class="MJX-TeXAtom-ORD">
+           <mi mathvariant="double-struck">C</mi></mrow>
+         <mo stretchy="false">[</mo><mi>t</mi>
+         <mo stretchy="false">]</mo></mrow>
+       </msub>
+     <mrow class="MJX-TeXAtom-ORD">
+       <mi mathvariant="double-struck">C</mi></mrow>
+     <mo stretchy="false">[</mo>
+     <msup>
+       <mi>t</mi>
+       <mrow class="MJX-TeXAtom-ORD"><mo>±</mo><mn>1</mn></mrow></msup>
+     <mo stretchy="false">]</mo></mrow>
+   <annotation encoding="application/x-tex">\begin{equation*} \mathcal{O}_X \to \operatorname {Hom}(C_{M,N_1
+      {\mathbin
+      {\vcenter{\img[width=5pt,height=5pt]{Images/imgf583f552c30fd83321393d3a515adc6a.svg}}}}N_2},
+      C'_{N_1 {\mathbin
+      {\vcenter{\img[width=5pt,height=5pt]{Images/imgf583f552c30fd83321393d3a515adc6a.svg}}}}N_2,
+      M}) \otimes _{\mathbb{C}[t]} \mathbb{C}[t^{\pm 1}]
+      \end{equation*}</annotation>
+   </semantics>
+ </math>

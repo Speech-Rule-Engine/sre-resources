@@ -1,0 +1,51 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">(</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mrow data-mjx-texclass="INNER">
+            <mo data-mjx-texclass="OPEN">(</mo>
+            <mtable columnspacing="1em" rowspacing="4pt">
+              <mtr>
+                <mtd>
+                  <mi>a</mi>
+                </mtd>
+                <mtd>
+                  <mi>b</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>c</mi>
+                </mtd>
+                <mtd>
+                  <mi>d</mi>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo data-mjx-texclass="CLOSE">)</mo>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mi>r</mi>
+        </mtd>
+        <mtd>
+          <mi>s</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+        <mtd>
+          <mn>2</mn>
+        </mtd>
+        <mtd>
+          <mn>3</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE">)</mo>
+  </mrow>
+</math>

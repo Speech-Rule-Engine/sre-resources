@@ -1,0 +1,13 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" latex="x^2+1+\frac{a}{b}" display="block">
+  <msup latex="x^2">
+    <mi latex="x">x</mi>
+    <mn latex="2">2</mn>
+  </msup>
+  <mo latex="+">+</mo>
+  <mn latex="1">1</mn>
+  <mo latex="+">+</mo>
+  <mfrac latex="\frac{a}{b}">
+    <mi latex="a">a</mi>
+    <mi latex="b">b</mi>
+  </mfrac>
+</math>

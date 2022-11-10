@@ -1,0 +1,326 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right right left right" columnspacing="0em 0em 0em" rowspacing="3pt">
+    <mlabeledtr>
+      <mtd>
+        <mtext>(3.1)</mtext>
+      </mtd>
+      <mtd>
+        <mpadded height="0" depth="0" voffset="height">
+          <mpadded height="0" depth="0" voffset="-1height">
+            <msubsup>
+              <mrow data-mjx-texclass="ORD">
+                <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+              </mrow>
+              <mi>k</mi>
+              <mn>0</mn>
+            </msubsup>
+            <mo stretchy="false">(</mo>
+            <mi>f</mi>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">(</mo>
+            <mi>t</mi>
+            <mo stretchy="false">)</mo>
+            <mo>&#x2264;</mo>
+            <mo>{</mo>
+            <mphantom>
+              <mpadded width="0">
+                <mtable displaystyle="true" columnalign="right left right" columnspacing="0em 0em" rowspacing="3pt">
+                  <mlabeledtr>
+                    <mtd>
+                      <mtext>(3.1)</mtext>
+                    </mtd>
+                    <mtd>
+                    </mtd>
+                    <mtd>
+                      <mn>6</mn>
+                      <msup>
+                        <mi>e</mi>
+                        <mrow data-mjx-texclass="ORD">
+                          <mo>&#x2212;</mo>
+                          <mfrac>
+                            <mrow>
+                              <mn>2</mn>
+                              <msub>
+                                <mi>&#x3BB;</mi>
+                                <mn>1</mn>
+                              </msub>
+                              <mi>t</mi>
+                            </mrow>
+                            <msup>
+                              <mi>&#x3F5;</mi>
+                              <mn>2</mn>
+                            </msup>
+                          </mfrac>
+                        </mrow>
+                      </msup>
+                      <msubsup>
+                        <mrow data-mjx-texclass="ORD">
+                          <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+                        </mrow>
+                        <mi>k</mi>
+                        <mn>0</mn>
+                      </msubsup>
+                      <mo stretchy="false">(</mo>
+                      <mi>g</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>,</mo>
+                    </mtd>
+                    <mtd>
+                      <mstyle scriptlevel="0">
+                        <mspace width="1em">
+                        </mspace>
+                      </mstyle>
+                      <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                      <mi>k</mi>
+                      <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                      <mi>&#x3F5;</mi>
+                      <mo>&gt;</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                      </mfrac>
+                      <mo>,</mo>
+                      <mrow>
+                      </mrow>
+                    </mtd>
+                  </mlabeledtr>
+                  <mlabeledtr>
+                    <mtd>
+                      <mtext>(3.2)</mtext>
+                    </mtd>
+                    <mtd>
+                    </mtd>
+                    <mtd>
+                      <mn>6</mn>
+                      <msup>
+                        <mi>e</mi>
+                        <mrow data-mjx-texclass="ORD">
+                          <mo>&#x2212;</mo>
+                          <mn>2</mn>
+                          <msub>
+                            <mi>&#x3BB;</mi>
+                            <mn>2</mn>
+                          </msub>
+                          <msup>
+                            <mi>k</mi>
+                            <mn>2</mn>
+                          </msup>
+                          <mi>t</mi>
+                        </mrow>
+                      </msup>
+                      <msubsup>
+                        <mrow data-mjx-texclass="ORD">
+                          <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+                        </mrow>
+                        <mi>k</mi>
+                        <mn>0</mn>
+                      </msubsup>
+                      <mo stretchy="false">(</mo>
+                      <mi>g</mi>
+                      <mo stretchy="false">)</mo>
+                      <mo>,</mo>
+                    </mtd>
+                    <mtd>
+                      <mstyle scriptlevel="0">
+                        <mspace width="1em">
+                        </mspace>
+                      </mstyle>
+                      <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                      <mi>k</mi>
+                      <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                      <mi>&#x3F5;</mi>
+                      <mo>&#x2264;</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mn>2</mn>
+                      </mfrac>
+                      <mo>,</mo>
+                      <mrow>
+                      </mrow>
+                    </mtd>
+                  </mlabeledtr>
+                </mtable>
+              </mpadded>
+            </mphantom>
+          </mpadded>
+          <mphantom>
+            <mpadded width="0">
+              <mtable displaystyle="true" columnalign="right left right" columnspacing="0em 0em" rowspacing="3pt" align="baseline 1">
+                <mlabeledtr>
+                  <mtd>
+                    <mtext>(3.1)</mtext>
+                  </mtd>
+                  <mtd>
+                  </mtd>
+                  <mtd>
+                    <mn>6</mn>
+                    <msup>
+                      <mi>e</mi>
+                      <mrow data-mjx-texclass="ORD">
+                        <mo>&#x2212;</mo>
+                        <mfrac>
+                          <mrow>
+                            <mn>2</mn>
+                            <msub>
+                              <mi>&#x3BB;</mi>
+                              <mn>1</mn>
+                            </msub>
+                            <mi>t</mi>
+                          </mrow>
+                          <msup>
+                            <mi>&#x3F5;</mi>
+                            <mn>2</mn>
+                          </msup>
+                        </mfrac>
+                      </mrow>
+                    </msup>
+                    <msubsup>
+                      <mrow data-mjx-texclass="ORD">
+                        <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+                      </mrow>
+                      <mi>k</mi>
+                      <mn>0</mn>
+                    </msubsup>
+                    <mo stretchy="false">(</mo>
+                    <mi>g</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>,</mo>
+                  </mtd>
+                  <mtd>
+                    <mstyle scriptlevel="0">
+                      <mspace width="1em">
+                      </mspace>
+                    </mstyle>
+                    <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                    <mi>k</mi>
+                    <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+                    <mi>&#x3F5;</mi>
+                    <mo>&gt;</mo>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mn>2</mn>
+                    </mfrac>
+                    <mo>,</mo>
+                    <mrow>
+                    </mrow>
+                  </mtd>
+                </mlabeledtr>
+              </mtable>
+            </mpadded>
+          </mphantom>
+        </mpadded>
+      </mtd>
+      <mtd>
+      </mtd>
+      <mtd>
+        <mn>6</mn>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <mrow>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x3BB;</mi>
+                  <mn>1</mn>
+                </msub>
+                <mi>t</mi>
+              </mrow>
+              <msup>
+                <mi>&#x3F5;</mi>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+          </mrow>
+        </msup>
+        <msubsup>
+          <mrow data-mjx-texclass="ORD">
+            <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+          </mrow>
+          <mi>k</mi>
+          <mn>0</mn>
+        </msubsup>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+      <mtd>
+        <mstyle scriptlevel="0">
+          <mspace width="1em">
+          </mspace>
+        </mstyle>
+        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+        <mi>k</mi>
+        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+        <mi>&#x3F5;</mi>
+        <mo>&gt;</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mn>2</mn>
+        </mfrac>
+        <mo>,</mo>
+        <mrow>
+        </mrow>
+      </mtd>
+    </mlabeledtr>
+    <mlabeledtr>
+      <mtd>
+        <mtext>(3.2)</mtext>
+      </mtd>
+      <mtd>
+      </mtd>
+      <mtd>
+      </mtd>
+      <mtd>
+        <mn>6</mn>
+        <msup>
+          <mi>e</mi>
+          <mrow data-mjx-texclass="ORD">
+            <mo>&#x2212;</mo>
+            <mn>2</mn>
+            <msub>
+              <mi>&#x3BB;</mi>
+              <mn>2</mn>
+            </msub>
+            <msup>
+              <mi>k</mi>
+              <mn>2</mn>
+            </msup>
+            <mi>t</mi>
+          </mrow>
+        </msup>
+        <msubsup>
+          <mrow data-mjx-texclass="ORD">
+            <mi data-mjx-variant="-tex-calligraphic" mathvariant="script">H</mi>
+          </mrow>
+          <mi>k</mi>
+          <mn>0</mn>
+        </msubsup>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mtd>
+      <mtd>
+        <mstyle scriptlevel="0">
+          <mspace width="1em">
+          </mspace>
+        </mstyle>
+        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+        <mi>k</mi>
+        <mo data-mjx-texclass="ORD" stretchy="false">|</mo>
+        <mi>&#x3F5;</mi>
+        <mo>&#x2264;</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mn>2</mn>
+        </mfrac>
+        <mo>,</mo>
+        <mrow>
+        </mrow>
+      </mtd>
+    </mlabeledtr>
+  </mtable>
+</math>

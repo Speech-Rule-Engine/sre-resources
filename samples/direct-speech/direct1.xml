@@ -1,0 +1,16 @@
+<math>
+  <mover aria-label="derivative of x ">
+    <mi>x</mi>
+    <mo>&#x02D9;<!-- ˙ --></mo>
+  </mover>
+  <mi></mi>
+  <mo aria-label="is equal to ">=</mo>
+  <mi aria-label="sigma ">&#x03C3;<!-- σ --></mi>
+  <mrow>
+    <mo aria-label="left parenthesis " stretchy="false">(</mo>
+    <mi aria-label="y ">y</mi>
+    <mo aria-label="minus ">&#x2212;<!-- − --></mo>
+    <mi aria-label="x ">x</mi>
+    <mo aria-label="right parenthesis " stretchy="false">)</mo>
+  </mrow>
+</math>

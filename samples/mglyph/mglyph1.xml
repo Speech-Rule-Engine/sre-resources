@@ -1,0 +1,298 @@
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <mtable rowspacing="3pt" columnspacing="1em" side="left" displaystyle="true">
+       <mtr>
+         <mtd style="min-width: 9.556ex;">
+           <mrow>
+             <mrow>
+               <mo>(</mo><mn>5</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>3</mn><mo>)</mo></mrow>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_sun.svg"
+                    width="23pt"
+                    height="20pt">
+                 </mglyph></mrow></mrow>
+             <mn>2</mn><mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 9.556ex;">
+           <mrow>
+             <mn>5</mn>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_ananas.svg"
+                    width="18pt"
+                    height="29pt">
+                 </mglyph></mrow></mrow>
+             <mrow>
+               <mo>(</mo><mn>3</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_sun.svg"
+                      width="23pt"
+                      height="20pt">
+                   </mglyph></mrow></mrow>
+               <mn>2</mn><mo>)</mo></mrow>
+             <mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 17ex;">
+           <mrow>
+             <mrow>
+               <mo>(</mo><mn>100</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>10</mn><mo>)</mo></mrow>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_sun.svg"
+                    width="23pt"
+                    height="20pt">
+                 </mglyph></mrow></mrow>
+             <mrow>
+               <mo>(</mo><mn>10</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>1</mn><mo>)</mo></mrow>
+             <mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       </mtable>
+     </mrow>
+   <annotation encoding="application/x-tex"
+      >\begin{gather*} \left( 5 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 3 \right)
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}} 2 =
+      ?\\ 5 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} \left( 3
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}}
+      2\right) = ?\\ \left(100 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 10\right)
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}}
+      \left(10 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 1\right) =
+      ? \end{gather*}</annotation>
+   </semantics>
+ </math
+>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <mn>5</mn>
+     <mrow class="MJX-TeXAtom-BIN">
+       <mrow class="MJX-TeXAtom-VCENTER">
+         <mglyph
+            src="Images/08_sun.svg"
+            width="23pt"
+            height="20pt">
+         </mglyph></mrow></mrow>
+     <mn>3</mn><mo>=</mo><mo>?</mo><mspace width="2em"></mspace><mn>10</mn>
+     <mrow class="MJX-TeXAtom-BIN">
+       <mrow class="MJX-TeXAtom-VCENTER">
+         <mglyph
+            src="Images/08_sun.svg"
+            width="23pt"
+            height="20pt">
+         </mglyph></mrow></mrow>
+     <mn>10</mn><mo>=</mo><mo>?</mo><mspace width="2em"></mspace><mn>11</mn>
+     <mrow class="MJX-TeXAtom-BIN">
+       <mrow class="MJX-TeXAtom-VCENTER">
+         <mglyph
+            src="Images/08_sun.svg"
+            width="23pt"
+            height="20pt">
+         </mglyph></mrow></mrow>
+     <mn>1</mn><mo>=</mo><mo>?</mo></mrow>
+   <annotation encoding="application/x-tex"
+      >\begin{equation*} 5 \mathbin
+      {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}} 3 = ? \qquad
+      10 \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}} 10
+      = ? \qquad 11 \mathbin
+      {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}} 1=?
+      \end{equation*}</annotation>
+   </semantics>
+ </math
+>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <mtable
+        rowspacing="3pt"
+        columnspacing="1em"
+        side="left"
+        displaystyle="true">
+       <mtr>
+         <mtd style="min-width: 9.556ex;">
+           <mrow>
+             <mrow>
+               <mo>(</mo><mn>5</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>3</mn><mo>)</mo></mrow>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_sun.svg"
+                    width="23pt"
+                    height="20pt">
+                 </mglyph></mrow></mrow>
+             <mn>2</mn><mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 9.556ex;">
+           <mrow>
+             <mn>5</mn>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_ananas.svg"
+                    width="18pt"
+                    height="29pt">
+                 </mglyph></mrow></mrow>
+             <mrow>
+               <mo>(</mo><mn>3</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_sun.svg"
+                      width="23pt"
+                      height="20pt">
+                   </mglyph></mrow></mrow>
+               <mn>2</mn><mo>)</mo></mrow>
+             <mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       <mtr>
+         <mtd style="min-width: 17ex;">
+           <mrow>
+             <mrow>
+               <mo>(</mo><mn>100</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>10</mn><mo>)</mo></mrow>
+             <mrow class="MJX-TeXAtom-BIN">
+               <mrow class="MJX-TeXAtom-VCENTER">
+                 <mglyph
+                    src="Images/08_sun.svg"
+                    width="23pt"
+                    height="20pt">
+                 </mglyph></mrow></mrow>
+             <mrow>
+               <mo>(</mo><mn>10</mn>
+               <mrow class="MJX-TeXAtom-BIN">
+                 <mrow class="MJX-TeXAtom-VCENTER">
+                   <mglyph
+                      src="Images/08_ananas.svg"
+                      width="18pt"
+                      height="29pt">
+                   </mglyph></mrow></mrow>
+               <mn>1</mn><mo>)</mo></mrow>
+             <mo>=</mo><mo>?</mo></mrow>
+           </mtd>
+         </mtr>
+       </mtable>
+     </mrow>
+   <annotation encoding="application/x-tex"
+      >\begin{gather*} \left( 5 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 3 \right)
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}} 2 =
+      ?\\ 5 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} \left( 3
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}}
+      2\right) = ?\\ \left(100 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 10\right)
+      \mathbin {\vcenter{\img[width=23pt,height=20pt]{Images/08_sun.svg}}}
+      \left(10 \mathbin
+      {\vcenter{\img[width=18pt,height=29pt]{Images/08_ananas.svg}}} 1\right) =
+      ? \end{gather*}</annotation>
+   </semantics>
+ </math
+>
+
+From https://www.ams.org/journals/bproc/2018-05-08/S2330-1511-2018-00039-2/ cf. also https://www.ams.org/journals/bproc/2018-05-08/S2330-1511-2018-00039-2/viewer/#ltxid70
+
+A custom accent on a character
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+ <semantics>
+   <mrow>
+     <msub>
+       <mo>⊩</mo>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi mathvariant="double-struck">P</mi></mrow>
+       </msub>
+     <mrow>
+       <mtext>“ for every perfect set&nbsp;</mtext>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi>P</mi><mo>⊆</mo>
+         <msup>
+           <mrow class="MJX-TeXAtom-ORD"></mrow>
+           <mrow class="MJX-TeXAtom-ORD"><mi>ω</mi></mrow></msup>
+         <mn>2</mn></mrow>
+       <mtext>&nbsp;there are&nbsp;</mtext>
+       <mrow class="MJX-TeXAtom-ORD">
+         <mi>f</mi><mo>,</mo><mi>g</mi><mo>∈</mo><mi>P</mi></mrow>
+       <mtext>&nbsp;with&nbsp;</mtext></mrow>
+     <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+     <mo stretchy="false">(</mo><mi>f</mi><mo>+</mo>
+     <mrow class="MJX-TeXAtom-VCENTER">
+       <mglyph
+          src="Images/img699d9e75f73a9d7d07f1e4350d707c96.svg"
+          width="7pt"
+          height="10pt">
+       </mglyph></mrow>
+     <mo stretchy="false">)</mo><mo>∩</mo><mo stretchy="false">(</mo><mi>g</mi>
+     <mo>+</mo>
+     <mrow class="MJX-TeXAtom-VCENTER">
+       <mglyph
+          src="Images/img699d9e75f73a9d7d07f1e4350d707c96.svg"
+          width="7pt"
+          height="10pt">
+       </mglyph></mrow>
+     <mo stretchy="false">)</mo>
+     <mrow class="MJX-TeXAtom-ORD"><mo stretchy="false">|</mo></mrow>
+     <mo>&lt;</mo><mn>4</mn><mtext>&nbsp;”.</mtext></mrow>
+   <annotation encoding="application/x-tex">\begin{equation*} \Vdash _\mathbb{P}\text{“ for every perfect set
+      $P\subseteq {}^{\omega }2$ there are $f,g\in P$ with
+      }|(f+\vcenter{\img[width=7pt,height=10pt]{Images/img699d9e75f73a9d7d07f1e4350d707c96.svg}})\cap
+      (g+\vcenter{\img[width=7pt,height=10pt]{Images/img699d9e75f73a9d7d07f1e4350d707c96.svg}})|&lt;4
+      \text{ ”.} \end{equation*}</annotation>
+   </semantics>
+ </math>
