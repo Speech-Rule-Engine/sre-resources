@@ -180,3 +180,26 @@ Layout:
 
 * How are empty rows being dealt with?
 
+
+## 8/12/2022
+
+* Do I need to have a baseline indicator after 2:
+
+``` latex
+a_2+a_3
+```
+
+* What is the final . here? 
+
+``` latex
+    1. + 0. = 1. 
+```
+
+* I don't need multipurpose indicators or baseline indicators before forced spaces (i.e., relations, ellipses, etc.)
+
+* viii: How do I even know these boxes are not relations?
+
+* ix: multipurpose indicator:
+  * Does that extend to other accent like symbols as well?
+  * Do I need an indicator before other puncutation signs? Is there a rule for it?
+

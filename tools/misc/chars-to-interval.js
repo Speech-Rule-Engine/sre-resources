@@ -70,25 +70,47 @@ function intervals(chars) {
 
 function prefixLists(chars) {
   let codes = hexCode(code(chars).sort((x, y) => x - y));
+  return prefixLists_(codes);
+}
+
+function prefixIntervals(chars) {
+  let int = intervals(chars);
+  return prefixLists_(int);
+}
+
+function prefixPostfix(code) {
+  const length = code.length - 2;
+  return (length <= 1) ?
+    ['', code] : [code.slice(0, length), code.slice(length)];
+}
+
+function prefixLists_(codes) {
   let result = {'': []};
-  for (let code of codes) {
-    const length = code.length - 2;
-    if (length <= 1) {
-      result[''].push(code);
-      continue;
-    }
-    let prefix = code.slice(0, length);
-    let postfix = code.slice(length);
-    const list = result[prefix];
+  let addResult = (pre, post) => {
+    const list = result[pre];
     if (list) {
-      list.push(postfix);
+      list.push(post);
+    } else {
+      result[pre] = [post];
+    }
+  };
+  for (let code of codes) {
+    if (!Array.isArray(code)) {
+      const [prefix, postfix] = prefixPostfix(code);
+      addResult(prefix, postfix);
       continue;
     }
-    result[prefix] = [postfix];
+    let [beg, end] = code;
+    let [begPre, begPost] = prefixPostfix(beg);
+    let [endPre, endPost] = prefixPostfix(end);
+    if (begPre !== endPre) {
+      throw 'Something went wrong with prefixes!';
+    }
+    addResult(begPre, [begPost, endPost]);
   }
   for (let [key, value] of Object.entries(result)) {
     if (!key) continue;
-    if (value.length === 1) {
+    if (value.length === 1 && !Array.isArray(value)) {
       result[''].push(value[0]);
       continue;
     }
@@ -104,7 +126,10 @@ function compareLength(lists) {
     let a = JSON.stringify(x).length;
     let b = JSON.stringify(intervals(x)).length;
     let c = JSON.stringify(prefixLists(x)).length;
-    return (a < b) && (a < c) ? 1 : ((b < c) ? 2 : 3);
+    let d = JSON.stringify(prefixIntervals(x)).length;
+    return (a < b) && (a < c) && (a < d) ? 1 :
+      ((b < c) && (b < d)? 2 :
+       ((c < d) ? 3 : 4));
   });
 };
 
@@ -113,6 +138,22 @@ function getLength(lists) {
     let a = JSON.stringify(x).length;
     let b = JSON.stringify(intervals(x)).length;
     let c = JSON.stringify(prefixLists(x)).length;
-    return (a < b) && (a < c) ? a : ((b < c) ? b : c);
+    let d = JSON.stringify(prefixIntervals(x)).length;
+    return (a < b) && (a < c) && (a < d) ? a :
+      ((b < c) && (b < d)? b :
+       ((c < d) ? c : d));
   });
 };
+
+// Get all constants
+// echo "let lists = [" > /tmp/constants;  grep "export const" ts/semantic_tree/semantic_attr.ts  | grep "string\[\]" | grep -v Object | grep -v // | grep -v Functions | awk '{print $3}' | awk -F: '{print "SemanticAttr."$1","}' >> /tmp/constants; echo "]" >> /tmp/constants
+
+
+// [
+//   299, 118,  79,  62,   45,  67,  62,
+//    67,  45, 186, 109,   65,  11, 104,
+//    54, 121,  74, 377,  504, 190, 121,
+//   368, 761, 395, 102,   23,  49,  23,
+//    55,  62,  98, 148, 1754, 197, 221,
+//   147, 156, 199,  59
+// ]
