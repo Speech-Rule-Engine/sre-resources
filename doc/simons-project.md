@@ -82,3 +82,83 @@ Better treatment of ellipses
   middle element:
      previous element and next element punctuation -> then not punctuation
      previous element and next element text -> not punctuation
+
+# After Simons
+
+The following are heuristics inspired by simons. 
+
+
+... Need to write up the entire heuristics package ...
+
+## Text analysis heuristics
+
+### Analysis of single text elements
+
+* Annotation-XML gets role `annotation`
+* MS gets role `string`
+* Spaces get role `space`
+* If `textContent` contains spaces it will get role `text`.
+
+Everything else will be further classified
+
+* Elements with one symbols:  (Maybe we can simply ignore them for now and only reclassify in context?)
+
+1. if identifier or number they will be reclassified as such.
+2. otherwise they will retain type text and role `uknown`. They have the
+   potential to be reclassified if they are outside a text context.
+   
+   Rational: something like `\text{(}\text{case}\text{)} should be retained as a
+   text.
+
+* Elements with multiple symbols:
+
+1. They will get the number classification.
+   1. If they are a number (i.e., not `othernumber` role) they will get fully
+      reclassified as number.
+   2. If they contain some sort of punctuation (i.e., is not only numbers and
+      identifiers), they will remain type `text` and classified as `annotation`
+      _Rational_: \text{(1)} usually a label.
+   3. Otherwise they have the potential to be (prefix) functions or units. This
+      needs to be determined from context. We therefore classify them initially
+      as `text` and `unknown`. Note, that they can contain only letters or a mix
+      of letters and numbers. Note also, that they are the only multi character
+      `text` elements now that have class `unknown`.
+   
+### Analysis of rows paritioned by text elements
+
+They can contain three types of text elements: 
+
+1. Proper ones with roles `annotation, string, space, text`
+2. Single symbol elements with `unknown` roles.
+3. Multi character elements (letters or numbers only) with role `unknown`.
+
+The goal is now to combine as much as possible these elements as well as further
+classify those of type 3.
+
+* If only one text element in row, then give it role `annotation`.  
+  _Rational_: In this case it is probably a singleton in a cell, as in a case
+  statement or as a label.
+* We then partition the row by finding all text elements then we
+  1. If all comp elements are empty then combine with role `annotation`.
+     _Rational_: as above.
+  1. initially combine contiguous text elements into a single punctuated element with
+    `text` or `annotation` role (the latter if all are annotations).
+  2. Now we know that the partition is proper, that is the only empty elements in
+    `comp` can be the first and last element.
+  3. Now we classify the `unknown` elements by first computing their meaning:
+     * If meaning is not `unknown` reclassify accordingly, otherwise
+     * Those at start or middle will be turned into `prefix functions`
+     * Those at the end will become `unit`
+     The corresponding comp elements will get merged.
+  4. Combine the comp elements into single semantic nodes.
+  5. Combine the row to a single punctuated dummy node.
+  
+This is the idea of the algorithm. In order to avoid multiple passes of the
+partition, we shall combine steps 2-4 into a single step.
+    
+
+This is the actual algorithm:
+
+
+
+
