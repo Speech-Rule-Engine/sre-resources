@@ -10,10 +10,10 @@
 
 ### Sync version
 
-* Transpile the files in `speech-rule-engine`
+* Transpile the files in `speech-rule-engine` and webpack
 
 ``` bash
-npx tsc; npx webpack; make publish
+pnpm buildAll
 ```
 
 _Note, that `make publish` is temporary until we have a different method to generate locales._
@@ -21,7 +21,7 @@ _Note, that `make publish` is temporary until we have a different method to gene
 * Run the usually test suite in `sre-tests`
 
 ``` bash
-npm run test
+pnpm test
 ```
 
 * Run a pipeline test in the sre directory. For example:
@@ -43,19 +43,19 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:speech-rule-engine/speech-rule-engine.git
 cd speech-rule-engine
-npm install
+pnpm install
 ```
 
 * Test that the package really works 
 
 ``` bash
-npm run prepublish
-npm pack
+pnpm prepublish
+pnpm pack
 rm -rf /var/www/html/test/*
 cp speech-rule-engine-*.tgz /var/www/html/test/
 cd /var/www/html/test/
 rm -rf node_modules
-npm install ./speech-rule-engine-*.tgz
+pnpm install ./speech-rule-engine-*.tgz
 ```
 
 * Test the content of the `pipe-direct.js` file in node.
@@ -70,8 +70,18 @@ node pipe-direct-2.js
 for f in /tmp/out-*.txt; do echo ${f}: >> /tmp/sre-output.txt; (cat "${f}"; echo) >> /tmp/sre-output.txt; done
 more /tmp/sre-output.txt
 ```
-    
-    
+
+* Test the import of commonjs and ES6 module files
+
+``` bash
+cd /var/www/html/test
+cp /home/sorge/git/sre/sre-resources/publish/import-module.?js .
+node import-module.mjs
+node import-module.cjs
+```
+
+
+
 ### HTTP version
 
 Test the various HTML versions:
@@ -136,7 +146,7 @@ Make sure to upgrade version in
 * `ts/common/variables`
 * `package.json`
 
-Run `npm install`. This should upgrade the version in 
+Run `pnpm install`. This should upgrade the version in 
 * `package-lock.json` 
 as well
 
@@ -149,8 +159,9 @@ cd /tmp
 rm -rf node_modules speech-rule-engine
 git clone git@github.com:speech-rule-engine/speech-rule-engine.git
 cd speech-rule-engine
-npm install
-npm publish
+pnpm install
+pnpm prepublish
+pnpm publish
 ```
 
 ## Publish the IE maps
@@ -181,8 +192,8 @@ cd /tmp/speech-rule-engine
 export PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g')
 cd ../sre-mathmaps-ie
 git commit -a -m "Update for release $PACKAGE_VERSION"
-npm version $PACKAGE_VERSION
-npm publish
+pnpm version $PACKAGE_VERSION
+pnpm publish
 ```
 
 
@@ -197,7 +208,7 @@ releases!
 ### Tag SRE
 
 ``` bash
-export SRE_VERSION=`npm view speech-rule-engine version`
+export SRE_VERSION=`pnpm view speech-rule-engine version`
 git tag -a v$SRE_VERSION -m "Release type $SRE_VERSION"
 git push origin v$SRE_VERSION
 ```
@@ -207,7 +218,7 @@ Alternatively generate a tag when making release on github.
 ### Tag the tests
 
 ``` bash
-SRE_VERSION=`npm view speech-rule-engine version`
+SRE_VERSION=`pnpm view speech-rule-engine version`
 git tag -a v$SRE_VERSION -m "Tests for SRE release v$SRE_VERSION"
 git push origin v$SRE_VERSION
 ```
