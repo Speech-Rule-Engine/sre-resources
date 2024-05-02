@@ -1,0 +1,13 @@
+<math>
+  <msubsup>
+    <mo data-mjx-texclass="OP">∫</mo>
+    <mi>a</mi>
+    <mi>b</mi>
+  </msubsup>
+  <mi>f</mi>
+  <mo stretchy="false">(</mo>
+  <mi>x</mi>
+  <mo stretchy="false">)</mo>
+  <mi>d</mi>
+  <mi>x</mi>
+</math>

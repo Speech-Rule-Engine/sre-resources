@@ -1,0 +1,17 @@
+const hundred_: string = 'सौ';
+// hundred: 1 - 9 hundred  (sau)
+
+large: [
+    'हजार',     // thousand: 1 - 99 thousand (hazaar)
+    'लाख',      // thousand/million: 100 thousand - 9 million (lakh)
+    'करोड़',     // million: 10 - 999 million (caror)
+    'अरब',      // billion: 1 - 99 billion (arab)
+    'खरब',      // billion/trillion: 100 billion - 9 trillion (kharab)
+    'नील',      // 10 trillion - 999 trillion (sau kharab)
+    'पद्मा',     // 1 quadrillion - 99 quadrillion (nil)
+    'शंख',       // 100 quadrillion - 9 quintillion (padma)
+    'महाशंख',    // 10 quin - 999 quin (Shankh)
+    'महाउपाध',  // 1 sext - 99 sext
+    'जल्द',      // 100 sext - 9 sept
+    'परार्ध', 'अंत', 'शिष्ट'
+  ],

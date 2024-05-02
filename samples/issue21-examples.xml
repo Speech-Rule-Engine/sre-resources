@@ -1,0 +1,89 @@
+<doc>
+
+<!-- {n \choose k} -->
+
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow class="MJX-TeXAtom-ORD">
+    <mrow>
+      <mrow class="MJX-TeXAtom-OPEN">
+        <mo maxsize="2.047em" minsize="2.047em" fence="true">(</mo>
+      </mrow>
+      <mfrac linethickness="0">
+        <mi>n</mi>
+        <mi>k</mi>
+      </mfrac>
+      <mrow class="MJX-TeXAtom-CLOSE">
+        <mo maxsize="2.047em" minsize="2.047em" fence="true">)</mo>
+      </mrow>
+    </mrow>
+  </mrow>
+</math>
+
+<!-- \begin{pmatrix} a & b \\ c & d \end{pmatrix} -->
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mo fence="true">(</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>
+          <mi>a</mi>
+        </mtd>
+        <mtd>
+          <mi>b</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mi>c</mi>
+        </mtd>
+        <mtd>
+          <mi>d</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo fence="true">)</mo>
+  </mrow>
+</math>
+
+<!-- \begin{pmatrix} a \end{pmatrix} -->
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mo fence="true">(</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>
+          <mi>a</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo fence="true">)</mo>
+  </mrow>
+</math>
+
+sre.Enrich.testTranslation__('<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mo fence="true">(</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><mi>a</mi></mtd></mtr></mtable><mo fence="true">)</mo></mrow></math>');
+
+
+<!-- \begin{pmatrix}a\end{pmatrix} + 2 -->
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mo>(</mo>
+    <mtable rowspacing="4pt" columnspacing="1em">
+      <mtr>
+        <mtd>
+          <mi>a</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo>)</mo>
+  </mrow>
+  <mo>+</mo>
+  <mn>2</mn>
+</math>
+
+sre.Enrich.testTranslation__('<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow><mo>(</mo><mtable rowspacing="4pt" columnspacing="1em"><mtr><mtd><mi>a</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>+</mo><mn>2</mn></math>');
+
+</doc>

@@ -1,0 +1,46 @@
+<table>
+  <thead>
+    <tr class="header">
+      <th>Name</th>
+      <th>Age</th>
+      <th>Physics</th>
+      <th>Chemistry</th>
+      <th>Mathematics</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="odd">
+      <td>Akashdeep</td>
+      <td>30</td>
+      <td>74</td>
+      <td>60</td>
+      <td>76</td>
+      <td>200</td>
+    </tr>
+    <tr class="even">
+      <td>Sunil</td>
+      <td>26</td>
+      <td>73</td>
+      <td>37</td>
+      <td>82</td>
+      <td>283</td>
+    </tr>
+    <tr class="odd">
+      <td>Ankit</td>
+      <td>23</td>
+      <td>832</td>
+      <td>73</td>
+      <td>82</td>
+      <td>836</td>
+    </tr>
+    <tr class="even">
+      <td>Anshika</td>
+      <td>73</td>
+      <td>38</td>
+      <td>88</td>
+      <td>838</td>
+      <td>836</td>
+    </tr>
+  </tbody>
+</table>

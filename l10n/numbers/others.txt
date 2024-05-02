@@ -1,0 +1,41 @@
+It:
+/** 
+ * String representation of ordinals from zero to ten.
+ */
+    onesOrdinals: [
+      'zero', 'primo', 'secondo', 'terzo', 'quarto', 'quinto', 'sesto', 'settimo',
+      'ottavo', 'nono', 'decimo'
+    ]
+
+
+ES:
+
+// Ordinals
+/**
+ * String representation of zero to nineteen.
+ */
+const onesOrdinals_: string[] = [
+  'primera', 'segunda', 'tercera', 'cuarta', 'quinta', 'sexta', 'séptima',
+  'octava', 'novena', 'décima', 'undécima', 'duodécima'
+];
+
+
+/**
+ * String representation of twenty to ninety.
+ */
+const tensOrdinals_: string[] = [
+  'décima', 'vigésima', 'trigésima', 'cuadragésima', 'quincuagésima',
+  'sexagésima', 'septuagésima', 'octogésima', 'nonagésima'
+];
+
+
+/**
+ * String representation of thousand to decillion.
+ */
+const hundredsOrdinals_: string[] = [
+  'centésima', 'ducentésima', 'tricentésima', 'cuadringentésima',
+  'quingentésima', 'sexcentésima', 'septingentésima', 'octingentésima',
+  'noningentésima'
+];
+
+
