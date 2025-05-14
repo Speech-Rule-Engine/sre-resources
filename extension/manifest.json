@@ -1,0 +1,14 @@
+{
+  "name": "SRE Injector for Chrome",
+  "description": "Inject various SRE into a page.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+      "default_title": "Inject MathJax.",
+      "default_icon": "mathjax_logo.png",
+      "default_popup": "injection.html"
+  },
+  "manifest_version": 2
+}
