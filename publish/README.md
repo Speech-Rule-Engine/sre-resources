@@ -153,14 +153,15 @@ as well
 
 ## Publish a Release
 
+This only works on master branch.
 
 ``` bash
 cd /tmp
-rm -rf node_modules speech-rule-engine
+rm -rf package.json pnpm-lock.yml node_modules speech-rule-engine
 git clone git@github.com:speech-rule-engine/speech-rule-engine.git
 cd speech-rule-engine
+git checkout master
 pnpm install
-pnpm prepublish
 pnpm publish
 ```
 

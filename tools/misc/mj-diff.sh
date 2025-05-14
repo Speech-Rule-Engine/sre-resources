@@ -9,8 +9,8 @@ sretree=$sre"core/Tree"
 mjmmltree=$mj"core/MmlTree"
 sremmltree=$sre"core/MmlTree"
 
-mjmmlnodes=$mj"core/MmlNodes"
-sremmlnodes=$sre"core/MmlNodes"
+mjmmlnodes=$mj"core/MmlTree/MmlNodes"
+sremmlnodes=$sre"core/MmlTree/MmlNodes"
 
 mjparser=$mj"input/tex"
 sreparser=$sre"parser"
@@ -32,6 +32,14 @@ compare() {
         diff $file $2/$basename
     done
 }
+
+if (( $# > 0 )); then
+    inmj=`find $mj -name $1`
+    insre=`find $sre -name $1`
+    echo "Diffing $inmj and $insre"
+    diff $inmj $insre
+    exit 0;
+fi
 
 echo MJ TREE
 compare $sretree $mjtree
@@ -72,7 +80,5 @@ ls -R $mjutil
 echo
 echo SRE UTIL
 ls -R $sreutil
-
-
 
 # diff $sre$1 $mj$2
